@@ -1,0 +1,48 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "CODEX_HOOK='1' node '/Users/fengliang/PycharmProjects/aisee.wiki/.aisee/hooks/session-inject.js'",
+            "statusMessage": "Loading OpenSpec context",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "CODEX_HOOK='1' node '/Users/fengliang/PycharmProjects/aisee.wiki/.aisee/hooks/spec-drift.js'",
+            "statusMessage": "Checking spec scope",
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "CODEX_HOOK='1' node '/Users/fengliang/PycharmProjects/aisee.wiki/.aisee/hooks/prompt-scan.js'",
+            "statusMessage": "Scanning prompt",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash|apply_patch|Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "CODEX_HOOK='1' node '/Users/fengliang/PycharmProjects/aisee.wiki/.aisee/hooks/prompt-scan.js'",
+            "statusMessage": "Scanning tool input",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

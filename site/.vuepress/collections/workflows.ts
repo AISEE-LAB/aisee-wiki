@@ -5,7 +5,7 @@ export const workflowsCollection = defineCollection({
   dir: 'workflows',
   linkPrefix: '/workflows',
   title: '工程流程',
-  sidebar: ['README.md'],
+  sidebar: ['README.md', 'flow-explainer'],
 })
 
 export const workflowsEnCollection = defineCollection({

@@ -5,6 +5,7 @@ import { defineClientConfig } from 'vuepress/client'
 // import Swiper from 'vuepress-theme-plume/features/Swiper.vue'
 
 import HomePage from './theme/components/HomePage.vue'
+import FlowExplainer from './theme/components/FlowExplainer.vue'
 // import CustomComponent from './theme/components/Custom.vue'
 
 // import './theme/styles/custom.css'
@@ -19,6 +20,7 @@ export default defineClientConfig({
 
     // your custom components
     app.component('HomePage', HomePage)
+    app.component('FlowExplainer', FlowExplainer)
     // app.component('CustomComponent', CustomComponent)
   },
 })

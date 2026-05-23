@@ -5,25 +5,25 @@
  */
 
 import { defineNavbarConfig } from 'vuepress-theme-plume'
+import { primarySectionSlugs, secondarySectionSlugs, siteSections } from './ia'
+
+const primarySections = siteSections.filter(section => primarySectionSlugs.includes(section.slug as typeof primarySectionSlugs[number]))
+const secondarySections = siteSections.filter(section => secondarySectionSlugs.includes(section.slug as typeof secondarySectionSlugs[number]))
 
 export const zhNavbar = defineNavbarConfig([
   { text: '首页', link: '/' },
-  { text: '博客', link: '/blog/' },
-  { text: '标签', link: '/blog/tags/' },
-  { text: '归档', link: '/blog/archives/' },
+  ...primarySections.map(section => ({ text: section.zh, link: `/${section.slug}/` })),
   {
-    text: '笔记',
-    items: [{ text: '示例', link: '/demo/README.md' }]
+    text: '更多',
+    items: secondarySections.map(section => ({ text: section.zh, link: `/${section.slug}/` })),
   },
 ])
 
 export const enNavbar = defineNavbarConfig([
   { text: 'Home', link: '/en/' },
-  { text: 'Blog', link: '/en/blog/' },
-  { text: 'Tags', link: '/en/blog/tags/' },
-  { text: 'Archives', link: '/en/blog/archives/' },
+  ...primarySections.map(section => ({ text: section.en, link: `/en/${section.slug}/` })),
   {
-    text: 'Notes',
-    items: [{ text: 'Demo', link: '/en/demo/README.md' }]
+    text: 'More',
+    items: secondarySections.map(section => ({ text: section.en, link: `/en/${section.slug}/` })),
   },
 ])

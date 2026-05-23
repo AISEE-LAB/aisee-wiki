@@ -43,7 +43,7 @@ export default defineUserConfig({
 
     /* 文档仓库配置，用于 editLink */
     // docsRepo: '',
-    // docsDir: 'docs',
+    // docsDir: 'site',
     // docsBranch: '',
 
     /* 页内信息 */

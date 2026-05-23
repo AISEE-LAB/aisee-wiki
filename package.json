@@ -7,10 +7,10 @@
   "author": "sincerly90 <fengshengjie5@live.com>",
   "license": "MIT",
   "scripts": {
-    "docs:build": "vuepress build docs --clean-cache --clean-temp",
-    "docs:dev": "vuepress dev docs",
-    "docs:dev-clean": "vuepress dev docs --clean-cache --clean-temp",
-    "docs:preview": "http-server docs/.vuepress/dist",
+    "docs:build": "vuepress build site --clean-cache --clean-temp",
+    "docs:dev": "vuepress dev site",
+    "docs:dev-clean": "vuepress dev site --clean-cache --clean-temp",
+    "docs:preview": "http-server site/.vuepress/dist",
     "vp-update": "pnpm dlx vp-update"
   },
   "devDependencies": {

@@ -1,2 +1,2 @@
-shamefully-hoist=true
-shell-emulator=true
+packages:
+  - .

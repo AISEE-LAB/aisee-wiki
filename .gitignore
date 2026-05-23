@@ -18,6 +18,7 @@ site/.vuepress/dist/
 .env
 .env.*
 !.env.example
+docs/design-assets/config/openai-config.local.json
 
 # Logs
 *.log

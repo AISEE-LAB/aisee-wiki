@@ -1,0 +1,44 @@
+<svg width="1400" height="420" viewBox="0 0 1400 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="trail" x1="90" y1="210" x2="1288" y2="210" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0EA5A8" stop-opacity="0"/>
+      <stop offset="0.16" stop-color="#22D3EE" stop-opacity="0.92"/>
+      <stop offset="0.5" stop-color="#38BDF8"/>
+      <stop offset="0.72" stop-color="#2DD4BF"/>
+      <stop offset="1" stop-color="#38BDF8" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="trailGlow" x="-20%" y="-70%" width="140%" height="240%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.02 0 0 0 0 0.86 0 0 0 0 0.9 0 0 0 0.8 0"/>
+      <feBlend in="SourceGraphic"/>
+    </filter>
+    <filter id="nodeGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feBlend in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g filter="url(#trailGlow)">
+    <path d="M86 80C154 120 110 214 194 250C282 288 466 252 628 262C820 274 924 332 1038 286C1148 242 1168 118 1288 94"
+      stroke="url(#trail)" stroke-width="28" stroke-linecap="round"/>
+    <path d="M86 80C154 120 110 214 194 250C282 288 466 252 628 262C820 274 924 332 1038 286C1148 242 1168 118 1288 94"
+      stroke="#ECFEFF" stroke-width="4" stroke-linecap="round" stroke-dasharray="22 20"/>
+    <path d="M112 92C176 130 140 198 214 224C322 262 518 214 670 232C812 249 904 294 1008 252C1110 210 1132 124 1254 108"
+      stroke="#7DD3FC" stroke-opacity="0.34" stroke-width="8" stroke-linecap="round" stroke-dasharray="4 18"/>
+  </g>
+  <g filter="url(#nodeGlow)">
+    <circle cx="214" cy="250" r="19" fill="#0EA5A8" stroke="white" stroke-width="8"/>
+    <circle cx="412" cy="254" r="18" fill="#0891B2" stroke="white" stroke-width="8"/>
+    <circle cx="610" cy="260" r="18" fill="#0EA5A8" stroke="white" stroke-width="8"/>
+    <circle cx="804" cy="280" r="18" fill="#0284C7" stroke="white" stroke-width="8"/>
+    <circle cx="1018" cy="292" r="22" fill="#22D3EE" stroke="white" stroke-width="8"/>
+  </g>
+  <g opacity="0.85">
+    <circle cx="286" cy="222" r="3" fill="#67E8F9"/>
+    <circle cx="356" cy="266" r="2.4" fill="#BAE6FD"/>
+    <circle cx="530" cy="232" r="3" fill="#67E8F9"/>
+    <circle cx="704" cy="252" r="2.6" fill="#BAE6FD"/>
+    <circle cx="872" cy="296" r="3" fill="#67E8F9"/>
+    <circle cx="1114" cy="196" r="2.8" fill="#BAE6FD"/>
+    <circle cx="1210" cy="118" r="3.2" fill="#67E8F9"/>
+  </g>
+</svg>

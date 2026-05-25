@@ -1,0 +1,141 @@
+{
+  "status": "published",
+  "elements": [
+    {
+      "id": "_mgqBsosbDKsaJPnV6GUm",
+      "type": "line",
+      "x": 859.977602555591,
+      "y": 576.6007020879847,
+      "width": 189.69431320997705,
+      "height": 92.14981705069717,
+      "angle": 0,
+      "strokeColor": "#2f9e44",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 80,
+      "groupIds": [
+        "oPEowtQlLQ7W75BeCNWVA"
+      ],
+      "frameId": null,
+      "index": "b02",
+      "roundness": {
+        "type": 2
+      },
+      "seed": 328260681,
+      "version": 3351,
+      "versionNonce": 8291625,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1717805902145,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          -0.4146249824936916,
+          -0.2553866241213836
+        ],
+        [
+          71.9452762472197,
+          -2.7525736277341424
+        ],
+        [
+          139.2031290073635,
+          -0.6084149661238962
+        ],
+        [
+          172.18904871522625,
+          16.492317293055287
+        ],
+        [
+          182.21459657555823,
+          42.44909898776862
+        ],
+        [
+          171.9221877693061,
+          69.91639259900991
+        ],
+        [
+          140.95789965612278,
+          86.00019617494236
+        ],
+        [
+          75.1616541535643,
+          89.39724342296302
+        ],
+        [
+          -0.3128306307790344,
+          87.31240126458516
+        ],
+        [
+          -6.345759049713115,
+          78.78690165941359
+        ],
+        [
+          -7.4797166344188515,
+          40.74704621264733
+        ],
+        [
+          -6.438257100429156,
+          4.4733548714151
+        ],
+        [
+          -0.4146249824936916,
+          -0.2553866241213836
+        ]
+      ],
+      "lastCommittedPoint": [
+        -3.916043340218039,
+        -1.0156321879867392
+      ],
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": null
+    },
+    {
+      "id": "sfg_Xl9_3KcBVN47Kgn2q",
+      "type": "text",
+      "x": 909.6639788403473,
+      "y": 608.3927966420889,
+      "width": 54.51995849609375,
+      "height": 25,
+      "angle": 0,
+      "strokeColor": "#2f9e44",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 80,
+      "groupIds": [
+        "oPEowtQlLQ7W75BeCNWVA"
+      ],
+      "frameId": null,
+      "index": "b03",
+      "roundness": null,
+      "seed": 1913210377,
+      "version": 62,
+      "versionNonce": 379975689,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1717805902145,
+      "link": null,
+      "locked": false,
+      "text": "Delay",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Delay",
+      "autoResize": true,
+      "lineHeight": 1.25
+    }
+  ],
+  "id": "2ubxnY8d_WiH_BL5_tMbc",
+  "created": 1717805903780,
+  "name": "Delay"
+}

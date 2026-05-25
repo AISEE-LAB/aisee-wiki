@@ -1,0 +1,141 @@
+{
+  "status": "published",
+  "elements": [
+    {
+      "id": "aOYKoBFtkBkWinkOTZSbx",
+      "type": "line",
+      "x": 341.79193029213565,
+      "y": 212.02306029032388,
+      "width": 215.3841423960141,
+      "height": 86.5470616870208,
+      "angle": 0,
+      "strokeColor": "#f08c00",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 80,
+      "groupIds": [
+        "iURYqzDDUS_HlukrruoXt"
+      ],
+      "frameId": null,
+      "index": "b04",
+      "roundness": {
+        "type": 2
+      },
+      "seed": 400689511,
+      "version": 4797,
+      "versionNonce": 106805319,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1717805847002,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          71.81544595290487,
+          -2.4136740813494826
+        ],
+        [
+          138.82660765347347,
+          -1.2450510810007056
+        ],
+        [
+          168.109388661726,
+          16.07292491766025
+        ],
+        [
+          177.73990742133736,
+          41.00695112077255
+        ],
+        [
+          167.85304263638204,
+          67.39197167864695
+        ],
+        [
+          138.9496417516002,
+          83.97677862351297
+        ],
+        [
+          74.80091837009296,
+          84.13338760567132
+        ],
+        [
+          2.404470760619684,
+          84.10253853545282
+        ],
+        [
+          -25.363803827368663,
+          71.44096570190817
+        ],
+        [
+          -37.64423497467675,
+          43.52586048206696
+        ],
+        [
+          -27.748183191795828,
+          13.57012300661859
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "lastCommittedPoint": [
+        -3.916043340218039,
+        -1.0156321879867392
+      ],
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": null
+    },
+    {
+      "id": "bPfE_O7x6N99m2sVqdJ2A",
+      "type": "text",
+      "x": 351.0942276581047,
+      "y": 244.74988065652488,
+      "width": 116.13620399376578,
+      "height": 24.01494385587742,
+      "angle": 0,
+      "strokeColor": "#f08c00",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 80,
+      "groupIds": [
+        "iURYqzDDUS_HlukrruoXt"
+      ],
+      "frameId": null,
+      "index": "b05",
+      "roundness": null,
+      "seed": 1445651593,
+      "version": 379,
+      "versionNonce": 1722619751,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1717805847002,
+      "link": null,
+      "locked": false,
+      "text": "Start / End",
+      "fontSize": 19.211955084701934,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Start / End",
+      "autoResize": true,
+      "lineHeight": 1.25
+    }
+  ],
+  "id": "tVtn0WO3N-0HC-p2kIXOJ",
+  "created": 1717805851594,
+  "name": "Start / End"
+}

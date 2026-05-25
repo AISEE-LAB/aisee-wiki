@@ -1,0 +1,104 @@
+{
+  "status": "published",
+  "elements": [
+    {
+      "type": "line",
+      "version": 2783,
+      "versionNonce": 1094955655,
+      "index": "aC",
+      "isDeleted": false,
+      "id": "c6tVey2vizAZfIpTpmyrn",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 863.8821959879904,
+      "y": 377.72227681403365,
+      "strokeColor": "#0c8599",
+      "backgroundColor": "transparent",
+      "width": 177.38720624737226,
+      "height": 68.61500430474813,
+      "seed": 298721961,
+      "groupIds": [
+        "Swcr2QLDws17ylZpGabM-"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "boundElements": [],
+      "updated": 1717805697298,
+      "link": null,
+      "locked": false,
+      "startBinding": null,
+      "endBinding": null,
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          141.1903133856958,
+          -0.8581778358546758
+        ],
+        [
+          111.65315195251631,
+          67.5555367658238
+        ],
+        [
+          -36.196892861676474,
+          67.75682646889345
+        ],
+        [
+          -4.112523736907434,
+          0.03207924491035474
+        ]
+      ]
+    },
+    {
+      "type": "text",
+      "version": 958,
+      "versionNonce": 736877929,
+      "index": "aD",
+      "isDeleted": false,
+      "id": "Osu8WLuVtjgbp_R-tvtGT",
+      "fillStyle": "hachure",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 878.1033600594241,
+      "y": 385.57421875,
+      "strokeColor": "#0c8599",
+      "backgroundColor": "#eaddd7",
+      "width": 72.75994873046875,
+      "height": 50,
+      "seed": 1730536841,
+      "groupIds": [
+        "Swcr2QLDws17ylZpGabM-"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "boundElements": [],
+      "updated": 1717805697298,
+      "link": null,
+      "locked": false,
+      "fontSize": 20,
+      "fontFamily": 1,
+      "text": "Input /\nOutput",
+      "textAlign": "center",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Input /\nOutput",
+      "autoResize": true,
+      "lineHeight": 1.25
+    }
+  ],
+  "id": "RQ9LMOAx9SsgXwRdUWp3m",
+  "created": 1717805892695,
+  "name": "Input / Output"
+}

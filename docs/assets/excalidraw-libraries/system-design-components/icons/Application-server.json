@@ -1,0 +1,61 @@
+{
+  "name": "Application server",
+  "elements": [
+    {
+      "type": "rectangle",
+      "version": 1251,
+      "versionNonce": 1595669494,
+      "isDeleted": false,
+      "id": "4d84ZazZKdSchXcNz8WMR",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 529.1704455315032,
+      "y": 305.8034542508692,
+      "strokeColor": "#000000",
+      "backgroundColor": "#eeeeee",
+      "width": 96.04882870779743,
+      "height": 94.20173584803199,
+      "seed": 587328630,
+      "groupIds": [
+        "N1_BrkBL_S16742rPKoT0"
+      ],
+      "strokeSharpness": "sharp",
+      "boundElementIds": []
+    },
+    {
+      "type": "text",
+      "version": 660,
+      "versionNonce": 766142058,
+      "isDeleted": false,
+      "id": "cEKmaenKh5Vw-r1-ftfwY",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 539.2589200272678,
+      "y": 332.8205893088141,
+      "strokeColor": "#000000",
+      "backgroundColor": "#ced4da",
+      "width": 75.87187971626813,
+      "height": 40.167465732141956,
+      "seed": 2008661482,
+      "groupIds": [
+        "N1_BrkBL_S16742rPKoT0"
+      ],
+      "strokeSharpness": "sharp",
+      "boundElementIds": [],
+      "fontSize": 14.876839160052583,
+      "fontFamily": 1,
+      "text": "Application\nserver",
+      "baseline": 34.167465732141956,
+      "textAlign": "center",
+      "verticalAlign": "top"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "name": "item-16",
+  "elements": [
+    {
+      "type": "rectangle",
+      "version": 137,
+      "versionNonce": 1071379595,
+      "isDeleted": false,
+      "id": "vyynW42YCio73uM0OaMjb",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 2,
+      "opacity": 100,
+      "angle": 0,
+      "x": 1202.5550391452496,
+      "y": 1264.2304439673046,
+      "strokeColor": "black",
+      "backgroundColor": "black",
+      "width": 61.819091796875,
+      "height": 50.320251464843864,
+      "seed": 2083265323,
+      "groupIds": [
+        "PqoR3pVWrX8EFMIUz_wOB"
+      ],
+      "strokeSharpness": "round",
+      "boundElementIds": []
+    },
+    {
+      "type": "rectangle",
+      "version": 261,
+      "versionNonce": 1887848549,
+      "isDeleted": false,
+      "id": "ynPBFGUooUA2e05t3hz5M",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 2,
+      "opacity": 100,
+      "angle": 0,
+      "x": 1239.382797934312,
+      "y": 1188.1281490454292,
+      "strokeColor": "black",
+      "backgroundColor": "black",
+      "width": 115.0626220703125,
+      "height": 90.44995117187511,
+      "seed": 1083621637,
+      "groupIds": [
+        "PqoR3pVWrX8EFMIUz_wOB"
+      ],
+      "strokeSharpness": "round",
+      "boundElementIds": [
+        "ETOXQoE3kxPaSyQB8ZeVq"
+      ]
+    },
+    {
+      "type": "arrow",
+      "version": 123,
+      "versionNonce": 1837796811,
+      "isDeleted": false,
+      "id": "ETOXQoE3kxPaSyQB8ZeVq",
+      "fillStyle": "solid",
+      "strokeWidth": 4,
+      "strokeStyle": "solid",
+      "roughness": 2,
+      "opacity": 100,
+      "angle": 0,
+      "x": 1228.7562110202496,
+      "y": 1290.299901975117,
+      "strokeColor": "white",
+      "backgroundColor": "black",
+      "width": 77.3865966796875,
+      "height": 63.31005859375,
+      "seed": 1240825291,
+      "groupIds": [
+        "PqoR3pVWrX8EFMIUz_wOB"
+      ],
+      "strokeSharpness": "round",
+      "boundElementIds": [],
+      "startBinding": {
+        "elementId": "ynPBFGUooUA2e05t3hz5M",
+        "focus": 0.012858480163332173,
+        "gap": 11.721801757812614
+      },
+      "endBinding": null,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          77.3865966796875,
+          -63.31005859375
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    }
+  ]
+}

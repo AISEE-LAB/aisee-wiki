@@ -9,7 +9,11 @@ createTime: 2026/05/25 00:00:00
 Agent 不是更会聊天的模型，而是模型、上下文、工具、运行环境、约束和验证共同组成的执行系统。
 
 <ClientOnly>
-  <LearningFlow variant="agent" />
+  <DiagramFigure
+    src="/diagrams/learn/agent-loop.svg"
+    title="Agent 的最小工作循环"
+    caption="目标进入上下文，模型决定下一步；如果需要工具，就执行动作并把结果写回下一轮。"
+  />
 </ClientOnly>
 
 ## 为什么从 Chat 走向 Agent

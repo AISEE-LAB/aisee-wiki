@@ -51,7 +51,9 @@ const extendedTools = [
 
     <div class="tool-logo-grid__primary">
       <article v-for="tool in primaryTools" :key="tool.name" class="tool-card tool-card--primary">
-        <img :src="tool.icon" :alt="`${tool.name} logo`" loading="lazy">
+        <div class="tool-card__icon">
+          <img :src="tool.icon" :alt="`${tool.name} logo`" loading="lazy">
+        </div>
         <div>
           <strong>{{ tool.name }}</strong>
           <small>{{ tool.vendor }} · {{ tool.focus }}</small>
@@ -62,7 +64,9 @@ const extendedTools = [
 
     <div class="tool-logo-grid__extended" aria-label="扩展视野">
       <article v-for="tool in extendedTools" :key="tool.name" class="tool-card">
-        <img :src="tool.icon" :alt="`${tool.name} logo`" loading="lazy">
+        <div class="tool-card__icon">
+          <img :src="tool.icon" :alt="`${tool.name} logo`" loading="lazy">
+        </div>
         <div>
           <strong>{{ tool.name }}</strong>
           <p>{{ tool.description }}</p>
@@ -75,7 +79,7 @@ const extendedTools = [
 <style scoped>
 .tool-logo-grid {
   margin: 30px 0;
-  padding: 24px;
+  padding: 28px;
   border: 1px solid color-mix(in oklch, var(--vp-c-divider) 82%, transparent);
   border-radius: 8px;
   background:
@@ -94,15 +98,16 @@ header p {
 
 header h2 {
   margin: 0;
-  font-size: 24px;
+  font-size: 28px;
   line-height: 1.25;
 }
 
 header span {
   display: block;
   margin-top: 8px;
+  max-width: 820px;
   color: var(--vp-c-text-2);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.7;
 }
 
@@ -114,27 +119,47 @@ header span {
 }
 
 .tool-logo-grid__primary {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
 }
 
 .tool-logo-grid__extended {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
 }
 
 .tool-card {
-  display: flex;
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
   min-width: 0;
-  gap: 12px;
+  gap: 14px;
   align-items: flex-start;
-  padding: 14px;
+  padding: 16px;
   border: 1px solid color-mix(in oklch, var(--vp-c-divider) 78%, transparent);
   border-radius: 8px;
   background: color-mix(in oklch, var(--vp-c-bg) 94%, white);
 }
 
 .tool-card--primary {
-  min-height: 168px;
-  flex-direction: column;
+  min-height: 150px;
+  padding: 20px;
+  grid-template-columns: 58px minmax(0, 1fr);
+}
+
+.tool-card__icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border-radius: 8px;
+  background:
+    linear-gradient(145deg, color-mix(in oklch, var(--vp-c-bg) 80%, white), color-mix(in oklch, var(--vp-c-bg-soft) 90%, transparent));
+  box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--vp-c-divider) 52%, transparent);
+}
+
+.tool-card--primary .tool-card__icon {
+  width: 58px;
+  height: 58px;
 }
 
 .tool-card img {
@@ -142,6 +167,11 @@ header span {
   height: 34px;
   flex: 0 0 auto;
   object-fit: contain;
+}
+
+.tool-card--primary img {
+  width: 40px;
+  height: 40px;
 }
 
 .tool-card strong,
@@ -153,20 +183,37 @@ header span {
 
 .tool-card strong {
   color: var(--vp-c-text-1);
-  font-size: 15px;
+  font-size: 17px;
+  line-height: 1.25;
 }
 
 .tool-card small {
-  margin-top: 2px;
+  margin-top: 5px;
   color: var(--vp-c-text-2);
-  font-size: 12px;
+  font-size: 13px;
+  line-height: 1.45;
 }
 
 .tool-card p {
   margin: 8px 0 0;
   color: var(--vp-c-text-2);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.tool-logo-grid__extended .tool-card {
+  align-items: center;
+  padding: 14px;
+}
+
+.tool-logo-grid__extended .tool-card strong {
+  font-size: 16px;
+}
+
+.tool-logo-grid__extended .tool-card p {
+  margin-top: 5px;
   font-size: 13px;
-  line-height: 1.55;
+  line-height: 1.5;
 }
 
 [data-theme="dark"] .tool-logo-grid {
@@ -175,6 +222,10 @@ header span {
 
 [data-theme="dark"] .tool-card {
   background: color-mix(in oklch, var(--vp-c-bg) 84%, oklch(24% 0.02 240));
+}
+
+[data-theme="dark"] .tool-card__icon {
+  background: color-mix(in oklch, var(--vp-c-bg) 78%, oklch(28% 0.02 240));
 }
 
 @media (max-width: 960px) {
@@ -190,7 +241,7 @@ header span {
   }
 
   header h2 {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .tool-logo-grid__primary,
@@ -198,8 +249,23 @@ header span {
     grid-template-columns: 1fr;
   }
 
+  .tool-card,
   .tool-card--primary {
+    grid-template-columns: 44px minmax(0, 1fr);
     min-height: 0;
+    padding: 14px;
+  }
+
+  .tool-card__icon,
+  .tool-card--primary .tool-card__icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .tool-card img,
+  .tool-card--primary img {
+    width: 30px;
+    height: 30px;
   }
 }
 </style>

@@ -1,0 +1,190 @@
+{
+  "status": "published",
+  "elements": [
+    {
+      "type": "ellipse",
+      "version": 500,
+      "versionNonce": 958375049,
+      "index": "aa",
+      "isDeleted": false,
+      "id": "vwFOAbBg_p9rIPsYtAkX0",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 70,
+      "angle": 0,
+      "x": 1361.1874136976912,
+      "y": 362.3681099059932,
+      "strokeColor": "#9c36b5",
+      "backgroundColor": "transparent",
+      "width": 127.93451698256467,
+      "height": 120.6590204032604,
+      "seed": 1823493767,
+      "groupIds": [
+        "_1-JhdtfXiVOUwayr5yQq"
+      ],
+      "frameId": null,
+      "roundness": {
+        "type": 2
+      },
+      "boundElements": [
+        {
+          "id": "6S3Ew6Wg_BCchkcublazQ",
+          "type": "arrow"
+        },
+        {
+          "id": "wruXLRErwk37BqH1JAtDs",
+          "type": "arrow"
+        }
+      ],
+      "updated": 1717805209495,
+      "link": null,
+      "locked": false
+    },
+    {
+      "type": "line",
+      "version": 780,
+      "versionNonce": 1415328583,
+      "index": "ab",
+      "isDeleted": false,
+      "id": "6S3Ew6Wg_BCchkcublazQ",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 70,
+      "angle": 0,
+      "x": 1424.091075703831,
+      "y": 361.5205435240584,
+      "strokeColor": "#9c36b5",
+      "backgroundColor": "transparent",
+      "width": 4.640094860475074,
+      "height": 121.27151954645547,
+      "seed": 807862633,
+      "groupIds": [
+        "_1-JhdtfXiVOUwayr5yQq"
+      ],
+      "frameId": null,
+      "roundness": {
+        "type": 2
+      },
+      "boundElements": null,
+      "updated": 1717805209593,
+      "link": null,
+      "locked": false,
+      "startBinding": {
+        "elementId": "vwFOAbBg_p9rIPsYtAkX0",
+        "focus": -0.019952896255160824,
+        "gap": 1
+      },
+      "endBinding": null,
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          4.640094860475074,
+          121.27151954645547
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "version": 836,
+      "versionNonce": 86258279,
+      "index": "ac",
+      "isDeleted": false,
+      "id": "wruXLRErwk37BqH1JAtDs",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 70,
+      "angle": 0,
+      "x": 1490.025780767241,
+      "y": 423.8928211383988,
+      "strokeColor": "#9c36b5",
+      "backgroundColor": "transparent",
+      "width": 127.36505831970203,
+      "height": 1.9484094365963074,
+      "seed": 181593511,
+      "groupIds": [
+        "_1-JhdtfXiVOUwayr5yQq"
+      ],
+      "frameId": null,
+      "roundness": {
+        "type": 2
+      },
+      "boundElements": null,
+      "updated": 1717805209593,
+      "link": null,
+      "locked": false,
+      "startBinding": {
+        "elementId": "vwFOAbBg_p9rIPsYtAkX0",
+        "focus": -0.03625590054573358,
+        "gap": 1
+      },
+      "endBinding": null,
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -127.36505831970203,
+          1.9484094365963074
+        ]
+      ]
+    },
+    {
+      "id": "_6y_RrnVDdjKXSGaCm1Mr",
+      "type": "text",
+      "x": 1387.708106915793,
+      "y": 440.34587244709144,
+      "width": 28.079986572265625,
+      "height": 25,
+      "angle": 0,
+      "strokeColor": "#9c36b5",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [
+        "_1-JhdtfXiVOUwayr5yQq"
+      ],
+      "frameId": null,
+      "index": "ad",
+      "roundness": null,
+      "seed": 1819601993,
+      "version": 481,
+      "versionNonce": 96120553,
+      "isDeleted": false,
+      "boundElements": [],
+      "updated": 1717805209495,
+      "link": null,
+      "locked": false,
+      "text": "OR",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "OR",
+      "autoResize": true,
+      "lineHeight": 1.25
+    }
+  ],
+  "id": "n3Fuxs_iH1zKmej-e7dtU",
+  "created": 1717805896882,
+  "name": "Or"
+}

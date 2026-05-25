@@ -7,7 +7,10 @@ import { defineClientConfig } from 'vuepress/client'
 import HomePage from './theme/components/HomePage.vue'
 import FlowExplainer from './theme/components/FlowExplainer.vue'
 import LearningFlow from './theme/components/LearningFlow.vue'
+import DocFlow from './theme/components/doc-flow/DocFlow.vue'
 import ToolLogoGrid from './theme/components/ToolLogoGrid.vue'
+import ToolCompareMatrix from './theme/components/ToolCompareMatrix.vue'
+import DiagramFigure from './theme/components/DiagramFigure.vue'
 import '@vue-flow/core/dist/style.css'
 import '@vue-flow/core/dist/theme-default.css'
 // import CustomComponent from './theme/components/Custom.vue'
@@ -26,7 +29,10 @@ export default defineClientConfig({
     app.component('HomePage', HomePage)
     app.component('FlowExplainer', FlowExplainer)
     app.component('LearningFlow', LearningFlow)
+    app.component('DocFlow', DocFlow)
     app.component('ToolLogoGrid', ToolLogoGrid)
+    app.component('ToolCompareMatrix', ToolCompareMatrix)
+    app.component('DiagramFigure', DiagramFigure)
     // app.component('CustomComponent', CustomComponent)
   },
 })

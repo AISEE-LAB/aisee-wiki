@@ -10,7 +10,7 @@
 
 ## 用户偏好（pref/）
 
-- 教程和学习路径页面应使用强视觉/交互表达；优先 Vue Flow 和 Vue Bits，fireworks-tech-graph 作为静态图补充或兜底 → pref/docsite-visual-components.md
+- 教程和学习路径页面应使用强视觉/交互表达；优先 Vue Flow 和 Vue Bits，复杂静态图采用先梳理逻辑、再改 `.excalidraw` 源文件、最后导出 SVG 的流程 → pref/docsite-visual-components.md
 <!-- - <一句话摘要> → pref/{topic}.md -->
 
 ## 上下文快照（ctx/）

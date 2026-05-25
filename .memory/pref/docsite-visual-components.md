@@ -5,7 +5,7 @@
 
 ## 摘要
 
-学习路径和教程类页面不应只有纯文字，应优先使用结构化视觉表达和交互体验。维护者更偏向优先使用 Vue Flow 和 Vue Bits 做有冲击力的交互与动效，`fireworks-tech-graph` 用于静态技术图补充或兜底。
+学习路径和教程类页面不应只有纯文字，应优先使用结构化视觉表达和交互体验。维护者更偏向优先使用 Vue Flow 和 Vue Bits 做有冲击力的交互与动效；复杂静态图优先采用 Excalidraw 源文件工作流，`fireworks-tech-graph` 用于静态技术图补充或兜底。
 
 ## 详情
 
@@ -13,6 +13,11 @@
 - Vue Flow `https://vueflow.dev/` 是复杂流程、节点关系、可交互学习路线和核心流程可视化的优先方案。文档站可以为了学习体验提供更强的视觉和交互冲击力。
 - Vue Bits `https://vue-bits.dev/get-started/index` 是动效和微交互参考，适合卡片进入、节点高亮、步骤切换、状态反馈等帮助理解的场景。
 - `fireworks-tech-graph` 已安装，可用于生成生产质量 SVG/PNG 静态技术图，适合作为补充或兜底，例如 AI Coding 阶段演进、工具选择矩阵、运行环境结构图和项目拆解图。
+- 对流程图、Agent 工作流、MCP / Tool / Memory / Hook 关系图等复杂静态图，不要直接只改导出的 SVG。必须先梳理图的表达逻辑，再修改 `.excalidraw` 源文件，最后导出 SVG 给 VuePress 展示。
+- 画图前先写清楚：表达目标、读者视角、图类型、节点、连线、主线、分支/回路、不展示内容和素材选择。若逻辑不清晰，先暂停绘制，避免出现“视觉还可以但顺序和连接不对”的图。
+- Excalidraw 基础素材库放在 `docs/assets/excalidraw-libraries/`；画图时先查各库的 `reference.md`，只读取或引用需要的单个 `icons/*.json` 素材。
+- 当前已准备的基础库包括：`flow-chart-symbols`、`software-architecture`、`system-design-components`、`software-logos`、`technology-logos`、`cloud-symbols`。
+- `.excalidraw` 源文件应作为可维护资产保留；导出的 `.svg` 只是文档展示产物。发现图的逻辑、连接或顺序不对时，应回到源文件修正。
 - 即使追求视觉冲击，也要保证交互服务内容理解；避免无意义动画堆叠或为了简单图示引入过重依赖。
 - 视觉组件必须兼顾移动端可读性，避免表格、卡片、logo 网格、代码块或 flow 在移动端横向溢出或遮挡正文。
 
@@ -20,5 +25,6 @@
 
 - `openspec/changes/build-ai-coding-learning-path/doc-change.md`
 - `openspec/changes/build-ai-coding-learning-path/tasks.md`
+- `docs/assets/excalidraw-libraries/README.md`
 - `https://vue-bits.dev/get-started/index`
 - `https://vueflow.dev/`

@@ -1,0 +1,111 @@
+{
+  "status": "published",
+  "elements": [
+    {
+      "id": "7lhy5sLQPzScfW-6lfBPd",
+      "type": "line",
+      "x": 1378.335226108522,
+      "y": 583.3618943263135,
+      "width": 102.95404895253068,
+      "height": 98.19215468747154,
+      "angle": 0,
+      "strokeColor": "#c2255c",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 80,
+      "groupIds": [
+        "z7Qf9wPKTcV9QOIwh5C8u"
+      ],
+      "frameId": null,
+      "index": "ay",
+      "roundness": null,
+      "seed": 407059785,
+      "version": 864,
+      "versionNonce": 1017959239,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1717805906559,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0.3759156430037365,
+          60.37295808721399
+        ],
+        [
+          54.58954101281756,
+          98.19215468747154
+        ],
+        [
+          102.8267215907565,
+          60.73117425017426
+        ],
+        [
+          102.95404895253068,
+          0.7385631877812102
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "lastCommittedPoint": [
+        6.087115954179808,
+        -0.5751962248369864
+      ],
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": null
+    },
+    {
+      "id": "LaNgWQrBqLmN39HuAoljg",
+      "type": "text",
+      "x": 1389.2954603618482,
+      "y": 599.4595828483938,
+      "width": 78.62739167691734,
+      "height": 41.557855548965705,
+      "angle": 0,
+      "strokeColor": "#c2255c",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 80,
+      "groupIds": [
+        "z7Qf9wPKTcV9QOIwh5C8u"
+      ],
+      "frameId": null,
+      "index": "az",
+      "roundness": null,
+      "seed": 404390247,
+      "version": 267,
+      "versionNonce": 1516294759,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1717805906559,
+      "link": null,
+      "locked": false,
+      "text": "Off-page\nConnector",
+      "fontSize": 16.623142219586274,
+      "fontFamily": 1,
+      "textAlign": "center",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Off-page\nConnector",
+      "autoResize": true,
+      "lineHeight": 1.25
+    }
+  ],
+  "id": "zB7s47_c8YdombAHNxSYv",
+  "created": 1717805908177,
+  "name": "Off-page Connector"
+}

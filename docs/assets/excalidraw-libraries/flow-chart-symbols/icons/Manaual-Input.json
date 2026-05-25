@@ -1,0 +1,104 @@
+{
+  "status": "published",
+  "elements": [
+    {
+      "type": "line",
+      "version": 941,
+      "versionNonce": 1356696073,
+      "index": "a0",
+      "isDeleted": false,
+      "id": "PEJ-QNcFs7f2x-SImP4Fv",
+      "fillStyle": "hachure",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 315.3350889273492,
+      "y": 413.1976522799753,
+      "strokeColor": "#2f9e44",
+      "backgroundColor": "transparent",
+      "width": 187.62872376742763,
+      "height": 99.60927275207422,
+      "seed": 1752890825,
+      "groupIds": [
+        "kB67pLNC54wJH3yWPiTVB"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "boundElements": [],
+      "updated": 1717805702754,
+      "link": null,
+      "locked": false,
+      "startBinding": null,
+      "endBinding": null,
+      "lastCommittedPoint": null,
+      "startArrowhead": null,
+      "endArrowhead": null,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          1.6772038882485643,
+          53.36744603397734
+        ],
+        [
+          186.88413549416947,
+          52.042222902854206
+        ],
+        [
+          187.62872376742763,
+          -46.241826718096874
+        ],
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "type": "text",
+      "version": 35,
+      "versionNonce": 1562294023,
+      "index": "a1",
+      "isDeleted": false,
+      "id": "DXjbJ3yXQCFLHJn6g-Zme",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "angle": 0,
+      "x": 344.90625,
+      "y": 423.91015625,
+      "strokeColor": "#2f9e44",
+      "backgroundColor": "transparent",
+      "width": 130.71990966796875,
+      "height": 25,
+      "seed": 257966985,
+      "groupIds": [
+        "kB67pLNC54wJH3yWPiTVB"
+      ],
+      "frameId": null,
+      "roundness": null,
+      "boundElements": [],
+      "updated": 1717805702754,
+      "link": null,
+      "locked": false,
+      "fontSize": 20,
+      "fontFamily": 1,
+      "text": "Manual Input",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Manual Input",
+      "autoResize": true,
+      "lineHeight": 1.25
+    }
+  ],
+  "id": "gHuOPWI1to2x4GZe-f8a6",
+  "created": 1717805884530,
+  "name": "Manaual Input"
+}

@@ -1,11 +1,39 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import {
+  Boxes,
+  Braces,
+  CircuitBoard,
+  CircleDot,
+  Cpu,
+  FileCheck2,
+  FileText,
+  GitBranch,
+  Globe2,
+  LibraryBig,
+  Lightbulb,
+  Monitor,
+  Network,
+  PackageCheck,
+  PenLine,
+  Radar,
+  Smartphone,
+  Workflow,
+} from 'lucide-vue-next'
+
+import UiBadge from './ui/UiBadge.vue'
+import UiButton from './ui/UiButton.vue'
+import UiCard from './ui/UiCard.vue'
 
 const props = defineProps<{
   locale?: 'zh' | 'en'
 }>()
 
 const isEn = computed(() => props.locale === 'en')
+const domainIcons = [Globe2, Smartphone, Monitor, Cpu, CircuitBoard, Workflow]
+const principleIcons = [FileText, PenLine, PackageCheck, LibraryBig]
+const pillarIcons = [FileCheck2, GitBranch, Boxes]
+const openIcons = [PenLine, Lightbulb, Workflow, Network]
 
 const content = computed(() => {
   if (isEn.value) {
@@ -17,13 +45,6 @@ const content = computed(() => {
       primary: 'Start reading',
       secondary: 'View methodology map',
       domainCta: 'View all domains',
-      rail: ['Core judgment', 'Engineering domains', 'Methodology threads', 'Learning path', 'Open collaboration'],
-      stats: [
-        ['1,248+', 'Knowledge assets'],
-        ['98%+', 'Spec consistency'],
-        ['96%+', 'Gate pass rate'],
-        ['Sustained', 'Community building'],
-      ],
       visual: {
         insightTitle: 'Requirement Insight',
         insightItems: ['User needs', 'Business goals', 'Constraints'],
@@ -33,8 +54,6 @@ const content = computed(() => {
         executionNodes: ['Plan', 'Code', 'Build', 'Verify', 'Ship'],
         reviewTitle: 'Review and Reflection',
         reviewNodes: ['Code review', 'Design review', 'Retrospective', 'Root cause'],
-        gateTitle: 'Verification Gate',
-        gateNodes: ['Static checks', 'Unit tests', 'Integration', 'Security'],
         knowledgeTitle: 'Knowledge Compounding',
         knowledgeNodes: ['Spec library', 'Component library', 'Cases', 'Templates', 'Assets'],
       },
@@ -48,8 +67,8 @@ const content = computed(() => {
         ['Hardware', 'Design, drivers, and validation loops'],
         ['Complex Systems', 'Business systems that must evolve'],
       ],
-      methodTitle: 'Stronger tools need stronger methodology',
-      methodText: 'Powerful AI tools need engineering constraints and feedback loops before they can reliably produce maintainable systems.',
+      methodTitle: 'Powerful tools still need effective ways of use',
+      methodText: 'AI tools become more useful when teams know how to frame problems, set boundaries, verify outputs, and turn experience into reusable practice.',
       principles: [
         ['Requirement Contract', 'Clarify what should be built and where the boundary is.'],
         ['Design Boundary', 'Constrain choices before generation starts.'],
@@ -86,13 +105,6 @@ const content = computed(() => {
     primary: '开始阅读',
     secondary: '查看方法论地图',
     domainCta: '查看全部领域',
-    rail: ['核心判断', '工程领域', '方法论主线', '学习路径', '开源协作'],
-    stats: [
-      ['1,248+', '知识资产'],
-      ['98%+', 'Spec 一致性'],
-      ['96%+', '验证通过率'],
-      ['持续增长', '社区共建'],
-    ],
     visual: {
       insightTitle: '需求洞察',
       insightItems: ['用户需求', '业务目标', '约束与假设'],
@@ -102,8 +114,6 @@ const content = computed(() => {
       executionNodes: ['设计与规划', '编码实现', '集成构建', '测试验证', '发布部署'],
       reviewTitle: '评审与复盘（持续改进）',
       reviewNodes: ['代码评审', '设计评审', '回顾复盘', '问题归因'],
-      gateTitle: '验证门禁（可证可控）',
-      gateNodes: ['静态检查', '单元测试', '集成测试', '性能与安全'],
       knowledgeTitle: '知识复利（持续沉淀）',
       knowledgeNodes: ['规范库', '组件库', '最佳实践', '模式与模板', '经验资产'],
     },
@@ -117,8 +127,8 @@ const content = computed(() => {
       ['硬件编程', '设计、驱动、测试和工程协作'],
       ['复杂业务系统', '需求拆分、长期维护和演进治理'],
     ],
-    methodTitle: '工具越强，越需要方法论',
-    methodText: '强大的 AI 能力需要清晰的工程约束与反馈回路，才能持续产出可用、可演进的系统。',
+    methodTitle: '工具强，也需要掌握高效使用的方法',
+    methodText: 'AI 工具越强，越需要知道如何提出问题、设置边界、验证结果，并把经验沉淀为可复用实践。',
     principles: [
       ['需求契约', '用 Spec 明确要做什么，形成可协商、可追溯的边界。'],
       ['设计边界', '在实现前选择设计与取舍，保持一致性与可组合性。'],
@@ -151,11 +161,6 @@ const content = computed(() => {
 <template>
   <main class="aisee-home">
     <section class="home-hero">
-      <aside class="hero-rail" aria-hidden="true">
-        <span v-for="(item, index) in content.rail" :key="item" :class="{ active: index === 0 }">
-          {{ item }}
-        </span>
-      </aside>
       <div class="hero-copy">
         <p class="eyebrow">{{ content.eyebrow }}</p>
         <h1 v-if="isEn">
@@ -169,58 +174,103 @@ const content = computed(() => {
         </h1>
         <p class="hero-subtitle">{{ content.subtitle }}</p>
         <div class="hero-actions">
-          <a class="action action-primary" :href="content.guideLink">{{ content.primary }}</a>
-          <a class="action action-secondary" :href="content.workflowLink">{{ content.secondary }}</a>
+          <a class="action" :href="content.guideLink">
+            <UiButton>
+              <FileCheck2 :size="18" />
+              {{ content.primary }}
+            </UiButton>
+          </a>
+          <a class="action" :href="content.workflowLink">
+            <UiButton variant="secondary">
+              <GitBranch :size="18" />
+              {{ content.secondary }}
+            </UiButton>
+          </a>
         </div>
-        <dl class="hero-stats">
-          <div v-for="item in content.stats" :key="item[0]">
-            <dt>{{ item[0] }}</dt>
-            <dd>{{ item[1] }}</dd>
-          </div>
-        </dl>
       </div>
       <div class="hero-visual" aria-hidden="true">
-        <div class="method-map">
-          <img class="hero-map" src="/homepage/hero-methodology-map.svg" alt="" />
-          <img class="hero-flow" src="/homepage/hero-flow-trail.svg" alt="" />
+        <div class="method-dashboard">
+          <div class="dashboard-glow dashboard-glow--cyan"></div>
+          <div class="dashboard-glow dashboard-glow--blue"></div>
 
-          <div class="insight-card map-card">
-            <span class="avatar-dot"></span>
-            <strong>{{ content.visual.insightTitle }}</strong>
-            <small v-for="item in content.visual.insightItems" :key="item">{{ item }}</small>
-          </div>
-
-          <div class="spec-panel map-panel">
-            <strong>{{ content.visual.specTitle }}</strong>
-            <div>
-              <span v-for="item in content.visual.specNodes" :key="item">{{ item }}</span>
+          <UiCard class="dashboard-card dashboard-card--input" tone="cyan">
+            <div class="dashboard-card__head">
+              <span class="dashboard-icon"><Radar :size="20" /></span>
+              <div>
+                <strong>{{ content.visual.insightTitle }}</strong>
+                <p>{{ isEn ? 'Define the work before generation starts.' : '先定义问题，再进入生成与实现。' }}</p>
+              </div>
             </div>
-          </div>
-
-          <div class="execution-panel map-panel">
-            <strong>{{ content.visual.executionTitle }}</strong>
-            <div>
-              <span v-for="item in content.visual.executionNodes" :key="item">{{ item }}</span>
+            <div class="dashboard-badges">
+              <UiBadge v-for="item in content.visual.insightItems" :key="item" tone="cyan">{{ item }}</UiBadge>
             </div>
-          </div>
+          </UiCard>
 
-          <div class="review-panel map-panel">
-            <strong>{{ content.visual.reviewTitle }}</strong>
-            <div>
-              <span v-for="item in content.visual.reviewNodes" :key="item">{{ item }}</span>
+          <UiCard class="dashboard-card dashboard-card--spec">
+            <div class="dashboard-card__head">
+              <span class="dashboard-icon"><FileCheck2 :size="20" /></span>
+              <div>
+                <strong>{{ content.visual.specTitle }}</strong>
+                <p>{{ isEn ? 'Turn intent into explicit contracts.' : '把意图变成可协商、可追溯的契约。' }}</p>
+              </div>
             </div>
-          </div>
-
-          <div class="gate-panel map-card">
-            <strong>{{ content.visual.gateTitle }}</strong>
-            <small v-for="item in content.visual.gateNodes" :key="item">{{ item }}</small>
-          </div>
-
-          <div class="knowledge-core">
-            <div class="core-ring">
-              <strong>{{ content.visual.knowledgeTitle }}</strong>
-              <span v-for="item in content.visual.knowledgeNodes" :key="item">{{ item }}</span>
+            <div class="dashboard-steps dashboard-steps--four">
+              <UiBadge v-for="item in content.visual.specNodes" :key="item">{{ item }}</UiBadge>
             </div>
+          </UiCard>
+
+          <UiCard class="dashboard-card dashboard-card--execution">
+            <div class="dashboard-card__head">
+              <span class="dashboard-icon"><Braces :size="20" /></span>
+              <div>
+                <strong>{{ content.visual.executionTitle }}</strong>
+                <p>{{ isEn ? 'AI participates in each engineering step under constraints.' : 'AI 参与每个工程步骤，但始终受约束与验证驱动。' }}</p>
+              </div>
+            </div>
+            <div class="dashboard-steps dashboard-steps--five">
+              <UiBadge v-for="item in content.visual.executionNodes" :key="item" tone="cyan">{{ item }}</UiBadge>
+            </div>
+          </UiCard>
+
+          <UiCard class="dashboard-card dashboard-card--review">
+            <div class="dashboard-card__head">
+              <span class="dashboard-icon"><CircleDot :size="20" /></span>
+              <div>
+                <strong>{{ content.visual.reviewTitle }}</strong>
+                <p>{{ isEn ? 'Review turns delivery into the next reusable asset.' : '评审与复盘把一次交付沉淀成下一次的资产。' }}</p>
+              </div>
+            </div>
+            <div class="dashboard-steps dashboard-steps--four">
+              <UiBadge v-for="item in content.visual.reviewNodes" :key="item">{{ item }}</UiBadge>
+            </div>
+          </UiCard>
+
+          <UiCard class="dashboard-card dashboard-card--knowledge" tone="cyan">
+            <div class="dashboard-card__head">
+              <span class="dashboard-icon dashboard-icon--deep"><LibraryBig :size="20" /></span>
+              <div>
+                <strong>{{ content.visual.knowledgeTitle }}</strong>
+                <p>{{ isEn ? 'Every cycle compounds the next workflow.' : '每轮实践都反哺下一次工作流。' }}</p>
+              </div>
+            </div>
+            <div class="knowledge-stack">
+              <div class="knowledge-stack__core">
+                <LibraryBig :size="24" />
+                <strong>{{ isEn ? 'Reusable asset hub' : '可复用资产库' }}</strong>
+                <span>{{ isEn ? 'Feed the next cycle' : '反哺下一轮工程' }}</span>
+              </div>
+              <div class="knowledge-stack__items">
+                <span v-for="(item, index) in content.visual.knowledgeNodes" :key="item">
+                  <i>{{ String(index + 1).padStart(2, '0') }}</i>
+                  {{ item }}
+                </span>
+              </div>
+            </div>
+          </UiCard>
+
+          <div class="dashboard-spine">
+            <Boxes :size="22" />
+            <span>{{ isEn ? 'Method layer' : '方法论层' }}</span>
           </div>
         </div>
       </div>
@@ -235,10 +285,17 @@ const content = computed(() => {
         <a :href="content.guideLink">{{ content.domainCta }}</a>
       </div>
       <div class="domain-grid">
-        <article v-for="item in content.domains" :key="item[0]" class="domain-card">
-          <span class="domain-icon" aria-hidden="true"></span>
-          <h3>{{ item[0] }}</h3>
-          <p>{{ item[1] }}</p>
+        <article v-for="(item, index) in content.domains" :key="item[0]" class="domain-card">
+          <div class="domain-card__top">
+            <span class="domain-icon" aria-hidden="true">
+              <component :is="domainIcons[index]" :size="21" :stroke-width="2.1" />
+            </span>
+            <span class="domain-index">{{ String(index + 1).padStart(2, '0') }}</span>
+          </div>
+          <div>
+            <h3>{{ item[0] }}</h3>
+            <p>{{ item[1] }}</p>
+          </div>
         </article>
       </div>
     </section>
@@ -249,11 +306,15 @@ const content = computed(() => {
         <p>{{ content.methodText }}</p>
       </div>
       <div class="principle-flow">
-        <img class="method-loop" src="/homepage/method-loop-glow.svg" alt="" aria-hidden="true" />
-        <article v-for="item in content.principles" :key="item[0]" class="principle-card">
-          <span class="principle-mark" aria-hidden="true"></span>
-          <h3>{{ item[0] }}</h3>
-          <p>{{ item[1] }}</p>
+        <article v-for="(item, index) in content.principles" :key="item[0]" class="principle-card">
+          <span class="principle-step">{{ String(index + 1).padStart(2, '0') }}</span>
+          <span class="principle-mark" aria-hidden="true">
+            <component :is="principleIcons[index]" :size="21" :stroke-width="2.1" />
+          </span>
+          <div>
+            <h3>{{ item[0] }}</h3>
+            <p>{{ item[1] }}</p>
+          </div>
         </article>
       </div>
     </section>
@@ -263,10 +324,14 @@ const content = computed(() => {
         <h2>{{ content.pillarsTitle }}</h2>
       </div>
       <div class="pillar-grid">
-        <a v-for="item in content.pillars" :key="item[0]" class="pillar-card" :href="item[2]">
-          <span class="pillar-icon" aria-hidden="true"></span>
-          <strong>{{ item[0] }}</strong>
-          <span>{{ item[1] }}</span>
+        <a v-for="(item, index) in content.pillars" :key="item[0]" class="pillar-card" :class="{ 'pillar-card--primary': index === 0 }" :href="item[2]">
+          <span class="pillar-icon" aria-hidden="true">
+            <component :is="pillarIcons[index]" :size="22" :stroke-width="2.1" />
+          </span>
+          <div>
+            <strong>{{ item[0] }}</strong>
+            <span>{{ item[1] }}</span>
+          </div>
         </a>
       </div>
     </section>
@@ -285,20 +350,22 @@ const content = computed(() => {
     </section>
 
     <section class="home-section open-section">
-      <img class="open-network" src="/homepage/open-collab-network.svg" alt="" aria-hidden="true" />
       <div class="section-heading">
         <h2>{{ content.openTitle }}</h2>
         <p>{{ content.openText }}</p>
       </div>
       <div class="open-grid">
-        <article v-for="item in content.openItems" :key="item[0]" class="open-card">
+        <article v-for="(item, index) in content.openItems" :key="item[0]" class="open-card">
+          <span class="open-icon" aria-hidden="true">
+            <component :is="openIcons[index]" :size="20" :stroke-width="2.1" />
+          </span>
           <h3>{{ item[0] }}</h3>
           <p>{{ item[1] }}</p>
         </article>
       </div>
       <div class="open-actions">
-        <a :href="content.resourcesLink">{{ isEn ? 'Resources' : '资源中心' }}</a>
-        <a :href="content.workflowLink">{{ isEn ? 'Workflows' : '工程流程' }}</a>
+        <a class="open-action open-action--primary" :href="content.resourcesLink">{{ isEn ? 'Resources' : '资源中心' }}</a>
+        <a class="open-action" :href="content.workflowLink">{{ isEn ? 'Workflows' : '工程流程' }}</a>
       </div>
     </section>
   </main>
@@ -326,61 +393,15 @@ const content = computed(() => {
 
 .home-hero {
   display: grid;
-  gap: 28px;
-  grid-template-columns: 104px minmax(500px, 0.84fr) minmax(520px, 1.16fr);
+  gap: 42px;
+  grid-template-columns: minmax(520px, 0.9fr) minmax(620px, 1.1fr);
   min-height: min(560px, calc(100vh - 150px));
   align-items: center;
-  padding: 58px 0 18px;
-}
-
-.hero-rail {
-  display: grid;
-  gap: 46px;
-  position: relative;
-}
-
-.hero-rail::before {
-  background: linear-gradient(180deg, rgba(8, 155, 176, 0.28), rgba(23, 85, 184, 0.1));
-  content: "";
-  inset: 8px auto 8px 15px;
-  position: absolute;
-  width: 1px;
-}
-
-.hero-rail span {
-  align-items: center;
-  color: #7d8b9c;
-  display: flex;
-  font-size: 0.92rem;
-  font-weight: 650;
-  gap: 14px;
-  min-width: 0;
-  position: relative;
-  white-space: nowrap;
-}
-
-.hero-rail span::before {
-  background: #fff;
-  border: 2px solid rgba(23, 85, 184, 0.28);
-  border-radius: 999px;
-  content: "";
-  height: 15px;
-  width: 15px;
-  z-index: 1;
-}
-
-.hero-rail span.active {
-  color: var(--home-teal);
-}
-
-.hero-rail span.active::before {
-  background: var(--home-cyan);
-  border-color: rgba(8, 155, 176, 0.2);
-  box-shadow: 0 0 0 8px rgba(8, 155, 176, 0.12);
+  padding: 58px 0 18px clamp(42px, 5vw, 92px);
 }
 
 .hero-copy {
-  max-width: 610px;
+  max-width: 680px;
   padding-bottom: 8px;
 }
 
@@ -427,308 +448,301 @@ const content = computed(() => {
 }
 
 .action {
-  align-items: center;
-  border-radius: 8px;
   display: inline-flex;
-  font-weight: 700;
-  gap: 10px;
-  min-height: 52px;
-  padding: 0 26px;
   text-decoration: none;
-  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
-}
-
-.action::before {
-  border: 2px solid currentColor;
-  border-radius: 4px;
-  content: "";
-  height: 17px;
-  opacity: 0.82;
-  width: 17px;
+  transition: transform 0.18s ease;
 }
 
 .action:hover {
   transform: translateY(-2px);
 }
 
-.action-primary {
-  background: linear-gradient(135deg, #089bb0, #087e82);
-  box-shadow: 0 18px 34px rgba(8, 155, 176, 0.24);
-  color: #fff;
-}
-
-.action-secondary {
-  background: rgba(255, 255, 255, 0.74);
-  border: 1px solid rgba(29, 78, 216, 0.28);
-  color: #17427e;
-}
-
-.hero-stats {
-  display: grid;
-  gap: 0;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin: 34px 0 0;
-}
-
-.hero-stats div {
-  border-left: 1px solid var(--home-line);
-  min-width: 0;
-  padding: 0 18px;
-}
-
-.hero-stats div:first-child {
-  border-left: 0;
-  padding-left: 0;
-}
-
-.hero-stats dt {
-  color: #10213a;
-  font-weight: 800;
-  font-size: 1.06rem;
-}
-
-.hero-stats dd {
-  color: var(--home-muted);
-  font-size: 0.88rem;
-  margin: 4px 0 0;
-}
-
 .hero-visual {
-  min-height: 430px;
+  min-height: 540px;
   position: relative;
 }
 
-.method-map {
-  height: 520px;
+.method-dashboard {
+  align-items: start;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: minmax(0, 1.08fr) minmax(260px, 0.82fr);
+  grid-template-rows: auto auto auto auto;
+  isolation: isolate;
+  max-width: 780px;
   position: relative;
-  transform: translateX(-10px) scale(0.7);
-  transform-origin: left center;
 }
 
-.method-map::before,
-.method-map::after {
-  content: "";
-  position: absolute;
-  pointer-events: none;
-}
-
-.method-map::before {
+.method-dashboard::before {
   background-image:
     linear-gradient(rgba(24, 84, 130, 0.08) 1px, transparent 1px),
     linear-gradient(90deg, rgba(24, 84, 130, 0.08) 1px, transparent 1px);
   background-size: 42px 42px;
-  inset: 12px 18px 30px 0;
-  mask-image: linear-gradient(90deg, transparent 0, #000 16%, #000 86%, transparent 100%);
-}
-
-.method-map::after {
-  background: linear-gradient(90deg, transparent, rgba(8, 155, 176, 0.1), transparent);
-  height: 1px;
-  left: 10px;
-  right: 30px;
-  top: 272px;
-}
-
-.hero-map,
-.hero-flow {
-  max-width: none;
+  content: "";
+  inset: -46px -42px -36px -36px;
+  mask-image: linear-gradient(90deg, transparent 0, #000 14%, #000 88%, transparent 100%);
   pointer-events: none;
   position: absolute;
-  user-select: none;
+  z-index: -2;
 }
 
-.hero-map {
-  filter: drop-shadow(0 30px 44px rgba(36, 68, 104, 0.15));
-  height: 500px;
-  left: -22px;
-  opacity: 0.32;
-  top: 12px;
-  width: 854px;
-}
-
-.hero-flow {
-  animation: flowFloat 7s ease-in-out infinite;
-  filter: drop-shadow(0 0 22px rgba(34, 211, 238, 0.48));
-  height: 255px;
-  left: 20px;
-  opacity: 0.86;
-  top: 205px;
-  width: 760px;
-  z-index: 2;
-}
-
-.map-card,
-.map-panel,
-.knowledge-core {
+.method-dashboard::after {
+  background:
+    radial-gradient(circle at 24% 56%, rgba(34, 211, 238, 0.22), transparent 32%),
+    radial-gradient(circle at 88% 42%, rgba(59, 130, 246, 0.2), transparent 30%);
+  content: "";
+  inset: -58px -72px -52px -52px;
+  pointer-events: none;
   position: absolute;
-  z-index: 3;
+  z-index: -3;
 }
 
-.map-card,
-.map-panel {
-  background: rgba(255, 255, 255, 0.76);
-  border: 1px solid rgba(32, 86, 130, 0.14);
-  border-radius: 8px;
-  box-shadow: 0 18px 40px rgba(35, 64, 98, 0.08);
-  backdrop-filter: blur(14px);
+.dashboard-glow {
+  border-radius: 999px;
+  filter: blur(20px);
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
 }
 
-.map-card strong,
-.map-panel strong,
-.knowledge-core strong {
-  color: #0a2a54;
-  display: block;
-  font-size: 0.94rem;
-  font-weight: 850;
+.dashboard-glow--cyan {
+  background: rgba(34, 211, 238, 0.22);
+  height: 92px;
+  left: 30px;
+  top: 250px;
+  width: 430px;
 }
 
-.map-card small {
-  color: #466075;
-  display: block;
-  font-size: 0.78rem;
-  line-height: 1.45;
-  margin-top: 8px;
-  padding-left: 14px;
+.dashboard-glow--blue {
+  background: rgba(37, 99, 235, 0.16);
+  height: 220px;
+  right: -28px;
+  top: 92px;
+  width: 220px;
+}
+
+.dashboard-card {
+  min-width: 0;
+  padding: 16px;
+}
+
+.dashboard-card--input {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.dashboard-card--spec {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.dashboard-card--execution {
+  grid-column: 1 / span 2;
+  grid-row: 3;
+}
+
+.dashboard-card--review {
+  grid-column: 1 / span 2;
+  grid-row: 4;
+}
+
+.dashboard-card--knowledge {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(244, 252, 255, 0.9)),
+    var(--home-card);
+  border-color: rgba(8, 155, 176, 0.22);
+  color: var(--home-text);
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  overflow: hidden;
   position: relative;
 }
 
-.map-card small::before {
-  background: var(--home-blue);
-  border-radius: 50%;
-  content: "";
-  height: 4px;
-  left: 2px;
-  position: absolute;
-  top: 0.6em;
-  width: 4px;
-}
-
-.insight-card {
-  left: 34px;
-  padding: 28px 22px 18px 64px;
-  top: 74px;
-  width: 182px;
-}
-
-.avatar-dot {
+.dashboard-card--knowledge::before {
   background:
-    radial-gradient(circle at center, #124d91 0 7px, transparent 8px),
-    radial-gradient(circle at center, rgba(18, 77, 145, 0.16) 0 26px, transparent 27px);
-  border-radius: 999px;
-  height: 56px;
-  left: 10px;
+    linear-gradient(180deg, rgba(8, 155, 176, 0.18), rgba(8, 155, 176, 0)),
+    repeating-linear-gradient(180deg, rgba(23, 85, 184, 0.08) 0 1px, transparent 1px 18px);
+  bottom: 16px;
+  content: "";
+  height: 136px;
   position: absolute;
-  top: 28px;
-  width: 56px;
+  right: 22px;
+  width: 2px;
 }
 
-.map-panel {
-  padding: 18px 20px 20px;
-}
-
-.map-panel div {
+.dashboard-card__head {
+  align-items: flex-start;
   display: flex;
   gap: 10px;
+  min-width: 0;
+}
+
+.dashboard-card__head strong {
+  color: #0a2a54;
+  display: block;
+  font-size: 0.96rem;
+  font-weight: 850;
+  line-height: 1.35;
+}
+
+.dashboard-card__head p {
+  color: #5b6f83;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  margin: 4px 0 0;
+}
+
+.dashboard-card--knowledge .dashboard-card__head {
+  background:
+    radial-gradient(circle at 90% 0%, rgba(34, 211, 238, 0.2), transparent 46%),
+    linear-gradient(135deg, rgba(8, 82, 124, 0.96), rgba(7, 54, 92, 0.98));
+  border: 1px solid rgba(88, 215, 255, 0.22);
+  border-radius: 8px;
+  margin: -4px -4px 0;
+  padding: 12px;
+}
+
+.dashboard-card--knowledge .dashboard-card__head strong,
+.dashboard-card--knowledge .dashboard-card__head p {
+  color: #e8f8ff;
+}
+
+.dashboard-icon {
+  align-items: center;
+  background: rgba(236, 254, 255, 0.92);
+  border: 1px solid rgba(8, 155, 176, 0.2);
+  border-radius: 8px;
+  color: #087e82;
+  display: inline-flex;
+  flex: 0 0 auto;
+  height: 34px;
+  justify-content: center;
+  width: 34px;
+}
+
+.dashboard-icon--deep {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(191, 236, 255, 0.26);
+  color: #e8f8ff;
+}
+
+.dashboard-badges,
+.dashboard-steps {
+  display: grid;
+  gap: 7px;
   margin-top: 12px;
 }
 
-.map-panel span {
+.dashboard-card :deep(.ui-badge) {
+  min-height: 26px;
+  padding: 5px 9px;
+}
+
+.dashboard-badges {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.dashboard-steps--four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.dashboard-steps--five {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.knowledge-stack {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr);
+  margin-top: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.knowledge-stack__core {
+  align-content: center;
+  background:
+    radial-gradient(circle at 50% 28%, rgba(34, 211, 238, 0.2), transparent 54%),
+    linear-gradient(180deg, rgba(236, 254, 255, 0.92), rgba(255, 255, 255, 0.9));
+  border: 1px solid rgba(8, 155, 176, 0.18);
+  border-radius: 8px;
+  color: #0a2a54;
+  display: grid;
+  justify-items: center;
+  min-height: 122px;
+  padding: 12px;
+  text-align: center;
+}
+
+.knowledge-stack__core svg {
+  color: var(--home-teal);
+  margin-bottom: 8px;
+}
+
+.knowledge-stack__core strong {
+  display: block;
+  font-size: 0.84rem;
+  font-weight: 850;
+  line-height: 1.35;
+}
+
+.knowledge-stack__core span {
+  color: #5b6f83;
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 680;
+  line-height: 1.35;
+  margin-top: 5px;
+}
+
+.knowledge-stack__items {
+  display: grid;
+  gap: 6px;
+}
+
+.knowledge-stack__items span {
   align-items: center;
   background: rgba(248, 252, 255, 0.92);
   border: 1px solid rgba(23, 85, 184, 0.12);
   border-radius: 8px;
   color: #19406f;
-  display: inline-flex;
-  font-size: 0.76rem;
-  font-weight: 720;
-  justify-content: center;
-  min-height: 42px;
-  min-width: 74px;
-  padding: 0 10px;
-  text-align: center;
-}
-
-.spec-panel {
-  left: 220px;
-  top: 92px;
-  width: 360px;
-}
-
-.execution-panel {
-  left: 150px;
-  top: 244px;
-  width: 510px;
-}
-
-.review-panel {
-  left: 172px;
-  top: 374px;
-  width: 430px;
-}
-
-.gate-panel {
-  background: rgba(255, 249, 238, 0.78);
-  border-color: rgba(217, 119, 6, 0.18);
-  left: 580px;
-  padding: 22px 24px;
-  top: 142px;
-  width: 172px;
-}
-
-.gate-panel small::before {
-  background: var(--home-amber);
-}
-
-.knowledge-core {
-  align-items: center;
   display: flex;
-  height: 310px;
-  justify-content: center;
-  left: 600px;
-  top: 128px;
-  width: 250px;
-}
-
-.knowledge-core::before {
-  animation: pulseGlow 4.4s ease-in-out infinite;
-  background:
-    radial-gradient(circle, rgba(7, 49, 105, 0.96) 0 28%, rgba(7, 76, 130, 0.68) 52%, rgba(56, 189, 248, 0.08) 76%, transparent 100%);
-  border-radius: 50%;
-  box-shadow: 0 0 60px rgba(45, 149, 232, 0.34), inset 0 0 34px rgba(255, 255, 255, 0.2);
-  content: "";
-  inset: 0;
-  position: absolute;
-}
-
-.core-ring {
-  align-content: center;
-  display: grid;
-  gap: 8px;
-  justify-items: center;
-  position: relative;
-  z-index: 1;
-}
-
-.core-ring strong {
-  color: #dff8ff;
-  margin-bottom: 4px;
-}
-
-.core-ring span {
-  background: rgba(255, 255, 255, 0.11);
-  border: 1px solid rgba(191, 236, 255, 0.18);
-  border-radius: 999px;
-  color: #e8f8ff;
   font-size: 0.76rem;
-  font-weight: 720;
-  min-width: 104px;
-  padding: 6px 12px;
-  text-align: center;
+  font-weight: 760;
+  gap: 8px;
+  min-height: 25px;
+  padding: 5px 8px;
+}
+
+.knowledge-stack__items i {
+  color: var(--home-teal);
+  flex: 0 0 auto;
+  font-size: 0.68rem;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.dashboard-spine {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(8, 155, 176, 0.18);
+  border-radius: 999px;
+  bottom: 108px;
+  box-shadow: 0 14px 34px rgba(8, 155, 176, 0.12);
+  color: #087e82;
+  display: inline-flex;
+  font-size: 0.82rem;
+  font-weight: 760;
+  gap: 8px;
+  left: 42%;
+  padding: 8px 13px;
+  position: absolute;
+  z-index: 2;
 }
 
 .home-section {
   border-top: 1px solid var(--home-line);
-  padding: 52px 0;
+  padding: 64px 0;
   position: relative;
 }
 
@@ -765,6 +779,10 @@ const content = computed(() => {
   text-decoration: none;
 }
 
+.domains-section {
+  padding-top: 70px;
+}
+
 .domain-grid,
 .pillar-grid,
 .open-grid {
@@ -774,7 +792,7 @@ const content = computed(() => {
 }
 
 .domain-grid {
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .domain-card,
@@ -788,26 +806,78 @@ const content = computed(() => {
 }
 
 .domain-card {
-  min-height: 128px;
-  padding: 20px;
+  display: grid;
+  gap: 28px;
+  grid-template-rows: auto 1fr;
+  min-height: 176px;
+  overflow: hidden;
+  padding: 22px;
+  position: relative;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.domain-card:hover {
+  border-color: rgba(8, 155, 176, 0.28);
+  box-shadow: 0 22px 50px rgba(39, 62, 83, 0.1);
+  transform: translateY(-3px);
+}
+
+.domain-card::after {
+  background: linear-gradient(90deg, rgba(8, 155, 176, 0.52), rgba(23, 85, 184, 0.08));
+  bottom: 0;
+  content: "";
+  height: 3px;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
+.domain-card__top {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+}
+
+.domain-index {
+  color: rgba(23, 85, 184, 0.28);
+  font-size: 1.8rem;
+  font-weight: 900;
+  line-height: 1;
 }
 
 .domain-icon,
 .pillar-icon,
-.principle-mark {
+.principle-mark,
+.open-icon {
+  align-items: center;
   background: linear-gradient(135deg, rgba(8, 145, 178, 0.14), rgba(29, 78, 216, 0.14));
   border: 2px solid rgba(8, 145, 178, 0.55);
   border-radius: 8px;
-  display: block;
+  color: var(--home-teal);
+  display: inline-flex;
   height: 34px;
+  justify-content: center;
   margin-bottom: 18px;
   width: 34px;
+}
+
+.domain-card:nth-child(2n) .domain-icon,
+.pillar-card:nth-child(2n) .pillar-icon {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(14, 165, 233, 0.12));
+  border-color: rgba(23, 85, 184, 0.42);
+  color: var(--home-blue);
+}
+
+.domain-card:nth-child(5n) .domain-icon {
+  background: linear-gradient(135deg, rgba(217, 119, 6, 0.12), rgba(8, 155, 176, 0.1));
+  border-color: rgba(217, 119, 6, 0.46);
+  color: var(--home-amber);
 }
 
 .domain-card h3,
 .principle-card h3,
 .open-card h3 {
-  font-size: 1.06rem;
+  font-size: 1.12rem;
   margin: 0;
 }
 
@@ -828,38 +898,75 @@ const content = computed(() => {
   position: relative;
 }
 
-.method-loop {
-  bottom: -56px;
-  left: -28px;
-  opacity: 0.62;
+.principle-flow::before {
+  background: linear-gradient(90deg, rgba(8, 155, 176, 0.18), rgba(23, 85, 184, 0.24), rgba(217, 119, 6, 0.18));
+  content: "";
+  height: 2px;
+  left: 36px;
   position: absolute;
-  right: -28px;
-  width: calc(100% + 56px);
+  right: 36px;
+  top: 46px;
   z-index: 0;
 }
 
 .principle-card {
-  min-height: 178px;
+  display: grid;
+  gap: 18px;
+  grid-template-rows: auto 1fr;
+  min-height: 204px;
   padding: 24px;
   position: relative;
   z-index: 1;
 }
 
+.principle-step {
+  color: rgba(217, 119, 6, 0.34);
+  font-size: 1.9rem;
+  font-weight: 900;
+  line-height: 1;
+  position: absolute;
+  right: 22px;
+  top: 20px;
+}
+
 .principle-mark {
   border-color: rgba(217, 119, 6, 0.58);
+  color: var(--home-amber);
+  margin-bottom: 0;
+  position: relative;
+  z-index: 1;
 }
 
 .pillar-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.pillar-card .pillar-icon {
+  margin-bottom: 0;
+}
+
 .pillar-card {
+  align-items: start;
   color: var(--home-text);
-  display: grid;
-  min-height: 170px;
+  display: flex;
+  gap: 18px;
+  min-height: 156px;
   padding: 28px;
   text-decoration: none;
   transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+.pillar-card--primary {
+  background:
+    linear-gradient(135deg, rgba(236, 254, 255, 0.92), rgba(255, 255, 255, 0.92)),
+    var(--home-card);
+  border-color: rgba(8, 155, 176, 0.24);
+}
+
+.pillar-card--primary .pillar-icon {
+  background: linear-gradient(135deg, rgba(8, 155, 176, 0.18), rgba(23, 85, 184, 0.12));
+  border-color: rgba(8, 155, 176, 0.55);
+  color: var(--home-teal);
 }
 
 .pillar-card:hover {
@@ -868,6 +975,7 @@ const content = computed(() => {
 }
 
 .pillar-card strong {
+  display: block;
   font-size: 1.26rem;
   margin-bottom: 8px;
 }
@@ -878,19 +986,43 @@ const content = computed(() => {
 
 .learning-path {
   display: grid;
-  gap: 14px;
+  gap: 0;
   grid-template-columns: repeat(7, minmax(0, 1fr));
   list-style: none;
-  margin: 30px 0 0;
+  margin: 34px 0 0;
   padding: 0;
+  position: relative;
+}
+
+.learning-path::before {
+  background: linear-gradient(90deg, rgba(8, 155, 176, 0.2), rgba(23, 85, 184, 0.2));
+  content: "";
+  height: 2px;
+  left: 7%;
+  position: absolute;
+  right: 7%;
+  top: 28px;
 }
 
 .learning-path li {
-  background: rgba(255, 255, 255, 0.76);
-  border: 1px solid var(--home-line);
+  min-height: 86px;
+  padding: 0 10px;
+  position: relative;
+  text-align: center;
+}
+
+.learning-path li::before {
+  background: #fff;
+  border: 2px solid rgba(8, 155, 176, 0.34);
   border-radius: 999px;
-  min-height: 56px;
-  padding: 10px 14px;
+  box-shadow: 0 0 0 8px rgba(8, 155, 176, 0.07);
+  content: "";
+  display: block;
+  height: 16px;
+  margin: 20px auto 14px;
+  position: relative;
+  width: 16px;
+  z-index: 1;
 }
 
 .learning-path span {
@@ -907,19 +1039,14 @@ const content = computed(() => {
 }
 
 .open-section {
-  background: linear-gradient(180deg, rgba(236, 254, 255, 0.38), rgba(255, 255, 255, 0.72));
+  background:
+    linear-gradient(90deg, rgba(236, 254, 255, 0.7), rgba(255, 255, 255, 0.84) 48%, rgba(241, 248, 255, 0.78)),
+    linear-gradient(180deg, rgba(236, 254, 255, 0.38), rgba(255, 255, 255, 0.72));
   border: 1px solid rgba(8, 145, 178, 0.12);
   border-radius: 8px;
   margin-top: 20px;
   padding: 48px;
-}
-
-.open-network {
-  bottom: 0;
-  left: 0;
-  opacity: 0.5;
-  position: absolute;
-  width: min(760px, 62vw);
+  overflow: hidden;
 }
 
 .open-grid {
@@ -927,16 +1054,42 @@ const content = computed(() => {
 }
 
 .open-card {
+  position: relative;
   min-height: 126px;
   padding: 22px;
+  z-index: 1;
+}
+
+.open-icon {
+  height: 32px;
+  margin-bottom: 16px;
+  width: 32px;
 }
 
 .open-actions {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 14px;
   margin-top: 28px;
   position: relative;
   z-index: 1;
+}
+
+.open-action {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(23, 85, 184, 0.18);
+  border-radius: 8px;
+  display: inline-flex;
+  min-height: 44px;
+  padding: 0 18px;
+}
+
+.open-action--primary {
+  background: linear-gradient(135deg, #089bb0, #087e82);
+  border-color: transparent;
+  color: #fff !important;
+  box-shadow: 0 16px 30px rgba(8, 155, 176, 0.18);
 }
 
 [data-theme="dark"] .aisee-home {
@@ -957,72 +1110,36 @@ const content = computed(() => {
   color: rgba(255, 255, 245, 0.94);
 }
 
-[data-theme="dark"] .action-secondary,
 [data-theme="dark"] .learning-path li {
-  background: rgba(14, 28, 44, 0.72);
+  color: rgba(255, 255, 245, 0.92);
 }
 
-[data-theme="dark"] .map-card,
-[data-theme="dark"] .map-panel {
-  background: rgba(11, 24, 38, 0.74);
+[data-theme="dark"] .learning-path li::before {
+  background: #0b1420;
 }
 
-[data-theme="dark"] .map-card strong,
-[data-theme="dark"] .map-panel strong {
+[data-theme="dark"] .dashboard-card__head strong {
   color: rgba(235, 248, 255, 0.92);
 }
 
-[data-theme="dark"] .map-card small {
+[data-theme="dark"] .dashboard-card__head p {
   color: rgba(220, 235, 245, 0.7);
-}
-
-[data-theme="dark"] .map-panel span {
-  background: rgba(19, 38, 58, 0.8);
-  color: rgba(225, 243, 255, 0.88);
-}
-
-@keyframes flowFloat {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-  50% {
-    transform: translate3d(10px, -8px, 0);
-  }
-}
-
-@keyframes pulseGlow {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.035);
-  }
 }
 
 @media (max-width: 1180px) {
   .home-hero {
     grid-template-columns: minmax(0, 1fr);
+    padding-left: 0;
     padding-top: 68px;
   }
 
-  .hero-rail {
-    display: none;
-  }
-
   .hero-visual {
-    min-height: 430px;
+    min-height: 440px;
     overflow: hidden;
   }
 
-  .method-map {
-    transform: scale(0.78);
-    transform-origin: left top;
-  }
-
-  .knowledge-core {
-    left: 700px;
+  .method-dashboard {
+    max-width: 920px;
   }
 
   .domain-grid {
@@ -1053,10 +1170,9 @@ const content = computed(() => {
   }
 
   .hero-copy h1 {
-    font-size: clamp(2.85rem, 13vw, 4.2rem);
+    font-size: clamp(2.45rem, 11vw, 3.6rem);
   }
 
-  .hero-stats,
   .domain-grid,
   .principle-flow,
   .pillar-grid,
@@ -1066,17 +1182,10 @@ const content = computed(() => {
   }
 
   .hero-visual {
-    min-height: 310px;
+    min-height: 0;
   }
 
-  .method-map {
-    transform: scale(0.58);
-    transform-origin: left top;
-  }
-
-  .gate-panel,
-  .review-panel,
-  .method-loop {
+  .method-dashboard {
     display: none;
   }
 
@@ -1084,6 +1193,36 @@ const content = computed(() => {
     align-items: flex-start;
     flex-direction: column;
     gap: 12px;
+  }
+
+  .principle-flow::before,
+  .learning-path::before {
+    display: none;
+  }
+
+  .learning-path {
+    gap: 12px;
+  }
+
+  .learning-path li {
+    align-items: center;
+    background: rgba(255, 255, 255, 0.76);
+    border: 1px solid var(--home-line);
+    border-radius: 8px;
+    display: flex;
+    gap: 14px;
+    min-height: 62px;
+    padding: 12px 16px;
+    text-align: left;
+  }
+
+  .learning-path li::before {
+    flex: 0 0 auto;
+    margin: 0;
+  }
+
+  .learning-path strong {
+    margin-top: 0;
   }
 
   .open-section {

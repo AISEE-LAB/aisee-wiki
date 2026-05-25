@@ -6,6 +6,10 @@ import { defineClientConfig } from 'vuepress/client'
 
 import HomePage from './theme/components/HomePage.vue'
 import FlowExplainer from './theme/components/FlowExplainer.vue'
+import LearningFlow from './theme/components/LearningFlow.vue'
+import ToolLogoGrid from './theme/components/ToolLogoGrid.vue'
+import '@vue-flow/core/dist/style.css'
+import '@vue-flow/core/dist/theme-default.css'
 // import CustomComponent from './theme/components/Custom.vue'
 
 // import './theme/styles/custom.css'
@@ -21,6 +25,8 @@ export default defineClientConfig({
     // your custom components
     app.component('HomePage', HomePage)
     app.component('FlowExplainer', FlowExplainer)
+    app.component('LearningFlow', LearningFlow)
+    app.component('ToolLogoGrid', ToolLogoGrid)
     // app.component('CustomComponent', CustomComponent)
   },
 })

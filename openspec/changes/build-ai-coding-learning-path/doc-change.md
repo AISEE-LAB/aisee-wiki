@@ -302,27 +302,29 @@
 
 ## Validation
 
-- [ ] 页面路径可访问。
-- [ ] 导航/侧边栏入口正确。
-- [ ] 内链有效。
-- [ ] 代码块、命令或示例已检查。
-- [ ] 工具与模型事实已核对官方文档，正文标注更新时间或事实源口径。
-- [ ] logo 资源来自 `@lobehub/icons` 说明支持的包、CDN 或静态资源路径。
-- [ ] 每篇文章至少包含一种配图、图示或组件化信息块。
-- [ ] 视觉组件、表格、logo 网格和代码块在移动端不溢出、不遮挡正文。
-- [ ] 若使用 Vue Flow、Vue Bits 风格动效或 `fireworks-tech-graph`，已验证构建、移动端布局、交互可用性和内容可读性。
-- [ ] 文档站构建或预览检查通过。
-- [ ] 需要时已截图或人工预览。
+- [x] 页面路径可访问：本地静态预览 `http://127.0.0.1:8088` 下 `/learn/` 和 12 个新增中文页面均返回 200。
+- [x] 导航/侧边栏入口正确：`learnCollection.sidebar` 已按“认知入门 / 工具上手 / Agent 进阶”分组，构建产物侧边栏已渲染分组。
+- [x] 内链有效：新增页面均使用稳定 `/learn/.../` permalink，并保留文章末尾下一步阅读。
+- [x] 代码块、命令或示例已检查：危险 Git/删除/生产操作只作为风险提醒出现，未给出破坏性执行步骤。
+- [x] 工具与模型事实已核对官方文档，正文标注更新时间或事实源口径：Codex、Claude Code、Gemini CLI、GLM Coding Plan 已核对官方说明，相关正文标注 2026-05-25 口径和“以官方文档为准”。
+- [x] logo 资源来自 `@lobehub/icons` 说明支持的包、CDN 或静态资源路径：使用 `@lobehub/icons-static-svg` CDN 的 `codex-color.svg`、`claude-color.svg`、`gemini-color.svg`、`zhipu-color.svg` 等资源。
+- [x] 每篇文章至少包含一种配图、图示或组件化信息块：12 篇正文和 `/learn/` 首页均包含 `LearningFlow` 或 `ToolLogoGrid`。
+- [x] 视觉组件、表格、logo 网格和代码块在移动端不溢出、不遮挡正文：已用 Chrome headless 截图检查 `/learn/` 桌面和 `/learn/tools-and-models/` 移动端。
+- [x] 若使用 Vue Flow、Vue Bits 风格动效或 `fireworks-tech-graph`，已验证构建、移动端布局、交互可用性和内容可读性：本次使用 Vue Flow 和 CSS 微动效，没有生成静态 fireworks 图。
+- [x] 文档站构建或预览检查通过：`pnpm docs:build` 成功。
+- [x] 需要时已截图或人工预览：已生成 `/tmp/aisee-learn-desktop.png` 与 `/tmp/aisee-learn-mobile.png` 并人工查看。
 
 ## Archive Updates
 
 归档前必须回写 `openspec/project-docs.md`，或在下方写明无需回写的原因。
 
-- [ ] 页面清单已更新。
-- [ ] 栏目结构已更新。
-- [ ] 内容状态已更新。
-- [ ] 后续缺口已更新。
-- [ ] 术语/写作约定已更新或确认无需更新。
+- [x] 已回写 `openspec/project-docs.md`：记录学习路径栏目状态、13 个页面清单、阅读路径、内容缺口、术语写作约定、站点结构约定和本 change 归档记录。
+
+- [x] 页面清单已更新。
+- [x] 栏目结构已更新。
+- [x] 内容状态已更新。
+- [x] 后续缺口已更新。
+- [x] 术语/写作约定已更新或确认无需更新。
 
 无需回写的原因：
 

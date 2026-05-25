@@ -9,20 +9,27 @@
 
 ## 1. 内容变更
 
-- [ ] 1.1 改写 `site/learn/README.md`，形成 AI Coding 入门路径首页，包含读者定位、两段式路径、5 篇文章入口和进阶阅读入口。
+- [ ] 1.1 改写 `site/learn/README.md`，形成 AI Coding 学习路径首页，包含读者定位、“认知入门 / 工具上手 / Agent 进阶”三类路径、12 篇文章入口和后续方法论阅读入口。
 - [ ] 1.2 新增 `site/learn/ai-coding-intro.md`，说明 AI Coding 从补全、生成到 Agent 的发展、工程师角色变化、AI 擅长/不擅长边界和最小实操任务。
-- [ ] 1.3 新增 `site/learn/tools-and-models.md`，说明工具形态、模型能力维度，以及 Codex、Claude、Gemini、GLM 的定位、便捷度、适用场景和选择矩阵。
+- [ ] 1.3 新增 `site/learn/tools-and-models.md`，说明工具形态、模型能力维度；可横向纳入更多工具和模型，但推荐重点聚焦 Codex、Claude、Gemini、GLM 的定位、便捷度、适用场景和选择矩阵。
 - [ ] 1.4 新增 `site/learn/dev-environment.md`，说明 Git、Node.js、Python、终端、编辑器、浏览器等基础运行环境及验证清单。
 - [ ] 1.5 新增 `site/learn/codex-setup.md`，说明 Codex 安装入口、配置、第一次打开项目、命令执行、diff、权限边界和常见问题。
 - [ ] 1.6 新增 `site/learn/first-ai-coding-project.md`，以“复刻一个网站首页”为第一个 AI Coding 项目，覆盖选参考、拆模块、分步实现、预览修复、移动端检查和 Git 提交标准。
-- [ ] 1.7 每篇文章末尾添加下一步阅读，优先指向已存在页面或本 change 新增页面，未完成进阶正文只链接栏目首页。
-- [ ] 1.8 公开正文不得暴露本地 Obsidian 绝对路径；参考资料只作为内部事实源使用。
-- [ ] 1.9 按 `doc-change.md` 的 Article Blueprints 写作每篇正文，尤其确保 `codex-setup` 覆盖“Codex 是什么、使用前准备、安装方式、第一次打开项目、第一个安全任务、权限和安全边界、常见问题”。
-- [ ] 1.10 每篇文章至少加入一种配图、流程图、路线卡片、对比矩阵、步骤组件、检查清单、logo 卡片或自定义组件，避免纯文字长文。
+- [ ] 1.7 新增 `site/learn/agent-basics.md`，说明 Agent 的基本组成、工作循环、失败点和与 Memory/Skill/MCP/Tool/Hook 的关系。
+- [ ] 1.8 新增 `site/learn/agent-memory.md`，说明 Memory 的层次、来源和边界，重点区分当前会话、项目规则、项目记忆和全局记忆，并以 Codex 项目工作流举例。
+- [ ] 1.9 新增 `site/learn/skills.md`，说明 Skill 的定位、适用场景、边界，以及它如何封装可复用工程经验。
+- [ ] 1.10 新增 `site/learn/mcp.md`，说明 MCP 的连接层定位、典型外部系统、权限边界，以及 MCP 与 Tool 的关系。
+- [ ] 1.11 新增 `site/learn/agent-tools.md`，说明 Tool 是 Agent 执行动作的接口，并覆盖常见工具类型、调用闭环和风险。
+- [ ] 1.12 新增 `site/learn/hooks.md`，说明 Hook 在 Agent 生命周期中的自动检查、上下文注入、风险拦截和验证作用。
+- [ ] 1.13 新增 `site/learn/agent-components.md`，以 Codex 智能体为例，总结 Memory、Skill、MCP、Tool、Hook 的职责边界和协作分工。
+- [ ] 1.14 每篇文章末尾添加下一步阅读，优先指向已存在页面或本 change 新增页面，未完成进阶正文只链接栏目首页。
+- [ ] 1.15 公开正文不得暴露本地 Obsidian 绝对路径；参考资料只作为内部事实源使用。
+- [ ] 1.16 按 `doc-change.md` 的 Article Blueprints 写作每篇正文，尤其确保 `codex-setup` 覆盖“Codex 是什么、使用前准备、安装方式、第一次打开项目、第一个安全任务、权限和安全边界、常见问题”，并确保 `agent-memory` 覆盖全局记忆、项目记忆、项目规则和当前会话上下文。
+- [ ] 1.17 每篇文章至少加入一种配图、流程图、路线卡片、对比矩阵、步骤组件、检查清单、logo 卡片、Vue Flow 或自定义组件，避免纯文字长文。
 
 ## 2. 站点结构与配置
 
-- [ ] 2.1 更新 `site/.vuepress/collections/learn.ts`，将新增中文文章加入 sidebar，并保持 `README.md` 为栏目首页。
+- [ ] 2.1 更新 `site/.vuepress/collections/learn.ts`，将新增中文文章加入 sidebar；优先按“认知入门 / 工具上手 / Agent 进阶”分组，并保持 `README.md` 为栏目首页。
 - [ ] 2.2 为新增页面设置稳定 frontmatter，包括 `title`、`permalink`、`createTime`，并沿用当前站点风格。
 - [ ] 2.3 评估 Plume 已有组件能力，优先使用提示块、代码组、卡片、步骤、表格或内置 Markdown 扩展组织文章。
 - [ ] 2.4 如 Plume 内置能力不足，新增轻量 Vue 组件用于工具 logo 网格、模型/工具选择矩阵或路线卡片，并避免装饰性过度设计。
@@ -43,13 +50,13 @@
 
 ## 4. 验证
 
-- [ ] 4.1 检查 `/learn/` 和 5 个新增中文页面路径可访问。
+- [ ] 4.1 检查 `/learn/` 和 12 个新增中文页面路径可访问。
 - [ ] 4.2 检查学习路径侧边栏顺序、栏目首页入口和文章间内链。
 - [ ] 4.3 检查代码块、终端命令、提示词示例和 Git 操作说明，避免危险命令或未解释的破坏性操作。
 - [ ] 4.4 检查工具/模型 logo 在亮色和暗色主题下可读；如无法截图，至少人工预览说明检查结果。
 - [ ] 4.5 运行 `pnpm docs:build` 或项目确认的等效构建检查。
 - [ ] 4.6 如新增自定义组件，进行本地预览或截图检查，确认布局在桌面和移动端不溢出、不遮挡。
-- [ ] 4.7 检查 6 个学习路径页面均包含配图、图示或组件化信息块，阅读体验不是纯文字堆叠。
+- [ ] 4.7 检查 13 个学习路径页面均包含配图、图示或组件化信息块，阅读体验不是纯文字堆叠。
 - [ ] 4.8 如使用 Vue Flow、Vue Bits 风格动画组件或 `fireworks-tech-graph` 生成图，检查桌面和移动端渲染、交互可用性、亮暗主题、构建结果和资源路径。
 
 ## 5. Archive Gate

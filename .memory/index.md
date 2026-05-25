@@ -18,4 +18,5 @@
 
 ## 技术栈笔记（stack/）
 
+- OpenSpec 文档站 change 应显式使用 `--schema aisee-docsite-driven` → stack/openspec.md
 <!-- - <一句话摘要> → stack/{technology}.md -->

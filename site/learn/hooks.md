@@ -41,5 +41,3 @@ Hook 不应该把所有流程都变成硬阻断，也不能替代人的判断。
 ## 与项目规则的关系
 
 `AGENTS.md`、`CLAUDE.md`、OpenSpec 状态机和 Hook 共同形成约束层。规则告诉 Agent 应该怎么做，Hook 在关键节点帮助它不忘记、不越界、不漏验。
-
-下一篇：[Agent 的核心组成如何配合](/learn/agent-orchestration/)

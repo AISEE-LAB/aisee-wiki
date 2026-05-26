@@ -156,5 +156,3 @@ codex
 - 知道从 App、CLI、IDE、Web 里先选哪个入口。
 - 知道第一次进入项目时该先看什么，而不是马上让 Codex 写代码。
 - 知道如何用只读任务、小改动任务和 diff 审查来建立安全边界。
-
-下一篇：[第一个 AI Coding 项目：复刻一个网站](/learn/first-ai-project/)

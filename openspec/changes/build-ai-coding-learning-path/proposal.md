@@ -29,7 +29,7 @@
 | 类型 | 范围 | 说明 |
 |---|---|---|
 | 栏目 | `/learn/` | 从占位入口升级为 AI Coding 入门学习路径。 |
-| 页面 | `/learn/`、`/learn/ai-coding-intro/`、`/learn/tools-and-models/`、`/learn/dev-environment/`、`/learn/codex-setup/`、`/learn/first-ai-coding-project/`、`/learn/agent-basics/`、`/learn/agent-memory/`、`/learn/skills/`、`/learn/mcp/`、`/learn/agent-tools/`、`/learn/hooks/`、`/learn/agent-components/` | 新增或改写中文正文。 |
+| 页面 | `/learn/`、`/learn/ai-coding-intro/`、`/learn/tools-and-models/`、`/learn/runtime-setup/`、`/learn/codex-setup/`、`/learn/first-ai-project/`、`/learn/agent-basics/`、`/learn/agent-memory/`、`/learn/skills/`、`/learn/mcp/`、`/learn/tool-calls/`、`/learn/hooks/`、`/learn/agent-orchestration/` | 新增或改写中文正文。 |
 | 导航/侧边栏 | `site/.vuepress/collections/learn.ts` | 将新增文章纳入学习路径侧边栏，并保持 README 作为栏目首页。 |
 | 路由/frontmatter | 中文学习路径页面 frontmatter | 每篇文章必须提供稳定 permalink、title、createTime 或项目现有 frontmatter 约定。 |
 | 站点配置 | 可能涉及依赖、组件注册或主题组件目录 | 如实现采用 `@lobehub/icons` 运行时/构建时能力或新增 Vue 组件，需要更新相关依赖和组件文件；如仅使用静态 CDN URL，需要记录来源并避免不必要依赖。 |

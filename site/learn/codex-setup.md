@@ -94,4 +94,4 @@ codex
 | 权限弹窗看不懂 | 不确定就拒绝，要求 Codex 用中文解释会做什么 |
 | AI 修改范围太大 | 中断任务，要求缩小到单文件或单模块，并先列计划 |
 
-下一篇：[第一个 AI Coding 项目：复刻一个网站](/learn/first-ai-coding-project/)
+下一篇：[第一个 AI Coding 项目：复刻一个网站](/learn/first-ai-project/)

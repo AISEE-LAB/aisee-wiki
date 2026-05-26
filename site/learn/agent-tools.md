@@ -1,6 +1,6 @@
 ---
 title: Tool：Agent 真正执行动作的接口
-permalink: /learn/agent-tools/
+permalink: /learn/tool-calls/
 createTime: 2026/05/25 00:00:00
 ---
 

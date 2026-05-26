@@ -1,6 +1,6 @@
 ---
 title: 给 AI 准备运行环境
-permalink: /learn/dev-environment/
+permalink: /learn/runtime-setup/
 createTime: 2026/05/25 00:00:00
 ---
 

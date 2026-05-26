@@ -1,6 +1,6 @@
 ---
 title: 第一个 AI Coding 项目：复刻一个网站
-permalink: /learn/first-ai-coding-project/
+permalink: /learn/first-ai-project/
 createTime: 2026/05/25 00:00:00
 ---
 

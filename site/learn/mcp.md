@@ -42,4 +42,4 @@ MCP 是 Agent 连接外部工具、数据和服务的桥梁，让模型能在受
 
 MCP 常用于提供 Tool，但 Tool 不一定都来自 MCP。比如本地 Shell、文件编辑、apply patch 也可以是 Agent 的工具；MCP 更像连接外部系统的标准桥梁。
 
-下一篇：[Tool：Agent 真正执行动作的接口](/learn/agent-tools/)
+下一篇：[Tool：Agent 真正执行动作的接口](/learn/tool-calls/)

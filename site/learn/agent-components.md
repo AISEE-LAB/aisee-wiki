@@ -1,6 +1,6 @@
 ---
 title: Agent 的核心组成：Memory、Skill、MCP、Tool、Hook 如何配合
-permalink: /learn/agent-components/
+permalink: /learn/agent-orchestration/
 createTime: 2026/05/25 00:00:00
 ---
 

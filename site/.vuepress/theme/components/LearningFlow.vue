@@ -47,10 +47,10 @@ const flowMap: Record<FlowVariant, FlowPreset> = {
       { id: 'start', title: '开始学习', subtitle: '入口', kind: 'start' },
       { id: 'intro', title: '认知入门', subtitle: '理解变化', description: 'AI Coding 不是补全更聪明，而是工作闭环改变。', kind: 'process', href: '/learn/ai-coding-intro/' },
       { id: 'choose', title: '工具与模型选择', subtitle: '选择坐标', description: '按任务形态选择 Codex、Claude、Gemini、GLM 等工具。', kind: 'decision', href: '/learn/tools-and-models/' },
-      { id: 'env', title: '准备运行环境', subtitle: 'Git / Node / Python', description: '让 AI 能读仓库、跑命令、看错误。', kind: 'process', href: '/learn/dev-environment/' },
+      { id: 'env', title: '准备运行环境', subtitle: 'Git / Node / Python', description: '让 AI 能读仓库、跑命令、看错误。', kind: 'process', href: '/learn/runtime-setup/' },
       { id: 'codex', title: 'Codex 第一次运行', subtitle: '项目 / 命令 / diff', description: '理解权限边界和第一次安全任务。', kind: 'agent', href: '/learn/codex-setup/' },
-      { id: 'project', title: '复刻网站项目', subtitle: '第一个闭环', description: '拆模块、预览、反馈修复、提交。', kind: 'process', href: '/learn/first-ai-coding-project/' },
-      { id: 'agent', title: 'Agent 进阶', subtitle: '核心组成', description: '理解 Memory、Skill、MCP、Tool、Hook 如何协作。', kind: 'end', href: '/learn/agent-components/' },
+      { id: 'project', title: '复刻网站项目', subtitle: '第一个闭环', description: '拆模块、预览、反馈修复、提交。', kind: 'process', href: '/learn/first-ai-project/' },
+      { id: 'agent', title: 'Agent 进阶', subtitle: '核心组成', description: '理解 Memory、Skill、MCP、Tool、Hook 如何协作。', kind: 'end', href: '/learn/agent-orchestration/' },
     ],
     edges: [
       { source: 'start', target: 'intro' },

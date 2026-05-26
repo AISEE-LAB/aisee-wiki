@@ -5,7 +5,7 @@
 - 文档基线：openspec/project-docs.md
 - 基线文件状态：已存在，但内容仍是待填写模板
 - 涉及栏目：`learn`
-- 涉及页面：`/learn/`、`/learn/ai-coding-intro/`、`/learn/tools-and-models/`、`/learn/dev-environment/`、`/learn/codex-setup/`、`/learn/first-ai-coding-project/`、`/learn/agent-basics/`、`/learn/agent-memory/`、`/learn/skills/`、`/learn/mcp/`、`/learn/agent-tools/`、`/learn/hooks/`、`/learn/agent-components/`
+- 涉及页面：`/learn/`、`/learn/ai-coding-intro/`、`/learn/tools-and-models/`、`/learn/runtime-setup/`、`/learn/codex-setup/`、`/learn/first-ai-project/`、`/learn/agent-basics/`、`/learn/agent-memory/`、`/learn/skills/`、`/learn/mcp/`、`/learn/tool-calls/`、`/learn/hooks/`、`/learn/agent-orchestration/`
 - 涉及导航/侧边栏：是
 - 涉及站点配置：是，取决于 `@lobehub/icons` 和自定义 Vue 组件实现方式
 
@@ -51,24 +51,24 @@
 | `/learn/` | 第一次进入 AI SEE Wiki 的 AI Coding 学习者 | 入门路径总览和读者分流 | 入门准备、实战项目、进阶方法论；5 篇正文入口；下一步阅读 | 大段工具安装细节、OpenSpec 深度正文 |
 | `/learn/ai-coding-intro/` | 想理解 AI Coding 本质变化的开发者 | AI Coding 发展阶段、工程师角色变化、AI 擅长与不擅长的边界 | 补全/生成/Agent 对比；常见翻车原因；最小实操对比任务 | 工具排行榜、模型价格细节 |
 | `/learn/tools-and-models/` | 面对多种工具和模型不知道如何选择的读者 | 工具形态、模型能力维度、Codex/Claude/Gemini/GLM 选型矩阵 | logo；更新时间；官方事实源口径；便捷度、工程能力、适用人群、成本等维度 | 绝对排名、未经核对的价格/额度/模型参数 |
-| `/learn/dev-environment/` | 准备让 AI 在本地项目中工作的读者 | AI Coding 所需基础运行环境和验证清单 | Git、Node.js、Python、终端、编辑器、浏览器；最小验证命令；安全提醒 | 完整系统运维教程、大量 AI 包安装清单 |
+| `/learn/runtime-setup/` | 准备让 AI 在本地项目中工作的读者 | AI Coding 所需基础运行环境和验证清单 | Git、Node.js、Python、终端、编辑器、浏览器；最小验证命令；安全提醒 | 完整系统运维教程、大量 AI 包安装清单 |
 | `/learn/codex-setup/` | 想以 Codex 作为主线工具上手的读者 | Codex 安装、登录、打开项目、理解命令与 diff、权限边界 | 桌面版/CLI 入口；第一次安全任务；常见问题；安全边界 | 未确认的安装命令、生产仓库高风险操作 |
-| `/learn/first-ai-coding-project/` | 想完成第一个 AI Coding 成果的读者 | 复刻一个网站首页的分步实战 | 项目目标、参考站选择、模块拆分、提示词结构、预览修复、移动端检查、Git 提交标准 | 登录、后台、数据库、真实品牌素材复刻 |
+| `/learn/first-ai-project/` | 想完成第一个 AI Coding 成果的读者 | 复刻一个网站首页的分步实战 | 项目目标、参考站选择、模块拆分、提示词结构、预览修复、移动端检查、Git 提交标准 | 登录、后台、数据库、真实品牌素材复刻 |
 | `/learn/agent-basics/` | 已完成基础上手、想理解 Agent 机制的读者 | Agent 的基本组成和工作循环 | 模型、上下文、工具、环境、约束、验证；Agent 不等于聊天模型 | 深入到某个具体 Agent 框架实现 |
 | `/learn/agent-memory/` | 想理解 Agent 如何“记住”和复用上下文的读者 | Memory 的层次、来源和边界 | 全局记忆、项目记忆、项目规则、会话上下文、事实源优先级；以 Codex 项目工作流举例 | 把 memory 写成无限长期记忆或替代事实核查 |
 | `/learn/skills/` | 想复用 AI 工程经验的读者 | Skill 的定位、结构、触发和边界 | Skill 与 prompt、脚本、文档的区别；何时适合沉淀为 skill | 写成某一个平台的私有功能说明 |
 | `/learn/mcp/` | 想让 Agent 连接外部系统的读者 | MCP 的连接层定位 | MCP server/client、外部能力、权限边界、典型场景 | 大量协议细节或 SDK 教程 |
-| `/learn/agent-tools/` | 想理解 Agent 如何真正执行动作的读者 | Tool 作为动作接口的职责 | 读文件、改代码、跑命令、查资料、调用 API；tool 与 MCP 的区别 | 罗列所有工具命令 |
+| `/learn/tool-calls/` | 想理解 Agent 如何真正执行动作的读者 | Tool 作为动作接口的职责 | 读文件、改代码、跑命令、查资料、调用 API；tool 与 MCP 的区别 | 罗列所有工具命令 |
 | `/learn/hooks/` | 想给 Agent 执行过程加检查点的读者 | Hook 的生命周期检查和约束作用 | 执行前、执行后、提交前、验证前；安全、质量、上下文注入 | 把 hook 写成万能自动化系统 |
-| `/learn/agent-components/` | 想串起 Agent 组成部分的读者 | Memory、Skill、MCP、Tool、Hook 的协作分工 | Codex 智能体示例；总览图；职责边界；典型请求从输入到执行再到沉淀的流转 | 重复前面每篇细节 |
+| `/learn/agent-orchestration/` | 想串起 Agent 组成部分的读者 | Memory、Skill、MCP、Tool、Hook 的协作分工 | Codex 智能体示例；总览图；职责边界；典型请求从输入到执行再到沉淀的流转 | 重复前面每篇细节 |
 
 ## Learning Path Categories
 
 | 分类 | 页面 | 目标 |
 |---|---|---|
 | 认知入门 | `/learn/ai-coding-intro/`、`/learn/tools-and-models/` | 建立 AI Coding 心智模型，理解工具和模型如何选择。 |
-| 工具上手 | `/learn/dev-environment/`、`/learn/codex-setup/`、`/learn/first-ai-coding-project/` | 准备本地环境，跑通 Codex，并完成第一个 AI Coding 项目。 |
-| Agent 进阶 | `/learn/agent-basics/`、`/learn/agent-memory/`、`/learn/skills/`、`/learn/mcp/`、`/learn/agent-tools/`、`/learn/hooks/`、`/learn/agent-components/` | 理解 Agent 的核心组成、能力边界和协作分工。 |
+| 工具上手 | `/learn/runtime-setup/`、`/learn/codex-setup/`、`/learn/first-ai-project/` | 准备本地环境，跑通 Codex，并完成第一个 AI Coding 项目。 |
+| Agent 进阶 | `/learn/agent-basics/`、`/learn/agent-memory/`、`/learn/skills/`、`/learn/mcp/`、`/learn/tool-calls/`、`/learn/hooks/`、`/learn/agent-orchestration/` | 理解 Agent 的核心组成、能力边界和协作分工。 |
 
 ## Article Blueprints
 
@@ -114,7 +114,7 @@
 - 视觉要求：必须包含带 logo 的工具/模型卡片组，并至少包含一个选择矩阵或能力雷达/对比表；推荐工具与扩展视野工具在视觉上要有主次。
 - 事实源注意：模型能力、平台支持、安装方式、价格/额度等实现时必须核对官方文档，不写绝对排名和未经确认的实时数据。
 
-### `/learn/dev-environment/` 给 AI 准备运行环境
+### `/learn/runtime-setup/` 给 AI 准备运行环境
 
 - 核心结论：AI 编程工具不是孤立聊天框，它需要一个能读仓库、装依赖、跑项目、执行验证的本地环境。
 - 建议结构：
@@ -173,7 +173,7 @@
 - 视觉要求：必须包含 Codex 第一次使用流程图或步骤卡片，并用风险提示组件突出权限、diff 和危险操作边界。
 - 事实源注意：参考本地 `AI编程工具安装教程.md`，但安装命令、平台支持、账号要求和产品入口必须以 OpenAI 官方文档为准。
 
-### `/learn/first-ai-coding-project/` 第一个 AI Coding 项目：复刻一个网站
+### `/learn/first-ai-project/` 第一个 AI Coding 项目：复刻一个网站
 
 - 核心结论：第一个项目不要追求复杂功能，要练会拆任务、给参考、看效果、修问题、提交成果的基本节奏。
 - 建议结构：
@@ -234,7 +234,7 @@
   5. MCP 与 Tool 的关系：MCP 常用于提供 tool，但 tool 不一定都来自 MCP。
 - 视觉要求：优先用 Vue Flow 展示 Agent 通过 MCP 连接多个外部系统的拓扑关系。
 
-### `/learn/agent-tools/` Tool：Agent 真正执行动作的接口
+### `/learn/tool-calls/` Tool：Agent 真正执行动作的接口
 
 - 核心结论：Tool 是 Agent 把计划变成动作的接口，读文件、改代码、跑命令、查资料、调用 API 都通过工具完成。
 - 建议结构：
@@ -256,7 +256,7 @@
   5. 与项目规则关系：AGENTS.md、CLAUDE.md、OpenSpec 状态机和 hooks 共同形成约束层。
 - 视觉要求：用生命周期时间线或 Vue Flow 展示 Hook 插入 Agent 执行链路的位置。
 
-### `/learn/agent-components/` Agent 的核心组成：Memory、Skill、MCP、Tool、Hook 如何配合
+### `/learn/agent-orchestration/` Agent 的核心组成：Memory、Skill、MCP、Tool、Hook 如何配合
 
 - 核心结论：Memory、Skill、MCP、Tool、Hook 不是同一层能力；Memory 负责保留和调取上下文，Skill 负责复用流程，MCP 负责连接外部能力，Tool 负责执行动作，Hook 负责生命周期检查和约束。
 - 建议结构：
@@ -283,7 +283,7 @@
 
 - 导航：不新增顶层导航；继续使用现有 `/learn/` 导航入口。
 - 侧边栏：`learnCollection.sidebar` 需要按“认知入门 / 工具上手 / Agent 进阶”分组呈现；若 collection 配置不支持分组，应在 `/learn/` 首页提供清晰分组入口。
-- 路由：新增 12 个稳定 permalink，分别为 `/learn/ai-coding-intro/`、`/learn/tools-and-models/`、`/learn/dev-environment/`、`/learn/codex-setup/`、`/learn/first-ai-coding-project/`、`/learn/agent-basics/`、`/learn/agent-memory/`、`/learn/skills/`、`/learn/mcp/`、`/learn/agent-tools/`、`/learn/hooks/`、`/learn/agent-components/`。
+- 路由：新增 12 个稳定 permalink，分别为 `/learn/ai-coding-intro/`、`/learn/tools-and-models/`、`/learn/runtime-setup/`、`/learn/codex-setup/`、`/learn/first-ai-project/`、`/learn/agent-basics/`、`/learn/agent-memory/`、`/learn/skills/`、`/learn/mcp/`、`/learn/tool-calls/`、`/learn/hooks/`、`/learn/agent-orchestration/`。
 - frontmatter：每篇页面需包含 `title`、`permalink`、`createTime`，并沿用现有站点 frontmatter 风格；如使用 Plume article metadata，保持与项目现有约定一致。
 - 标签/分类：文档型栏目默认不使用文章标签；如添加标签，应确认 Plume doc collection 支持方式并保持简洁。
 - 搜索影响：新增正文会进入站内搜索；标题和小节应使用可检索中文关键词，如 AI Coding、Codex、Claude、Gemini、GLM、运行环境、复刻网站、Agent、Memory、全局记忆、项目记忆、Skill、MCP、Tool、Hook。

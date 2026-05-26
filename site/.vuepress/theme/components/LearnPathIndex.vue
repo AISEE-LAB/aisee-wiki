@@ -32,7 +32,7 @@ const phases = [
     articles: [
       {
         title: '给 AI 准备运行环境',
-        href: '/learn/dev-environment/',
+        href: '/learn/runtime-setup/',
         problem: '为什么 Agent 需要 Git、Node、Python、终端和浏览器',
         result: '能验证本地环境是否足够让 Agent 工作',
       },
@@ -44,7 +44,7 @@ const phases = [
       },
       {
         title: '第一个 AI Coding 项目：复刻一个网站',
-        href: '/learn/first-ai-coding-project/',
+        href: '/learn/first-ai-project/',
         problem: '如何用小项目练出协作闭环',
         result: '能分模块完成一个 PC + 移动端可看的页面',
       },
@@ -84,7 +84,7 @@ const phases = [
       },
       {
         title: 'Tool：Agent 真正执行动作的接口',
-        href: '/learn/agent-tools/',
+        href: '/learn/tool-calls/',
         problem: 'Agent 如何读文件、改代码、跑命令',
         result: '能监督 tool 调用输入、输出和风险',
       },
@@ -96,7 +96,7 @@ const phases = [
       },
       {
         title: 'Agent 的核心组成如何配合',
-        href: '/learn/agent-components/',
+        href: '/learn/agent-orchestration/',
         problem: 'Memory、Skill、MCP、Tool、Hook 如何分工',
         result: '用 Codex 智能体串起完整工作流',
       },

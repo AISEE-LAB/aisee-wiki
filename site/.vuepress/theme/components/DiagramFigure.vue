@@ -33,7 +33,6 @@ withDefaults(defineProps<{
   background:
     linear-gradient(135deg, color-mix(in oklch, oklch(49% 0.12 188) 10%, transparent), transparent 42%),
     color-mix(in oklch, var(--vp-c-bg) 93%, oklch(96% 0.012 205));
-  box-shadow: 0 18px 44px color-mix(in oklch, var(--vp-c-text-1) 8%, transparent);
 }
 
 .diagram-figure__caption {

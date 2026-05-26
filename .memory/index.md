@@ -10,7 +10,7 @@
 
 ## 用户偏好（pref/）
 
-- 教程和学习路径页面应使用强视觉/交互表达；复杂静态图采用 `.excalidraw` 源文件优先流程，目录标题保持短，避免大阴影和手写“下一篇”提示 → pref/docsite-visual-components.md
+- 教程和学习路径页面应使用强视觉/交互表达；复杂静态图采用 `.excalidraw` 源文件优先流程，目录标题保持短，避免大阴影、手写“下一篇”提示和图文清单重复 → pref/docsite-visual-components.md
 <!-- - <一句话摘要> → pref/{topic}.md -->
 
 ## 上下文快照（ctx/）

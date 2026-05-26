@@ -11,6 +11,7 @@ import DocFlow from './theme/components/doc-flow/DocFlow.vue'
 import ToolLogoGrid from './theme/components/ToolLogoGrid.vue'
 import ToolCompareMatrix from './theme/components/ToolCompareMatrix.vue'
 import DiagramFigure from './theme/components/DiagramFigure.vue'
+import LearnPathIndex from './theme/components/LearnPathIndex.vue'
 import '@vue-flow/core/dist/style.css'
 import '@vue-flow/core/dist/theme-default.css'
 // import CustomComponent from './theme/components/Custom.vue'
@@ -33,6 +34,7 @@ export default defineClientConfig({
     app.component('ToolLogoGrid', ToolLogoGrid)
     app.component('ToolCompareMatrix', ToolCompareMatrix)
     app.component('DiagramFigure', DiagramFigure)
+    app.component('LearnPathIndex', LearnPathIndex)
     // app.component('CustomComponent', CustomComponent)
   },
 })

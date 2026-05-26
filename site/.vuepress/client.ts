@@ -17,6 +17,7 @@ import ModelDecisionBoard from './theme/components/ModelDecisionBoard.vue'
 import ToolEntryBoard from './theme/components/ToolEntryBoard.vue'
 import BenchmarkSnapshot from './theme/components/BenchmarkSnapshot.vue'
 import RecommendedCombos from './theme/components/RecommendedCombos.vue'
+import RuntimeSetupBoard from './theme/components/RuntimeSetupBoard.vue'
 import '@vue-flow/core/dist/style.css'
 import '@vue-flow/core/dist/theme-default.css'
 // import CustomComponent from './theme/components/Custom.vue'
@@ -45,6 +46,7 @@ export default defineClientConfig({
     app.component('ToolEntryBoard', ToolEntryBoard)
     app.component('BenchmarkSnapshot', BenchmarkSnapshot)
     app.component('RecommendedCombos', RecommendedCombos)
+    app.component('RuntimeSetupBoard', RuntimeSetupBoard)
     // app.component('CustomComponent', CustomComponent)
   },
 })

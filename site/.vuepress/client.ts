@@ -20,6 +20,7 @@ import RecommendedCombos from './theme/components/RecommendedCombos.vue'
 import RuntimeSetupBoard from './theme/components/RuntimeSetupBoard.vue'
 import ProjectModuleBoard from './theme/components/ProjectModuleBoard.vue'
 import ProjectLoopBoard from './theme/components/ProjectLoopBoard.vue'
+import AgentBasicsBoard from './theme/components/AgentBasicsBoard.vue'
 import '@vue-flow/core/dist/style.css'
 import '@vue-flow/core/dist/theme-default.css'
 // import CustomComponent from './theme/components/Custom.vue'
@@ -51,6 +52,7 @@ export default defineClientConfig({
     app.component('RuntimeSetupBoard', RuntimeSetupBoard)
     app.component('ProjectModuleBoard', ProjectModuleBoard)
     app.component('ProjectLoopBoard', ProjectLoopBoard)
+    app.component('AgentBasicsBoard', AgentBasicsBoard)
     // app.component('CustomComponent', CustomComponent)
   },
 })

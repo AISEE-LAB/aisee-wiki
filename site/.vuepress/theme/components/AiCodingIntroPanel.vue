@@ -93,7 +93,6 @@ const roleChanges = [
   background:
     linear-gradient(135deg, color-mix(in oklch, oklch(58% 0.12 185) 13%, transparent), transparent 42%),
     color-mix(in oklch, var(--vp-c-bg) 94%, oklch(97% 0.012 220));
-  box-shadow: 0 18px 44px color-mix(in oklch, var(--vp-c-text-1) 7%, transparent);
 }
 
 .ai-intro-panel__header {

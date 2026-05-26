@@ -183,7 +183,6 @@ const checkpoints = [
   background:
     linear-gradient(135deg, color-mix(in oklch, oklch(57% 0.12 185) 14%, transparent), transparent 46%),
     color-mix(in oklch, var(--vp-c-bg) 94%, oklch(97% 0.014 215));
-  box-shadow: 0 18px 44px color-mix(in oklch, var(--vp-c-text-1) 7%, transparent);
 }
 
 .learn-index__hero-copy {
@@ -320,7 +319,6 @@ const checkpoints = [
 
 .learn-article:hover {
   border-color: color-mix(in oklch, var(--accent) 58%, var(--vp-c-divider));
-  box-shadow: 0 12px 28px color-mix(in oklch, var(--accent) 12%, transparent);
   transform: translateY(-1px);
 }
 

@@ -13,6 +13,10 @@ import ToolCompareMatrix from './theme/components/ToolCompareMatrix.vue'
 import DiagramFigure from './theme/components/DiagramFigure.vue'
 import LearnPathIndex from './theme/components/LearnPathIndex.vue'
 import AiCodingIntroPanel from './theme/components/AiCodingIntroPanel.vue'
+import ModelDecisionBoard from './theme/components/ModelDecisionBoard.vue'
+import ToolEntryBoard from './theme/components/ToolEntryBoard.vue'
+import BenchmarkSnapshot from './theme/components/BenchmarkSnapshot.vue'
+import RecommendedCombos from './theme/components/RecommendedCombos.vue'
 import '@vue-flow/core/dist/style.css'
 import '@vue-flow/core/dist/theme-default.css'
 // import CustomComponent from './theme/components/Custom.vue'
@@ -37,6 +41,10 @@ export default defineClientConfig({
     app.component('DiagramFigure', DiagramFigure)
     app.component('LearnPathIndex', LearnPathIndex)
     app.component('AiCodingIntroPanel', AiCodingIntroPanel)
+    app.component('ModelDecisionBoard', ModelDecisionBoard)
+    app.component('ToolEntryBoard', ToolEntryBoard)
+    app.component('BenchmarkSnapshot', BenchmarkSnapshot)
+    app.component('RecommendedCombos', RecommendedCombos)
     // app.component('CustomComponent', CustomComponent)
   },
 })

@@ -3,14 +3,16 @@ withDefaults(defineProps<{
   src: string
   title?: string
   caption?: string
+  mode?: 'fit' | 'wide' | 'compact'
 }>(), {
   title: '',
   caption: '',
+  mode: 'fit',
 })
 </script>
 
 <template>
-  <figure class="diagram-figure">
+  <figure class="diagram-figure" :class="`diagram-figure--${mode}`">
     <figcaption v-if="title || caption" class="diagram-figure__caption">
       <strong v-if="title">{{ title }}</strong>
       <span v-if="caption">{{ caption }}</span>
@@ -24,6 +26,7 @@ withDefaults(defineProps<{
 <style scoped>
 .diagram-figure {
   margin: 30px 0;
+  max-width: 100%;
   overflow: hidden;
   border: 1px solid color-mix(in oklch, var(--vp-c-divider) 82%, transparent);
   border-radius: 8px;
@@ -65,6 +68,26 @@ withDefaults(defineProps<{
   background: #fff;
 }
 
+.diagram-figure--compact {
+  max-width: 720px;
+}
+
+.diagram-figure--compact .diagram-figure__media {
+  display: grid;
+  place-items: center;
+}
+
+@media (min-width: 761px) {
+  .diagram-figure--wide .diagram-figure__media {
+    overflow-x: auto;
+  }
+
+  .diagram-figure--wide img {
+    width: max(100%, 960px);
+    max-width: none;
+  }
+}
+
 [data-theme="dark"] .diagram-figure {
   background: color-mix(in oklch, var(--vp-c-bg) 86%, oklch(25% 0.018 240));
 }
@@ -88,7 +111,7 @@ withDefaults(defineProps<{
   }
 
   .diagram-figure img {
-    min-width: 720px;
+    width: max(100%, 720px);
   }
 }
 </style>

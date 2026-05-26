@@ -1,0 +1,4 @@
+interface:
+  display_name: "Aisee Doc Diagram"
+  short_description: "Create source-first diagrams for the Aisee VuePress docs."
+  default_prompt: "Use this skill when creating or fixing Excalidraw, SVG, Vue Flow, or diagram figures for the Aisee documentation site."

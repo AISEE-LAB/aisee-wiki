@@ -18,6 +18,9 @@
 - Excalidraw 基础素材库放在 `docs/assets/excalidraw-libraries/`；画图时先查各库的 `reference.md`，只读取或引用需要的单个 `icons/*.json` 素材。
 - 当前已准备的基础库包括：`flow-chart-symbols`、`software-architecture`、`system-design-components`、`software-logos`、`technology-logos`、`cloud-symbols`。
 - `.excalidraw` 源文件应作为可维护资产保留；导出的 `.svg` 只是文档展示产物。发现图的逻辑、连接或顺序不对时，应回到源文件修正。
+- Excalidraw 图默认使用 `fontFamily: 2`，优先保证中文技术文档的中英文一致性。切换字体后必须回到 `.excalidraw` 源文件重新检查和修正独立 text 元素的居中，不要只改导出的 SVG。
+- `DiagramFigure` 根据内容选择展示模式：默认 `fit`，超宽架构图或泳道图才使用 `wide`，小型概念图使用 `compact`。不要为了视觉冲击让图卡撑出正文区域或压到右侧目录。
+- 画图时不要默认横向。先根据读者阅读顺序判断横向、纵向、分区、矩阵或多图拆分，版式服务内容理解。
 - 即使追求视觉冲击，也要保证交互服务内容理解；避免无意义动画堆叠或为了简单图示引入过重依赖。
 - 视觉组件必须兼顾移动端可读性，避免表格、卡片、logo 网格、代码块或 flow 在移动端横向溢出或遮挡正文。
 

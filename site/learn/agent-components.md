@@ -9,7 +9,11 @@ createTime: 2026/05/25 00:00:00
 Memory、Skill、MCP、Tool、Hook 不是同一层能力。Memory 负责上下文，Skill 负责复用流程，MCP 负责连接外部能力，Tool 负责执行动作，Hook 负责生命周期检查和约束。
 
 <ClientOnly>
-  <LearningFlow variant="components" />
+  <DiagramFigure
+    src="/diagrams/learn/agent-components.svg"
+    title="Codex Agent 的核心协作图"
+    caption="主线是任务流转：目标进入上下文，模型计划下一步；需要动作时调用 Tool，观察结果再回到下一轮。Memory、Skill、MCP 和 Hook 分别从上下文、流程、连接和检查层面支撑这条主线。"
+  />
 </ClientOnly>
 
 ## 五个概念的职责边界

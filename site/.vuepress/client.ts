@@ -22,6 +22,7 @@ import ProjectModuleBoard from './theme/components/ProjectModuleBoard.vue'
 import ProjectLoopBoard from './theme/components/ProjectLoopBoard.vue'
 import AgentBasicsBoard from './theme/components/AgentBasicsBoard.vue'
 import MemoryLayerBoard from './theme/components/MemoryLayerBoard.vue'
+import SkillBoard from './theme/components/SkillBoard.vue'
 import '@vue-flow/core/dist/style.css'
 import '@vue-flow/core/dist/theme-default.css'
 // import CustomComponent from './theme/components/Custom.vue'
@@ -55,6 +56,7 @@ export default defineClientConfig({
     app.component('ProjectLoopBoard', ProjectLoopBoard)
     app.component('AgentBasicsBoard', AgentBasicsBoard)
     app.component('MemoryLayerBoard', MemoryLayerBoard)
+    app.component('SkillBoard', SkillBoard)
     // app.component('CustomComponent', CustomComponent)
   },
 })

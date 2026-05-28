@@ -5,7 +5,15 @@ export const openspecCollection = defineCollection({
   dir: 'openspec',
   linkPrefix: '/openspec',
   title: 'OpenSpec',
-  sidebar: ['README.md'],
+  sidebar: [
+    'README.md',
+    {
+      text: '作用',
+      items: [
+        { text: 'OpenSpec 是什么', link: '/openspec/what-is-openspec/' },
+      ],
+    },
+  ],
 })
 
 export const openspecEnCollection = defineCollection({

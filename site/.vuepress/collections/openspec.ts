@@ -13,6 +13,12 @@ export const openspecCollection = defineCollection({
         { text: 'OpenSpec 是什么', link: '/openspec/what-is-openspec/' },
       ],
     },
+    {
+      text: '模型',
+      items: [
+        { text: '心智模型', link: '/openspec/mental-model/' },
+      ],
+    },
   ],
 })
 

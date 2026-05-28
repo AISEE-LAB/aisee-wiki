@@ -2,7 +2,6 @@
 import { computed } from 'vue'
 import {
   Boxes,
-  Braces,
   CircuitBoard,
   CircleDot,
   Cpu,
@@ -21,9 +20,7 @@ import {
   Workflow,
 } from 'lucide-vue-next'
 
-import UiBadge from './ui/UiBadge.vue'
 import UiButton from './ui/UiButton.vue'
-import UiCard from './ui/UiCard.vue'
 
 const props = defineProps<{
   locale?: 'zh' | 'en'
@@ -168,7 +165,7 @@ const content = computed(() => {
           <span>methodology</span>
           <span>for the AI era</span>
         </h1>
-        <h1 v-else>
+        <h1 v-else class="hero-title-zh">
           <span><em>AI</em> 时代的</span>
           <span>软件工程方法论</span>
         </h1>
@@ -189,88 +186,53 @@ const content = computed(() => {
         </div>
       </div>
       <div class="hero-visual" aria-hidden="true">
-        <div class="method-dashboard">
-          <div class="dashboard-glow dashboard-glow--cyan"></div>
-          <div class="dashboard-glow dashboard-glow--blue"></div>
+        <div class="method-map">
+          <div class="method-map__core">
+            <span><Boxes :size="22" /></span>
+            <div>
+              <strong>{{ isEn ? 'Method layer' : '方法论层' }}</strong>
+              <p>{{ isEn ? 'Keep AI work inside a verifiable engineering loop.' : '把 AI 协作放进可验证的工程闭环。' }}</p>
+            </div>
+          </div>
 
-          <UiCard class="dashboard-card dashboard-card--input" tone="cyan">
-            <div class="dashboard-card__head">
-              <span class="dashboard-icon"><Radar :size="20" /></span>
+          <div class="method-flow">
+            <article class="method-node method-node--one">
+              <span class="method-node__icon"><Radar :size="20" /></span>
               <div>
                 <strong>{{ content.visual.insightTitle }}</strong>
-                <p>{{ isEn ? 'Define the work before generation starts.' : '先定义问题，再进入生成与实现。' }}</p>
+                <p>{{ isEn ? 'Clarify needs, goals, and constraints.' : '先说清需求、目标和约束。' }}</p>
               </div>
-            </div>
-            <div class="dashboard-badges">
-              <UiBadge v-for="item in content.visual.insightItems" :key="item" tone="cyan">{{ item }}</UiBadge>
-            </div>
-          </UiCard>
+            </article>
 
-          <UiCard class="dashboard-card dashboard-card--spec">
-            <div class="dashboard-card__head">
-              <span class="dashboard-icon"><FileCheck2 :size="20" /></span>
+            <article class="method-node method-node--two">
+              <span class="method-node__icon"><FileCheck2 :size="20" /></span>
               <div>
                 <strong>{{ content.visual.specTitle }}</strong>
-                <p>{{ isEn ? 'Turn intent into explicit contracts.' : '把意图变成可协商、可追溯的契约。' }}</p>
+                <p>{{ isEn ? 'Turn intent into an explicit contract.' : '把意图写成可协商的契约。' }}</p>
               </div>
-            </div>
-            <div class="dashboard-steps dashboard-steps--four">
-              <UiBadge v-for="item in content.visual.specNodes" :key="item">{{ item }}</UiBadge>
-            </div>
-          </UiCard>
+            </article>
 
-          <UiCard class="dashboard-card dashboard-card--execution">
-            <div class="dashboard-card__head">
-              <span class="dashboard-icon"><Braces :size="20" /></span>
+            <article class="method-node method-node--three">
+              <span class="method-node__icon method-node__icon--amber"><CircleDot :size="20" /></span>
               <div>
-                <strong>{{ content.visual.executionTitle }}</strong>
-                <p>{{ isEn ? 'AI participates in each engineering step under constraints.' : 'AI 参与每个工程步骤，但始终受约束与验证驱动。' }}</p>
+                <strong>{{ isEn ? 'Verification gate' : '验证 gate' }}</strong>
+                <p>{{ isEn ? 'Use checks and review before moving on.' : '用检查与评审决定是否继续。' }}</p>
               </div>
-            </div>
-            <div class="dashboard-steps dashboard-steps--five">
-              <UiBadge v-for="item in content.visual.executionNodes" :key="item" tone="cyan">{{ item }}</UiBadge>
-            </div>
-          </UiCard>
+            </article>
 
-          <UiCard class="dashboard-card dashboard-card--review">
-            <div class="dashboard-card__head">
-              <span class="dashboard-icon"><CircleDot :size="20" /></span>
-              <div>
-                <strong>{{ content.visual.reviewTitle }}</strong>
-                <p>{{ isEn ? 'Review turns delivery into the next reusable asset.' : '评审与复盘把一次交付沉淀成下一次的资产。' }}</p>
-              </div>
-            </div>
-            <div class="dashboard-steps dashboard-steps--four">
-              <UiBadge v-for="item in content.visual.reviewNodes" :key="item">{{ item }}</UiBadge>
-            </div>
-          </UiCard>
-
-          <UiCard class="dashboard-card dashboard-card--knowledge" tone="cyan">
-            <div class="dashboard-card__head">
-              <span class="dashboard-icon dashboard-icon--deep"><LibraryBig :size="20" /></span>
+            <article class="method-node method-node--four method-node--deep">
+              <span class="method-node__icon method-node__icon--deep"><LibraryBig :size="20" /></span>
               <div>
                 <strong>{{ content.visual.knowledgeTitle }}</strong>
-                <p>{{ isEn ? 'Every cycle compounds the next workflow.' : '每轮实践都反哺下一次工作流。' }}</p>
+                <p>{{ isEn ? 'Feed proven practice into the next cycle.' : '把有效经验反哺下一轮工程。' }}</p>
               </div>
-            </div>
-            <div class="knowledge-stack">
-              <div class="knowledge-stack__core">
-                <LibraryBig :size="24" />
-                <strong>{{ isEn ? 'Reusable asset hub' : '可复用资产库' }}</strong>
-                <span>{{ isEn ? 'Feed the next cycle' : '反哺下一轮工程' }}</span>
-              </div>
-              <div class="knowledge-stack__items">
-                <span v-for="(item, index) in content.visual.knowledgeNodes" :key="item">
-                  <i>{{ String(index + 1).padStart(2, '0') }}</i>
-                  {{ item }}
-                </span>
-              </div>
-            </div>
-          </UiCard>
+            </article>
+          </div>
 
-          <div class="dashboard-spine">
-            <Boxes :size="22" />
-            <span>{{ isEn ? 'Method layer' : '方法论层' }}</span>
+          <div class="method-map__ticks">
+            <span v-for="item in content.visual.executionNodes.slice(0, 4)" :key="item">
+              {{ item }}
+            </span>
           </div>
         </div>
       </div>
@@ -401,7 +363,7 @@ const content = computed(() => {
 }
 
 .hero-copy {
-  max-width: 680px;
+  max-width: 740px;
   padding-bottom: 8px;
 }
 
@@ -415,9 +377,9 @@ const content = computed(() => {
 
 .hero-copy h1 {
   color: #061326;
-  font-size: clamp(3.55rem, 5vw, 6.25rem);
+  font-size: clamp(3.5rem, 4.65vw, 5.65rem);
   font-weight: 900;
-  line-height: 1.04;
+  line-height: 1.08;
   letter-spacing: 0;
   margin: 0;
 }
@@ -431,6 +393,10 @@ const content = computed(() => {
   background-clip: text;
   color: transparent;
   font-style: normal;
+}
+
+.hero-title-zh span:last-child {
+  white-space: nowrap;
 }
 
 .hero-subtitle {
@@ -458,286 +424,191 @@ const content = computed(() => {
 }
 
 .hero-visual {
-  min-height: 540px;
+  align-items: center;
+  display: flex;
+  min-height: 440px;
   position: relative;
 }
 
-.method-dashboard {
-  align-items: start;
-  display: grid;
-  gap: 12px;
-  grid-template-columns: minmax(0, 1.08fr) minmax(260px, 0.82fr);
-  grid-template-rows: auto auto auto auto;
+.method-map {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(243, 251, 255, 0.82)),
+    radial-gradient(circle at 92% 0%, rgba(34, 211, 238, 0.14), transparent 36%);
+  border: 1px solid rgba(8, 155, 176, 0.18);
+  border-radius: 8px;
+  box-shadow: 0 18px 46px rgba(39, 62, 83, 0.06);
   isolation: isolate;
-  max-width: 780px;
+  max-width: 600px;
+  overflow: hidden;
+  padding: 24px;
   position: relative;
+  width: 100%;
 }
 
-.method-dashboard::before {
+.method-map::before {
   background-image:
-    linear-gradient(rgba(24, 84, 130, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(24, 84, 130, 0.08) 1px, transparent 1px);
-  background-size: 42px 42px;
+    linear-gradient(rgba(24, 84, 130, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(24, 84, 130, 0.055) 1px, transparent 1px);
+  background-size: 36px 36px;
   content: "";
-  inset: -46px -42px -36px -36px;
-  mask-image: linear-gradient(90deg, transparent 0, #000 14%, #000 88%, transparent 100%);
+  inset: 0;
+  mask-image: linear-gradient(90deg, transparent 0, #000 13%, #000 88%, transparent 100%);
   pointer-events: none;
   position: absolute;
   z-index: -2;
 }
 
-.method-dashboard::after {
-  background:
-    radial-gradient(circle at 24% 56%, rgba(34, 211, 238, 0.22), transparent 32%),
-    radial-gradient(circle at 88% 42%, rgba(59, 130, 246, 0.2), transparent 30%);
+.method-map::after {
+  background: linear-gradient(90deg, rgba(8, 155, 176, 0.24), rgba(23, 85, 184, 0.12), rgba(217, 119, 6, 0.18));
   content: "";
-  inset: -58px -72px -52px -52px;
-  pointer-events: none;
+  height: 3px;
+  left: 0;
   position: absolute;
-  z-index: -3;
+  right: 0;
+  top: 0;
 }
 
-.dashboard-glow {
-  border-radius: 999px;
-  filter: blur(20px);
-  pointer-events: none;
-  position: absolute;
-  z-index: -1;
-}
-
-.dashboard-glow--cyan {
-  background: rgba(34, 211, 238, 0.22);
-  height: 92px;
-  left: 30px;
-  top: 250px;
-  width: 430px;
-}
-
-.dashboard-glow--blue {
-  background: rgba(37, 99, 235, 0.16);
-  height: 220px;
-  right: -28px;
-  top: 92px;
-  width: 220px;
-}
-
-.dashboard-card {
-  min-width: 0;
-  padding: 16px;
-}
-
-.dashboard-card--input {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.dashboard-card--spec {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-.dashboard-card--execution {
-  grid-column: 1 / span 2;
-  grid-row: 3;
-}
-
-.dashboard-card--review {
-  grid-column: 1 / span 2;
-  grid-row: 4;
-}
-
-.dashboard-card--knowledge {
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(244, 252, 255, 0.9)),
-    var(--home-card);
-  border-color: rgba(8, 155, 176, 0.22);
-  color: var(--home-text);
-  grid-column: 2;
-  grid-row: 1 / span 2;
-  overflow: hidden;
-  position: relative;
-}
-
-.dashboard-card--knowledge::before {
-  background:
-    linear-gradient(180deg, rgba(8, 155, 176, 0.18), rgba(8, 155, 176, 0)),
-    repeating-linear-gradient(180deg, rgba(23, 85, 184, 0.08) 0 1px, transparent 1px 18px);
-  bottom: 16px;
-  content: "";
-  height: 136px;
-  position: absolute;
-  right: 22px;
-  width: 2px;
-}
-
-.dashboard-card__head {
-  align-items: flex-start;
-  display: flex;
-  gap: 10px;
-  min-width: 0;
-}
-
-.dashboard-card__head strong {
-  color: #0a2a54;
-  display: block;
-  font-size: 0.96rem;
-  font-weight: 850;
-  line-height: 1.35;
-}
-
-.dashboard-card__head p {
-  color: #5b6f83;
-  font-size: 0.8rem;
-  line-height: 1.45;
-  margin: 4px 0 0;
-}
-
-.dashboard-card--knowledge .dashboard-card__head {
-  background:
-    radial-gradient(circle at 90% 0%, rgba(34, 211, 238, 0.2), transparent 46%),
-    linear-gradient(135deg, rgba(8, 82, 124, 0.96), rgba(7, 54, 92, 0.98));
-  border: 1px solid rgba(88, 215, 255, 0.22);
-  border-radius: 8px;
-  margin: -4px -4px 0;
-  padding: 12px;
-}
-
-.dashboard-card--knowledge .dashboard-card__head strong,
-.dashboard-card--knowledge .dashboard-card__head p {
-  color: #e8f8ff;
-}
-
-.dashboard-icon {
+.method-map__core {
   align-items: center;
-  background: rgba(236, 254, 255, 0.92);
-  border: 1px solid rgba(8, 155, 176, 0.2);
+  background:
+    radial-gradient(circle at 92% 0%, rgba(34, 211, 238, 0.2), transparent 42%),
+    linear-gradient(135deg, rgba(8, 82, 124, 0.96), rgba(7, 54, 92, 0.98));
+  border: 1px solid rgba(88, 215, 255, 0.24);
   border-radius: 8px;
-  color: #087e82;
-  display: inline-flex;
-  flex: 0 0 auto;
-  height: 34px;
-  justify-content: center;
-  width: 34px;
-}
-
-.dashboard-icon--deep {
-  background: rgba(255, 255, 255, 0.14);
-  border-color: rgba(191, 236, 255, 0.26);
   color: #e8f8ff;
-}
-
-.dashboard-badges,
-.dashboard-steps {
-  display: grid;
-  gap: 7px;
-  margin-top: 12px;
-}
-
-.dashboard-card :deep(.ui-badge) {
-  min-height: 26px;
-  padding: 5px 9px;
-}
-
-.dashboard-badges {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.dashboard-steps--four {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.dashboard-steps--five {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-}
-
-.knowledge-stack {
-  display: grid;
-  gap: 10px;
-  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr);
-  margin-top: 12px;
+  display: flex;
+  gap: 14px;
+  margin: 0 auto;
+  max-width: 390px;
+  padding: 16px;
   position: relative;
   z-index: 1;
 }
 
-.knowledge-stack__core {
-  align-content: center;
-  background:
-    radial-gradient(circle at 50% 28%, rgba(34, 211, 238, 0.2), transparent 54%),
-    linear-gradient(180deg, rgba(236, 254, 255, 0.92), rgba(255, 255, 255, 0.9));
-  border: 1px solid rgba(8, 155, 176, 0.18);
+.method-map__core > span {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(191, 236, 255, 0.24);
   border-radius: 8px;
-  color: #0a2a54;
-  display: grid;
-  justify-items: center;
-  min-height: 122px;
-  padding: 12px;
-  text-align: center;
+  display: flex;
+  flex: 0 0 auto;
+  height: 40px;
+  justify-content: center;
+  width: 40px;
 }
 
-.knowledge-stack__core svg {
-  color: var(--home-teal);
-  margin-bottom: 8px;
-}
-
-.knowledge-stack__core strong {
+.method-map__core strong {
   display: block;
-  font-size: 0.84rem;
+  font-size: 1.06rem;
+  font-weight: 850;
+}
+
+.method-map__core p {
+  color: rgba(232, 248, 255, 0.78);
+  font-size: 0.86rem;
+  line-height: 1.55;
+  margin: 5px 0 0;
+}
+
+.method-flow {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.method-flow::before {
+  border: 1px dashed rgba(8, 155, 176, 0.22);
+  border-radius: 999px;
+  content: "";
+  inset: 18px 42px;
+  position: absolute;
+  z-index: -1;
+}
+
+.method-node {
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(32, 86, 130, 0.14);
+  border-radius: 8px;
+  display: flex;
+  gap: 10px;
+  min-height: 106px;
+  padding: 13px;
+}
+
+.method-node--deep {
+  background:
+    linear-gradient(135deg, rgba(236, 254, 255, 0.72), rgba(255, 255, 255, 0.9)),
+    rgba(255, 255, 255, 0.86);
+  border-color: rgba(8, 155, 176, 0.22);
+}
+
+.method-node__icon {
+  align-items: center;
+  background: rgba(236, 254, 255, 0.92);
+  border: 1px solid rgba(8, 155, 176, 0.24);
+  border-radius: 8px;
+  color: var(--home-teal);
+  display: inline-flex;
+  flex: 0 0 auto;
+  height: 36px;
+  justify-content: center;
+  position: relative;
+  width: 36px;
+}
+
+.method-node__icon--amber {
+  background: rgba(255, 247, 237, 0.92);
+  border-color: rgba(217, 119, 6, 0.26);
+  color: var(--home-amber);
+}
+
+.method-node__icon--deep {
+  background: linear-gradient(135deg, rgba(8, 82, 124, 0.96), rgba(7, 54, 92, 0.98));
+  border-color: rgba(88, 215, 255, 0.24);
+  color: #e8f8ff;
+}
+
+.method-node strong {
+  color: #0a2a54;
+  display: block;
+  font-size: 0.94rem;
   font-weight: 850;
   line-height: 1.35;
 }
 
-.knowledge-stack__core span {
+.method-node p {
   color: #5b6f83;
-  display: block;
-  font-size: 0.72rem;
-  font-weight: 680;
-  line-height: 1.35;
-  margin-top: 5px;
+  font-size: 0.78rem;
+  line-height: 1.48;
+  margin: 4px 0 0;
 }
 
-.knowledge-stack__items {
-  display: grid;
-  gap: 6px;
-}
-
-.knowledge-stack__items span {
-  align-items: center;
-  background: rgba(248, 252, 255, 0.92);
-  border: 1px solid rgba(23, 85, 184, 0.12);
-  border-radius: 8px;
-  color: #19406f;
+.method-map__ticks {
+  border-top: 1px solid rgba(32, 86, 130, 0.11);
   display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+  padding-top: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.method-map__ticks span {
+  background: rgba(248, 252, 255, 0.86);
+  border: 1px solid rgba(23, 85, 184, 0.12);
+  border-radius: 999px;
+  color: #19406f;
   font-size: 0.76rem;
   font-weight: 760;
-  gap: 8px;
-  min-height: 25px;
-  padding: 5px 8px;
-}
-
-.knowledge-stack__items i {
-  color: var(--home-teal);
-  flex: 0 0 auto;
-  font-size: 0.68rem;
-  font-style: normal;
-  font-weight: 900;
-}
-
-.dashboard-spine {
-  align-items: center;
-  background: rgba(255, 255, 255, 0.78);
-  border: 1px solid rgba(8, 155, 176, 0.18);
-  border-radius: 999px;
-  bottom: 108px;
-  box-shadow: 0 14px 34px rgba(8, 155, 176, 0.12);
-  color: #087e82;
-  display: inline-flex;
-  font-size: 0.82rem;
-  font-weight: 760;
-  gap: 8px;
-  left: 42%;
-  padding: 8px 13px;
-  position: absolute;
-  z-index: 2;
+  flex: 1 1 92px;
+  min-height: 30px;
+  padding: 6px 10px;
+  text-align: center;
 }
 
 .home-section {
@@ -1118,12 +989,29 @@ const content = computed(() => {
   background: #0b1420;
 }
 
-[data-theme="dark"] .dashboard-card__head strong {
+[data-theme="dark"] .method-map {
+  background:
+    linear-gradient(135deg, rgba(12, 22, 34, 0.8), rgba(8, 17, 29, 0.72)),
+    radial-gradient(circle at 72% 36%, rgba(34, 211, 238, 0.12), transparent 34%),
+    radial-gradient(circle at 24% 68%, rgba(217, 119, 6, 0.08), transparent 28%);
+}
+
+[data-theme="dark"] .method-node,
+[data-theme="dark"] .method-map__ticks span {
+  background: rgba(11, 24, 38, 0.78);
+  border-color: rgba(148, 213, 255, 0.16);
+}
+
+[data-theme="dark"] .method-node strong {
   color: rgba(235, 248, 255, 0.92);
 }
 
-[data-theme="dark"] .dashboard-card__head p {
+[data-theme="dark"] .method-node p {
   color: rgba(220, 235, 245, 0.7);
+}
+
+[data-theme="dark"] .method-map__ticks span {
+  color: rgba(235, 248, 255, 0.82);
 }
 
 @media (max-width: 1180px) {
@@ -1134,12 +1022,12 @@ const content = computed(() => {
   }
 
   .hero-visual {
-    min-height: 440px;
+    min-height: 0;
     overflow: hidden;
   }
 
-  .method-dashboard {
-    max-width: 920px;
+  .method-map {
+    max-width: 680px;
   }
 
   .domain-grid {
@@ -1173,6 +1061,10 @@ const content = computed(() => {
     font-size: clamp(2.45rem, 11vw, 3.6rem);
   }
 
+  .hero-title-zh span:last-child {
+    white-space: normal;
+  }
+
   .domain-grid,
   .principle-flow,
   .pillar-grid,
@@ -1185,8 +1077,28 @@ const content = computed(() => {
     min-height: 0;
   }
 
-  .method-dashboard {
-    display: none;
+  .method-map {
+    margin-top: 8px;
+    padding: 18px;
+  }
+
+  .method-map__core {
+    max-width: none;
+  }
+
+  .method-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .method-flow::before {
+    border-radius: 0;
+    border-width: 0 0 0 1px;
+    inset: 18px auto 18px 17px;
+    width: 1px;
+  }
+
+  .method-node {
+    min-height: auto;
   }
 
   .section-heading-row {

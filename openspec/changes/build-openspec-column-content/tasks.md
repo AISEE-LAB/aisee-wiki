@@ -19,7 +19,7 @@
 - [x] 2.1 重写 `site/openspec/README.md`，提供 OpenSpec 定位、能力地图、五层阅读结构、推荐阅读顺序和跨栏目边界。
 - [x] 2.2 新增 `site/openspec/what-is-openspec.md`，说明 OpenSpec 的作用、规范层价值、AI 协作风险和适用动机。
 - [x] 2.3 新增 `site/openspec/mental-model.md`，说明 `openspec/specs/`、`openspec/changes/`、artifacts 与 archive 的心智模型，并使用 Mermaid、流程讲解组件或等价结构化表达。
-- [ ] 2.4 新增 `site/openspec/workflow.md`，说明从 propose 到 archive 的基础工作流、阶段输入输出、验证节点和归档含义。
+- [x] 2.4 新增 `site/openspec/workflow.md`，说明从 propose 到 archive 的基础工作流、阶段输入输出、验证节点和归档含义。
 - [ ] 2.5 新增 `site/openspec/artifact-guide.md`，说明 proposal、spec、design、tasks 的职责、写法、常见误区和审查清单。
 - [ ] 2.6 新增 `site/openspec/spec-granularity.md`，说明项目级、模块级、能力级 spec 的划分原则、过粗/过细风险和并行 change 影响。
 - [ ] 2.7 新增 `site/openspec/delta-spec.md`，说明 delta spec 的作用、变更语义、与当前 spec 的关系和 archive 后的事实源更新。

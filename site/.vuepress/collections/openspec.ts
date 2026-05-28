@@ -19,6 +19,12 @@ export const openspecCollection = defineCollection({
         { text: '心智模型', link: '/openspec/mental-model/' },
       ],
     },
+    {
+      text: '用法',
+      items: [
+        { text: '基础工作流', link: '/openspec/workflow/' },
+      ],
+    },
   ],
 })
 

@@ -388,8 +388,9 @@ function getMotionIndex(index: number, max = 8): number {
 .flow-item__link,
 .flow-item__body {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   min-height: 24px;
 }
@@ -440,6 +441,11 @@ function getMotionIndex(index: number, max = 8): number {
   font-size: 0.75rem;
   line-height: 1.5;
   white-space: normal;
+}
+
+.flow-item__status {
+  max-width: 100%;
+  white-space: nowrap;
 }
 
 .flow-item p {

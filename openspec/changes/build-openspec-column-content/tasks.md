@@ -9,14 +9,14 @@
 
 ## 1. 内容准备
 
-- [ ] 1.1 核对 OpenSpec 官方事实源，至少覆盖官网/README、getting started、concepts、conventions 或等价官方文档。
-- [ ] 1.2 核对项目内 OpenSpec 实践材料，至少读取 `openspec/project.md`、当前 change artifacts、已归档 change 示例和 `openspec/project-docs.md`。
-- [ ] 1.3 整理本 change 的公开术语口径，覆盖 OpenSpec、specs、changes、proposal、delta spec、design、tasks、archive、schema、artifact。
-- [ ] 1.4 确认“不把 SRS 到 OpenSpec Change 链路作为 OpenSpec 栏目主线”的边界，并在栏目首页或边界页中说明该主题后续归属 `/aisee/` 或 `/workflows/`。
+- [x] 1.1 核对 OpenSpec 官方事实源，至少覆盖官网/README、getting started、concepts、conventions 或等价官方文档。
+- [x] 1.2 核对项目内 OpenSpec 实践材料，至少读取 `openspec/project.md`、当前 change artifacts、已归档 change 示例和 `openspec/project-docs.md`。
+- [x] 1.3 整理本 change 的公开术语口径，覆盖 OpenSpec、specs、changes、proposal、delta spec、design、tasks、archive、schema、artifact。
+- [x] 1.4 确认“不把 SRS 到 OpenSpec Change 链路作为 OpenSpec 栏目主线”的边界，并在栏目首页或边界页中说明该主题后续归属 `/aisee/` 或 `/workflows/`。
 
 ## 2. 中文页面写作
 
-- [ ] 2.1 重写 `site/openspec/README.md`，提供 OpenSpec 定位、能力地图、五层阅读结构、推荐阅读顺序和跨栏目边界。
+- [x] 2.1 重写 `site/openspec/README.md`，提供 OpenSpec 定位、能力地图、五层阅读结构、推荐阅读顺序和跨栏目边界。
 - [ ] 2.2 新增 `site/openspec/what-is-openspec.md`，说明 OpenSpec 的作用、规范层价值、AI 协作风险和适用动机。
 - [ ] 2.3 新增 `site/openspec/mental-model.md`，说明 `openspec/specs/`、`openspec/changes/`、artifacts 与 archive 的心智模型，并使用 Mermaid、流程讲解组件或等价结构化表达。
 - [ ] 2.4 新增 `site/openspec/workflow.md`，说明从 propose 到 archive 的基础工作流、阶段输入输出、验证节点和归档含义。

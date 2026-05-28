@@ -23,6 +23,7 @@ export const openspecCollection = defineCollection({
       text: '用法',
       items: [
         { text: '基础工作流', link: '/openspec/workflow/' },
+        { text: 'Artifact 写法指南', link: '/openspec/artifact-guide/' },
       ],
     },
   ],

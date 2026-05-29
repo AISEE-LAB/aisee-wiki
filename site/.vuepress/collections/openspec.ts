@@ -25,6 +25,7 @@ export const openspecCollection = defineCollection({
         { text: '基础工作流', link: '/openspec/workflow/' },
         { text: 'Artifact 写法指南', link: '/openspec/artifact-guide/' },
         { text: 'Spec 粒度设计', link: '/openspec/spec-granularity/' },
+        { text: 'Delta Spec 深度解析', link: '/openspec/delta-spec/' },
       ],
     },
   ],

@@ -271,7 +271,7 @@ Spec 粒度没有一次到位的答案。好的粒度来自持续归档和复盘
 
 ## 下一步阅读
 
-理解 spec 粒度后，下一篇适合继续看 delta spec：为什么 change 里先描述行为变化，而不是直接修改主 specs；ADDED、MODIFIED、REMOVED 应该如何写；归档时这些变化如何进入事实源。
+理解 spec 粒度后，下一篇适合继续看 [Delta Spec 深度解析](/openspec/delta-spec/)：为什么 change 里先描述行为变化，而不是直接修改主 specs；ADDED、MODIFIED、REMOVED 应该如何写；归档时这些变化如何进入事实源。
 
 ## 参考资料
 

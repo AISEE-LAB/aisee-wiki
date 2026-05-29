@@ -6,7 +6,12 @@ export const openspecCollection = defineCollection({
   linkPrefix: '/openspec',
   title: 'OpenSpec',
   sidebar: [
-    'README.md',
+    {
+      text: '栏目首页',
+      items: [
+        { text: 'OpenSpec', link: '/openspec/' },
+      ],
+    },
     {
       text: '作用',
       items: [

@@ -25,35 +25,41 @@
 - [x] 2.7 新增 `site/openspec/delta-spec.md`，说明 delta spec 的作用、变更语义、与当前 spec 的关系和 archive 后的事实源更新。
 - [x] 2.8 新增 `site/openspec/schema.md`，说明 OpenSpec schema 的扩展作用、artifact DAG、模板、门禁，并引用 AI SEE Wiki 的 `aisee-docsite-driven` 示例。
 - [x] 2.9 新增 `site/openspec/boundaries.md`，说明 OpenSpec 适合和不适合的场景，以及与 Issue、普通文档、测试、代码注释等工程材料的边界。
-- [ ] 2.10 检查每篇中文页面至少包含明确问题、核心结论、工作机制、常见误区或适用边界、下一步阅读。
+- [x] 2.10 检查每篇中文页面至少包含明确问题、核心结论、工作机制、常见误区或适用边界、下一步阅读。
 
 ## 3. 站点结构与配置
 
-- [ ] 3.1 更新 `site/.vuepress/collections/openspec.ts`，将中文 sidebar 改为“栏目首页 / 作用 / 模型 / 用法 / 扩展 / 边界”分组。
-- [ ] 3.2 保持中文页面为平铺路由 `/openspec/<slug>/`，不创建多级目录。
-- [ ] 3.3 确认新增和修改页面 frontmatter 均包含 `title`、`permalink`、`createTime`，且 permalink 与侧边栏条目一致。
-- [ ] 3.4 更新 `site/en/openspec/README.md`，说明英文正文待后续完成，并链接中文 OpenSpec 栏目和英文稳定入口。
-- [ ] 3.5 更新 `site/resources/reading-path.md`，将 OpenSpec 入口指向栏目首页和关键首篇文章。
-- [ ] 3.6 如实现中新增图示、组件调用或图片资源，确认资源位于 `site/.vuepress/public/` 或当前站点可发布路径，不引用维护者本地绝对路径。
+- [x] 3.1 更新 `site/.vuepress/collections/openspec.ts`，将中文 sidebar 改为“栏目首页 / 作用 / 模型 / 用法 / 扩展 / 边界”分组。
+- [x] 3.2 保持中文页面为平铺路由 `/openspec/<slug>/`，不创建多级目录。
+- [x] 3.3 确认新增和修改页面 frontmatter 均包含 `title`、`permalink`、`createTime`，且 permalink 与侧边栏条目一致。
+- [x] 3.4 更新 `site/en/openspec/README.md`，说明英文正文待后续完成，并链接中文 OpenSpec 栏目和英文稳定入口。
+- [x] 3.5 更新 `site/resources/reading-path.md`，将 OpenSpec 入口指向栏目首页和关键首篇文章。
+- [x] 3.6 如实现中新增图示、组件调用或图片资源，确认资源位于 `site/.vuepress/public/` 或当前站点可发布路径，不引用维护者本地绝对路径。
 
 ## 4. 链接与内容质量检查
 
-- [ ] 4.1 检查 `/learn/`、`/resources/reading-path/`、`/workflows/` 中指向 OpenSpec 的链接仍有效，并按需升级为具体页面链接。
-- [ ] 4.2 检查 OpenSpec 页面之间的内链，确保不存在指向未创建页面的死链。
-- [ ] 4.3 检查正文中的命令、路径和代码块，确保与当前项目结构或官方文档一致。
-- [ ] 4.4 检查公开正文不暴露维护者本地绝对路径、未整理私有资料、密钥、token 或账号信息。
-- [ ] 4.5 检查术语一致性，避免混淆 OpenSpec 自身能力、aisee 上游链路、Compound/Agent 执行增强和 workflows 端到端流程。
+- [x] 4.1 检查 `/learn/`、`/resources/reading-path/`、`/workflows/` 中指向 OpenSpec 的链接仍有效，并按需升级为具体页面链接。
+- [x] 4.2 检查 OpenSpec 页面之间的内链，确保不存在指向未创建页面的死链。
+- [x] 4.3 检查正文中的命令、路径和代码块，确保与当前项目结构或官方文档一致。
+- [x] 4.4 检查公开正文不暴露维护者本地绝对路径、未整理私有资料、密钥、token 或账号信息。
+- [x] 4.5 检查术语一致性，避免混淆 OpenSpec 自身能力、aisee 上游链路、Compound/Agent 执行增强和 workflows 端到端流程。
 
 ## 5. 验证
 
-- [ ] 5.1 运行 `pnpm docs:build` 或项目确认的等效文档站构建检查。
-- [ ] 5.2 如构建失败，修复 Markdown、frontmatter、组件调用、内链或 collection 配置问题后重新验证。
-- [ ] 5.3 必要时运行本地预览，人工检查 OpenSpec 侧边栏分组、页面标题、目录和关键图示显示。
-- [ ] 5.4 在本文件或最终交付说明中记录实际执行的验证命令和结果。
+- [x] 5.1 运行 `pnpm docs:build` 或项目确认的等效文档站构建检查。
+- [x] 5.2 如构建失败，修复 Markdown、frontmatter、组件调用、内链或 collection 配置问题后重新验证。
+- [x] 5.3 必要时运行本地预览，人工检查 OpenSpec 侧边栏分组、页面标题、目录和关键图示显示。
+- [x] 5.4 在本文件或最终交付说明中记录实际执行的验证命令和结果。
 
 ## 6. Archive Gate
 
-- [ ] 6.1 完成 doc-change.md 中的 Archive Updates。
-- [ ] 6.2 更新 `openspec/project-docs.md`，记录 OpenSpec 栏目结构、页面清单、阅读路径、内容状态、后续缺口和术语/写作约定。
-- [ ] 6.3 确认验证结果已记录。
-- [ ] 6.4 确认本 change 可归档。
+- [x] 6.1 完成 doc-change.md 中的 Archive Updates。
+- [x] 6.2 更新 `openspec/project-docs.md`，记录 OpenSpec 栏目结构、页面清单、阅读路径、内容状态、后续缺口和术语/写作约定。
+- [x] 6.3 确认验证结果已记录。
+- [x] 6.4 确认本 change 可归档。
+
+## 验证记录
+
+- `git diff --check`：通过。
+- `pnpm docs:build`：通过；仍有既有 `@vueuse/core` pure annotation 警告，不影响构建。
+- 本地预览：打开 `/openspec/` 检查侧边栏分组、页面标题和目录；打开 `/openspec/boundaries/` 检查关键流程图渲染。

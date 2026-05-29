@@ -263,7 +263,8 @@ createTime: 2026/05/23 18:20:00
 
 ## 下一步
 
-- [OpenSpec](/openspec/)
+- [OpenSpec 基础工作流](/openspec/workflow/)
+- [OpenSpec 的适用边界](/openspec/boundaries/)
 - [Compound](/compound/)
 - [aisee](/aisee/)
 - [资源中心](/resources/)

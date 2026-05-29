@@ -28,6 +28,12 @@ export const openspecCollection = defineCollection({
         { text: 'Delta Spec 深度解析', link: '/openspec/delta-spec/' },
       ],
     },
+    {
+      text: '扩展',
+      items: [
+        { text: 'OpenSpec Schema 是什么', link: '/openspec/schema/' },
+      ],
+    },
   ],
 })
 

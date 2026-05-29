@@ -253,7 +253,7 @@
   2. Hook 常见位置：任务开始前、工具调用前后、文件修改后、提交前、归档前。
   3. Hook 能做什么：注入规则、检查 secrets、阻止危险命令、运行测试、记录上下文。
   4. Hook 的边界：不能替代人类判断，也不应把所有流程做成硬阻断。
-  5. 与项目规则关系：AGENTS.md、CLAUDE.md、OpenSpec 状态机和 hooks 共同形成约束层。
+  5. 与项目规则关系：AGENTS.md、OpenSpec 状态机和 hooks 共同形成约束层。
 - 视觉要求：用生命周期时间线或 Vue Flow 展示 Hook 插入 Agent 执行链路的位置。
 
 ### `/learn/agent-orchestration/` Agent 的核心组成：Memory、Skill、MCP、Tool、Hook 如何配合

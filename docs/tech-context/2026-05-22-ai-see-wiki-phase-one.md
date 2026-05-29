@@ -83,7 +83,7 @@
 | 资源中心边界 | 资源中心承载模板、Schema Pack、命令速查、检查清单、示例仓库、术语表、参考资料。 | SRS FR-009 | 资源页和核心文章存在交叉引用，需要避免空链接。 |
 | skills 集成边界 | skills 源码不进文档站仓库，文档站只提供介绍、链接、安装命令和版本说明。 | SRS FR-015/FR-016、用户确认 | 独立仓库由维护者手动创建；本项目不承担仓库创建和版本规则设计。 |
 | 开源部署边界 | 目标包含 README/贡献指南/许可证/Cloudflare Pages/GitHub Actions/SEO/LLMs.txt。 | SRS FR-017/FR-018、用户确认 | 生产域名和许可证方案已确认；预览分支、CI 检查矩阵、GitHub 仓库 URL 仍需配置。 |
-| OpenSpec 工作流边界 | `openspec/` 为规范事实源，`docs/requirements/` 等为规划输入。 | `CLAUDE.md`、`AGENTS.md`、`openspec/project.md` | 后续实现前应从 SRS 进入 OpenSpec artifacts，不应直接跳到实现。 |
+| OpenSpec 工作流边界 | `openspec/` 为规范事实源，`docs/requirements/` 等为规划输入。 | `AGENTS.md`、`openspec/project.md` | 后续实现前应从 SRS 进入 OpenSpec artifacts，不应直接跳到实现。 |
 
 ---
 
@@ -97,10 +97,10 @@
 | 队列 / 异步 | 未发现可信来源。 | `openspec/project.md` | 无复用能力。 | 不涉及异步任务拆分。 |
 | 文件存储 | Git 仓库承载 Markdown 与静态资源。 | `openspec/project.md`、项目文件 | 可复用现有 Markdown 文件组织和 VuePress 静态资源机制。 | 公开资源与本地 Obsidian 来源需要人工改写和脱敏。 |
 | 通知 | 未发现可信来源。 | `openspec/project.md` | 无复用能力。 | 不涉及消息通知。 |
-| 审计 / 日志 | Git 历史、PR、OpenSpec artifacts 可承担变更记录；未发现运行时审计。 | `CLAUDE.md`、`AGENTS.md`、仓库状态 | 可通过 OpenSpec change、Git commit、PR checklist 追踪内容变更。 | 不应将运行时审计能力写入需求。 |
+| 审计 / 日志 | Git 历史、PR、OpenSpec artifacts 可承担变更记录；未发现运行时审计。 | `AGENTS.md`、仓库状态 | 可通过 OpenSpec change、Git commit、PR checklist 追踪内容变更。 | 不应将运行时审计能力写入需求。 |
 | 搜索 | Plume 本地搜索已配置。 | `docs/.vuepress/config.ts` | 可用于站内文章和资源发现。 | 迁移到 `site/` 后配置路径需同步。 |
 | 双语 locale | VuePress 已配置 `/` 与 `/en/` locale。 | `docs/.vuepress/config.ts` | 可复用为英文站基础。 | 当前导航和集合仍是示例结构，需要替换。 |
-| OpenSpec / aisee 配置 | 已有 `openspec/`、`CLAUDE.md`、`AGENTS.md`、`.memory/`、hooks。 | 项目文件 | 可复用为后续 change 规划、上下文注入和密钥扫描。 | hooks 首次在 Codex 运行前可能需要信任。 |
+| OpenSpec / aisee 配置 | 已有 `openspec/`、`AGENTS.md`、`.memory/`、hooks。 | 项目文件 | 可复用为后续 change 规划、上下文注入和密钥扫描。 | hooks 首次在 Codex 运行前可能需要信任。 |
 
 ---
 

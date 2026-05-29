@@ -242,7 +242,7 @@ openspec schema which my-workflow
 
 ## 下一步阅读
 
-理解 schema 后，下一篇适合看 OpenSpec 的适用边界：哪些工作值得进入 OpenSpec，哪些只需要轻量记录；OpenSpec、aisee、Compound 和端到端 workflows 应该如何分工。
+理解 schema 后，下一篇适合看 [OpenSpec 的适用边界](/openspec/boundaries/)：哪些工作值得进入 OpenSpec，哪些只需要轻量记录，以及 OpenSpec 与 Issue、普通文档、测试、代码注释之间如何分工。
 
 ## 参考资料
 

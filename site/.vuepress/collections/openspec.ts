@@ -34,6 +34,12 @@ export const openspecCollection = defineCollection({
         { text: 'OpenSpec Schema 是什么', link: '/openspec/schema/' },
       ],
     },
+    {
+      text: '边界',
+      items: [
+        { text: 'OpenSpec 的适用边界', link: '/openspec/boundaries/' },
+      ],
+    },
   ],
 })
 

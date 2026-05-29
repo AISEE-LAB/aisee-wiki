@@ -24,7 +24,7 @@
 - [x] 2.6 新增 `site/openspec/spec-granularity.md`，说明项目级、模块级、能力级 spec 的划分原则、过粗/过细风险和并行 change 影响。
 - [x] 2.7 新增 `site/openspec/delta-spec.md`，说明 delta spec 的作用、变更语义、与当前 spec 的关系和 archive 后的事实源更新。
 - [x] 2.8 新增 `site/openspec/schema.md`，说明 OpenSpec schema 的扩展作用、artifact DAG、模板、门禁，并引用 AI SEE Wiki 的 `aisee-docsite-driven` 示例。
-- [ ] 2.9 新增 `site/openspec/boundaries.md`，说明 OpenSpec 适合和不适合的场景，以及与 aisee、Compound、workflows 的边界。
+- [x] 2.9 新增 `site/openspec/boundaries.md`，说明 OpenSpec 适合和不适合的场景，以及与 Issue、普通文档、测试、代码注释等工程材料的边界。
 - [ ] 2.10 检查每篇中文页面至少包含明确问题、核心结论、工作机制、常见误区或适用边界、下一步阅读。
 
 ## 3. 站点结构与配置

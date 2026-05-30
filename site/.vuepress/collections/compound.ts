@@ -35,6 +35,7 @@ export const compoundCollection = defineCollection({
         { text: '设计与 UI 评审智能体', link: '/compound/design-review-agents/' },
         { text: '研究型智能体', link: '/compound/research-agents/' },
         { text: '多智能体如何协作', link: '/compound/agent-orchestration/' },
+        { text: '多智能体评审边界', link: '/compound/review-boundaries/' },
       ],
     },
   ],

@@ -38,6 +38,12 @@ export const compoundCollection = defineCollection({
         { text: '多智能体评审边界', link: '/compound/review-boundaries/' },
       ],
     },
+    {
+      text: '知识',
+      items: [
+        { text: '知识如何复利', link: '/compound/knowledge-compounding/' },
+      ],
+    },
   ],
 })
 

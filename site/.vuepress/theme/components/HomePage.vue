@@ -37,22 +37,26 @@ const content = computed(() => {
     return {
       eyebrow: 'AI-enhanced software engineering',
       title: 'Software engineering methodology for the AI era',
-      subtitle: 'Using OpenSpec and Compound Engineering as core references, AI SEE Wiki explores methods for AI-enhanced software engineering and uses the aisee working mechanism to turn requirements, design, verification, and reflection into reusable practice.',
+      subtitle: 'Using OpenSpec and Compound Engineering as core references, AI SEE Wiki explores methods for AI-enhanced software engineering and uses the AISEE working mechanism to turn requirements, design, verification, and reflection into reusable practice.',
       note: 'English content is being prepared. This page keeps the same structure as the Chinese homepage while the Chinese methodology articles are completed first.',
       primary: 'Start reading',
       secondary: 'View methodology map',
       domainCta: 'View all domains',
       visual: {
-        insightTitle: 'Requirement Insight',
-        insightItems: ['User needs', 'Business goals', 'Constraints'],
-        specTitle: 'OpenSpec',
-        specNodes: ['Need', 'Design', 'API', 'Test'],
-        executionTitle: 'Engineering Execution',
-        executionNodes: ['Plan', 'Code', 'Build', 'Verify', 'Ship'],
-        reviewTitle: 'Review and Reflection',
-        reviewNodes: ['Code review', 'Design review', 'Retrospective', 'Root cause'],
-        knowledgeTitle: 'Knowledge Compounding',
-        knowledgeNodes: ['Spec library', 'Component library', 'Cases', 'Templates', 'Assets'],
+        coreTitle: 'AI Engineering Method',
+        coreText: 'A repeatable loop for specification, harness, verification, and knowledge reuse.',
+        specTitle: 'Spec First',
+        specText: 'Intent, constraints, design decisions, and acceptance criteria become a reviewable source of truth.',
+        specItems: ['Intent', 'Constraints', 'Acceptance'],
+        harnessTitle: 'Harness Better',
+        harnessText: 'AI works inside an explicit execution environment instead of an unbounded prompt.',
+        harnessItems: ['Agent', 'Skill', 'MCP', 'Hook', 'Workflow', 'Schema'],
+        gateTitle: 'Verification Gate',
+        gateText: 'Tests, review, checks, and apply guards decide whether the work can move forward.',
+        gateItems: ['Test', 'Review', 'Guard'],
+        knowledgeTitle: 'Compound Knowledge',
+        knowledgeText: 'Proven patterns, templates, schemas, and cases feed the next engineering cycle.',
+        knowledgeItems: ['Review', 'Template', 'Case', 'Memory'],
       },
       domainsTitle: 'AI is enhancing every kind of engineering',
       domainsText: 'The domains differ, but the engineering base is shared: clear inputs, explicit constraints, verifiable outputs, and reusable knowledge.',
@@ -76,7 +80,7 @@ const content = computed(() => {
       pillars: [
         ['OpenSpec', 'Specification layer and source of truth', '/en/openspec/'],
         ['Compound Engineering', 'Harness and knowledge compounding', '/en/compound/'],
-        ['aisee mechanism', 'An evolving working mechanism integrated with OpenSpec', '/en/aisee/'],
+        ['AISEE mechanism', 'An evolving working mechanism integrated with OpenSpec', '/en/aisee/'],
       ],
       pathTitle: 'Recommended learning path',
       path: ['Foundations', 'Spec-first', 'OpenSpec', 'Harness', 'Verification', 'Knowledge', 'Practice'],
@@ -90,29 +94,33 @@ const content = computed(() => {
       ],
       guideLink: '/en/learn/',
       resourcesLink: '/en/resources/',
-      workflowLink: '/en/workflows/',
+      workflowLink: '/en/aisee/',
     }
   }
 
   return {
     eyebrow: 'AI 增强软件工程',
     title: 'AI 时代的软件工程方法论',
-    subtitle: '以 OpenSpec 和 Compound Engineering 为核心参照，探索 AI 增强软件工程的方法论，并通过 aisee 工作机制把需求、设计、验证和复盘沉淀为可复用实践。',
+    subtitle: '以 OpenSpec 和 Compound Engineering 为核心参照，探索 AI 增强软件工程的方法论，并通过 AISEE 工作机制把需求、设计、验证和复盘沉淀为可复用实践。',
     note: '工具和技能固然强大，但真正决定上限的是方法论。没有需求契约，AI 会放大模糊；没有验证 gate，AI 会制造不确定性；没有知识沉淀，AI 协作就只是一次性消耗。',
     primary: '开始阅读',
     secondary: '查看方法论地图',
     domainCta: '查看全部领域',
     visual: {
-      insightTitle: '需求洞察',
-      insightItems: ['用户需求', '业务目标', '约束与假设'],
-      specTitle: 'OpenSpec（规范先行）',
-      specNodes: ['需求 Spec', '设计 Spec', '接口 Spec', '测试 Spec'],
-      executionTitle: '工程执行（AI 增强）',
-      executionNodes: ['设计与规划', '编码实现', '集成构建', '测试验证', '发布部署'],
-      reviewTitle: '评审与复盘（持续改进）',
-      reviewNodes: ['代码评审', '设计评审', '回顾复盘', '问题归因'],
-      knowledgeTitle: '知识复利（持续沉淀）',
-      knowledgeNodes: ['规范库', '组件库', '最佳实践', '模式与模板', '经验资产'],
+      coreTitle: 'AI Engineering Method',
+      coreText: '把规范、执行环境、验证和知识复用组织成可反复运行的工程闭环。',
+      specTitle: 'Spec First',
+      specText: '意图、约束、设计判断和验收标准先进入可审查的事实源。',
+      specItems: ['意图', '约束', '验收'],
+      harnessTitle: 'Harness Better',
+      harnessText: 'AI 在明确的执行环境里工作，而不是裸跑在一次性 prompt 中。',
+      harnessItems: ['Agent', 'Skill', 'MCP', 'Hook', 'Workflow', 'Schema'],
+      gateTitle: 'Verification Gate',
+      gateText: '测试、评审、检查和 apply guard 决定工程结果是否继续流转。',
+      gateItems: ['测试', '评审', 'Guard'],
+      knowledgeTitle: 'Compound Knowledge',
+      knowledgeText: '把有效模式、模板、schema 和真实案例反哺下一轮工程。',
+      knowledgeItems: ['Review', 'Template', 'Case', 'Memory'],
     },
     domainsTitle: 'AI 正在增强每一种工程开发',
     domainsText: 'Web、App、Desktop、嵌入式、硬件编程和复杂业务系统的对象不同，但共同底座都是清晰输入、明确约束、可验证输出和可复用知识。',
@@ -136,7 +144,7 @@ const content = computed(() => {
     pillars: [
       ['OpenSpec', '规范层与事实源', '/openspec/'],
       ['Compound Engineering', 'Harness 与知识复利', '/compound/'],
-      ['aisee 工作机制', '与 OpenSpec 融合的探索性实践', '/aisee/'],
+      ['AISEE 工作机制', '与 OpenSpec 融合的探索性实践', '/aisee/'],
     ],
     pathTitle: '推荐学习路径',
     path: ['基础能力', 'Spec-first', 'OpenSpec', 'Harness', '验证闭环', '知识复利', '综合实践'],
@@ -150,7 +158,7 @@ const content = computed(() => {
     ],
     guideLink: '/learn/',
     resourcesLink: '/resources/',
-    workflowLink: '/workflows/',
+    workflowLink: '/aisee/',
   }
 })
 </script>
@@ -186,53 +194,67 @@ const content = computed(() => {
         </div>
       </div>
       <div class="hero-visual" aria-hidden="true">
-        <div class="method-map">
-          <div class="method-map__core">
-            <span><Boxes :size="22" /></span>
+        <div class="method-system">
+          <svg class="method-system__links" viewBox="0 0 720 500" fill="none" aria-hidden="true">
+            <path class="method-system__loop method-system__loop--primary" d="M216 126 C318 42 504 64 570 168" />
+            <path class="method-system__loop method-system__loop--secondary" d="M594 290 C530 426 292 456 150 340" />
+            <path class="method-system__link" d="M168 174 C200 226 246 250 310 252" />
+            <path class="method-system__link method-system__link--amber" d="M424 252 C488 252 532 278 560 326" />
+            <path class="method-system__link" d="M392 326 C334 386 236 382 174 326" />
+          </svg>
+
+          <div class="method-system__core">
+            <span><Boxes :size="24" /></span>
             <div>
-              <strong>{{ isEn ? 'Method layer' : '方法论层' }}</strong>
-              <p>{{ isEn ? 'Keep AI work inside a verifiable engineering loop.' : '把 AI 协作放进可验证的工程闭环。' }}</p>
+              <strong>{{ content.visual.coreTitle }}</strong>
+              <p>{{ content.visual.coreText }}</p>
             </div>
           </div>
 
-          <div class="method-flow">
-            <article class="method-node method-node--one">
-              <span class="method-node__icon"><Radar :size="20" /></span>
-              <div>
-                <strong>{{ content.visual.insightTitle }}</strong>
-                <p>{{ isEn ? 'Clarify needs, goals, and constraints.' : '先说清需求、目标和约束。' }}</p>
-              </div>
-            </article>
-
-            <article class="method-node method-node--two">
+          <div class="method-system__nodes">
+            <article class="method-node method-node--spec">
               <span class="method-node__icon"><FileCheck2 :size="20" /></span>
               <div>
                 <strong>{{ content.visual.specTitle }}</strong>
-                <p>{{ isEn ? 'Turn intent into an explicit contract.' : '把意图写成可协商的契约。' }}</p>
+                <p>{{ content.visual.specText }}</p>
+                <span class="method-node__chips">
+                  <b v-for="item in content.visual.specItems" :key="item">{{ item }}</b>
+                </span>
               </div>
             </article>
 
-            <article class="method-node method-node--three">
+            <article class="method-node method-node--harness">
+              <span class="method-node__icon"><Workflow :size="20" /></span>
+              <div>
+                <strong>{{ content.visual.harnessTitle }}</strong>
+                <p>{{ content.visual.harnessText }}</p>
+                <span class="method-node__chips method-node__chips--grid">
+                  <b v-for="item in content.visual.harnessItems" :key="item">{{ item }}</b>
+                </span>
+              </div>
+            </article>
+
+            <article class="method-node method-node--gate">
               <span class="method-node__icon method-node__icon--amber"><CircleDot :size="20" /></span>
               <div>
-                <strong>{{ isEn ? 'Verification gate' : '验证 gate' }}</strong>
-                <p>{{ isEn ? 'Use checks and review before moving on.' : '用检查与评审决定是否继续。' }}</p>
+                <strong>{{ content.visual.gateTitle }}</strong>
+                <p>{{ content.visual.gateText }}</p>
+                <span class="method-node__chips">
+                  <b v-for="item in content.visual.gateItems" :key="item">{{ item }}</b>
+                </span>
               </div>
             </article>
 
-            <article class="method-node method-node--four method-node--deep">
+            <article class="method-node method-node--knowledge method-node--deep">
               <span class="method-node__icon method-node__icon--deep"><LibraryBig :size="20" /></span>
               <div>
                 <strong>{{ content.visual.knowledgeTitle }}</strong>
-                <p>{{ isEn ? 'Feed proven practice into the next cycle.' : '把有效经验反哺下一轮工程。' }}</p>
+                <p>{{ content.visual.knowledgeText }}</p>
+                <span class="method-node__chips">
+                  <b v-for="item in content.visual.knowledgeItems" :key="item">{{ item }}</b>
+                </span>
               </div>
             </article>
-          </div>
-
-          <div class="method-map__ticks">
-            <span v-for="item in content.visual.executionNodes.slice(0, 4)" :key="item">
-              {{ item }}
-            </span>
           </div>
         </div>
       </div>
@@ -327,7 +349,7 @@ const content = computed(() => {
       </div>
       <div class="open-actions">
         <a class="open-action open-action--primary" :href="content.resourcesLink">{{ isEn ? 'Resources' : '资源中心' }}</a>
-        <a class="open-action" :href="content.workflowLink">{{ isEn ? 'Workflows' : '工程流程' }}</a>
+        <a class="open-action" :href="content.workflowLink">AISEE</a>
       </div>
     </section>
   </main>
@@ -608,6 +630,143 @@ const content = computed(() => {
   flex: 1 1 92px;
   min-height: 30px;
   padding: 6px 10px;
+  text-align: center;
+}
+
+.method-system {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(243, 251, 255, 0.82)),
+    radial-gradient(circle at 88% 10%, rgba(34, 211, 238, 0.14), transparent 34%),
+    radial-gradient(circle at 18% 78%, rgba(217, 119, 6, 0.12), transparent 30%);
+  border: 1px solid rgba(8, 155, 176, 0.18);
+  border-radius: 8px;
+  box-shadow: 0 18px 46px rgba(39, 62, 83, 0.06);
+  isolation: isolate;
+  max-width: 660px;
+  min-height: 500px;
+  overflow: hidden;
+  padding: 24px;
+  position: relative;
+  width: 100%;
+}
+
+.method-system::before {
+  background-image:
+    linear-gradient(rgba(24, 84, 130, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(24, 84, 130, 0.055) 1px, transparent 1px);
+  background-size: 36px 36px;
+  content: "";
+  inset: 0;
+  mask-image: linear-gradient(90deg, transparent 0, #000 13%, #000 88%, transparent 100%);
+  pointer-events: none;
+  position: absolute;
+  z-index: -2;
+}
+
+.method-system::after {
+  background: linear-gradient(90deg, rgba(8, 155, 176, 0.24), rgba(23, 85, 184, 0.12), rgba(217, 119, 6, 0.18));
+  content: "";
+  height: 3px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.method-system__links {
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.method-system__link,
+.method-system__loop {
+  stroke: rgba(8, 155, 176, 0.36);
+  stroke-width: 2.4;
+  stroke-dasharray: 8 8;
+}
+
+.method-system__loop--secondary,
+.method-system__link--amber {
+  stroke: rgba(217, 119, 6, 0.32);
+}
+
+.method-system__core {
+  align-items: center;
+  background:
+    radial-gradient(circle at 92% 0%, rgba(34, 211, 238, 0.2), transparent 42%),
+    linear-gradient(135deg, rgba(8, 82, 124, 0.96), rgba(7, 54, 92, 0.98));
+  border: 1px solid rgba(88, 215, 255, 0.24);
+  border-radius: 8px;
+  color: #e8f8ff;
+  display: flex;
+  gap: 14px;
+  margin: 0 auto;
+  max-width: 420px;
+  padding: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.method-system__core > span {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(191, 236, 255, 0.24);
+  border-radius: 8px;
+  display: flex;
+  flex: 0 0 auto;
+  height: 42px;
+  justify-content: center;
+  width: 42px;
+}
+
+.method-system__core strong {
+  display: block;
+  font-size: 1.08rem;
+  font-weight: 850;
+}
+
+.method-system__core p {
+  color: rgba(232, 248, 255, 0.78);
+  font-size: 0.86rem;
+  line-height: 1.55;
+  margin: 5px 0 0;
+}
+
+.method-system__nodes {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.method-node__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.method-node__chips--grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.method-node__chips b {
+  background: rgba(248, 252, 255, 0.86);
+  border: 1px solid rgba(23, 85, 184, 0.12);
+  border-radius: 999px;
+  color: #19406f;
+  font-size: 0.72rem;
+  font-weight: 760;
+  line-height: 1.2;
+  min-height: 26px;
+  padding: 5px 8px;
   text-align: center;
 }
 
@@ -996,8 +1155,16 @@ const content = computed(() => {
     radial-gradient(circle at 24% 68%, rgba(217, 119, 6, 0.08), transparent 28%);
 }
 
+[data-theme="dark"] .method-system {
+  background:
+    linear-gradient(135deg, rgba(12, 22, 34, 0.8), rgba(8, 17, 29, 0.72)),
+    radial-gradient(circle at 72% 36%, rgba(34, 211, 238, 0.12), transparent 34%),
+    radial-gradient(circle at 24% 68%, rgba(217, 119, 6, 0.08), transparent 28%);
+}
+
 [data-theme="dark"] .method-node,
-[data-theme="dark"] .method-map__ticks span {
+[data-theme="dark"] .method-map__ticks span,
+[data-theme="dark"] .method-node__chips b {
   background: rgba(11, 24, 38, 0.78);
   border-color: rgba(148, 213, 255, 0.16);
 }
@@ -1010,7 +1177,8 @@ const content = computed(() => {
   color: rgba(220, 235, 245, 0.7);
 }
 
-[data-theme="dark"] .method-map__ticks span {
+[data-theme="dark"] .method-map__ticks span,
+[data-theme="dark"] .method-node__chips b {
   color: rgba(235, 248, 255, 0.82);
 }
 
@@ -1026,7 +1194,8 @@ const content = computed(() => {
     overflow: hidden;
   }
 
-  .method-map {
+  .method-map,
+  .method-system {
     max-width: 680px;
   }
 
@@ -1077,16 +1246,19 @@ const content = computed(() => {
     min-height: 0;
   }
 
-  .method-map {
+  .method-map,
+  .method-system {
     margin-top: 8px;
     padding: 18px;
   }
 
-  .method-map__core {
+  .method-map__core,
+  .method-system__core {
     max-width: none;
   }
 
-  .method-flow {
+  .method-flow,
+  .method-system__nodes {
     grid-template-columns: 1fr;
   }
 
@@ -1099,6 +1271,18 @@ const content = computed(() => {
 
   .method-node {
     min-height: auto;
+  }
+
+  .method-system {
+    min-height: 0;
+  }
+
+  .method-system__links {
+    display: none;
+  }
+
+  .method-node__chips--grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .section-heading-row {

@@ -6,7 +6,7 @@
 ## 1. 文档站定位
 
 - 文档站名称：AI SEE Wiki
-- 目标读者：正在学习 AI Coding、Agent 工程化协作、OpenSpec / Compound / aisee 工作流的开发者和团队维护者。
+- 目标读者：正在学习 AI Coding、Agent 工程化协作、OpenSpec / Compound / AISEE 工作流的开发者和团队维护者。
 - 核心用途：沉淀 AI Engineering 学习路径、工程方法论、工作流说明和可复用实践。
 - 内容边界：优先提供可执行、可验证、可复用的工程文档；不做实时模型排行榜、价格表或未经核对的第三方安装方案。
 
@@ -17,6 +17,7 @@
 | 学习路径 | `/learn/` | AI Coding 入门到 Agent 进阶的主路径 | active | 按“认知入门 / 工具上手 / Agent 进阶”组织 12 篇正文，作为 Codex 和 Agent 基础主入口。 |
 | OpenSpec | `/openspec/` | AI Engineering 的规范层与事实源方法论栏目 | active | 按“栏目首页 / 作用 / 模型 / 用法 / 扩展 / 边界”组织中文正文，说明 OpenSpec 的作用、对象模型、artifact 写法、schema 扩展和适用边界。 |
 | Compound Engineering | `/compound/` | AI Engineering 的工程复利方法论栏目 | active | 按“总览 / 定义与计划 / 执行与质量 / 多智能体 / 知识 / 关系”组织中文正文，说明策略、计划、执行、评审、调试、知识沉淀和 OpenSpec 配合关系。 |
+| AISEE | `/aisee/` | AI-Enhanced Software Engineering 方法、插件与工作流入口 | active | 承载 skill 生态、需求链路、技术上下文、change 拆分、OpenSpec 协作方式，以及原工程流程子入口 `/aisee/workflows/`。 |
 
 ## 3. 页面清单
 
@@ -58,16 +59,19 @@
 | 多智能体评审边界 | `/compound/review-boundaries/` | Compound Engineering | 说明 no review、lightweight review、document review、full multi-agent review 和 specialized review 的选择边界。 | active | 后续可补更多高/低风险任务示例。 |
 | 知识如何复利 | `/compound/knowledge-compounding/` | Compound Engineering | 说明 `/ce-compound`、`/ce-compound-refresh`、`docs/solutions/`、frontmatter、problem_type、bug/knowledge track 和 refresh 机制。 | active | 后续可补更多 `docs/solutions/` 示例。 |
 | 与 OpenSpec 如何配合 | `/compound/with-openspec/` | Compound Engineering | 说明 OpenSpec 作为规范事实源，Compound Engineering 作为工程执行、评审、沉淀和反馈层，两者如何组合使用。 | active | 后续可补完整 OpenSpec + Compound 工程案例。 |
+| AISEE | `/aisee/` | AISEE | AI-Enhanced Software Engineering 栏目首页，说明 skill 生态、需求链路、技术上下文、change 拆分、OpenSpec 协作方式和工程流程入口。 | active | 后续补齐 skills、schema pack、context pack 和 Compound handoff 正文。 |
+| 工程流程 | `/aisee/workflows/` | AISEE | AISEE 栏目下的工程流程子入口，承载 OpenSpec、Compound、Harness 和 AISEE 链路中的可执行工作流说明。 | active | 后续补端到端流程正文。 |
+| 可复用流程讲解组件示例 | `/aisee/workflows/flow-explainer/` | AISEE | 展示 FlowExplainer 组件的阶段、节点、连接和状态写法，作为后续流程文章复用示例。 | active | 后续可替换为真实流程案例或保留为组件文档。 |
 
 ## 4. 内容缺口
 
 | 缺口 | 关联栏目 | 优先级 | 原因 | 建议动作 |
 |---|---|---|---|---|
-| OpenSpec、Compound、aisee 深度学习路径尚未串成完整后续课程 | 学习路径 | P1 | `/learn/` 已建立入门路径，但后续方法论正文仍分散。 | 新建独立 change 规划方法论学习路径和跨栏目导读。 |
+| OpenSpec、Compound、AISEE 深度学习路径尚未串成完整后续课程 | 学习路径 | P1 | `/learn/` 已建立入门路径，但后续方法论正文仍分散。 | 新建独立 change 规划方法论学习路径和跨栏目导读。 |
 | OpenSpec 英文完整正文尚未建设 | OpenSpec | P1 | 本轮只更新英文入口，未重写英文专题正文。 | 后续独立 change 按英文读者语境重写 OpenSpec 栏目。 |
 | Compound 英文完整正文尚未建设 | Compound Engineering | P1 | 本轮只建设中文正文，英文入口保持稳定占位。 | 后续独立 change 按英文读者语境重写 Compound 栏目。 |
-| OpenSpec 缺少完整真实项目演练 | OpenSpec / 工程流程 | P1 | 栏目已解释概念、写法和边界，但尚未把一次真实 change 从 propose 跑到 archive。 | 后续放入 `/workflows/` 或 OpenSpec 实战页，避免替代 aisee SRS 链路。 |
-| Compound 缺少端到端工程复利演练 | Compound Engineering / 工程流程 | P1 | 栏目已解释方法论、角色、边界和知识沉淀，但尚未把一次真实任务从 brainstorm / plan 跑到 work / review / compound。 | 后续放入 `/workflows/` 或 Compound 实战页，避免把栏目正文写成操作日志。 |
+| OpenSpec 缺少完整真实项目演练 | OpenSpec / AISEE 工程流程 | P1 | 栏目已解释概念、写法和边界，但尚未把一次真实 change 从 propose 跑到 archive。 | 后续放入 `/aisee/workflows/` 或 OpenSpec 实战页，避免替代 AISEE SRS 链路。 |
+| Compound 缺少端到端工程复利演练 | Compound Engineering / AISEE 工程流程 | P1 | 栏目已解释方法论、角色、边界和知识沉淀，但尚未把一次真实任务从 brainstorm / plan 跑到 work / review / compound。 | 后续放入 `/aisee/workflows/` 或 Compound 实战页，避免把栏目正文写成操作日志。 |
 | OpenSpec artifact 模板和命令速查尚未独立整理 | OpenSpec / 资源中心 | P2 | 当前正文已有写法原则，但缺少可复制模板和短命令清单。 | 后续在资源中心或 OpenSpec 子页补模板、检查清单和命令速查。 |
 | Compound skill / agent 命令速查尚未独立整理 | Compound Engineering / 资源中心 | P2 | 当前栏目按方法论转译插件能力，未复制完整命令清单和版本行为。 | 后续在资源中心或专题页整理稳定速查，并明确以官方 README 和插件源码为准。 |
 | Codex 产品入口和安装方式可能快速变化 | 学习路径 | P1 | Codex App、CLI、IDE 和账号/额度属于高频变化信息。 | 定期核对 OpenAI 官方文档，必要时更新 `/learn/codex-setup/`。 |
@@ -115,6 +119,7 @@
 - 侧边栏：学习路径中文栏目按“认知入门 / 工具上手 / Agent 进阶”分组，`README.md` 保持栏目首页。
 - 侧边栏：OpenSpec 中文栏目按“栏目首页 / 作用 / 模型 / 用法 / 扩展 / 边界”分组，页面保持平铺路由 `/openspec/<slug>/`。
 - 侧边栏：Compound 中文栏目按“栏目首页 / 总览 / 定义与计划 / 执行与质量 / 多智能体 / 知识 / 关系”分组，页面保持平铺路由 `/compound/<slug>/`。
+- 侧边栏：AISEE 中文栏目包含栏目首页和“工程流程”分组，工程流程页面使用 `/aisee/workflows/` 路由前缀。
 - frontmatter：学习路径正文包含 `title`、`permalink`、`createTime`。
 - frontmatter：OpenSpec 中文正文包含 `title`、`permalink`、`createTime`，permalink 与侧边栏链接保持一致。
 - frontmatter：Compound 中文正文包含 `title`、`permalink`、`createTime`，permalink 与侧边栏链接保持一致。

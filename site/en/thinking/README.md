@@ -15,5 +15,5 @@ English articles are being prepared. This page keeps the section available.
 ## Next
 
 - [Learn](/en/learn/)
-- [Workflows](/en/workflows/)
+- [AISEE Workflows](/en/aisee/workflows/)
 - [Resources](/en/resources/)

@@ -11,14 +11,12 @@ import { learnCollection, learnEnCollection } from './collections/learn'
 import { openspecCollection, openspecEnCollection } from './collections/openspec'
 import { resourcesCollection, resourcesEnCollection } from './collections/resources'
 import { thinkingCollection, thinkingEnCollection } from './collections/thinking'
-import { workflowsCollection, workflowsEnCollection } from './collections/workflows'
 
 export const zhCollections = defineCollections([
   learnCollection,
   openspecCollection,
   compoundCollection,
   aiseeCollection,
-  workflowsCollection,
   resourcesCollection,
   thinkingCollection,
 ])
@@ -28,7 +26,6 @@ export const enCollections = defineCollections([
   openspecEnCollection,
   compoundEnCollection,
   aiseeEnCollection,
-  workflowsEnCollection,
   resourcesEnCollection,
   thinkingEnCollection,
 ])

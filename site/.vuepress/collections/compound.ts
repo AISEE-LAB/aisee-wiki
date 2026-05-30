@@ -34,6 +34,7 @@ export const compoundCollection = defineCollection({
         { text: '文档评审智能体', link: '/compound/document-review-agents/' },
         { text: '设计与 UI 评审智能体', link: '/compound/design-review-agents/' },
         { text: '研究型智能体', link: '/compound/research-agents/' },
+        { text: '多智能体如何协作', link: '/compound/agent-orchestration/' },
       ],
     },
   ],

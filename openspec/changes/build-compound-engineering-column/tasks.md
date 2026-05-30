@@ -23,7 +23,7 @@
 - [x] 1.12 新增 `site/compound/agent-orchestration.md`，作为多智能体关系总览，说明 orchestrator/dispatcher、parallel agents、dedup、confidence gate、final synthesis 和 human decision gate 如何协作。
 - [x] 1.13 新增 `site/compound/review-boundaries.md`，说明多智能体评审的适用边界、轻量/完整/文档 review 选择矩阵，以及哪些判断必须人工负责。
 - [x] 1.14 新增 `site/compound/knowledge-compounding.md`，说明 `/ce-compound`、`/ce-compound-refresh`、`docs/solutions/`、YAML frontmatter、problem_type、discoverability check 和 refresh 机制。
-- [ ] 1.15 新增 `site/compound/with-openspec-and-aisee.md`，说明 Compound Engineering、OpenSpec、aisee 的职责边界、组合路径和典型使用顺序。
+- [x] 1.15 新增 `site/compound/with-openspec.md`，说明 Compound Engineering、OpenSpec 和工程流程的职责边界、组合路径和典型使用顺序。
 - [x] 1.16 正文不手写“下一步阅读”；上一篇/下一篇导航交给主题默认能力，必要的关系说明放在正文或侧边栏分组中。
 - [ ] 1.17 每篇正文至少加入一种结构化视觉表达：循环图、层级图、对比矩阵、persona 矩阵、证据拓扑、关系图、边界决策树、检查清单或卡片组。
 - [ ] 1.18 检查所有正文不暴露本地绝对路径、不复制插件内部长 prompt、不泄露私密会话或组织上下文。
@@ -51,7 +51,7 @@
 
 - [ ] 4.1 检查 `/compound/` 和 13 个新增中文页面路径可访问。
 - [ ] 4.2 检查 Compound 中文侧边栏分组、栏目首页入口和页面顺序正确。
-- [ ] 4.3 检查文章间内链，以及指向 `/openspec/`、`/aisee/`、`/workflows/`、`/resources/glossary/` 的跨栏目链接。
+- [ ] 4.3 检查文章间内链，以及指向 `/openspec/`、`/workflows/`、`/resources/glossary/` 的跨栏目链接。
 - [ ] 4.4 检查代码块、命令、示例和事实源说明，避免危险命令或未解释的高风险操作。
 - [ ] 4.5 检查每篇正文都有结构化视觉表达，不是纯文字长文；多智能体关系页必须包含关系图；设计/UI 评审页必须说明 design lens 与 design implementation review 的边界。
 - [ ] 4.6 如新增组件或图示资产，进行本地预览或截图检查，确认桌面和移动端不溢出、不遮挡，亮暗主题可读。

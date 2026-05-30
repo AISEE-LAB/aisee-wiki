@@ -44,6 +44,12 @@ export const compoundCollection = defineCollection({
         { text: '知识如何复利', link: '/compound/knowledge-compounding/' },
       ],
     },
+    {
+      text: '关系',
+      items: [
+        { text: '与 OpenSpec 如何配合', link: '/compound/with-openspec/' },
+      ],
+    },
   ],
 })
 

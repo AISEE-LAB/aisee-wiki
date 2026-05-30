@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 
 type Resource = {
   name: string
@@ -14,7 +14,6 @@ type Resource = {
 type Category = {
   key: string
   title: string
-  summary: string
   resources: Resource[]
 }
 
@@ -22,7 +21,6 @@ const categories: Category[] = [
   {
     key: 'methodology',
     title: '方法论与工作流',
-    summary: '先看这些资源，理解如何把一次 AI Coding 从聊天、提示词和零散工具，推进到可审查、可复用的工程流程。',
     resources: [
       {
         name: 'OpenSpec',
@@ -89,7 +87,6 @@ const categories: Category[] = [
   {
     key: 'agents',
     title: 'Coding Agent 与 Harness',
-    summary: '这些项目更接近“让 Agent 接手真实任务”的运行层，适合比较 CLI、WebUI、任务分派、长任务和多 Agent 协作方式。',
     resources: [
       {
         name: 'OpenHands',
@@ -193,7 +190,6 @@ const categories: Category[] = [
   {
     key: 'skills',
     title: 'Skill、Prompt 与上下文工程',
-    summary: '这组资源关注“把经验封装成可复用能力”，适合读完本站 Skill、Memory 和 Hook 文章后继续研究。',
     resources: [
       {
         name: 'SkillOpt',
@@ -292,7 +288,6 @@ const categories: Category[] = [
   {
     key: 'tools',
     title: 'MCP、Tool Use 与浏览器自动化',
-    summary: '这组资源用于理解 Agent 如何连接外部能力、控制浏览器、操作网页或把现有工具包装成可调用接口。',
     resources: [
       {
         name: 'agent-browser',
@@ -376,7 +371,6 @@ const categories: Category[] = [
   {
     key: 'context',
     title: '代码上下文、记忆与观测',
-    summary: '这组资源解决“Agent 如何知道当前仓库、历史会话和执行状态”的问题，适合和本站 Memory、Tool、Review 内容一起看。',
     resources: [
       {
         name: 'code-review-graph',
@@ -469,7 +463,6 @@ const categories: Category[] = [
   {
     key: 'design',
     title: 'UI/UX、设计与可视化',
-    summary: '这组是本轮复核中最容易漏掉的一类。它们不是普通设计素材，而是让 coding agent 更好地产出 UI、图示和可读文档的能力。',
     resources: [
       {
         name: 'ui-ux-pro-max-skill',
@@ -598,7 +591,6 @@ const categories: Category[] = [
   {
     key: 'learning',
     title: '学习资料与训练场',
-    summary: '这组资源适合新手或团队培训使用，重点不是工具清单，而是把 Agent、Claude Code、Harness 和 AI-native 能力讲成可练习路径。',
     resources: [
       {
         name: 'learn-claude-code',
@@ -666,96 +658,121 @@ const categories: Category[] = [
   },
 ]
 
-const activeKey = ref(categories[0].key)
-const activeCategory = computed(() => categories.find(category => category.key === activeKey.value) ?? categories[0])
 const totalResources = computed(() => categories.reduce((total, category) => total + category.resources.length, 0))
+const updatedDate = '2026-05-30'
 </script>
 
 <template>
   <section class="ai-resource-board" aria-label="AI Coding 资源目录">
     <header class="ai-resource-board__header">
       <div>
-        <p>Curated from GitHub stars</p>
-        <h2>按工程用途阅读，而不是按 star 数排序</h2>
+        <p>更新日期：{{ updatedDate }}</p>
       </div>
       <strong>{{ totalResources }} 个精选资源</strong>
     </header>
 
-    <div class="ai-resource-board__tabs" role="tablist" aria-label="资源分类">
-      <button
+    <div class="ai-resource-board__index" aria-label="资源分类">
+      <a
         v-for="category in categories"
         :key="category.key"
-        type="button"
-        :class="['ai-resource-board__tab', { 'ai-resource-board__tab--active': category.key === activeKey }]"
-        role="tab"
-        :aria-selected="category.key === activeKey"
-        @click="activeKey = category.key"
+        class="ai-resource-board__index-item"
+        :href="`#resource-${category.key}`"
       >
         <span>{{ category.title }}</span>
         <small>{{ category.resources.length }}</small>
-      </button>
+      </a>
     </div>
 
-    <section class="ai-resource-board__category">
-      <div class="ai-resource-board__category-heading">
-        <h3>{{ activeCategory.title }}</h3>
-        <p>{{ activeCategory.summary }}</p>
-      </div>
+    <div class="ai-resource-board__sections">
+      <section
+        v-for="category in categories"
+        :id="`resource-${category.key}`"
+        :key="category.key"
+        class="ai-resource-board__category"
+      >
+        <div class="ai-resource-board__category-heading">
+          <h3>{{ category.title }}</h3>
+          <span>{{ category.resources.length }} 个资源</span>
+        </div>
 
-      <div class="ai-resource-board__grid">
-        <article v-for="resource in activeCategory.resources" :key="resource.repo" class="ai-resource-card">
-          <div class="ai-resource-card__top">
-            <span class="ai-resource-card__icon">
-              <span>{{ resource.name.slice(0, 1).toUpperCase() }}</span>
-              <img :src="resource.icon" :alt="`${resource.name} icon`" loading="lazy">
-            </span>
-            <div>
-              <strong>{{ resource.name }}</strong>
-              <small>{{ resource.repo }}</small>
+        <div class="ai-resource-board__grid">
+          <article v-for="resource in category.resources" :key="resource.repo" class="ai-resource-card">
+            <div class="ai-resource-card__top">
+              <span class="ai-resource-card__icon">
+                <span>{{ resource.name.slice(0, 1).toUpperCase() }}</span>
+                <img :src="resource.icon" :alt="`${resource.name} icon`" loading="lazy">
+              </span>
+              <div>
+                <strong>{{ resource.name }}</strong>
+                <small>{{ resource.repo }}</small>
+              </div>
             </div>
-          </div>
-          <p>{{ resource.description }}</p>
-          <div class="ai-resource-card__tags" aria-label="标签">
-            <span v-for="tag in resource.tags" :key="tag">{{ tag }}</span>
-          </div>
-          <div class="ai-resource-card__links">
-            <a :href="resource.github" target="_blank" rel="noreferrer">GitHub</a>
-            <a v-if="resource.site" :href="resource.site" target="_blank" rel="noreferrer">官网/文档</a>
-          </div>
-        </article>
-      </div>
-    </section>
+            <p>{{ resource.description }}</p>
+            <div class="ai-resource-card__tags" aria-label="标签">
+              <span v-for="tag in resource.tags" :key="tag">{{ tag }}</span>
+            </div>
+            <div class="ai-resource-card__links">
+              <a :href="resource.github" target="_blank" rel="noreferrer">GitHub</a>
+              <a v-if="resource.site" :href="resource.site" target="_blank" rel="noreferrer">官网/文档</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
   </section>
 </template>
 
 <style scoped>
+:global(.ai-resources-wide .vp-doc-container) {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+:global(.ai-resources-wide .vp-doc-container .container),
+:global(.ai-resources-wide .vp-doc-container.has-sidebar .container) {
+  max-width: 1360px !important;
+}
+
+:global(.ai-resources-wide .vp-doc-container .content),
+:global(.ai-resources-wide .vp-doc-container:not(.has-sidebar) .content) {
+  width: min(100%, 1320px) !important;
+  max-width: 1320px !important;
+}
+
+:global(.ai-resources-wide .vp-doc-container .content-container),
+:global(.ai-resources-wide .vp-doc-container.has-aside .content-container) {
+  width: 100%;
+  max-width: none;
+}
+
+:global(.ai-resources-wide .vp-doc.plume-content) {
+  max-width: none;
+}
+
 .ai-resource-board {
-  margin: 30px 0;
+  margin: 18px 0 40px;
 }
 
 .ai-resource-board__header {
   display: flex;
   gap: 18px;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
-  padding-bottom: 18px;
+  padding: 14px 16px;
   border-bottom: 1px solid color-mix(in oklch, var(--vp-c-divider) 86%, transparent);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, color-mix(in oklch, oklch(93% 0.045 180) 46%, transparent), transparent 58%),
+    color-mix(in oklch, var(--vp-c-bg-soft) 64%, var(--vp-c-bg));
 }
 
 .ai-resource-board__header p {
-  margin: 0 0 8px;
+  margin: 0;
   color: oklch(48% 0.13 174);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0;
   text-transform: uppercase;
-}
-
-.ai-resource-board__header h2 {
-  margin: 0;
-  color: var(--vp-c-text-1);
-  font-size: 28px;
-  line-height: 1.25;
 }
 
 .ai-resource-board__header strong {
@@ -769,14 +786,14 @@ const totalResources = computed(() => categories.reduce((total, category) => tot
   background: color-mix(in oklch, oklch(92% 0.05 65) 42%, var(--vp-c-bg));
 }
 
-.ai-resource-board__tabs {
+.ai-resource-board__index {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   margin: 18px 0 24px;
 }
 
-.ai-resource-board__tab {
+.ai-resource-board__index-item {
   display: inline-flex;
   gap: 8px;
   align-items: center;
@@ -787,12 +804,13 @@ const totalResources = computed(() => categories.reduce((total, category) => tot
   color: var(--vp-c-text-2);
   font: inherit;
   font-size: 13px;
+  font-weight: 650;
   line-height: 1.25;
+  text-decoration: none;
   background: color-mix(in oklch, var(--vp-c-bg) 94%, white);
-  cursor: pointer;
 }
 
-.ai-resource-board__tab small {
+.ai-resource-board__index-item small {
   display: grid;
   min-width: 22px;
   height: 22px;
@@ -802,45 +820,59 @@ const totalResources = computed(() => categories.reduce((total, category) => tot
   background: color-mix(in oklch, var(--vp-c-bg-soft) 92%, transparent);
 }
 
-.ai-resource-board__tab--active {
+.ai-resource-board__index-item:hover {
   border-color: color-mix(in oklch, oklch(54% 0.13 174) 62%, var(--vp-c-divider));
   color: var(--vp-c-text-1);
   background: color-mix(in oklch, oklch(92% 0.045 180) 48%, var(--vp-c-bg));
 }
 
-.ai-resource-board__tab--active small {
+.ai-resource-board__index-item:hover small {
   color: white;
   background: oklch(48% 0.13 174);
 }
 
+.ai-resource-board__sections {
+  display: grid;
+  gap: 34px;
+}
+
+.ai-resource-board__category {
+  scroll-margin-top: calc(var(--vp-nav-height) + 18px);
+}
+
 .ai-resource-board__category-heading {
-  max-width: 820px;
-  margin-bottom: 18px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid color-mix(in oklch, var(--vp-c-divider) 84%, transparent);
 }
 
 .ai-resource-board__category-heading h3 {
   margin: 0;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 1.3;
 }
 
-.ai-resource-board__category-heading p {
-  margin: 8px 0 0;
-  color: var(--vp-c-text-2);
-  font-size: 15px;
-  line-height: 1.75;
+.ai-resource-board__category-heading span {
+  flex: 0 0 auto;
+  color: var(--vp-c-text-3);
+  font-size: 13px;
+  font-weight: 650;
 }
 
 .ai-resource-board__grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
 }
 
 .ai-resource-card {
   display: flex;
   min-width: 0;
-  min-height: 238px;
+  min-height: 232px;
   flex-direction: column;
   padding: 16px;
   border: 1px solid color-mix(in oklch, var(--vp-c-divider) 76%, transparent);
@@ -958,13 +990,19 @@ const totalResources = computed(() => categories.reduce((total, category) => tot
   background: color-mix(in oklch, oklch(31% 0.04 66) 38%, var(--vp-c-bg));
 }
 
-[data-theme="dark"] .ai-resource-board__tab,
+[data-theme="dark"] .ai-resource-board__header {
+  background:
+    linear-gradient(135deg, color-mix(in oklch, oklch(30% 0.06 180) 48%, transparent), transparent 58%),
+    color-mix(in oklch, var(--vp-c-bg) 86%, oklch(23% 0.018 236));
+}
+
+[data-theme="dark"] .ai-resource-board__index-item,
 [data-theme="dark"] .ai-resource-card,
 [data-theme="dark"] .ai-resource-card__links a {
   background: color-mix(in oklch, var(--vp-c-bg) 88%, oklch(23% 0.018 236));
 }
 
-[data-theme="dark"] .ai-resource-board__tab--active {
+[data-theme="dark"] .ai-resource-board__index-item:hover {
   background: color-mix(in oklch, oklch(28% 0.05 180) 52%, var(--vp-c-bg));
 }
 
@@ -992,15 +1030,31 @@ const totalResources = computed(() => categories.reduce((total, category) => tot
   }
 }
 
+@media (min-width: 781px) and (max-width: 1080px) {
+  .ai-resource-board__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 520px) {
-  .ai-resource-board__tabs {
+  :global(.ai-resources-wide .vp-doc-container) {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .ai-resource-board__index {
     display: grid;
     grid-template-columns: 1fr;
   }
 
-  .ai-resource-board__tab {
+  .ai-resource-board__index-item {
     justify-content: space-between;
     width: 100%;
+  }
+
+  .ai-resource-board__category-heading {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .ai-resource-card {

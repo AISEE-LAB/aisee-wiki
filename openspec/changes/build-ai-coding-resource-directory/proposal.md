@@ -8,10 +8,10 @@
 
 ## 目标
 
-- 在中文资源中心新增一篇 AI Coding 资源目录页，基于维护者 GitHub stars 中的公开仓库，筛选与 AI Coding、Agent 工程化、Skill、MCP、Spec-driven、UI/UX Skill 和代码上下文相关的资源。
+- 将中文资源中心默认页改为 AI Coding 资源目录，基于维护者 GitHub stars 中的公开仓库，筛选与 AI Coding、Agent 工程化、Skill、MCP、Spec-driven、UI/UX Skill 和代码上下文相关的资源。
 - 为资源目录提供结构化展示组件，支持按资源类别阅读，并为每个资源提供 GitHub 链接、官网链接、用途摘要和推荐标签。
-- 更新 `/resources/` 入口和资源中心侧边栏，使读者能从资源中心稳定进入该目录。
-- 明确收录标准、暂不收录类型和更新口径，避免把资源目录写成实时排行榜、无差别 awesome list 或未经核对的安装指南。
+- 更新 `/resources/` 入口和资源中心侧边栏，使读者进入资源中心后直接看到资源目录，不再展示其他文章入口。
+- 页面正文不写筛选说明和使用建议，只保留更新日期与资源清单；收录边界沉淀在 change artifacts 中，不占用公开页面。
 
 ## 不在范围
 
@@ -25,16 +25,16 @@
 
 | 类型 | 范围 | 说明 |
 |---|---|---|
-| 栏目 | `/resources/` | 将资源中心从占位入口扩展为包含 AI Coding 资源目录的可用资源入口。 |
-| 页面 | `site/resources/ai-coding-resources.md` | 新增中文资源目录正文，说明收录标准、分类、使用方式和暂不收录原因。 |
-| 导航/侧边栏 | `site/resources/README.md`、`site/.vuepress/collections/resources.ts` | 在资源首页和侧边栏加入 AI Coding 资源目录入口。 |
-| 路由/frontmatter | `/resources/ai-coding-resources/` | 新增稳定 permalink，保持 VuePress/Plume doc collection 路由一致。 |
+| 栏目 | `/resources/` | 将资源中心默认页改为 AI Coding 资源目录。 |
+| 页面 | `site/resources/README.md` | 中文资源中心首页只保留更新日期和资源组件。 |
+| 导航/侧边栏 | `site/resources/README.md`、`site/.vuepress/collections/resources.ts` | 资源中心侧边栏只保留默认入口，不再列出其他资源文章。 |
+| 路由/frontmatter | `/resources/` | 默认资源中心路由直接展示资源目录。 |
 | 站点配置 | `site/.vuepress/client.ts`、`site/.vuepress/theme/components/` | 注册并新增资源展示组件；不新增外部依赖。 |
 
 ## 成功标准
 
-- [ ] 目标页面或栏目内容已补齐，资源目录包含 AI Coding 相关精选仓库，并明确分类和收录标准。
-- [ ] 涉及的导航、侧边栏或路由入口正确，`/resources/` 可进入 `/resources/ai-coding-resources/`。
+- [ ] 目标页面或栏目内容已补齐，资源目录包含 AI Coding 相关精选仓库，并以分类卡片直接呈现。
+- [ ] 涉及的导航、侧边栏或路由入口正确，`/resources/` 默认展示资源目录。
 - [ ] 相关链接和引用已检查，外链仅指向公开 GitHub 仓库、官网或公开文档，不引用本地绝对路径。
 - [ ] 文档站构建或预览检查通过。
 - [ ] 归档前已处理 openspec/project-docs.md 回写。
@@ -43,5 +43,5 @@
 
 - [ASSUMPTION] Excel 中的 GitHub stars 只作为维护者兴趣来源和候选池，最终正文以公开 GitHub 元数据和人工筛选后的工程相关性为准。
 - [ASSUMPTION] 资源目录优先服务 AI SEE Wiki 读者理解 AI Coding 生态，不追求穷尽收录或按 star 数排名。
-- [DOC-GAP] 资源中心尚缺模板、Schema Pack、命令速查和检查清单；本 change 只补 AI Coding 资源目录，不替代后续资源建设。
+- [DOC-GAP] 资源中心后续如需模板、Schema Pack、命令速查和检查清单，应另起明确栏目或页面；当前资源中心默认只展示 AI Coding 资源目录。
 - [SITE-CONFIG-IMPACT] 新增组件必须沿用当前 VuePress/Plume 组件注册方式，移动端可读，构建通过，不引入额外运行时依赖。

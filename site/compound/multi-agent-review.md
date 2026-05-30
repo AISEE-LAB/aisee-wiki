@@ -190,7 +190,7 @@ Reviewer persona 不是职位，也不是一组漂亮名字。它应该代表一
 | Security | 权限、输入、数据暴露和敏感边界。 | 不把所有代码风格问题都包装成安全问题。 |
 | Maintainability | 复杂度、重复、命名、耦合和抽象边界。 | 不为了“更优雅”改变已确认行为。 |
 | Document Review | proposal、plan、spec 是否自洽、可执行、范围清楚。 | 不替代业务负责人确认取舍。 |
-| Design / UI Review | 设计决策、交互状态、Figma 对齐、AI slop 风险。 | 不把个人审美当成产品事实。 |
+| Design / UI Review | 设计决策、交互状态、Figma 对齐、低质量生成痕迹。 | 不把个人审美当成产品事实。 |
 | Research | 补仓库、历史、issue、知识库或外部事实。 | 不把检索结果直接当最终判断。 |
 
 后续文章会分别展开代码 reviewer personas、文档评审、设计/UI 评审和 research agents。这里先建立关系：它们不是彼此替代，而是围绕同一个变更对象补足不同证据。

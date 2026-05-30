@@ -2,7 +2,7 @@
 
 ## Purpose
 
-定义 AI SEE Wiki 正式中英文栏目、导航、collections、资源中心、术语表和阅读路径入口的当前行为基线。站点信息架构必须替换 Plume 初始化示例，并保持中英文栏目路径一致、入口可访问。
+定义 AI SEE Wiki 正式中英文栏目、导航、collections、资源中心、术语表和阅读路径入口的当前行为基线。站点信息架构必须替换 Plume 初始化示例，并保持中英文栏目路径一致、入口可访问。AISEE 是 AI-Enhanced Software Engineering 顶级栏目，并承载原工程流程内容。
 
 ## Requirements
 ### Requirement: 中文栏目显示名与 slug 分离
@@ -10,26 +10,34 @@
 
 #### Scenario: 中文导航不直接显示英文 slug
 - **WHEN** 读者查看中文导航或中文栏目入口
-- **THEN** 系统不得直接把 `learn`、`workflows`、`thinking`、`resources` 作为中文显示名
+- **THEN** 系统不得直接把 `learn`、`thinking`、`resources` 作为中文显示名
 
 #### Scenario: 中文栏目显示名可读
 - **WHEN** 读者查看中文栏目入口
-- **THEN** 系统必须展示 `学习路径`、`工程流程`、`观点文章`、`资源中心` 等中文显示名
+- **THEN** 系统必须展示 `学习路径`、`AISEE`、`观点文章`、`资源中心` 等中文显示名
 
 #### Scenario: slug 保持稳定
 - **WHEN** 维护者检查中文栏目路径
-- **THEN** 系统必须保留 `/learn/`、`/openspec/`、`/compound/`、`/aisee/`、`/workflows/`、`/thinking/`、`/resources/` 作为栏目路径
+- **THEN** 系统必须保留 `/learn/`、`/openspec/`、`/compound/`、`/aisee/`、`/thinking/`、`/resources/` 作为顶级栏目路径
+
+#### Scenario: 工程流程归入 AISEE
+- **WHEN** 维护者检查工程流程入口
+- **THEN** 系统必须通过 `/aisee/workflows/` 提供工程流程子入口，而不是将 `/workflows/` 作为独立顶级栏目入口
 
 ### Requirement: 英文栏目与中文栏目 slug 对应
 系统 MUST 在 `/en/` 下提供与中文栏目同 slug 的英文栏目入口。
 
 #### Scenario: 英文栏目路径存在
 - **WHEN** 维护者检查英文栏目路径
-- **THEN** 系统必须提供 `/en/learn/`、`/en/openspec/`、`/en/compound/`、`/en/aisee/`、`/en/workflows/`、`/en/thinking/`、`/en/resources/`
+- **THEN** 系统必须提供 `/en/learn/`、`/en/openspec/`、`/en/compound/`、`/en/aisee/`、`/en/thinking/`、`/en/resources/`
+
+#### Scenario: 英文工程流程归入 AISEE
+- **WHEN** 维护者检查英文工程流程入口
+- **THEN** 系统必须通过 `/en/aisee/workflows/` 提供英文工程流程子入口，而不是将 `/en/workflows/` 作为独立顶级栏目入口
 
 #### Scenario: 英文栏目显示名使用英文
 - **WHEN** 英文读者查看英文导航或英文栏目入口
-- **THEN** 系统必须展示 `Learn`、`OpenSpec`、`Compound`、`aisee`、`Workflows`、`Thinking`、`Resources`
+- **THEN** 系统必须展示 `Learn`、`OpenSpec`、`Compound`、`AISEE`、`Thinking`、`Resources`
 
 ### Requirement: 正式导航替换示例入口
 系统 MUST 使用正式栏目导航替换 Plume 初始化的 demo/blog 示例导航。
@@ -78,7 +86,7 @@
 
 #### Scenario: 文档型栏目使用 doc collection
 - **WHEN** 维护者检查 collections 配置
-- **THEN** `learn`、`openspec`、`compound`、`aisee`、`workflows`、`resources` 必须按文档型栏目组织
+- **THEN** `learn`、`openspec`、`compound`、`aisee`、`resources` 必须按文档型栏目组织，工程流程必须作为 `aisee` 文档型栏目下的子分组组织
 
 #### Scenario: 观点栏目按文章型内容组织
 - **WHEN** 维护者检查 `thinking` 栏目配置

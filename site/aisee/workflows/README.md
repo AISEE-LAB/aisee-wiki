@@ -1,12 +1,12 @@
 ---
 title: 工程流程
-permalink: /workflows/
+permalink: /aisee/workflows/
 createTime: 2026/05/23 11:01:52
 ---
 
 # 工程流程
 
-工程流程栏目用于承载 OpenSpec、Compound、Harness 和 aisee 链路中的可执行工作流说明。
+工程流程现在作为 AISEE 栏目下的子入口，用于承载 OpenSpec、Compound、Harness 和 AISEE 链路中的可执行工作流说明。
 
 ## 当前状态
 
@@ -14,7 +14,7 @@ createTime: 2026/05/23 11:01:52
 
 ## 组件示例
 
-- [可复用流程讲解组件示例](/workflows/flow-explainer/)
+- [可复用流程讲解组件示例](/aisee/workflows/flow-explainer/)
 
 ## 已完成相关内容
 

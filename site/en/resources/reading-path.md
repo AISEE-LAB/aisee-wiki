@@ -11,10 +11,9 @@ Recommended order:
 1. [Learn](/en/learn/)
 2. [OpenSpec](/en/openspec/)
 3. [Compound](/en/compound/)
-4. [aisee](/en/aisee/)
-5. [Workflows](/en/workflows/)
-6. [Thinking](/en/thinking/)
-7. [Resources](/en/resources/)
+4. [AISEE](/en/aisee/)
+5. [Thinking](/en/thinking/)
+6. [Resources](/en/resources/)
 
 ## Status
 

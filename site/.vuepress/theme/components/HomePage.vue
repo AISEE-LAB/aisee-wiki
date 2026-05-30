@@ -37,7 +37,7 @@ const content = computed(() => {
     return {
       eyebrow: 'AI-enhanced software engineering',
       title: 'Software engineering methodology for the AI era',
-      subtitle: 'Using OpenSpec and Compound Engineering as core references, AI SEE Wiki explores methods for AI-enhanced software engineering and uses the aisee working mechanism to turn requirements, design, verification, and reflection into reusable practice.',
+      subtitle: 'Using OpenSpec and Compound Engineering as core references, AI SEE Wiki explores methods for AI-enhanced software engineering and uses the AISEE working mechanism to turn requirements, design, verification, and reflection into reusable practice.',
       note: 'English content is being prepared. This page keeps the same structure as the Chinese homepage while the Chinese methodology articles are completed first.',
       primary: 'Start reading',
       secondary: 'View methodology map',
@@ -76,7 +76,7 @@ const content = computed(() => {
       pillars: [
         ['OpenSpec', 'Specification layer and source of truth', '/en/openspec/'],
         ['Compound Engineering', 'Harness and knowledge compounding', '/en/compound/'],
-        ['aisee mechanism', 'An evolving working mechanism integrated with OpenSpec', '/en/aisee/'],
+        ['AISEE mechanism', 'An evolving working mechanism integrated with OpenSpec', '/en/aisee/'],
       ],
       pathTitle: 'Recommended learning path',
       path: ['Foundations', 'Spec-first', 'OpenSpec', 'Harness', 'Verification', 'Knowledge', 'Practice'],
@@ -90,14 +90,14 @@ const content = computed(() => {
       ],
       guideLink: '/en/learn/',
       resourcesLink: '/en/resources/',
-      workflowLink: '/en/workflows/',
+      workflowLink: '/en/aisee/',
     }
   }
 
   return {
     eyebrow: 'AI 增强软件工程',
     title: 'AI 时代的软件工程方法论',
-    subtitle: '以 OpenSpec 和 Compound Engineering 为核心参照，探索 AI 增强软件工程的方法论，并通过 aisee 工作机制把需求、设计、验证和复盘沉淀为可复用实践。',
+    subtitle: '以 OpenSpec 和 Compound Engineering 为核心参照，探索 AI 增强软件工程的方法论，并通过 AISEE 工作机制把需求、设计、验证和复盘沉淀为可复用实践。',
     note: '工具和技能固然强大，但真正决定上限的是方法论。没有需求契约，AI 会放大模糊；没有验证 gate，AI 会制造不确定性；没有知识沉淀，AI 协作就只是一次性消耗。',
     primary: '开始阅读',
     secondary: '查看方法论地图',
@@ -136,7 +136,7 @@ const content = computed(() => {
     pillars: [
       ['OpenSpec', '规范层与事实源', '/openspec/'],
       ['Compound Engineering', 'Harness 与知识复利', '/compound/'],
-      ['aisee 工作机制', '与 OpenSpec 融合的探索性实践', '/aisee/'],
+      ['AISEE 工作机制', '与 OpenSpec 融合的探索性实践', '/aisee/'],
     ],
     pathTitle: '推荐学习路径',
     path: ['基础能力', 'Spec-first', 'OpenSpec', 'Harness', '验证闭环', '知识复利', '综合实践'],
@@ -150,7 +150,7 @@ const content = computed(() => {
     ],
     guideLink: '/learn/',
     resourcesLink: '/resources/',
-    workflowLink: '/workflows/',
+    workflowLink: '/aisee/',
   }
 })
 </script>
@@ -327,7 +327,7 @@ const content = computed(() => {
       </div>
       <div class="open-actions">
         <a class="open-action open-action--primary" :href="content.resourcesLink">{{ isEn ? 'Resources' : '资源中心' }}</a>
-        <a class="open-action" :href="content.workflowLink">{{ isEn ? 'Workflows' : '工程流程' }}</a>
+        <a class="open-action" :href="content.workflowLink">{{ isEn ? 'AISEE' : 'AISEE' }}</a>
       </div>
     </section>
   </main>

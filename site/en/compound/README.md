@@ -15,5 +15,5 @@ English content is being prepared. This page keeps the section available while t
 ## Next
 
 - [OpenSpec](/en/openspec/)
-- [Workflows](/en/workflows/)
+- [AISEE Workflows](/en/aisee/workflows/)
 - [Glossary](/en/resources/glossary/)

@@ -1,17 +1,17 @@
 ---
 title: 可复用流程讲解组件示例
-permalink: /workflows/flow-explainer/
+permalink: /aisee/workflows/flow-explainer/
 createTime: 2026/05/23 18:20:00
 ---
 
 # 可复用流程讲解组件示例
 
-本页是流程讲解组件的基础示例，用于验证组件形态并给后续文章提供写法参考。它不是 P0/P1 正文，也不代表 OpenSpec、Compound 或 aisee 的完整教程已经完成。
+本页是流程讲解组件的基础示例，用于验证组件形态并给后续文章提供写法参考。它不是 P0/P1 正文，也不代表 OpenSpec、Compound 或 AISEE 的完整教程已经完成。
 
 <FlowExplainer
   eyebrow="流程组件"
   title="从需求到可归档 change 的最小闭环"
-  description="这个示例把 aisee 前置材料、OpenSpec artifacts、实现验证和复盘归档放在同一条静态流程里。后续正文可以替换阶段、节点和连接关系，复用同一个组件。"
+  description="这个示例把 AISEE 前置材料、OpenSpec artifacts、实现验证和复盘归档放在同一条静态流程里。后续正文可以替换阶段、节点和连接关系，复用同一个组件。"
   :stages="[
     {
       id: 'inputs',
@@ -69,7 +69,7 @@ createTime: 2026/05/23 18:20:00
           description: '实现任务，运行最小相关验证，确认行为符合 spec。',
           status: 'risk',
           accent: '验证 gate',
-          href: '/workflows/',
+          href: '/aisee/workflows/',
         },
         {
           id: 'archive',
@@ -134,7 +134,7 @@ createTime: 2026/05/23 18:20:00
 <FlowExplainer
   mode="timeline"
   eyebrow="长流程示例"
-  title="aisee 到 OpenSpec 的扩展链路"
+  title="AISEE 到 OpenSpec 的扩展链路"
   description="这个示例用于展示长流程的阅读形态。阶段按纵向时间线排列，每个阶段内部仍然可以放多个节点。"
   :stages="[
     {

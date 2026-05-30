@@ -19,15 +19,9 @@ export const siteSections = [
   },
   {
     slug: 'aisee',
-    zh: 'aisee',
-    en: 'aisee',
-    role: 'skill 生态与方法链路入口',
-  },
-  {
-    slug: 'workflows',
-    zh: '工程流程',
-    en: 'Workflows',
-    role: '综合实践与流程说明',
+    zh: 'AISEE',
+    en: 'AISEE',
+    role: 'AI-Enhanced Software Engineering 方法、插件与工作流入口',
   },
   {
     slug: 'thinking',
@@ -43,6 +37,6 @@ export const siteSections = [
   },
 ] as const
 
-export const primarySectionSlugs = ['learn', 'openspec', 'compound', 'aisee', 'workflows', 'resources'] as const
+export const primarySectionSlugs = ['learn', 'openspec', 'compound', 'aisee', 'resources'] as const
 
 export const secondarySectionSlugs = ['thinking'] as const

@@ -31,6 +31,7 @@ export const compoundCollection = defineCollection({
       items: [
         { text: '多智能体评审是什么', link: '/compound/multi-agent-review/' },
         { text: 'Reviewer Personas', link: '/compound/reviewer-personas/' },
+        { text: '文档评审智能体', link: '/compound/document-review-agents/' },
       ],
     },
   ],

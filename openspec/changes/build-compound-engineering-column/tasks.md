@@ -10,9 +10,9 @@
 ## 1. 内容变更
 
 - [ ] 1.1 核对事实源：远端 `EveryInc/compound-engineering-plugin` README、本地插件 `3.9.3` README、本地相关 `SKILL.md` 和 agents 说明；记录正文口径，避免把版本、数量和命令细节写成永久事实。
-- [x] 1.2 改写 `site/compound/README.md`，将栏目首页升级为“Compound Engineering（工程复利）”，包含定位、核心循环、分组入口、事实源说明和下一步阅读。
-- [ ] 1.3 新增 `site/compound/what-is-compound-engineering.md`，解释方法论、插件、skill、agent、`/ce-compound` 的层级关系，以及工程复利与一次性代码生成的区别。
-- [ ] 1.4 新增 `site/compound/workflow-loop.md`，说明 `ce-strategy -> ce-ideate -> ce-brainstorm -> ce-plan -> ce-work -> ce-code-review/ce-debug -> ce-compound -> ce-product-pulse` 的闭环。
+- [x] 1.2 改写 `site/compound/README.md`，将栏目首页升级为“Compound Engineering（工程复利）”，包含定位、核心循环、分组入口和事实源说明。
+- [x] 1.3 新增 `site/compound/what-is-compound-engineering.md`，解释方法论、插件、skill、agent、`/ce-compound` 的层级关系，以及工程复利与一次性代码生成的区别。
+- [x] 1.4 新增 `site/compound/workflow-loop.md`，说明 `ce-strategy -> ce-ideate -> ce-brainstorm -> ce-plan -> ce-work -> ce-code-review/ce-debug -> ce-compound -> ce-product-pulse` 的闭环。
 - [ ] 1.5 新增 `site/compound/strategy-brainstorm-plan.md`，说明上游定义阶段如何把模糊想法转成 requirements、plan、implementation units 和验证边界。
 - [ ] 1.6 新增 `site/compound/work-debug-review.md`，说明 `ce-work`、`ce-debug`、`ce-code-review`、`ce-simplify-code`、`ce-optimize`、`ce-polish-beta` 的职责边界和协作顺序。
 - [ ] 1.7 新增 `site/compound/multi-agent-review.md`，说明多智能体评审的价值、单 Agent 容易遗漏的风险、并行审查与综合输出的基础模型。
@@ -24,13 +24,13 @@
 - [ ] 1.13 新增 `site/compound/review-boundaries.md`，说明多智能体评审的适用边界、轻量/完整/文档 review 选择矩阵，以及哪些判断必须人工负责。
 - [ ] 1.14 新增 `site/compound/knowledge-compounding.md`，说明 `/ce-compound`、`/ce-compound-refresh`、`docs/solutions/`、YAML frontmatter、problem_type、discoverability check 和 refresh 机制。
 - [ ] 1.15 新增 `site/compound/with-openspec-and-aisee.md`，说明 Compound Engineering、OpenSpec、aisee 的职责边界、组合路径和典型使用顺序。
-- [ ] 1.16 每篇正文末尾添加下一步阅读，优先指向已存在页面或本 change 新增页面；避免手写冗长“下一篇”提示，保持与现有站点风格一致。
+- [x] 1.16 正文不手写“下一步阅读”；上一篇/下一篇导航交给主题默认能力，必要的关系说明放在正文或侧边栏分组中。
 - [ ] 1.17 每篇正文至少加入一种结构化视觉表达：循环图、层级图、对比矩阵、persona 矩阵、证据拓扑、关系图、边界决策树、检查清单或卡片组。
 - [ ] 1.18 检查所有正文不暴露本地绝对路径、不复制插件内部长 prompt、不泄露私密会话或组织上下文。
 
 ## 2. 站点结构与配置
 
-- [ ] 2.1 更新 `site/.vuepress/collections/compound.ts`，将 `compoundCollection` title 调整为 `Compound Engineering` 或等价展示名，并改为分组侧边栏。
+- [x] 2.1 更新 `site/.vuepress/collections/compound.ts`，将 `compoundCollection` title 调整为 `Compound Engineering` 或等价展示名，并改为分组侧边栏。
 - [ ] 2.2 侧边栏按 doc-change.md 的分组组织：栏目首页、总览、上游、交付、多智能体、知识、关系；保持 `README.md` 为栏目首页。
 - [ ] 2.3 为新增中文页面设置稳定 frontmatter：`title`、`permalink`、`createTime`；permalink 必须与侧边栏链接一致。
 - [ ] 2.4 检查 `site/en/compound/README.md` 是否需要补充稳定英文占位或中文入口；不要求完整英文正文，但不得新增死链。

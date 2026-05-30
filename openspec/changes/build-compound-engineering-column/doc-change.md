@@ -15,7 +15,7 @@
 
 | 对象 | 当前状态 | 问题/缺口 |
 |---|---|---|
-| `site/compound/README.md` | 存在，但只是一页占位入口，标题为 `Compound`，正文只有一句栏目说明和下一步阅读链接。 | 没有解释 Compound Engineering 的方法论定位、核心循环、技能/智能体能力地图，也没有说明它与 `/ce-compound`、OpenSpec、aisee 的区别。 |
+| `site/compound/README.md` | 存在，但只是一页占位入口，标题为 `Compound`，正文只有一句栏目说明和少量入口链接。 | 没有解释 Compound Engineering 的方法论定位、核心循环、技能/智能体能力地图，也没有说明它与 `/ce-compound`、OpenSpec、aisee 的区别。 |
 | `site/.vuepress/collections/compound.ts` | 中文 compound collection 只包含 `README.md`，title 为 `Compound`；英文 collection 也只包含 `README.md`。 | 缺少中文侧边栏分组，无法承载首批正文；栏目展示名也未体现“Compound Engineering（工程复利）”。 |
 | `site/en/compound/README.md` | 英文占位页存在。 | 中文优先策略下可不写完整英文，但新增中文页面后英文入口不能产生死链或错误承诺。 |
 | `openspec/project-docs.md` | 已记录学习路径和 OpenSpec 栏目状态。 | 尚未记录 Compound 栏目的正式页面清单、阅读路径、内容边界和写作约定。 |
@@ -49,7 +49,7 @@
 
 | 页面 | 目标读者 | 核心内容 | 必须包含 | 不包含 |
 |---|---|---|---|---|
-| `/compound/` | 进入 Compound 栏目的读者 | Compound Engineering 栏目总览和阅读路径。 | “Compound Engineering（工程复利）”命名、核心循环图、分组入口、事实源说明、与 OpenSpec/aisee/workflows 的下一步入口。 | 复制插件 README 的完整 skills 表；单独讲 `/ce-compound` 细节。 |
+| `/compound/` | 进入 Compound 栏目的读者 | Compound Engineering 栏目总览和阅读路径。 | “Compound Engineering（工程复利）”命名、核心循环图、分组入口、事实源说明、与 OpenSpec/aisee/workflows 的关系说明。 | 复制插件 README 的完整 skills 表；单独讲 `/ce-compound` 细节；手写主题已提供的上一篇/下一篇导航。 |
 | `/compound/what-is-compound-engineering/` | 第一次听到 Compound Engineering 的读者 | Compound Engineering 是把工程工作组织成可复利链路的方法论和工具集合。 | 方法论、插件、skill、agent、`/ce-compound` 的区别；工程复利的判断标准；适用场景速览。 | 命令大全、版本 changelog、安装教程。 |
 | `/compound/workflow-loop/` | 想理解整体链路的读者 | 从策略到结果回看的闭环，而不是单次代码生成。 | `ce-strategy`、`ce-ideate`、`ce-brainstorm`、`ce-plan`、`ce-work`、`ce-code-review`、`ce-debug`、`ce-compound`、`ce-product-pulse` 的位置；循环图。 | 每个 skill 的完整内部实现细节。 |
 | `/compound/strategy-brainstorm-plan/` | 需求不清、想把想法变成计划的读者 | 上游定义阶段把方向、问题、约束和计划写清楚。 | `STRATEGY.md`、ideation、interactive Q&A、right-sized requirements、plan handoff、适合进入 OpenSpec 的边界。 | 把 brainstorm 写成产品经理万能模板；把 plan 当不可变执行脚本。 |

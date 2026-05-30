@@ -5,7 +5,16 @@ export const compoundCollection = defineCollection({
   dir: 'compound',
   linkPrefix: '/compound',
   title: 'Compound Engineering',
-  sidebar: ['README.md'],
+  sidebar: [
+    'README.md',
+    {
+      text: '总览',
+      items: [
+        { text: 'Compound Engineering 是什么', link: '/compound/what-is-compound-engineering/' },
+        { text: '工程复利核心循环', link: '/compound/workflow-loop/' },
+      ],
+    },
+  ],
 })
 
 export const compoundEnCollection = defineCollection({

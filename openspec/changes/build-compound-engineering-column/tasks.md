@@ -16,7 +16,7 @@
 - [x] 1.5 新增 `site/compound/strategy-brainstorm-plan.md`，说明定义与计划阶段如何把模糊想法转成 requirements、plan、implementation units 和验证边界。
 - [x] 1.6 新增 `site/compound/work-debug-review.md`，说明 `ce-work`、`ce-debug`、`ce-code-review`、`ce-simplify-code`、`ce-optimize`、`ce-polish-beta` 的职责边界和协作顺序。
 - [x] 1.7 新增 `site/compound/multi-agent-review.md`，说明多智能体评审的价值、单 Agent 容易遗漏的风险、并行审查与综合输出的基础模型。
-- [ ] 1.8 新增 `site/compound/reviewer-personas.md`，拆解 correctness、security、performance、maintainability、testing、scope、simplicity、project standards 等 reviewer personas 的关注点和边界。
+- [x] 1.8 新增 `site/compound/reviewer-personas.md`，拆解 correctness、security、performance、maintainability、testing、scope、simplicity、project standards 等 reviewer personas 的关注点和边界。
 - [ ] 1.9 新增 `site/compound/document-review-agents.md`，说明 coherence、feasibility、product lens、scope guardian、security lens、adversarial document reviewer 等文档评审智能体如何前置发现风险。
 - [ ] 1.10 新增 `site/compound/design-review-agents.md`，说明 `ce-design-lens-reviewer`、`ce-design-implementation-reviewer`、`ce-design-iterator`、`ce-figma-design-sync` 等设计/UI 评审与同步能力。
 - [ ] 1.11 新增 `site/compound/research-agents.md`，说明 repo、session、Slack、web、issue、learnings research 等研究型 agents 如何补足上下文，并明确事实源优先级和隐私边界。

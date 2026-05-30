@@ -10,7 +10,7 @@
 ## 1. 内容变更
 
 - [ ] 1.1 核对事实源：远端 `EveryInc/compound-engineering-plugin` README、本地插件 `3.9.3` README、本地相关 `SKILL.md` 和 agents 说明；记录正文口径，避免把版本、数量和命令细节写成永久事实。
-- [ ] 1.2 改写 `site/compound/README.md`，将栏目首页升级为“Compound Engineering（工程复利）”，包含定位、核心循环、分组入口、事实源说明和下一步阅读。
+- [x] 1.2 改写 `site/compound/README.md`，将栏目首页升级为“Compound Engineering（工程复利）”，包含定位、核心循环、分组入口、事实源说明和下一步阅读。
 - [ ] 1.3 新增 `site/compound/what-is-compound-engineering.md`，解释方法论、插件、skill、agent、`/ce-compound` 的层级关系，以及工程复利与一次性代码生成的区别。
 - [ ] 1.4 新增 `site/compound/workflow-loop.md`，说明 `ce-strategy -> ce-ideate -> ce-brainstorm -> ce-plan -> ce-work -> ce-code-review/ce-debug -> ce-compound -> ce-product-pulse` 的闭环。
 - [ ] 1.5 新增 `site/compound/strategy-brainstorm-plan.md`，说明上游定义阶段如何把模糊想法转成 requirements、plan、implementation units 和验证边界。
@@ -18,14 +18,15 @@
 - [ ] 1.7 新增 `site/compound/multi-agent-review.md`，说明多智能体评审的价值、单 Agent 容易遗漏的风险、并行审查与综合输出的基础模型。
 - [ ] 1.8 新增 `site/compound/reviewer-personas.md`，拆解 correctness、security、performance、maintainability、testing、scope、simplicity、project standards 等 reviewer personas 的关注点和边界。
 - [ ] 1.9 新增 `site/compound/document-review-agents.md`，说明 coherence、feasibility、product lens、scope guardian、security lens、adversarial document reviewer 等文档评审智能体如何前置发现风险。
-- [ ] 1.10 新增 `site/compound/research-agents.md`，说明 repo、session、Slack、web、issue、learnings research 等研究型 agents 如何补足上下文，并明确事实源优先级和隐私边界。
-- [ ] 1.11 新增 `site/compound/agent-orchestration.md`，作为多智能体关系总览，说明 orchestrator/dispatcher、parallel agents、dedup、confidence gate、final synthesis 和 human decision gate 如何协作。
-- [ ] 1.12 新增 `site/compound/review-boundaries.md`，说明多智能体评审的适用边界、轻量/完整/文档 review 选择矩阵，以及哪些判断必须人工负责。
-- [ ] 1.13 新增 `site/compound/knowledge-compounding.md`，说明 `/ce-compound`、`/ce-compound-refresh`、`docs/solutions/`、YAML frontmatter、problem_type、discoverability check 和 refresh 机制。
-- [ ] 1.14 新增 `site/compound/with-openspec-and-aisee.md`，说明 Compound Engineering、OpenSpec、aisee 的职责边界、组合路径和典型使用顺序。
-- [ ] 1.15 每篇正文末尾添加下一步阅读，优先指向已存在页面或本 change 新增页面；避免手写冗长“下一篇”提示，保持与现有站点风格一致。
-- [ ] 1.16 每篇正文至少加入一种结构化视觉表达：循环图、层级图、对比矩阵、persona 矩阵、证据拓扑、关系图、边界决策树、检查清单或卡片组。
-- [ ] 1.17 检查所有正文不暴露本地绝对路径、不复制插件内部长 prompt、不泄露私密会话或组织上下文。
+- [ ] 1.10 新增 `site/compound/design-review-agents.md`，说明 `ce-design-lens-reviewer`、`ce-design-implementation-reviewer`、`ce-design-iterator`、`ce-figma-design-sync` 等设计/UI 评审与同步能力。
+- [ ] 1.11 新增 `site/compound/research-agents.md`，说明 repo、session、Slack、web、issue、learnings research 等研究型 agents 如何补足上下文，并明确事实源优先级和隐私边界。
+- [ ] 1.12 新增 `site/compound/agent-orchestration.md`，作为多智能体关系总览，说明 orchestrator/dispatcher、parallel agents、dedup、confidence gate、final synthesis 和 human decision gate 如何协作。
+- [ ] 1.13 新增 `site/compound/review-boundaries.md`，说明多智能体评审的适用边界、轻量/完整/文档 review 选择矩阵，以及哪些判断必须人工负责。
+- [ ] 1.14 新增 `site/compound/knowledge-compounding.md`，说明 `/ce-compound`、`/ce-compound-refresh`、`docs/solutions/`、YAML frontmatter、problem_type、discoverability check 和 refresh 机制。
+- [ ] 1.15 新增 `site/compound/with-openspec-and-aisee.md`，说明 Compound Engineering、OpenSpec、aisee 的职责边界、组合路径和典型使用顺序。
+- [ ] 1.16 每篇正文末尾添加下一步阅读，优先指向已存在页面或本 change 新增页面；避免手写冗长“下一篇”提示，保持与现有站点风格一致。
+- [ ] 1.17 每篇正文至少加入一种结构化视觉表达：循环图、层级图、对比矩阵、persona 矩阵、证据拓扑、关系图、边界决策树、检查清单或卡片组。
+- [ ] 1.18 检查所有正文不暴露本地绝对路径、不复制插件内部长 prompt、不泄露私密会话或组织上下文。
 
 ## 2. 站点结构与配置
 
@@ -48,11 +49,11 @@
 
 ## 4. 验证
 
-- [ ] 4.1 检查 `/compound/` 和 12 个新增中文页面路径可访问。
+- [ ] 4.1 检查 `/compound/` 和 13 个新增中文页面路径可访问。
 - [ ] 4.2 检查 Compound 中文侧边栏分组、栏目首页入口和页面顺序正确。
 - [ ] 4.3 检查文章间内链，以及指向 `/openspec/`、`/aisee/`、`/workflows/`、`/resources/glossary/` 的跨栏目链接。
 - [ ] 4.4 检查代码块、命令、示例和事实源说明，避免危险命令或未解释的高风险操作。
-- [ ] 4.5 检查每篇正文都有结构化视觉表达，不是纯文字长文；多智能体关系页必须包含关系图。
+- [ ] 4.5 检查每篇正文都有结构化视觉表达，不是纯文字长文；多智能体关系页必须包含关系图；设计/UI 评审页必须说明 design lens 与 design implementation review 的边界。
 - [ ] 4.6 如新增组件或图示资产，进行本地预览或截图检查，确认桌面和移动端不溢出、不遮挡，亮暗主题可读。
 - [ ] 4.7 运行 `pnpm docs:build` 或项目确认的等效文档站构建检查。
 - [ ] 4.8 如构建失败，修复与本 change 相关的问题；若失败来自无关既有问题，记录风险和复现命令。

@@ -20,7 +20,7 @@
 | `site/en/compound/README.md` | 英文占位页存在。 | 中文优先策略下可不写完整英文，但新增中文页面后英文入口不能产生死链或错误承诺。 |
 | `openspec/project-docs.md` | 已记录学习路径和 OpenSpec 栏目状态。 | 尚未记录 Compound 栏目的正式页面清单、阅读路径、内容边界和写作约定。 |
 | Compound Engineering 事实源 | 远端 README 和本地插件 `3.9.3` 都包含 skills、agents 和分类信息。 | 站内尚未把这些信息转成读者可理解的方法论文章；需要避免复制 README 命令清单，也要避免把动态版本信息写死。 |
-| 多智能体评审内容 | 本地插件包含 reviewer、document reviewer、research、design、workflow 等多类 agents。 | 如果只写一篇总览会过于拥挤；需要拆成概念、角色、文档评审、研究智能体、协作关系和边界。 |
+| 多智能体评审内容 | 本地插件包含 reviewer、document reviewer、design/UI reviewer、research、workflow 等多类 agents。 | 如果只写一篇总览会过于拥挤；需要拆成概念、角色、文档评审、设计/UI 评审、研究智能体、协作关系和边界。 |
 
 ## Planned Changes
 
@@ -34,6 +34,7 @@
 | 新增 | 多智能体评审是什么 | `site/compound/multi-agent-review.md` | 说明为什么单个 Agent 容易漏问题，以及多视角评审如何降低风险。 |
 | 新增 | Reviewer Personas | `site/compound/reviewer-personas.md` | 拆解 correctness、security、performance、maintainability、testing、scope、simplicity 等 reviewer 角色。 |
 | 新增 | 文档评审智能体 | `site/compound/document-review-agents.md` | 说明 coherence、feasibility、product、scope、security lens 等文档评审角色如何审 proposal、plan、spec 或说明文档。 |
+| 新增 | 设计与 UI 评审智能体 | `site/compound/design-review-agents.md` | 说明 `ce-design-lens-reviewer`、`ce-design-implementation-reviewer`、`ce-design-iterator`、`ce-figma-design-sync` 等能力如何覆盖设计决策、交互状态、Figma 对齐和 UI 质量。 |
 | 新增 | Research Agents | `site/compound/research-agents.md` | 说明 repo、session、Slack、web、issue、learnings 等研究型 agent 如何补足上下文。 |
 | 新增 | 多智能体如何协作 | `site/compound/agent-orchestration.md` | 作为多智能体分组的关系总览，说明 dispatcher、并行、去重、置信度门禁、综合输出和人工判断边界。 |
 | 新增 | 多智能体评审边界 | `site/compound/review-boundaries.md` | 说明什么时候值得上多智能体评审，什么时候过重，以及哪些结论必须人工判断。 |
@@ -55,7 +56,8 @@
 | `/compound/work-debug-review/` | 准备交付真实代码任务的读者 | 执行、调试和评审分别解决不同风险。 | `ce-work` 执行计划、`ce-debug` 根因调查、`ce-code-review` 多视角评审、`ce-optimize` 迭代优化、何时进入下一步。 | 自动承诺“无需人工 review”；鼓励无验证执行。 |
 | `/compound/multi-agent-review/` | 想理解多智能体价值的读者 | 多智能体评审用不同视角发现单 Agent 易漏的问题。 | 单 Agent 风险、多视角价值、分派与综合的基本模型、适用任务类型。 | 具体列完所有 reviewer；把多智能体写成越多越好。 |
 | `/compound/reviewer-personas/` | 想知道代码评审角色分工的读者 | Reviewer personas 不是重复审查，而是按风险维度拆分注意力。 | correctness、security、performance、maintainability、testing、scope、simplicity、project standards 等角色；各自看什么、不看什么。 | 每个 agent 的完整 prompt；无法验证的泛泛质量口号。 |
-| `/compound/document-review-agents/` | 写 proposal、plan、spec、需求文档的读者 | 文档评审智能体用于在实现前暴露矛盾、缺口和范围风险。 | coherence、feasibility、product lens、scope guardian、security lens、adversarial document review；适合评审哪些文档。 | 把文档评审等同语法润色；替代用户确认。 |
+| `/compound/document-review-agents/` | 写 proposal、plan、spec、需求文档的读者 | 文档评审智能体用于在实现前暴露矛盾、缺口和范围风险。 | coherence、feasibility、product lens、scope guardian、security lens、design lens、adversarial document review；适合评审哪些文档。 | 把文档评审等同语法润色；替代用户确认。 |
+| `/compound/design-review-agents/` | 做 UI、前端实现或设计同步的读者 | 设计与 UI 评审智能体用于检查设计决策、交互状态、AI slop 风险和实现是否贴合设计稿。 | `ce-design-lens-reviewer`、`ce-design-implementation-reviewer`、`ce-design-iterator`、`ce-figma-design-sync` 的职责边界；Figma/设计规范对齐；与文档评审和代码评审的区别。 | 把设计评审写成审美偏好；把 Figma 对齐等同于产品正确性。 |
 | `/compound/research-agents/` | 需要补上下文再决策的读者 | Research agents 负责从仓库、会话、Slack、Web、Issue、learnings 等来源补足证据。 | repo research、session history、Slack research、web research、issue intelligence、learnings research 的边界；事实源优先级。 | 泄露私有上下文；把研究结果当无需核验的事实。 |
 | `/compound/agent-orchestration/` | 已读多智能体拆分文章、想看关系的读者 | 多类 agents 如何被分派、并行、去重、置信度过滤并汇总为可执行结论。 | dispatcher、parallel agents、confidence gate、dedup pipeline、final synthesis、human decision gate；一张关系图。 | 重复前面每篇细节；承诺自动合并所有结论。 |
 | `/compound/review-boundaries/` | 担心流程过重的读者 | 多智能体评审应按风险使用，不是所有任务都需要。 | 适用/不适用矩阵；轻量 review、完整 review、文档 review 的选择规则；人工判断边界。 | 把小改动也强制拉进完整流程。 |
@@ -69,7 +71,7 @@
 | 总览 | `/compound/`、`/compound/what-is-compound-engineering/`、`/compound/workflow-loop/` | 先建立 Compound Engineering 的方法论定位和工程循环。 |
 | 上游 | `/compound/strategy-brainstorm-plan/` | 说明策略、构思、需求澄清和计划如何进入可执行状态。 |
 | 交付 | `/compound/work-debug-review/` | 说明执行、调试、评审和优化的交付链路。 |
-| 多智能体 | `/compound/multi-agent-review/`、`/compound/reviewer-personas/`、`/compound/document-review-agents/`、`/compound/research-agents/`、`/compound/agent-orchestration/`、`/compound/review-boundaries/` | 拆解多智能体评审的角色、关系、协作方式和边界。 |
+| 多智能体 | `/compound/multi-agent-review/`、`/compound/reviewer-personas/`、`/compound/document-review-agents/`、`/compound/design-review-agents/`、`/compound/research-agents/`、`/compound/agent-orchestration/`、`/compound/review-boundaries/` | 拆解多智能体评审的角色、关系、协作方式和边界。 |
 | 知识 | `/compound/knowledge-compounding/` | 说明知识沉淀、刷新和可发现性。 |
 | 关系 | `/compound/with-openspec-and-aisee/` | 把 Compound Engineering 与 OpenSpec、aisee、工程流程串起来。 |
 
@@ -155,10 +157,21 @@
 - 核心结论：文档评审智能体把风险前移到 proposal、plan、spec、需求文档阶段。
 - 建议结构：
   1. 为什么文档也需要多视角 review。
-  2. coherence、feasibility、product lens、scope guardian、security lens、adversarial document reviewer 的分工。
+  2. coherence、feasibility、product lens、scope guardian、security lens、design lens、adversarial document reviewer 的分工。
   3. 文档 review 输出如何回写到计划或 OpenSpec artifacts。
   4. 人类确认哪些内容。
 - 视觉要求：使用文档类型与 reviewer 对照表。
+
+### `/compound/design-review-agents/`
+
+- 核心结论：设计与 UI 评审不是“看起来好不好”的主观评价，而是检查设计决策、交互状态、视觉质量和实现对齐是否支撑用户目标。
+- 建议结构：
+  1. `ce-design-lens-reviewer` 如何在计划或方案阶段发现缺失的设计决策、交互状态和 AI slop 风险。
+  2. `ce-design-implementation-reviewer` 如何检查 UI 实现是否匹配 Figma 或设计规范。
+  3. `ce-design-iterator` 和 `ce-figma-design-sync` 在设计迭代与同步中的位置。
+  4. 设计评审与产品评审、代码评审、文档评审的边界。
+  5. 哪些 UI 判断必须回到真实用户、品牌规范或设计系统确认。
+- 视觉要求：使用“方案设计 -> UI 实现 -> 设计对齐 -> 迭代同步”的流程图或角色矩阵。
 
 ### `/compound/research-agents/`
 
@@ -222,7 +235,7 @@
   - 总览：`what-is-compound-engineering`、`workflow-loop`
   - 上游：`strategy-brainstorm-plan`
   - 交付：`work-debug-review`
-  - 多智能体：`multi-agent-review`、`reviewer-personas`、`document-review-agents`、`research-agents`、`agent-orchestration`、`review-boundaries`
+  - 多智能体：`multi-agent-review`、`reviewer-personas`、`document-review-agents`、`design-review-agents`、`research-agents`、`agent-orchestration`、`review-boundaries`
   - 知识：`knowledge-compounding`
   - 关系：`with-openspec-and-aisee`
 - 路由：中文页面采用稳定 permalink：`/compound/<slug>/`。文件名与 slug 保持一致。
@@ -234,13 +247,13 @@
 
 ## Validation
 
-- [ ] `/compound/` 和 12 个新增中文页面路径可访问。
+- [ ] `/compound/` 和 13 个新增中文页面路径可访问。
 - [ ] Compound 中文侧边栏分组、栏目首页入口和页面顺序正确。
 - [ ] 内链有效，尤其是指向 `/openspec/`、`/aisee/`、`/workflows/`、`/resources/glossary/` 的链接。
 - [ ] 代码块、命令或示例已检查，避免把当前插件版本的动态信息写成永久事实。
 - [ ] 远端 README、本地插件 README、本地 skills/agents 的事实源口径已核对并在正文中说明更新时间。
 - [ ] 每篇正文都包含结构化视觉表达，不是纯文字长文。
-- [ ] 多智能体分组至少包含概念、角色、文档评审、研究、协作关系和边界六类内容。
+- [ ] 多智能体分组至少包含概念、角色、文档评审、设计/UI 评审、研究、协作关系和边界七类内容。
 - [ ] `pnpm docs:build` 或项目确认的等效文档站构建检查通过。
 - [ ] 如新增组件或图示资产，已进行本地预览或截图检查，确认桌面和移动端不溢出、不遮挡。
 

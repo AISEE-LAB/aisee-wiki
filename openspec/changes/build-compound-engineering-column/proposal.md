@@ -11,7 +11,7 @@
 - 将 `/compound/` 从占位入口升级为 **Compound Engineering（工程复利）** 方法论栏目首页；路由继续保持 `/compound/`，展示名和正文明确“Compound Engineering”而非单个 `/ce-compound` skill。
 - 按工程循环组织栏目分组，而不是照搬插件 README 的技能清单；建议分为“总览 / 上游定义 / 执行交付 / 评审质量 / 知识复利 / 团队信号 / 工具化实践”。
 - 新增首批中文正文，建立从概念、核心循环、上游定义、执行评审、多智能体、知识沉淀到 OpenSpec/aisee 关系的阅读路径。
-- 将多智能体评审拆成独立文章：多智能体评审概念、Reviewer Personas、文档评审智能体、Research Agents、多智能体协作关系、评审边界；其中协作关系文章负责解释 dispatcher、并行、去重、置信度门禁和综合输出如何配合。
+- 将多智能体评审拆成独立文章：多智能体评审概念、Reviewer Personas、文档评审智能体、设计/UI 评审智能体、Research Agents、多智能体协作关系、评审边界；其中协作关系文章负责解释 dispatcher、并行、去重、置信度门禁和综合输出如何配合。
 - 明确 Compound Engineering 与 OpenSpec、aisee 的边界：OpenSpec 提供 spec-first 事实源和变更边界，Compound Engineering 提供工程执行、评审、反馈和知识复利链路，aisee 提供本站项目内 OpenSpec / skill / schema 的结构化工作流。
 - 参考远端 README 和本地插件 `3.9.3` 内容，介绍 skills 与 agents 的能力地图，但正文不写成插件 API 手册、版本发布说明或命令大全。
 - 每篇正文至少包含一种结构化视觉表达，例如循环图、关系图、分组卡片、对比矩阵、流程组件、检查清单或多智能体分工图。
@@ -30,7 +30,7 @@
 | 类型 | 范围 | 说明 |
 |---|---|---|
 | 栏目 | `/compound/` | 展示名建议调整为“Compound Engineering（工程复利）”，说明方法论定位、核心循环、分组阅读路径和与其他栏目的关系。 |
-| 页面 | `/compound/`、`/compound/what-is-compound-engineering/`、`/compound/workflow-loop/`、`/compound/strategy-brainstorm-plan/`、`/compound/work-debug-review/`、`/compound/multi-agent-review/`、`/compound/reviewer-personas/`、`/compound/document-review-agents/`、`/compound/research-agents/`、`/compound/agent-orchestration/`、`/compound/review-boundaries/`、`/compound/knowledge-compounding/`、`/compound/with-openspec-and-aisee/` | 首批中文正文和多智能体拆分文章。若实现阶段发现篇幅过大，可在 doc-change/tasks 中分 P0/P1 交付，但不得丢失已确认的信息架构。 |
+| 页面 | `/compound/`、`/compound/what-is-compound-engineering/`、`/compound/workflow-loop/`、`/compound/strategy-brainstorm-plan/`、`/compound/work-debug-review/`、`/compound/multi-agent-review/`、`/compound/reviewer-personas/`、`/compound/document-review-agents/`、`/compound/design-review-agents/`、`/compound/research-agents/`、`/compound/agent-orchestration/`、`/compound/review-boundaries/`、`/compound/knowledge-compounding/`、`/compound/with-openspec-and-aisee/` | 首批中文正文和多智能体拆分文章。若实现阶段发现篇幅过大，可在 doc-change/tasks 中分 P0/P1 交付，但不得丢失已确认的信息架构。 |
 | 导航/侧边栏 | `site/.vuepress/collections/compound.ts` | 将 Compound 中文侧边栏从单页入口改为分组结构，保持 `README.md` 为栏目首页；英文 collection 可继续只保留 README。 |
 | 路由/frontmatter | 中文 Compound 页面 frontmatter | 新增页面必须提供稳定 `title`、`permalink`、`createTime`，permalink 与侧边栏链接一致。 |
 | 站点配置 | 可能涉及复用或新增视觉组件 | 优先复用现有 `FlowExplainer`、Markdown 表格、提示块、卡片和已有图示组件；如需新增多智能体关系图组件，应保持轻量并通过构建验证。 |
@@ -40,7 +40,7 @@
 - [ ] `/compound/` 首页已改写为 Compound Engineering（工程复利）栏目首页，清楚说明“Compound Engineering”与单个 `/ce-compound` skill 的区别。
 - [ ] 中文侧边栏按“总览 / 上游定义 / 执行交付 / 评审质量 / 知识复利 / 关系”或等价结构分组，且页面顺序符合读者学习路径。
 - [ ] 首批中文正文已创建或改写，并达到可发布内容，不是占位页或纯大纲。
-- [ ] 多智能体评审已拆成多篇文章，至少覆盖多智能体评审概念、Reviewer Personas、文档评审智能体、Research Agents、协作关系和适用边界。
+- [ ] 多智能体评审已拆成多篇文章，至少覆盖多智能体评审概念、Reviewer Personas、文档评审智能体、设计/UI 评审智能体、Research Agents、协作关系和适用边界。
 - [ ] `agent-orchestration` 或等价页面说明多类 agents 之间的关系，包括任务分派、并行、去重、置信度门禁、综合输出和人工判断边界。
 - [ ] `knowledge-compounding` 页面说明 `/ce-compound`、`/ce-compound-refresh`、`docs/solutions/`、frontmatter、problem_type 和知识刷新如何让一次解决变成团队资产。
 - [ ] `with-openspec-and-aisee` 页面说明 Compound Engineering、OpenSpec、aisee 的职责边界和组合方式，避免方法论重复或互相覆盖。

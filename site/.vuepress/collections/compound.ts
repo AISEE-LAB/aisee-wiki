@@ -4,7 +4,7 @@ export const compoundCollection = defineCollection({
   type: 'doc',
   dir: 'compound',
   linkPrefix: '/compound',
-  title: 'Compound',
+  title: 'Compound Engineering',
   sidebar: ['README.md'],
 })
 

@@ -14,6 +14,12 @@ export const compoundCollection = defineCollection({
         { text: '工程复利核心循环', link: '/compound/workflow-loop/' },
       ],
     },
+    {
+      text: '定义与计划',
+      items: [
+        { text: '策略、构思与计划', link: '/compound/strategy-brainstorm-plan/' },
+      ],
+    },
   ],
 })
 

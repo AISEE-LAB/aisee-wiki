@@ -172,7 +172,7 @@ Compound Engineering 更强调任务前后都有结构化动作：
 - 最终怎么修复，为什么这个方案有效。
 - 以后如何预防、如何测试、如何搜索到这条经验。
 
-因此，`/ce-compound` 很重要，但它不是 Compound Engineering 的全部。没有上游的策略和计划，没有执行过程的验证，没有评审阶段的风险发现，知识沉淀也会缺少可信来源。
+因此，`/ce-compound` 很重要，但它不是 Compound Engineering 的全部。没有前置的策略和计划，没有执行过程的验证，没有评审阶段的风险发现，知识沉淀也会缺少可信来源。
 
 ## 什么时候值得使用
 
@@ -189,4 +189,3 @@ Compound Engineering 更强调任务前后都有结构化动作：
 ## 参考资料
 
 - [EveryInc/compound-engineering-plugin README](https://github.com/EveryInc/compound-engineering-plugin/blob/main/plugins/compound-engineering/README.md)
-

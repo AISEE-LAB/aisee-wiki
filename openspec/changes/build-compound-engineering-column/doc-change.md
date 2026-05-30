@@ -28,7 +28,7 @@
 |---|---|---|---|
 | 修改 | Compound 栏目首页 | `site/compound/README.md` | 改写为“Compound Engineering（工程复利）”首页，包含定位、核心循环、栏目分组、首批文章入口、事实源说明和后续阅读路径。 |
 | 新增 | Compound Engineering 是什么 | `site/compound/what-is-compound-engineering.md` | 定义 Compound Engineering，解释工程复利、方法论、插件和 `/ce-compound` 的区别。 |
-| 新增 | 工程复利核心循环 | `site/compound/workflow-loop.md` | 说明从 `ce-strategy` 到 `ce-product-pulse` 的上游定义、执行、评审、知识沉淀和结果回看闭环。 |
+| 新增 | 工程复利核心循环 | `site/compound/workflow-loop.md` | 说明从 `ce-strategy` 到 `ce-product-pulse` 的定义与计划、执行、评审、知识沉淀和结果回看闭环。 |
 | 新增 | 策略、构思与计划 | `site/compound/strategy-brainstorm-plan.md` | 说明 `ce-strategy`、`ce-ideate`、`ce-brainstorm`、`ce-plan` 如何把模糊想法转成可执行计划。 |
 | 新增 | 执行、调试与评审 | `site/compound/work-debug-review.md` | 说明 `ce-work`、`ce-debug`、`ce-code-review`、`ce-optimize` 的职责边界和协作顺序。 |
 | 新增 | 多智能体评审是什么 | `site/compound/multi-agent-review.md` | 说明为什么单个 Agent 容易漏问题，以及多视角评审如何降低风险。 |
@@ -40,7 +40,7 @@
 | 新增 | 多智能体评审边界 | `site/compound/review-boundaries.md` | 说明什么时候值得上多智能体评审，什么时候过重，以及哪些结论必须人工判断。 |
 | 新增 | 知识如何复利 | `site/compound/knowledge-compounding.md` | 说明 `/ce-compound`、`/ce-compound-refresh`、`docs/solutions/`、frontmatter、problem_type、refresh 机制和可发现性。 |
 | 新增 | 与 OpenSpec、aisee 如何配合 | `site/compound/with-openspec-and-aisee.md` | 说明 Compound Engineering、OpenSpec、aisee 的职责边界、组合路径和典型使用顺序。 |
-| 修改 | Compound 中文侧边栏 | `site/.vuepress/collections/compound.ts` | 将 sidebar 从 `['README.md']` 改成分组结构，建议分为“总览 / 上游 / 交付 / 多智能体 / 知识 / 关系”。 |
+| 修改 | Compound 中文侧边栏 | `site/.vuepress/collections/compound.ts` | 将 sidebar 从 `['README.md']` 改成分组结构，建议分为“总览 / 定义与计划 / 交付 / 多智能体 / 知识 / 关系”。 |
 | 可能修改 | Compound 英文入口 | `site/en/compound/README.md` | 仅在需要时补充“English content is being prepared”的稳定说明和中文入口，避免死链；不写完整英文正文。 |
 | 可能新增 | 视觉组件或图示资产 | `site/.vuepress/components/`、`site/.vuepress/public/diagrams/compound/` | 优先复用 `FlowExplainer`；如 Markdown 难以表达多智能体关系，可新增轻量组件或图示资产。 |
 | 修改 | 文档基线 | `openspec/project-docs.md` | 归档前回写 Compound 栏目状态、页面清单、阅读路径、内容缺口和写作约定。 |
@@ -52,7 +52,7 @@
 | `/compound/` | 进入 Compound 栏目的读者 | Compound Engineering 栏目总览和阅读路径。 | “Compound Engineering（工程复利）”命名、核心循环图、分组入口、事实源说明、与 OpenSpec/aisee/workflows 的关系说明。 | 复制插件 README 的完整 skills 表；单独讲 `/ce-compound` 细节；手写主题已提供的上一篇/下一篇导航。 |
 | `/compound/what-is-compound-engineering/` | 第一次听到 Compound Engineering 的读者 | Compound Engineering 是把工程工作组织成可复利链路的方法论和工具集合。 | 方法论、插件、skill、agent、`/ce-compound` 的区别；工程复利的判断标准；适用场景速览。 | 命令大全、版本 changelog、安装教程。 |
 | `/compound/workflow-loop/` | 想理解整体链路的读者 | 从策略到结果回看的闭环，而不是单次代码生成。 | `ce-strategy`、`ce-ideate`、`ce-brainstorm`、`ce-plan`、`ce-work`、`ce-code-review`、`ce-debug`、`ce-compound`、`ce-product-pulse` 的位置；循环图。 | 每个 skill 的完整内部实现细节。 |
-| `/compound/strategy-brainstorm-plan/` | 需求不清、想把想法变成计划的读者 | 上游定义阶段把方向、问题、约束和计划写清楚。 | `STRATEGY.md`、ideation、interactive Q&A、right-sized requirements、plan handoff、适合进入 OpenSpec 的边界。 | 把 brainstorm 写成产品经理万能模板；把 plan 当不可变执行脚本。 |
+| `/compound/strategy-brainstorm-plan/` | 需求不清、想把想法变成计划的读者 | 定义与计划阶段把方向、问题、约束和计划写清楚。 | `STRATEGY.md`、ideation、interactive Q&A、right-sized requirements、plan handoff、适合进入 OpenSpec 的边界。 | 把 brainstorm 写成产品经理万能模板；把 plan 当不可变执行脚本。 |
 | `/compound/work-debug-review/` | 准备交付真实代码任务的读者 | 执行、调试和评审分别解决不同风险。 | `ce-work` 执行计划、`ce-debug` 根因调查、`ce-code-review` 多视角评审、`ce-optimize` 迭代优化、何时进入下一步。 | 自动承诺“无需人工 review”；鼓励无验证执行。 |
 | `/compound/multi-agent-review/` | 想理解多智能体价值的读者 | 多智能体评审用不同视角发现单 Agent 易漏的问题。 | 单 Agent 风险、多视角价值、分派与综合的基本模型、适用任务类型。 | 具体列完所有 reviewer；把多智能体写成越多越好。 |
 | `/compound/reviewer-personas/` | 想知道代码评审角色分工的读者 | Reviewer personas 不是重复审查，而是按风险维度拆分注意力。 | correctness、security、performance、maintainability、testing、scope、simplicity、project standards 等角色；各自看什么、不看什么。 | 每个 agent 的完整 prompt；无法验证的泛泛质量口号。 |
@@ -69,7 +69,7 @@
 | 分组 | 页面 | 目标 |
 |---|---|---|
 | 总览 | `/compound/`、`/compound/what-is-compound-engineering/`、`/compound/workflow-loop/` | 先建立 Compound Engineering 的方法论定位和工程循环。 |
-| 上游 | `/compound/strategy-brainstorm-plan/` | 说明策略、构思、需求澄清和计划如何进入可执行状态。 |
+| 定义与计划 | `/compound/strategy-brainstorm-plan/` | 说明策略、构思、需求澄清和计划如何进入可执行状态。 |
 | 交付 | `/compound/work-debug-review/` | 说明执行、调试、评审和优化的交付链路。 |
 | 多智能体 | `/compound/multi-agent-review/`、`/compound/reviewer-personas/`、`/compound/document-review-agents/`、`/compound/design-review-agents/`、`/compound/research-agents/`、`/compound/agent-orchestration/`、`/compound/review-boundaries/` | 拆解多智能体评审的角色、关系、协作方式和边界。 |
 | 知识 | `/compound/knowledge-compounding/` | 说明知识沉淀、刷新和可发现性。 |
@@ -83,7 +83,7 @@
 - 建议结构：
   1. 这是什么：策略、计划、执行、评审、知识沉淀和结果回看的工程复利链路。
   2. 为什么叫复利：一次解决不只交付代码，还留下可复用策略、计划、review 经验和解决方案文档。
-  3. 核心循环：上游定义、执行交付、评审质量、知识复利、团队信号。
+  3. 核心循环：定义与计划、执行交付、评审质量、知识复利、团队信号。
   4. 栏目分组和阅读顺序。
   5. 与 OpenSpec、aisee、工程流程栏目的入口关系。
 - 视觉要求：必须包含核心循环图或分组入口卡片。
@@ -100,9 +100,9 @@
 
 ### `/compound/workflow-loop/`
 
-- 核心结论：Compound Engineering 的主线是从上游方向到用户结果的闭环，而不是从 prompt 到代码的直线。
+- 核心结论：Compound Engineering 的主线是从方向定义到用户结果的闭环，而不是从 prompt 到代码的直线。
 - 建议结构：
-  1. 上游锚点：`ce-strategy`。
+  1. 方向锚点：`ce-strategy`。
   2. 想法到计划：`ce-ideate`、`ce-brainstorm`、`ce-plan`。
   3. 执行与质量：`ce-work`、`ce-debug`、`ce-code-review`、`ce-simplify-code`、`ce-optimize`。
   4. 沉淀与反馈：`ce-compound`、`ce-compound-refresh`、`ce-product-pulse`。
@@ -233,7 +233,7 @@
 - 侧边栏：中文 `compoundCollection` 改为分组侧边栏，建议结构：
   - 栏目首页：`/compound/`
   - 总览：`what-is-compound-engineering`、`workflow-loop`
-  - 上游：`strategy-brainstorm-plan`
+  - 定义与计划：`strategy-brainstorm-plan`
   - 交付：`work-debug-review`
   - 多智能体：`multi-agent-review`、`reviewer-personas`、`document-review-agents`、`design-review-agents`、`research-agents`、`agent-orchestration`、`review-boundaries`
   - 知识：`knowledge-compounding`

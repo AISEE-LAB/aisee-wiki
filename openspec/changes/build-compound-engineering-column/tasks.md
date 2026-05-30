@@ -13,7 +13,7 @@
 - [x] 1.2 改写 `site/compound/README.md`，将栏目首页升级为“Compound Engineering（工程复利）”，包含定位、核心循环、分组入口和事实源说明。
 - [x] 1.3 新增 `site/compound/what-is-compound-engineering.md`，解释方法论、插件、skill、agent、`/ce-compound` 的层级关系，以及工程复利与一次性代码生成的区别。
 - [x] 1.4 新增 `site/compound/workflow-loop.md`，说明 `ce-strategy -> ce-ideate -> ce-brainstorm -> ce-plan -> ce-work -> ce-code-review/ce-debug -> ce-compound -> ce-product-pulse` 的闭环。
-- [ ] 1.5 新增 `site/compound/strategy-brainstorm-plan.md`，说明上游定义阶段如何把模糊想法转成 requirements、plan、implementation units 和验证边界。
+- [x] 1.5 新增 `site/compound/strategy-brainstorm-plan.md`，说明定义与计划阶段如何把模糊想法转成 requirements、plan、implementation units 和验证边界。
 - [ ] 1.6 新增 `site/compound/work-debug-review.md`，说明 `ce-work`、`ce-debug`、`ce-code-review`、`ce-simplify-code`、`ce-optimize`、`ce-polish-beta` 的职责边界和协作顺序。
 - [ ] 1.7 新增 `site/compound/multi-agent-review.md`，说明多智能体评审的价值、单 Agent 容易遗漏的风险、并行审查与综合输出的基础模型。
 - [ ] 1.8 新增 `site/compound/reviewer-personas.md`，拆解 correctness、security、performance、maintainability、testing、scope、simplicity、project standards 等 reviewer personas 的关注点和边界。
@@ -31,7 +31,7 @@
 ## 2. 站点结构与配置
 
 - [x] 2.1 更新 `site/.vuepress/collections/compound.ts`，将 `compoundCollection` title 调整为 `Compound Engineering` 或等价展示名，并改为分组侧边栏。
-- [ ] 2.2 侧边栏按 doc-change.md 的分组组织：栏目首页、总览、上游、交付、多智能体、知识、关系；保持 `README.md` 为栏目首页。
+- [ ] 2.2 侧边栏按 doc-change.md 的分组组织：栏目首页、总览、定义与计划、交付、多智能体、知识、关系；保持 `README.md` 为栏目首页。
 - [ ] 2.3 为新增中文页面设置稳定 frontmatter：`title`、`permalink`、`createTime`；permalink 必须与侧边栏链接一致。
 - [ ] 2.4 检查 `site/en/compound/README.md` 是否需要补充稳定英文占位或中文入口；不要求完整英文正文，但不得新增死链。
 - [ ] 2.5 优先复用现有 `FlowExplainer`、Markdown 表格、提示块、卡片和已有图示组件表达核心循环和关系图。

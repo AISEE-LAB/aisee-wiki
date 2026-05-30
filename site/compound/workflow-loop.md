@@ -6,7 +6,7 @@ createTime: 2026/05/30 00:00:00
 
 # 工程复利核心循环
 
-Compound Engineering 的主线不是“从 prompt 到代码”的直线，而是从上游方向到用户结果的闭环。
+Compound Engineering 的主线不是“从 prompt 到代码”的直线，而是从方向定义到用户结果的闭环。
 
 这条闭环先回答为什么做、做什么、如何拆解，再进入执行、调试、评审和优化。任务结束后，它还会把解决过程写成可搜索知识，并用产品和工程结果反过来校准下一轮工作。
 
@@ -14,7 +14,7 @@ Compound Engineering 的主线不是“从 prompt 到代码”的直线，而是
 
 如果一次 AI Coding 只把当前 diff 改完，它的价值很容易停在这次提交里。Compound Engineering 希望每次工程工作都留下下一次可以复用的东西：策略锚点、需求判断、计划边界、评审发现、调试路径、解决方案文档和结果信号。
 
-官方 README 把 `ce-strategy` 到 `ce-product-pulse` 放在 Core Workflow 中：`ce-strategy` 作为上游锚点，`ce-product-pulse` 用用户结果和产品表现收口。中间的 skills 不是必须每次全量调用，而是按任务风险截取使用。
+官方 README 把 `ce-strategy` 到 `ce-product-pulse` 放在 Core Workflow 中：`ce-strategy` 作为方向锚点，`ce-product-pulse` 用用户结果和产品表现收口。中间的 skills 不是必须每次全量调用，而是按任务风险截取使用。
 
 ## 闭环总览
 
@@ -26,7 +26,7 @@ Compound Engineering 的主线不是“从 prompt 到代码”的直线，而是
   :stages="[
     {
       id: 'upstream',
-      title: '上游定义',
+      title: '定义与计划',
       description: '先让方向和问题可判断。',
       items: [
         {
@@ -175,7 +175,7 @@ Compound Engineering 的主线不是“从 prompt 到代码”的直线，而是
 
 这张图里的箭头不是强制流程。它表达的是：一次工程工作最好不要只停在“生成代码”，而要能回到更高层的问题，也能继续流向后续的知识和结果反馈。
 
-## 上游定义：先回答方向问题
+## 定义与计划：先回答方向问题
 
 `ce-strategy` 的作用是建立长期锚点。它关心产品正在解决什么问题、面向谁、关键指标是什么、当前有哪些工作轨道。没有这个锚点，Agent 很容易把局部任务做对，却把整体方向做偏。
 
@@ -191,7 +191,7 @@ Compound Engineering 的主线不是“从 prompt 到代码”的直线，而是
 
 ## 执行质量：执行、调试、评审不是一件事
 
-`ce-work` 关注把计划落成变更。它的重点是按步骤推进、保持上下文、运行验证，并在发现计划不成立时及时回到上游修正。
+`ce-work` 关注把计划落成变更。它的重点是按步骤推进、保持上下文、运行验证，并在发现计划不成立时及时回到定义阶段修正。
 
 `ce-debug` 和 `ce-code-review` 处理的是两类不同风险：
 

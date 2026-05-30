@@ -20,6 +20,12 @@ export const compoundCollection = defineCollection({
         { text: '策略、构思与计划', link: '/compound/strategy-brainstorm-plan/' },
       ],
     },
+    {
+      text: '执行与质量',
+      items: [
+        { text: '执行、调试与评审', link: '/compound/work-debug-review/' },
+      ],
+    },
   ],
 })
 

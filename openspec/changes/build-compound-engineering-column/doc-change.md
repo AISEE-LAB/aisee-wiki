@@ -40,7 +40,7 @@
 | 新增 | 多智能体评审边界 | `site/compound/review-boundaries.md` | 说明什么时候值得上多智能体评审，什么时候过重，以及哪些结论必须人工判断。 |
 | 新增 | 知识如何复利 | `site/compound/knowledge-compounding.md` | 说明 `/ce-compound`、`/ce-compound-refresh`、`docs/solutions/`、frontmatter、problem_type、refresh 机制和可发现性。 |
 | 新增 | 与 OpenSpec、aisee 如何配合 | `site/compound/with-openspec-and-aisee.md` | 说明 Compound Engineering、OpenSpec、aisee 的职责边界、组合路径和典型使用顺序。 |
-| 修改 | Compound 中文侧边栏 | `site/.vuepress/collections/compound.ts` | 将 sidebar 从 `['README.md']` 改成分组结构，建议分为“总览 / 定义与计划 / 交付 / 多智能体 / 知识 / 关系”。 |
+| 修改 | Compound 中文侧边栏 | `site/.vuepress/collections/compound.ts` | 将 sidebar 从 `['README.md']` 改成分组结构，建议分为“总览 / 定义与计划 / 执行与质量 / 多智能体 / 知识 / 关系”。 |
 | 可能修改 | Compound 英文入口 | `site/en/compound/README.md` | 仅在需要时补充“English content is being prepared”的稳定说明和中文入口，避免死链；不写完整英文正文。 |
 | 可能新增 | 视觉组件或图示资产 | `site/.vuepress/components/`、`site/.vuepress/public/diagrams/compound/` | 优先复用 `FlowExplainer`；如 Markdown 难以表达多智能体关系，可新增轻量组件或图示资产。 |
 | 修改 | 文档基线 | `openspec/project-docs.md` | 归档前回写 Compound 栏目状态、页面清单、阅读路径、内容缺口和写作约定。 |
@@ -70,7 +70,7 @@
 |---|---|---|
 | 总览 | `/compound/`、`/compound/what-is-compound-engineering/`、`/compound/workflow-loop/` | 先建立 Compound Engineering 的方法论定位和工程循环。 |
 | 定义与计划 | `/compound/strategy-brainstorm-plan/` | 说明策略、构思、需求澄清和计划如何进入可执行状态。 |
-| 交付 | `/compound/work-debug-review/` | 说明执行、调试、评审和优化的交付链路。 |
+| 执行与质量 | `/compound/work-debug-review/` | 说明执行、调试、评审和优化的交付链路。 |
 | 多智能体 | `/compound/multi-agent-review/`、`/compound/reviewer-personas/`、`/compound/document-review-agents/`、`/compound/design-review-agents/`、`/compound/research-agents/`、`/compound/agent-orchestration/`、`/compound/review-boundaries/` | 拆解多智能体评审的角色、关系、协作方式和边界。 |
 | 知识 | `/compound/knowledge-compounding/` | 说明知识沉淀、刷新和可发现性。 |
 | 关系 | `/compound/with-openspec-and-aisee/` | 把 Compound Engineering 与 OpenSpec、aisee、工程流程串起来。 |
@@ -83,7 +83,7 @@
 - 建议结构：
   1. 这是什么：策略、计划、执行、评审、知识沉淀和结果回看的工程复利链路。
   2. 为什么叫复利：一次解决不只交付代码，还留下可复用策略、计划、review 经验和解决方案文档。
-  3. 核心循环：定义与计划、执行交付、评审质量、知识复利、团队信号。
+  3. 核心循环：定义与计划、执行与质量、评审质量、知识复利、团队信号。
   4. 栏目分组和阅读顺序。
   5. 与 OpenSpec、aisee、工程流程栏目的入口关系。
 - 视觉要求：必须包含核心循环图或分组入口卡片。
@@ -234,7 +234,7 @@
   - 栏目首页：`/compound/`
   - 总览：`what-is-compound-engineering`、`workflow-loop`
   - 定义与计划：`strategy-brainstorm-plan`
-  - 交付：`work-debug-review`
+  - 执行与质量：`work-debug-review`
   - 多智能体：`multi-agent-review`、`reviewer-personas`、`document-review-agents`、`design-review-agents`、`research-agents`、`agent-orchestration`、`review-boundaries`
   - 知识：`knowledge-compounding`
   - 关系：`with-openspec-and-aisee`

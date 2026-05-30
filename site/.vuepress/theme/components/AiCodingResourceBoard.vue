@@ -668,7 +668,7 @@ const updatedDate = '2026-05-30'
       <div>
         <p>更新日期：{{ updatedDate }}</p>
       </div>
-      <strong>{{ totalResources }} 个精选资源</strong>
+      <strong>{{ totalResources }} 个推荐资源</strong>
     </header>
 
     <div class="ai-resource-board__index" aria-label="资源分类">

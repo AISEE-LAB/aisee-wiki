@@ -36,7 +36,7 @@
 
 | 页面 | 目标读者 | 核心内容 | 必须包含 | 不包含 |
 |---|---|---|---|---|
-| `/resources/` | 想了解 AI Coding 开源生态、选择 Agent/Skill/MCP/设计辅助工具的学习者和维护者。 | 从 GitHub stars 中筛选 AI Coding 相关仓库，按方法论、Coding Agent、Skill、MCP/Tool、代码上下文、UI/UX 与设计、学习资料分类。 | 更新日期；精选资源卡片；分类索引；GitHub 和官网链接；`ui-ux-pro-max-skill` 等容易遗漏的 UI/UX Skill。 | 公开页面不写筛选说明、阅读建议、暂不收录列表、其他文章入口、实时排行、价格/额度、安装教程、账号共享/中转/key 自动化、泄露 prompt、生图/视频/PPT prompt 大合集。 |
+| `/resources/` | 想了解 AI Coding 开源生态、选择 Agent/Skill/MCP/设计辅助工具的学习者和维护者。 | 从 GitHub stars 中筛选 AI Coding 相关仓库，按方法论、Coding Agent、Skill、MCP/Tool、代码上下文、UI/UX 与设计、学习资料分类。 | 更新日期；推荐资源卡片；分类索引；GitHub 和官网链接；`ui-ux-pro-max-skill` 等容易遗漏的 UI/UX Skill。 | 公开页面不写筛选说明、阅读建议、暂不收录列表、其他文章入口、实时排行、价格/额度、安装教程、账号共享/中转/key 自动化、泄露 prompt、生图/视频/PPT prompt 大合集。 |
 
 ## Site Impact
 

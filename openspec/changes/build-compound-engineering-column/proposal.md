@@ -3,7 +3,7 @@
 ## 背景与问题
 
 - 当前问题：`/compound/` 目前只是占位入口，尚未解释 Compound Engineering 的方法论定位、工程复利循环、compound-engineering-plugin 的技能分组，以及它与 OpenSpec、工程流程栏目的关系。读者容易把“Compound”误解为单个 `/ce-compound` 知识沉淀命令，而不是一套从策略、计划、执行、评审到知识沉淀和结果回看的工程协作系统。
-- 触发原因：维护者确认需要结合远端 `EveryInc/compound-engineering-plugin` README、本地已安装 compound-engineering-plugin 内容和本站其他栏目风格，重新规划 Compound 栏目；栏目需要分组，多智能体评审需要拆成多篇文章，并补一篇说明多类智能体之间关系的总览文章。
+- 触发原因：维护者确认需要结合 `EveryInc/compound-engineering-plugin` 官方 README、公开文档、插件源码和本站其他栏目风格，重新规划 Compound 栏目；栏目需要分组，多智能体评审需要拆成多篇文章，并补一篇说明多类智能体之间关系的总览文章。
 - 关联基线：openspec/project-docs.md
 
 ## 目标
@@ -13,13 +13,13 @@
 - 新增首批中文正文，建立从概念、核心循环、定义与计划、执行评审、多智能体、知识沉淀到 OpenSpec 关系的阅读路径。
 - 将多智能体评审拆成独立文章：多智能体评审概念、Reviewer Personas、文档评审智能体、设计/UI 评审智能体、Research Agents、多智能体协作关系、评审边界；其中协作关系文章负责解释 dispatcher、并行、去重、置信度门禁和综合输出如何配合。
 - 明确 Compound Engineering 与 OpenSpec 的边界：OpenSpec 提供 spec-first 事实源和变更边界，Compound Engineering 提供工程执行、评审、反馈和知识复利链路。
-- 参考远端 README 和本地插件 `3.9.3` 内容，介绍 skills 与 agents 的能力地图，但正文不写成插件 API 手册、版本发布说明或命令大全。
+- 参考官方 README、公开文档和插件源码，介绍 skills 与 agents 的能力地图，但正文不写成插件 API 手册、版本发布说明或命令大全。
 - 每篇正文至少包含一种结构化视觉表达，例如循环图、关系图、分组卡片、对比矩阵、流程组件、检查清单或多智能体分工图。
 
 ## 不在范围
 
 - 不在本 change 中重写英文 `/en/compound/` 完整正文；英文页面可保持简要占位或补充稳定入口。
-- 不在本 change 中安装、升级或修改本地 compound-engineering-plugin。
+- 不在本 change 中安装、升级或修改 compound-engineering-plugin。
 - 不在本 change 中生成实时版本追踪、完整 changelog 解读、价格/计费说明或跨平台安装评测。
 - 不在本 change 中为每一个 `ce-*` skill 都写独立深度教程；首批重点建立方法论主线和高优先级文章。
 - 不在本 change 中替代 `/workflows/` 栏目的具体端到端流程演练；Compound 栏目可链接工程流程，但不承载所有操作手册。
@@ -44,7 +44,7 @@
 - [ ] `agent-orchestration` 或等价页面说明多类 agents 之间的关系，包括任务分派、并行、去重、置信度门禁、综合输出和人工判断边界。
 - [ ] `knowledge-compounding` 页面说明 `/ce-compound`、`/ce-compound-refresh`、`docs/solutions/`、frontmatter、problem_type 和知识刷新如何让一次解决变成团队资产。
 - [ ] `with-openspec` 页面说明 Compound Engineering、OpenSpec 和工程流程的职责边界和组合方式，避免方法论重复或互相覆盖。
-- [ ] 正文参考远端 README 与本地插件内容时，标注事实源口径和更新时间；涉及版本、技能数量、命令名称等易变信息时使用“以当前插件版本和官方 README 为准”的表述。
+- [ ] 正文参考官方 README、公开文档和插件源码时，标注事实源口径；涉及版本、技能数量、命令名称等易变信息时使用“以官方 README 和对应插件源码为准”的表述。
 - [ ] 每篇正文至少包含一种结构化视觉表达，不出现连续纯文字长文。
 - [ ] 所有新增页面 permalink、侧边栏链接和栏目首页入口正确；正文不手写主题已提供的上一篇/下一篇导航。
 - [ ] `pnpm docs:build` 或项目确认的等效文档站构建检查通过。
@@ -53,7 +53,7 @@
 ## 约束与假设
 
 - [ASSUMPTION] 中文正文优先完成；英文 `/en/compound/` 暂不要求同步完整重写，只需保持入口可访问且无死链。
-- [ASSUMPTION] 本 change 的主要事实源包括远端 `EveryInc/compound-engineering-plugin` README、本地 `/Users/fengliang/.codex/plugins/cache/compound-engineering-plugin/compound-engineering/3.9.3/README.md`、本地 skills `SKILL.md`、本地 agents 说明，以及本站现有 OpenSpec / 学习路径栏目风格。
+- [ASSUMPTION] 本 change 的主要事实源包括 `EveryInc/compound-engineering-plugin` 官方 README、公开文档、插件源码中的 skills 与 agents 说明，以及本站现有 OpenSpec / 学习路径栏目风格。
 - [ASSUMPTION] 栏目名称采用“Compound Engineering（工程复利）”，路由继续使用 `/compound/`，避免破坏既有链接。
 - [DOC-GAP] 当前 `openspec/project-docs.md` 尚未记录 Compound 栏目的正式页面清单、阅读路径和内容边界，归档前需要回写。
 - [DOC-GAP] `site/compound/README.md` 目前为占位页，`site/.vuepress/collections/compound.ts` 目前只包含 `README.md`，缺少分组侧边栏。

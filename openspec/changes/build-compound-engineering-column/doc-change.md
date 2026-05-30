@@ -19,8 +19,8 @@
 | `site/.vuepress/collections/compound.ts` | 中文 compound collection 只包含 `README.md`，title 为 `Compound`；英文 collection 也只包含 `README.md`。 | 缺少中文侧边栏分组，无法承载首批正文；栏目展示名也未体现“Compound Engineering（工程复利）”。 |
 | `site/en/compound/README.md` | 英文占位页存在。 | 中文优先策略下可不写完整英文，但新增中文页面后英文入口不能产生死链或错误承诺。 |
 | `openspec/project-docs.md` | 已记录学习路径和 OpenSpec 栏目状态。 | 尚未记录 Compound 栏目的正式页面清单、阅读路径、内容边界和写作约定。 |
-| Compound Engineering 事实源 | 远端 README 和本地插件 `3.9.3` 都包含 skills、agents 和分类信息。 | 站内尚未把这些信息转成读者可理解的方法论文章；需要避免复制 README 命令清单，也要避免把动态版本信息写死。 |
-| 多智能体评审内容 | 本地插件包含 reviewer、document reviewer、design/UI reviewer、research、workflow 等多类 agents。 | 如果只写一篇总览会过于拥挤；需要拆成概念、角色、文档评审、设计/UI 评审、研究智能体、协作关系和边界。 |
+| Compound Engineering 事实源 | 官方 README、公开文档和插件源码包含 skills、agents 和分类信息。 | 站内尚未把这些信息转成读者可理解的方法论文章；需要避免复制 README 命令清单，也要避免把动态版本信息写死。 |
+| 多智能体评审内容 | 插件源码包含 reviewer、document reviewer、design/UI reviewer、research、workflow 等多类 agents。 | 如果只写一篇总览会过于拥挤；需要拆成概念、角色、文档评审、设计/UI 评审、研究智能体、协作关系和边界。 |
 
 ## Planned Changes
 
@@ -247,25 +247,25 @@
 
 ## Validation
 
-- [ ] `/compound/` 和 13 个新增中文页面路径可访问。
-- [ ] Compound 中文侧边栏分组、栏目首页入口和页面顺序正确。
-- [ ] 内链有效，尤其是指向 `/openspec/`、`/workflows/`、`/resources/glossary/` 的链接。
-- [ ] 代码块、命令或示例已检查，避免把当前插件版本的动态信息写成永久事实。
-- [ ] 远端 README、本地插件 README、本地 skills/agents 的事实源口径已核对并在正文中说明更新时间。
-- [ ] 每篇正文都包含结构化视觉表达，不是纯文字长文。
-- [ ] 多智能体分组至少包含概念、角色、文档评审、设计/UI 评审、研究、协作关系和边界七类内容。
-- [ ] `pnpm docs:build` 或项目确认的等效文档站构建检查通过。
-- [ ] 如新增组件或图示资产，已进行本地预览或截图检查，确认桌面和移动端不溢出、不遮挡。
+- [x] `/compound/` 和 13 个新增中文页面路径可访问。
+- [x] Compound 中文侧边栏分组、栏目首页入口和页面顺序正确。
+- [x] 内链有效，尤其是指向 `/openspec/`、`/workflows/`、`/resources/glossary/` 的链接。
+- [x] 代码块、命令或示例已检查，避免把当前插件版本的动态信息写成永久事实。
+- [x] 官方 README、公开文档和插件源码中的 skills/agents 事实源口径已核对，并在正文中避免写死动态版本信息。
+- [x] 每篇正文都包含结构化视觉表达，不是纯文字长文。
+- [x] 多智能体分组至少包含概念、角色、文档评审、设计/UI 评审、研究、协作关系和边界七类内容。
+- [x] `pnpm docs:build` 或项目确认的等效文档站构建检查通过。
+- [x] 未新增组件或图示资产；本项无需额外预览或截图检查。
 
 ## Archive Updates
 
 归档前必须回写 `openspec/project-docs.md`，或在下方写明无需回写的原因。
 
-- [ ] 页面清单已更新。
-- [ ] 栏目结构已更新。
-- [ ] 内容状态已更新。
-- [ ] 后续缺口已更新。
-- [ ] 术语/写作约定已更新或确认无需更新。
+- [x] 页面清单已更新。
+- [x] 栏目结构已更新。
+- [x] 内容状态已更新。
+- [x] 后续缺口已更新。
+- [x] 术语/写作约定已更新或确认无需更新。
 
 无需回写的原因：
 

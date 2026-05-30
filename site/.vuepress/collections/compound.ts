@@ -33,6 +33,7 @@ export const compoundCollection = defineCollection({
         { text: 'Reviewer Personas', link: '/compound/reviewer-personas/' },
         { text: '文档评审智能体', link: '/compound/document-review-agents/' },
         { text: '设计与 UI 评审智能体', link: '/compound/design-review-agents/' },
+        { text: '研究型智能体', link: '/compound/research-agents/' },
       ],
     },
   ],

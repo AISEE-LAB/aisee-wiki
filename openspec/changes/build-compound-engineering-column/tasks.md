@@ -19,7 +19,7 @@
 - [x] 1.8 新增 `site/compound/reviewer-personas.md`，拆解 correctness、security、performance、maintainability、testing、scope、simplicity、project standards 等 reviewer personas 的关注点和边界。
 - [x] 1.9 新增 `site/compound/document-review-agents.md`，说明 coherence、feasibility、product lens、scope guardian、security lens、adversarial document reviewer 等文档评审智能体如何前置发现风险。
 - [x] 1.10 新增 `site/compound/design-review-agents.md`，说明 `ce-design-lens-reviewer`、`ce-design-implementation-reviewer`、`ce-design-iterator`、`ce-figma-design-sync` 等设计/UI 评审与同步能力。
-- [ ] 1.11 新增 `site/compound/research-agents.md`，说明 repo、session、Slack、web、issue、learnings research 等研究型 agents 如何补足上下文，并明确事实源优先级和隐私边界。
+- [x] 1.11 新增 `site/compound/research-agents.md`，说明 repo、session、Slack、web、issue、learnings research 等研究型 agents 如何补足上下文，并明确事实源优先级和隐私边界。
 - [ ] 1.12 新增 `site/compound/agent-orchestration.md`，作为多智能体关系总览，说明 orchestrator/dispatcher、parallel agents、dedup、confidence gate、final synthesis 和 human decision gate 如何协作。
 - [ ] 1.13 新增 `site/compound/review-boundaries.md`，说明多智能体评审的适用边界、轻量/完整/文档 review 选择矩阵，以及哪些判断必须人工负责。
 - [ ] 1.14 新增 `site/compound/knowledge-compounding.md`，说明 `/ce-compound`、`/ce-compound-refresh`、`docs/solutions/`、YAML frontmatter、problem_type、discoverability check 和 refresh 机制。

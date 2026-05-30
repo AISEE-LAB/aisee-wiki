@@ -12,8 +12,8 @@ createTime: 2026/05/23 11:01:52
 
 文章内容将在后续内容 change 中逐步补齐。本页先提供可访问栏目入口。
 
-## 下一步阅读
+## 已完成相关内容
 
 - [学习路径](/learn/)
-- [工程流程](/workflows/)
-- [资源中心](/resources/)
+- [OpenSpec](/openspec/)
+- [Compound](/compound/)

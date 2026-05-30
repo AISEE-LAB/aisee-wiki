@@ -6,15 +6,14 @@ createTime: 2026/05/23 11:01:52
 
 # 阅读路径
 
-推荐顺序先走学习路径，再进入方法论栏目：
+推荐顺序先走学习路径，再进入已经完成第一轮正文建设的方法论栏目：
 
 1. [学习路径](/learn/)
 2. [OpenSpec](/openspec/)
 3. [Compound](/compound/)
-4. [aisee](/aisee/)
-5. [工程流程](/workflows/)
-6. [观点文章](/thinking/)
-7. [资源中心](/resources/)
+4. [资源中心](/resources/)
+
+aisee、工程流程和观点文章仍在内容建设中，正文补齐后再纳入推荐顺序。
 
 ## OpenSpec 深度阅读
 
@@ -32,4 +31,4 @@ createTime: 2026/05/23 11:01:52
 
 ## 当前状态
 
-OpenSpec 中文核心正文已完成第一轮建设。Compound、aisee、工程流程和观点文章仍以栏目入口为主，后续正文完成后再补具体文章链接。
+OpenSpec 和 Compound 中文核心正文已完成第一轮建设。aisee、工程流程和观点文章仍以栏目入口为主，后续正文完成后再补具体文章链接。

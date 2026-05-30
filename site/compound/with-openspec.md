@@ -8,7 +8,7 @@ createTime: 2026/05/30 00:00:00
 
 OpenSpec 和 Compound Engineering 不是竞争关系。它们约束的是 AI 工程协作的两个不同层面：OpenSpec 管规范事实源和变更边界，Compound Engineering 管计划、执行、评审、调试、知识沉淀和结果回看。
 
-如果只用 OpenSpec，规范可能很清楚，但执行、评审和知识沉淀仍然需要工程流程承接。如果只用 Compound Engineering，执行反馈链路可能很顺，但重大变更仍然需要一个可审查、可归档的事实源。
+如果只用 OpenSpec，规范可能很清楚，但执行、评审和知识沉淀仍然需要后续链路承接。如果只用 Compound Engineering，执行反馈链路可能很顺，但重大变更仍然需要一个可审查、可归档的事实源。
 
 ## 核心结论
 
@@ -157,7 +157,6 @@ OpenSpec 和 Compound Engineering 不是竞争关系。它们约束的是 AI 工
 |---|---|---|---|
 | OpenSpec | 规范层、事实源、变更边界、验收标准。 | `proposal.md`、delta specs、`design.md`、`tasks.md`、archive。 | 不直接替代实现、调试、代码评审和结果回看。 |
 | Compound Engineering | 工程执行、计划、评审、调试、优化、知识复利和产品信号。 | requirements、plan、review findings、solution docs、pulse report。 | 不替代已生效 spec，也不自动决定产品取舍。 |
-| 工程流程 | 具体端到端操作演练和可执行流程说明。 | 流程说明、操作步骤、案例。 | 不承担方法论总览，也不作为事实源本身。 |
 
 最容易混淆的是 OpenSpec 和 Compound Engineering。OpenSpec 是规范层，告诉 Agent 什么是本次变更的事实源；Compound Engineering 是工程协作层，告诉 Agent 如何把一次工作做完、审好、沉淀好。
 
@@ -209,7 +208,6 @@ OpenSpec 和 Compound Engineering 不是竞争关系。它们约束的是 AI 工
 |---|---|
 | 只用 OpenSpec | 需要更新规范、归档历史或审查变更边界，但实现不在当前任务内。 |
 | 只用 Compound Engineering | 低风险执行、调试、评审、知识沉淀或外部研究，不需要建立新 spec。 |
-| 只用工程流程 | 读者只需要具体操作演练，不需要理解完整方法论。 |
 
 判断标准仍然是风险和事实源。如果任务会改变系统行为并影响多人协作，优先补 OpenSpec；如果只是把已经明确的任务执行好、审好、沉淀好，Compound Engineering 就足够。
 
@@ -229,4 +227,3 @@ OpenSpec 和 Compound Engineering 不是竞争关系。它们约束的是 AI 工
 
 - [EveryInc/compound-engineering-plugin README](https://github.com/EveryInc/compound-engineering-plugin/blob/main/plugins/compound-engineering/README.md)
 - [OpenSpec](/openspec/)
-- [工程流程](/workflows/)

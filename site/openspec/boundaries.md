@@ -269,7 +269,7 @@ OpenSpec 最大的误用，是把它变成“所有事情都必须填表”。
 
 ## 下一步阅读
 
-到这里，OpenSpec 栏目的核心概念已经闭环：先理解它为什么存在，再理解 specs、changes、artifacts、delta spec、schema 和适用边界。后续更适合回到真实项目中，用一个小而完整的 change 练习 propose、spec、design、tasks、verify 和 archive。
+到这里，OpenSpec 的核心概念已经闭环：先理解它为什么存在，再理解 specs、changes、artifacts、delta spec、schema 和适用边界。接下来更适合回到真实项目中，用一个小而完整的 change 练习 propose、spec、design、tasks、verify 和 archive。
 
 ## 参考资料
 

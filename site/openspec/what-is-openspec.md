@@ -208,7 +208,7 @@ OpenSpec 不是把瀑布流程搬到 AI Coding 中。官方文档强调的是 fl
 
 ## 下一步阅读
 
-读完这篇后，建议回到 [OpenSpec 栏目首页](/openspec/) 对照整体阅读顺序。下一篇会展开 OpenSpec 的心智模型：`specs`、`changes`、artifacts 和 archive 到底如何配合。
+读完这篇后，可以回到 [OpenSpec 总览](/openspec/) 对照整体学习路线。下一篇会展开 OpenSpec 的心智模型：`specs`、`changes`、artifacts 和 archive 到底如何配合。
 
 ## 参考资料
 

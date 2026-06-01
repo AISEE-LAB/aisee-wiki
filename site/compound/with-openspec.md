@@ -193,7 +193,7 @@ OpenSpec 和 Compound Engineering 不是竞争关系。它们约束的是 AI 工
 |---|---|---|
 | 需求已清楚的新功能 | OpenSpec -> `ce-work` -> `ce-code-review` -> archive / `ce-compound` | 先固化规范，再执行和沉淀。 |
 | 需求仍模糊 | `ce-brainstorm` / `ce-plan` -> OpenSpec -> Compound 执行评审 | 先澄清，再进入事实源。 |
-| 文档站栏目建设 | OpenSpec doc change -> 分篇写作 -> `pnpm docs:build` -> project-docs 回写 | 文档工作也需要 change 范围和 archive gate。 |
+| 文档站内容建设 | OpenSpec doc change -> 分篇写作 -> `pnpm docs:build` -> project-docs 回写 | 文档工作也需要 change 范围和 archive gate。 |
 | UI 功能 | 内容规格 / design lens -> OpenSpec 或 plan -> `ce-work` -> design implementation review | 先明确页面内容和状态，再验证实现。 |
 | 线上问题修复 | `ce-debug` -> 必要时 OpenSpec -> `ce-code-review` -> `ce-compound` | 先找根因；若行为或范围变化大，再补规范层。 |
 | 已解决问题沉淀 | `ce-compound` | 把一次解决写成未来可检索的 solution。 |

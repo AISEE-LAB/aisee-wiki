@@ -227,7 +227,7 @@ Reviewer persona 不是职位，也不是一组漂亮名字。它应该代表一
 
 ## 人和事实源仍然优先
 
-多智能体评审不能替代项目事实源。对于本站这样的 OpenSpec 驱动项目，`proposal.md`、delta specs、`design.md`、`tasks.md` 和项目规则仍然是判断依据。Reviewer 的发现如果和事实源冲突，不能直接改代码，而应先标记冲突并回到对应 artifact。
+多智能体评审不能替代项目事实源。对于 OpenSpec 驱动项目，`proposal.md`、delta specs、`design.md`、`tasks.md` 和项目规则仍然是判断依据。Reviewer 的发现如果和事实源冲突，不能直接改代码，而应先标记冲突并回到对应 artifact。
 
 同样，以下判断必须交给人或项目规则：
 

@@ -24,10 +24,10 @@ export const siteSections = [
     role: 'AI-Enhanced Software Engineering 方法、插件与工作流入口',
   },
   {
-    slug: 'thinking',
-    zh: '观点文章',
-    en: 'Thinking',
-    role: '观点、案例和文章型内容',
+    slug: 'ai-engineering',
+    zh: 'AI Engineering',
+    en: 'AI Engineering',
+    role: 'AI 时代软件工程的方法论基础',
   },
   {
     slug: 'resources',

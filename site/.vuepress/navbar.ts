@@ -7,7 +7,7 @@
 import { defineNavbarConfig } from 'vuepress-theme-plume'
 import { siteSections } from './ia'
 
-const navbarSectionSlugs = ['learn', 'openspec', 'compound', 'aisee', 'resources', 'thinking'] as const
+const navbarSectionSlugs = ['learn', 'ai-engineering', 'openspec', 'compound', 'aisee', 'resources'] as const
 const navbarSections = navbarSectionSlugs.map((slug) => {
   const section = siteSections.find(item => item.slug === slug)
 

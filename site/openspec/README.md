@@ -187,7 +187,7 @@ propose -> specs -> design -> tasks -> implement -> verify -> archive
 
 Archive 是工作流的收口动作。归档时，变更中的 delta specs 会被合并到主 specs，change 目录会移动到 `changes/archive/`，成为后续审计和理解历史决策的依据。
 
-## 推荐阅读顺序
+## 学习路线
 
 建议按下面的顺序学习 OpenSpec：
 

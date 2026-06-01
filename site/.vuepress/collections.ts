@@ -5,27 +5,27 @@
  */
 
 import { defineCollections } from 'vuepress-theme-plume'
+import { aiEngineeringCollection, aiEngineeringEnCollection } from './collections/ai-engineering'
 import { aiseeCollection, aiseeEnCollection } from './collections/aisee'
 import { compoundCollection, compoundEnCollection } from './collections/compound'
 import { learnCollection, learnEnCollection } from './collections/learn'
 import { openspecCollection, openspecEnCollection } from './collections/openspec'
 import { resourcesCollection, resourcesEnCollection } from './collections/resources'
-import { thinkingCollection, thinkingEnCollection } from './collections/thinking'
 
 export const zhCollections = defineCollections([
   learnCollection,
+  aiEngineeringCollection,
   openspecCollection,
   compoundCollection,
   aiseeCollection,
   resourcesCollection,
-  thinkingCollection,
 ])
 
 export const enCollections = defineCollections([
   learnEnCollection,
+  aiEngineeringEnCollection,
   openspecEnCollection,
   compoundEnCollection,
   aiseeEnCollection,
   resourcesEnCollection,
-  thinkingEnCollection,
 ])

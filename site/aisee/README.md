@@ -6,18 +6,22 @@ createTime: 2026/05/23 11:01:52
 
 # AISEE
 
-AISEE 是 AI-Enhanced Software Engineering 的方法与插件栏目，用于说明 skill 生态、需求链路、技术上下文、change 拆分、OpenSpec 协作方式，以及可复用工程流程。
+AISEE 是 AI-Enhanced Software Engineering 的方法与插件主题，用于把需求链路、技术上下文、change 拆分、OpenSpec 协作方式和可复用工程流程组织成一套工程机制。
 
-## 当前状态
+## 方法范围
 
-skill 详情、安装命令和版本说明将在独立 skills 文档 change 中补齐。本页先提供稳定入口，并承载原工程流程栏目。
+AISEE 关注的不是单个命令，而是从需求到验证的连续链路：
+
+- 把模糊需求整理成可审查输入。
+- 把项目事实、技术约束和风险组织成上下文。
+- 把已确认目标拆成 OpenSpec change。
+- 把实现、评审、验证和知识沉淀交给明确的工作流承接。
 
 ## 工程流程
 
 - [流程总览](/aisee/workflows/)
-- [可复用流程讲解组件示例](/aisee/workflows/flow-explainer/)
 
-## 已完成相关内容
+## 相关方法
 
 - [学习路径](/learn/)
 - [OpenSpec](/openspec/)

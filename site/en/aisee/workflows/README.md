@@ -6,14 +6,15 @@ createTime: 2026/05/23 11:01:52
 
 # Workflows
 
-Workflows now live under AISEE. This section will explain runnable engineering workflows across OpenSpec, Compound, Harness, and AISEE.
+Workflows describe runnable engineering chains across OpenSpec, Compound, Harness, and AISEE.
 
-## Status
+## Scope
 
-Workflow articles and reusable flow components will be completed in later changes.
+The workflow layer focuses on repeatable sequences: clarify context, define change boundaries, execute inside a harness, verify results, and preserve reusable knowledge.
 
-## Next
+## Start Here
 
+- [Chinese workflow foundation](/aisee/workflows/)
 - [OpenSpec](/en/openspec/)
 - [Compound](/en/compound/)
 - [AISEE](/en/aisee/)

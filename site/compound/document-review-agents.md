@@ -205,7 +205,7 @@ Requirements 和 plan 都是文档，但不能用同一套问题审。
 
 ## 如何回写到 OpenSpec artifacts
 
-对本站这样的 OpenSpec 驱动项目，文档评审的有效发现应回写到对应 artifact，而不是只停留在聊天记录或 review 报告里。
+对 OpenSpec 驱动项目，文档评审的有效发现应回写到对应 artifact，而不是只停留在聊天记录或 review 报告里。
 
 | 发现类型 | 回写位置 |
 |---|---|

@@ -240,15 +240,15 @@ Refresh 的原则是“让文档匹配现实”，不是让代码迁就旧文档
 
 这就是知识复利的实际工作方式：不是每次都重新研究，而是先找团队已经付过成本的经验。
 
-## 本站知识库示例
+## 知识库示例
 
-本站已有 `docs/solutions/documentation-gaps/openspec-column-content-playbook.md`，它记录了 OpenSpec 栏目从占位页建设为系统正文时的收尾流程。
+当前项目已有 `docs/solutions/documentation-gaps/openspec-column-content-playbook.md`，它记录了 OpenSpec 内容从占位页建设为系统正文时的收尾流程。
 
 它属于 knowledge track：
 
 | 字段 | 示例含义 |
 |---|---|
-| `problem_type: documentation_gap` | 记录的是文档栏目建设经验，不是运行时 bug。 |
+| `problem_type: documentation_gap` | 记录的是文档内容建设经验，不是运行时 bug。 |
 | `component: documentation` | 影响对象是文档内容和站点结构。 |
 | `applies_when` | 标明什么时候需要使用这条经验。 |
 | `tags` | 让未来关于 OpenSpec、VuePress、教程内容、archive gate 的工作能命中它。 |

@@ -148,7 +148,7 @@ Schema 是沉淀稳定流程的工具，不是逃避规范的捷径。
 
 ## AI SEE Wiki 的 schema 示例
 
-本站使用的 schema 是项目级 `aisee-docsite-driven`，位于：
+当前项目使用的 schema 是项目级 `aisee-docsite-driven`，位于：
 
 ```text
 openspec/schemas/aisee-docsite-driven/schema.yaml

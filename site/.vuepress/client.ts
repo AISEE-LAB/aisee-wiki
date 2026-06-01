@@ -30,7 +30,7 @@ import '@vue-flow/core/dist/style.css'
 import '@vue-flow/core/dist/theme-default.css'
 // import CustomComponent from './theme/components/Custom.vue'
 
-// import './theme/styles/custom.css'
+import './theme/styles/custom.css'
 
 export default defineClientConfig({
   enhance({ app }) {

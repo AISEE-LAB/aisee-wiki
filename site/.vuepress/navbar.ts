@@ -5,25 +5,27 @@
  */
 
 import { defineNavbarConfig } from 'vuepress-theme-plume'
-import { primarySectionSlugs, secondarySectionSlugs, siteSections } from './ia'
+import { siteSections } from './ia'
 
-const primarySections = siteSections.filter(section => primarySectionSlugs.includes(section.slug as typeof primarySectionSlugs[number]))
-const secondarySections = siteSections.filter(section => secondarySectionSlugs.includes(section.slug as typeof secondarySectionSlugs[number]))
+const navbarSectionSlugs = ['learn', 'openspec', 'compound', 'aisee', 'resources', 'thinking'] as const
+const navbarSections = navbarSectionSlugs.map((slug) => {
+  const section = siteSections.find(item => item.slug === slug)
+
+  if (!section)
+    throw new Error(`Missing navbar section: ${slug}`)
+
+  return section
+})
+
+const zhSectionNavbar = navbarSections.map(section => ({ text: section.zh, link: `/${section.slug}/` }))
+const enSectionNavbar = navbarSections.map(section => ({ text: section.en, link: `/en/${section.slug}/` }))
 
 export const zhNavbar = defineNavbarConfig([
   { text: '首页', link: '/' },
-  ...primarySections.map(section => ({ text: section.zh, link: `/${section.slug}/` })),
-  {
-    text: '更多',
-    items: secondarySections.map(section => ({ text: section.zh, link: `/${section.slug}/` })),
-  },
+  ...zhSectionNavbar,
 ])
 
 export const enNavbar = defineNavbarConfig([
   { text: 'Home', link: '/en/' },
-  ...primarySections.map(section => ({ text: section.en, link: `/en/${section.slug}/` })),
-  {
-    text: 'More',
-    items: secondarySections.map(section => ({ text: section.en, link: `/en/${section.slug}/` })),
-  },
+  ...enSectionNavbar,
 ])

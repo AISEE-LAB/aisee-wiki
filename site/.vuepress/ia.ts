@@ -36,7 +36,3 @@ export const siteSections = [
     role: '模板、术语、命令、检查清单等资源',
   },
 ] as const
-
-export const primarySectionSlugs = ['learn', 'openspec', 'compound', 'aisee', 'resources'] as const
-
-export const secondarySectionSlugs = ['thinking'] as const

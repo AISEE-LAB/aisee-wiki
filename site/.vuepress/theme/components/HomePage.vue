@@ -1,22 +1,16 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import {
   Boxes,
-  CircuitBoard,
   CircleDot,
-  Cpu,
   FileCheck2,
   FileText,
   GitBranch,
-  Globe2,
   LibraryBig,
   Lightbulb,
-  Monitor,
   Network,
   PackageCheck,
   PenLine,
-  Radar,
-  Smartphone,
   Workflow,
 } from 'lucide-vue-next'
 
@@ -26,22 +20,26 @@ const props = defineProps<{
   locale?: 'zh' | 'en'
 }>()
 
+const homeRef = ref<HTMLElement | null>(null)
+let cleanupHeroAnimation: (() => void) | null = null
 const isEn = computed(() => props.locale === 'en')
-const domainIcons = [Globe2, Smartphone, Monitor, Cpu, CircuitBoard, Workflow]
-const principleIcons = [FileText, PenLine, PackageCheck, LibraryBig]
+const domainIcons = [Lightbulb, FileCheck2, Workflow, Boxes, LibraryBig]
+const principleIcons = [FileText, Workflow, LibraryBig]
+const frameworkIcons = [Lightbulb, FileText, Network, Workflow, CircleDot, LibraryBig]
 const pillarIcons = [FileCheck2, GitBranch, Boxes]
-const openIcons = [PenLine, Lightbulb, Workflow, Network]
+const pluginIcons = [PenLine, GitBranch, FileText, Workflow, CircleDot, PackageCheck]
+const openIcons = [GitBranch, PenLine, PackageCheck, Network]
 
 const content = computed(() => {
   if (isEn.value) {
     return {
-      eyebrow: 'AI-enhanced software engineering',
-      title: 'Software engineering methodology for the AI era',
-      subtitle: 'Using OpenSpec and Compound Engineering as core references, AI SEE Wiki explores methods for AI-enhanced software engineering and uses the AISEE working mechanism to turn requirements, design, verification, and reflection into reusable practice.',
-      note: 'English content is being prepared. This page keeps the same structure as the Chinese homepage while the Chinese methodology articles are completed first.',
-      primary: 'Start reading',
-      secondary: 'View methodology map',
-      domainCta: 'View all domains',
+      eyebrow: 'AI-Enhanced Software Engineering',
+      title: 'Understand software engineering in the AI era',
+      subtitle: 'AI SEE Wiki is an independent methodology site around OpenSpec, Compound Engineering, and aisee workflows.',
+      note: 'Spec First. Harness Better. Compound Knowledge.',
+      primary: 'Start learning',
+      secondary: 'Explore aisee',
+      domainCta: 'Start with the guide',
       visual: {
         coreTitle: 'AI Engineering Method',
         coreText: 'A repeatable loop for specification, harness, verification, and knowledge reuse.',
@@ -58,39 +56,62 @@ const content = computed(() => {
         knowledgeText: 'Proven patterns, templates, schemas, and cases feed the next engineering cycle.',
         knowledgeItems: ['Review', 'Template', 'Case', 'Memory'],
       },
-      domainsTitle: 'AI is enhancing every kind of engineering',
-      domainsText: 'The domains differ, but the engineering base is shared: clear inputs, explicit constraints, verifiable outputs, and reusable knowledge.',
+      domainsTitle: 'What this wiki covers',
+      domainsText: 'Each area serves the same method line: make intent explicit, run AI inside a bounded harness, and turn useful work into reusable knowledge.',
       domains: [
-        ['Web', 'Interfaces, components, services'],
-        ['App', 'Mobile experience and platform flows'],
-        ['Desktop', 'Local capability and cross-platform tools'],
-        ['Embedded', 'Constraints, interfaces, firmware flows'],
-        ['Hardware', 'Design, drivers, and validation loops'],
-        ['Complex Systems', 'Business systems that must evolve'],
+        ['Learning Path', 'Concepts, local setup, agent components, memory, skills, MCP, and hooks.', '/en/learn/'],
+        ['OpenSpec', 'A specification state machine for changes, artifacts, validation, and archive.', '/en/openspec/'],
+        ['Compound', 'Planning, work, review, debugging, retrospection, and knowledge assets.', '/en/compound/'],
+        ['aisee', 'Requirements, context, change planning, implementation bridge, and verification guard.', '/en/aisee/'],
+        ['Resources', 'Templates, glossary, schema packs, checklists, examples, and references.', '/en/resources/'],
       ],
-      methodTitle: 'Powerful tools still need effective ways of use',
-      methodText: 'AI tools become more useful when teams know how to frame problems, set boundaries, verify outputs, and turn experience into reusable practice.',
+      methodTitle: 'Three method threads',
+      methodText: 'The site is organized by methodology, not by tool commands. OpenSpec provides the source of truth, Compound provides the execution and learning discipline, and aisee connects them into working flows.',
       principles: [
-        ['Requirement Contract', 'Clarify what should be built and where the boundary is.'],
-        ['Design Boundary', 'Constrain choices before generation starts.'],
-        ['Verification Gate', 'Make quality measurable and reviewable.'],
-        ['Knowledge Compounding', 'Turn experience into reusable assets.'],
+        ['Spec First', 'Turn intent, scope, behavior change, design judgment, and acceptance criteria into reviewable artifacts.'],
+        ['Harness Better', 'Put AI inside explicit agents, skills, MCP tools, hooks, schemas, and workflows.'],
+        ['Compound Knowledge', 'Keep templates, cases, schemas, retrospectives, and fixes available for the next change.'],
       ],
-      pillarsTitle: 'Three core threads',
+      frameworkTitle: 'AI Engineering method frame',
+      frameworkText: 'AI-enhanced engineering becomes reliable when the full chain is visible, inspectable, and reusable.',
+      framework: [
+        ['01', 'Problem framing', 'Clarify goals, users, constraints, non-goals, and acceptance direction.'],
+        ['02', 'Specification modeling', 'Use specs and artifacts to make scope, behavior, and decisions inspectable.'],
+        ['03', 'Context harness', 'Prepare project facts, source maps, memory, skills, and tool boundaries.'],
+        ['04', 'Engineering execution', 'Let AI participate in implementation inside explicit tasks and workflows.'],
+        ['05', 'Verification gate', 'Use tests, reviews, checks, and apply guards to manage uncertainty.'],
+        ['06', 'Knowledge compounding', 'Keep patterns, fixes, templates, and schema decisions for the next change.'],
+      ],
+      pillarsTitle: 'Core references and engineering entry',
       pillars: [
-        ['OpenSpec', 'Specification layer and source of truth', '/en/openspec/'],
-        ['Compound Engineering', 'Harness and knowledge compounding', '/en/compound/'],
-        ['AISEE mechanism', 'An evolving working mechanism integrated with OpenSpec', '/en/aisee/'],
+        ['OpenSpec', 'The specification layer and source of truth for controlled engineering changes.', '/en/openspec/'],
+        ['Compound Engineering', 'The discipline for harnessed execution, review, debugging, and knowledge reuse.', '/en/compound/'],
+        ['aisee plugin', 'The installable workflow layer for SRS, context packs, schema packs, and handoffs.', '/en/aisee/'],
       ],
-      pathTitle: 'Recommended learning path',
-      path: ['Foundations', 'Spec-first', 'OpenSpec', 'Harness', 'Verification', 'Knowledge', 'Practice'],
-      openTitle: 'Open collaboration',
-      openText: 'AI SEE Wiki is an open engineering knowledge base. Contributions can start from corrections, cases, workflow templates, terminology, and references.',
+      pluginTitle: 'aisee plugin as implementation layer',
+      pluginText: 'The plugin turns the method into installable skills, schema packs, context packs, ID policy, and Compound handoffs.',
+      pluginItems: [
+        ['SRS and content inputs', 'Structure raw requirements into SRS, UI content, device context, or technical context.'],
+        ['Change planning', 'Map confirmed requirements into OpenSpec changes, dependencies, schemas, and source maps.'],
+        ['Artifact authoring', 'Generate change artifacts while keeping OpenSpec as the specification state machine.'],
+        ['Implementation bridge', 'Prepare the minimum context package for Compound work and review.'],
+        ['Verify and apply guard', 'Check drift, tasks, contracts, source maps, and review/test evidence before apply.'],
+        ['Schema packs', 'Support app, device, docsite, infra, security, quick-fix, research, and collaboration workflows.'],
+      ],
+      pathTitle: 'Recommended reading path',
+      paths: [
+        ['New to AI Coding', 'Start with concepts, local setup, agent components, memory, skills, MCP, and hooks.', '/en/learn/'],
+        ['Managing real changes', 'Read OpenSpec first to understand specs, changes, artifacts, validation, and archive.', '/en/openspec/'],
+        ['Building team leverage', 'Read Compound to connect planning, work, review, debugging, and knowledge assets.', '/en/compound/'],
+        ['Adopting aisee', 'Use the plugin track to connect requirements, schemas, context packs, and handoffs.', '/en/aisee/'],
+      ],
+      openTitle: 'Open collaboration and source notes',
+      openText: 'This site is maintained as an independent practice and methodology wiki. It is not the official OpenSpec or Compound documentation.',
       openItems: [
-        ['Documentation edits', 'Fix wording, structure, and examples.'],
-        ['Real cases', 'Share project experience and lessons.'],
-        ['Workflow / skill / schema', 'Contribute reusable engineering assets.'],
-        ['Terminology and references', 'Improve shared language and sources.'],
+        ['Source on GitHub', 'Documentation source is hosted in GitHub and pages can provide edit entries.'],
+        ['Reusable assets', 'Templates, example specs, schemas, and agent rules are designed for reuse.'],
+        ['Open contribution', 'Contributions can be fixes, cases, workflow templates, skills, or schemas.'],
+        ['Clear attribution', 'The site documents independent practice, interpretation, and methodology.'],
       ],
       guideLink: '/en/learn/',
       resourcesLink: '/en/resources/',
@@ -99,13 +120,13 @@ const content = computed(() => {
   }
 
   return {
-    eyebrow: 'AI 增强软件工程',
-    title: 'AI 时代的软件工程方法论',
-    subtitle: '以 OpenSpec 和 Compound Engineering 为核心参照，探索 AI 增强软件工程的方法论，并通过 AISEE 工作机制把需求、设计、验证和复盘沉淀为可复用实践。',
-    note: '工具和技能固然强大，但真正决定上限的是方法论。没有需求契约，AI 会放大模糊；没有验证 gate，AI 会制造不确定性；没有知识沉淀，AI 协作就只是一次性消耗。',
-    primary: '开始阅读',
-    secondary: '查看方法论地图',
-    domainCta: '查看全部领域',
+    eyebrow: 'AI-Enhanced Software Engineering',
+    title: '深入理解 AI 时代的软件工程',
+    subtitle: 'AI SEE Wiki 是围绕 OpenSpec、Compound Engineering 与 aisee 工作流建立的独立实践与方法论站点。',
+    note: 'Spec First. Harness Better. Compound Knowledge.',
+    primary: '开始学习',
+    secondary: '了解 aisee',
+    domainCta: '进入学习路径',
     visual: {
       coreTitle: 'AI Engineering Method',
       coreText: '把规范、执行环境、验证和知识复用组织成可反复运行的工程闭环。',
@@ -122,62 +143,164 @@ const content = computed(() => {
       knowledgeText: '把有效模式、模板、schema 和真实案例反哺下一轮工程。',
       knowledgeItems: ['Review', 'Template', 'Case', 'Memory'],
     },
-    domainsTitle: 'AI 正在增强每一种工程开发',
-    domainsText: 'Web、App、Desktop、嵌入式、硬件编程和复杂业务系统的对象不同，但共同底座都是清晰输入、明确约束、可验证输出和可复用知识。',
+    domainsTitle: '本站内容地图',
+    domainsText: '所有栏目都服务于同一条主线：把意图表达清楚，让 AI 在有边界的环境中工作，再把有效经验沉淀为可复用资产。',
     domains: [
-      ['Web 开发', '界面、组件、服务与体验验证'],
-      ['App 开发', '移动体验、平台能力和发布流程'],
-      ['Desktop 开发', '本地能力、自动化和跨平台工具'],
-      ['嵌入式程序开发', '约束建模、接口契约和固件流程'],
-      ['硬件编程', '设计、驱动、测试和工程协作'],
-      ['复杂业务系统', '需求拆分、长期维护和演进治理'],
+      ['学习路径', '建立 AI Coding、Agent、Memory、Skill、MCP、Tool 和 Hook 的基础认知。', '/learn/'],
+      ['OpenSpec', '用规范状态机管理 specs、changes、artifacts、validate 和 archive。', '/openspec/'],
+      ['Compound', '理解工程复利：计划、执行、评审、调试、复盘和知识资产。', '/compound/'],
+      ['aisee', '把需求、上下文、change 规划、实现桥接、验证和工程流程串成工作机制。', '/aisee/'],
+      ['资源中心', '模板、术语表、schema pack、检查清单、示例和参考资料入口。', '/resources/'],
     ],
-    methodTitle: '工具强，也需要掌握高效使用的方法',
-    methodText: 'AI 工具越强，越需要知道如何提出问题、设置边界、验证结果，并把经验沉淀为可复用实践。',
+    methodTitle: '三条方法主线',
+    methodText: '本站不是命令清单，而是围绕方法论组织内容：OpenSpec 提供事实源，Compound 提供执行与复盘纪律，aisee 把两者连接成可落地的工作流。',
     principles: [
-      ['需求契约', '用 Spec 明确要做什么，形成可协商、可追溯的边界。'],
-      ['设计边界', '在实现前选择设计与取舍，保持一致性与可组合性。'],
-      ['验证 gate', '用可执行检查守住质量，不满足就回到上一环。'],
-      ['知识沉淀', '复盘、模板和经验资产驱动下一轮更快更稳。'],
+      ['Spec First', '把意图、范围、行为变化、设计判断和验收标准放进可审查的 artifacts。'],
+      ['Harness Better', '用 Agent、Skill、MCP、Hook、Schema 和 Workflow 组成有边界的 AI 执行环境。'],
+      ['Compound Knowledge', '把模板、案例、schema、复盘和修复经验留给下一次工程工作。'],
     ],
-    pillarsTitle: '三条核心主线',
+    frameworkTitle: 'AI Engineering 方法框架',
+    frameworkText: 'AI 增强的软件工程不是把某一步自动化，而是让完整工程链路变得可表达、可验证、可复用。',
+    framework: [
+      ['01', '问题定义', '明确目标、用户、约束、非目标和验收方向。'],
+      ['02', '规范建模', '用 specs 与 artifacts 固化范围、行为变化和设计判断。'],
+      ['03', '上下文组织', '准备项目事实、source-map、memory、skills 与工具边界。'],
+      ['04', '工程执行', '让 AI 在明确任务、规则和工作流中参与实现。'],
+      ['05', '验证 gate', '通过测试、评审、检查和 apply guard 管理不确定性。'],
+      ['06', '知识复利', '把模式、修复、模板和 schema 决策留给下一轮工程。'],
+    ],
+    pillarsTitle: '核心参照与工程化入口',
     pillars: [
-      ['OpenSpec', '规范层与事实源', '/openspec/'],
-      ['Compound Engineering', 'Harness 与知识复利', '/compound/'],
-      ['AISEE 工作机制', '与 OpenSpec 融合的探索性实践', '/aisee/'],
+      ['OpenSpec', '作为规范层和事实源，管理可审查、可验证、可归档的工程变更。', '/openspec/'],
+      ['Compound Engineering', '提供有边界的执行、评审、调试、复盘与知识复利方法。', '/compound/'],
+      ['aisee plugin', '把 SRS、上下文包、schema pack、change 规划和 handoff 做成工程化入口。', '/aisee/'],
+    ],
+    pluginTitle: 'aisee plugin：方法论的工程化入口',
+    pluginText: 'aisee plugin 会把这套方法落到可安装、可引用、可版本化的 skills、schema packs、context packs、ID 策略和 Compound handoff 中。',
+    pluginItems: [
+      ['SRS 与内容输入', '把模糊需求整理为 SRS、UI 内容、设备上下文或技术上下文。'],
+      ['Change 规划', '把已确认需求映射为 OpenSpec changes、依赖、schema 和 source-map。'],
+      ['Artifact 编排', '生成 change artifacts，同时保持 OpenSpec 作为规范状态机。'],
+      ['实现桥接', '为 Compound work / review 准备单个 change 的最小工程上下文。'],
+      ['Verify / apply guard', '在 apply 前检查 drift、tasks、contracts、source-map 和测试评审证据。'],
+      ['Schema packs', '支持 app、device、docsite、infra、security、quick-fix、research 等工作流。'],
     ],
     pathTitle: '推荐学习路径',
-    path: ['基础能力', 'Spec-first', 'OpenSpec', 'Harness', '验证闭环', '知识复利', '综合实践'],
-    openTitle: '开放协作',
-    openText: 'AI SEE Wiki 是开放的工程知识库，欢迎从文档修订、真实案例、workflow / skill / schema 模板、术语与参考资料开始参与。',
+    paths: [
+      ['新手理解 AI Coding', '从概念、工具、agent 组件、memory、skills、MCP 和 hooks 建立基础模型。', '/learn/'],
+      ['管理真实变更', '先读 OpenSpec，理解 specs、changes、artifacts、validate 和 archive。', '/openspec/'],
+      ['建立团队复利', '读 Compound，把计划、执行、评审、调试和知识资产连接起来。', '/compound/'],
+      ['采用 aisee', '沿插件路线连接需求、schema、上下文包、change 规划和 handoff。', '/aisee/'],
+    ],
+    openTitle: '开放协作与来源说明',
+    openText: '本站独立维护，记录围绕 OpenSpec、Compound Engineering 与 aisee 的实践、解释和方法论沉淀。',
     openItems: [
-      ['文档修订', '修正表述、补充内容、优化表达与结构。'],
-      ['真实案例', '分享实践经验、项目案例、踩坑与解决方案。'],
-      ['workflow / skill / schema 模板', '贡献高质量模板，促进最佳实践沉淀。'],
-      ['术语与参考资料', '完善术语解释、参考资料、外部链接与原则来源。'],
+      ['源码托管', '文档源代码托管在 GitHub，页面可提供编辑入口。'],
+      ['资产复用', '模板、示例 spec、schema 示例和 agent 规则以可复用为目标。'],
+      ['开放贡献', '接受文档修订、真实案例、workflow、skill 和 schema 模板。'],
+      ['清晰声明', '本站不是 OpenSpec 或 Compound 官方文档，而是独立实践与方法论沉淀。'],
     ],
     guideLink: '/learn/',
     resourcesLink: '/resources/',
     workflowLink: '/aisee/',
   }
 })
+const heroTitleLines = computed(() => {
+  if (isEn.value) {
+    return [
+      [{ text: 'Understand software', highlight: false }],
+      [{ text: 'engineering', highlight: false }],
+      [
+        { text: 'in the ', highlight: false },
+        { text: 'AI', highlight: true },
+        { text: ' era', highlight: false },
+      ],
+    ]
+  }
+
+  return [
+    [
+      { text: '深入理解 ', highlight: false },
+      { text: 'AI', highlight: true },
+      { text: ' 时代的', highlight: false },
+    ],
+    [{ text: '软件工程', highlight: false }],
+  ]
+})
+
+onMounted(async () => {
+  const root = homeRef.value
+  if (!root) return
+  if (isEn.value) return
+
+  const { gsap } = await import('gsap')
+  if (!homeRef.value) return
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  const ctx = gsap.context(() => {
+    const q = gsap.utils.selector(root)
+    const titleChars = q('[data-hero-title-char]')
+
+    if (reduceMotion) {
+      gsap.set(titleChars, { clearProps: 'all' })
+      return
+    }
+
+    gsap.fromTo(
+      titleChars,
+      { autoAlpha: 0 },
+      {
+        autoAlpha: 1,
+        duration: 0.01,
+        ease: 'none',
+        stagger: {
+          each: 0.055,
+          from: 'start',
+        },
+      },
+    )
+  }, root)
+
+  cleanupHeroAnimation = () => ctx.revert()
+})
+
+onUnmounted(() => {
+  cleanupHeroAnimation?.()
+  cleanupHeroAnimation = null
+})
 </script>
 
 <template>
-  <main class="aisee-home">
+  <main ref="homeRef" class="aisee-home">
     <section class="home-hero">
       <div class="hero-copy">
         <p class="eyebrow">{{ content.eyebrow }}</p>
-        <h1 v-if="isEn">
-          <span>Software engineering</span>
-          <span>methodology</span>
-          <span>for the AI era</span>
-        </h1>
-        <h1 v-else class="hero-title-zh">
-          <span><em>AI</em> 时代的</span>
-          <span>软件工程方法论</span>
+        <h1 :class="{ 'hero-title-zh': !isEn }">
+          <span v-for="(line, lineIndex) in heroTitleLines" :key="lineIndex" class="hero-title__line">
+            <template v-for="(segment, segmentIndex) in line" :key="`${lineIndex}-${segmentIndex}`">
+              <em
+                v-if="segment.highlight"
+                class="hero-title__char hero-title__char--ai"
+                data-hero-title-ai
+                data-hero-title-char
+              >
+                {{ segment.text }}
+              </em>
+              <template v-else>
+                <span
+                  v-for="(char, charIndex) in Array.from(segment.text)"
+                  :key="`${lineIndex}-${segmentIndex}-${charIndex}`"
+                  class="hero-title__char"
+                  data-hero-title-char
+                >
+                  {{ char === ' ' ? '\u00A0' : char }}
+                </span>
+              </template>
+            </template>
+          </span>
         </h1>
         <p class="hero-subtitle">{{ content.subtitle }}</p>
+        <p class="hero-slogan">{{ content.note }}</p>
         <div class="hero-actions">
           <a class="action" :href="content.guideLink">
             <UiButton>
@@ -260,30 +383,6 @@ const content = computed(() => {
       </div>
     </section>
 
-    <section class="home-section domains-section">
-      <div class="section-heading section-heading-row">
-        <div>
-          <h2>{{ content.domainsTitle }}</h2>
-          <p>{{ content.domainsText }}</p>
-        </div>
-        <a :href="content.guideLink">{{ content.domainCta }}</a>
-      </div>
-      <div class="domain-grid">
-        <article v-for="(item, index) in content.domains" :key="item[0]" class="domain-card">
-          <div class="domain-card__top">
-            <span class="domain-icon" aria-hidden="true">
-              <component :is="domainIcons[index]" :size="21" :stroke-width="2.1" />
-            </span>
-            <span class="domain-index">{{ String(index + 1).padStart(2, '0') }}</span>
-          </div>
-          <div>
-            <h3>{{ item[0] }}</h3>
-            <p>{{ item[1] }}</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
     <section class="home-section method-section">
       <div class="section-heading">
         <h2>{{ content.methodTitle }}</h2>
@@ -300,6 +399,47 @@ const content = computed(() => {
             <p>{{ item[1] }}</p>
           </div>
         </article>
+      </div>
+    </section>
+
+    <section class="home-section framework-section">
+      <div class="section-heading">
+        <h2>{{ content.frameworkTitle }}</h2>
+        <p>{{ content.frameworkText }}</p>
+      </div>
+      <div class="framework-rail">
+        <article v-for="(item, index) in content.framework" :key="item[0]" class="framework-step">
+          <span class="framework-step__icon" aria-hidden="true">
+            <component :is="frameworkIcons[index]" :size="20" :stroke-width="2.1" />
+          </span>
+          <span class="framework-step__index">{{ item[0] }}</span>
+          <h3>{{ item[1] }}</h3>
+          <p>{{ item[2] }}</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="home-section domains-section">
+      <div class="section-heading section-heading-row">
+        <div>
+          <h2>{{ content.domainsTitle }}</h2>
+          <p>{{ content.domainsText }}</p>
+        </div>
+        <a :href="content.guideLink">{{ content.domainCta }}</a>
+      </div>
+      <div class="domain-grid">
+        <a v-for="(item, index) in content.domains" :key="item[0]" class="domain-card" :href="item[2]">
+          <div class="domain-card__top">
+            <span class="domain-icon" aria-hidden="true">
+              <component :is="domainIcons[index]" :size="21" :stroke-width="2.1" />
+            </span>
+            <span class="domain-index">{{ String(index + 1).padStart(2, '0') }}</span>
+          </div>
+          <div>
+            <h3>{{ item[0] }}</h3>
+            <p>{{ item[1] }}</p>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -320,17 +460,21 @@ const content = computed(() => {
       </div>
     </section>
 
-    <section class="home-section path-section">
-      <div class="section-heading section-heading-row">
-        <h2>{{ content.pathTitle }}</h2>
-        <a :href="content.guideLink">{{ isEn ? 'View guide' : '查看学习指南' }}</a>
+    <section class="home-section plugin-section">
+      <div class="plugin-copy">
+        <p class="section-kicker">{{ isEn ? 'Implementation layer' : '工程化入口' }}</p>
+        <h2>{{ content.pluginTitle }}</h2>
+        <p>{{ content.pluginText }}</p>
       </div>
-      <ol class="learning-path">
-        <li v-for="(item, index) in content.path" :key="item">
-          <span>{{ String(index + 1).padStart(2, '0') }}</span>
-          <strong>{{ item }}</strong>
-        </li>
-      </ol>
+      <div class="plugin-grid">
+        <article v-for="(item, index) in content.pluginItems" :key="item[0]" class="plugin-card">
+          <span class="plugin-card__icon" aria-hidden="true">
+            <component :is="pluginIcons[index]" :size="19" :stroke-width="2.1" />
+          </span>
+          <strong>{{ item[0] }}</strong>
+          <p>{{ item[1] }}</p>
+        </article>
+      </div>
     </section>
 
     <section class="home-section open-section">
@@ -349,7 +493,20 @@ const content = computed(() => {
       </div>
       <div class="open-actions">
         <a class="open-action open-action--primary" :href="content.resourcesLink">{{ isEn ? 'Resources' : '资源中心' }}</a>
-        <a class="open-action" :href="content.workflowLink">AISEE</a>
+        <a class="open-action" :href="content.workflowLink">aisee</a>
+      </div>
+    </section>
+
+    <section class="home-section path-section">
+      <div class="section-heading section-heading-row">
+        <h2>{{ content.pathTitle }}</h2>
+        <a :href="content.guideLink">{{ isEn ? 'View guide' : '查看学习指南' }}</a>
+      </div>
+      <div class="path-grid">
+        <a v-for="item in content.paths" :key="item[0]" class="path-card" :href="item[2]">
+          <strong>{{ item[0] }}</strong>
+          <p>{{ item[1] }}</p>
+        </a>
       </div>
     </section>
   </main>
@@ -390,11 +547,12 @@ const content = computed(() => {
 }
 
 .eyebrow {
-  color: var(--home-teal);
-  font-size: 0.92rem;
-  font-weight: 700;
+  color: #087e82;
+  font-size: clamp(1.12rem, 1.52vw, 1.48rem);
+  font-weight: 880;
   letter-spacing: 0;
-  margin: 0 0 18px;
+  line-height: 1.2;
+  margin: 0 0 22px;
 }
 
 .hero-copy h1 {
@@ -406,18 +564,28 @@ const content = computed(() => {
   margin: 0;
 }
 
-.hero-copy h1 span {
+.hero-title__line {
   display: block;
+  overflow: hidden;
 }
 
-.hero-copy h1 em {
+.hero-title__char {
+  display: inline-block;
+  transform-origin: 50% 82%;
+  will-change: opacity, transform;
+}
+
+.hero-title__char--ai {
+  --ai-glow-alpha: 0;
   background: linear-gradient(180deg, #12c8d0 0%, #0961c6 92%);
   background-clip: text;
   color: transparent;
   font-style: normal;
+  text-shadow: 0 0 26px rgba(18, 200, 208, var(--ai-glow-alpha));
+  transform-origin: 50% 62%;
 }
 
-.hero-title-zh span:last-child {
+.hero-title-zh .hero-title__line:last-child {
   white-space: nowrap;
 }
 
@@ -426,6 +594,14 @@ const content = computed(() => {
   font-size: clamp(1.02rem, 1.25vw, 1.2rem);
   line-height: 1.78;
   margin: 24px 0 0;
+}
+
+.hero-slogan {
+  color: #0a376a;
+  font-size: clamp(1rem, 1.18vw, 1.14rem);
+  font-weight: 850;
+  line-height: 1.45;
+  margin: 18px 0 0;
 }
 
 .hero-actions {
@@ -794,6 +970,15 @@ const content = computed(() => {
   margin: 14px 0 0;
 }
 
+.section-kicker {
+  color: var(--home-teal);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
 .section-heading-row {
   align-items: center;
   display: flex;
@@ -815,20 +1000,25 @@ const content = computed(() => {
 
 .domain-grid,
 .pillar-grid,
-.open-grid {
+.open-grid,
+.plugin-grid,
+.path-grid {
   display: grid;
   gap: 18px;
   margin-top: 26px;
 }
 
 .domain-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .domain-card,
 .pillar-card,
 .open-card,
-.principle-card {
+.principle-card,
+.framework-step,
+.plugin-card,
+.path-card {
   background: var(--home-card);
   border: 1px solid var(--home-line);
   border-radius: 8px;
@@ -836,6 +1026,7 @@ const content = computed(() => {
 }
 
 .domain-card {
+  color: var(--home-text);
   display: grid;
   gap: 28px;
   grid-template-rows: auto 1fr;
@@ -843,6 +1034,7 @@ const content = computed(() => {
   overflow: hidden;
   padding: 22px;
   position: relative;
+  text-decoration: none;
   transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
 }
 
@@ -878,7 +1070,9 @@ const content = computed(() => {
 .domain-icon,
 .pillar-icon,
 .principle-mark,
-.open-icon {
+.open-icon,
+.framework-step__icon,
+.plugin-card__icon {
   align-items: center;
   background: linear-gradient(135deg, rgba(8, 145, 178, 0.14), rgba(29, 78, 216, 0.14));
   border: 2px solid rgba(8, 145, 178, 0.55);
@@ -906,14 +1100,18 @@ const content = computed(() => {
 
 .domain-card h3,
 .principle-card h3,
-.open-card h3 {
+.open-card h3,
+.framework-step h3 {
   font-size: 1.12rem;
   margin: 0;
 }
 
 .domain-card p,
 .principle-card p,
-.open-card p {
+.open-card p,
+.framework-step p,
+.plugin-card p,
+.path-card p {
   color: var(--home-muted);
   font-size: 0.93rem;
   line-height: 1.6;
@@ -923,7 +1121,7 @@ const content = computed(() => {
 .principle-flow {
   display: grid;
   gap: 24px;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: 30px;
   position: relative;
 }
@@ -965,6 +1163,50 @@ const content = computed(() => {
   margin-bottom: 0;
   position: relative;
   z-index: 1;
+}
+
+.framework-rail {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  margin-top: 30px;
+  position: relative;
+}
+
+.framework-rail::before {
+  background: linear-gradient(90deg, rgba(8, 155, 176, 0.22), rgba(23, 85, 184, 0.18), rgba(217, 119, 6, 0.18));
+  content: "";
+  height: 2px;
+  left: 5%;
+  position: absolute;
+  right: 5%;
+  top: 26px;
+  z-index: 0;
+}
+
+.framework-step {
+  min-height: 190px;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.framework-step__icon {
+  height: 34px;
+  margin-bottom: 18px;
+  position: relative;
+  width: 34px;
+  z-index: 1;
+}
+
+.framework-step__index {
+  color: rgba(23, 85, 184, 0.28);
+  font-size: 1.55rem;
+  font-weight: 900;
+  line-height: 1;
+  position: absolute;
+  right: 18px;
+  top: 18px;
 }
 
 .pillar-grid {
@@ -1014,10 +1256,62 @@ const content = computed(() => {
   color: var(--home-muted);
 }
 
+.plugin-section {
+  align-items: start;
+  display: grid;
+  gap: 34px;
+  grid-template-columns: minmax(300px, 0.72fr) minmax(620px, 1.28fr);
+}
+
+.plugin-copy {
+  max-width: 520px;
+  position: sticky;
+  top: calc(var(--vp-nav-height, 64px) + 28px);
+}
+
+.plugin-copy h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  letter-spacing: 0;
+  line-height: 1.12;
+  margin: 0;
+}
+
+.plugin-copy p {
+  color: var(--home-muted);
+  font-size: 1.04rem;
+  line-height: 1.72;
+  margin: 14px 0 0;
+}
+
+.plugin-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 0;
+}
+
+.plugin-card {
+  min-height: 156px;
+  padding: 22px;
+}
+
+.plugin-card__icon {
+  height: 34px;
+  margin-bottom: 16px;
+  width: 34px;
+}
+
+.plugin-card strong,
+.path-card strong {
+  color: #0a2a54;
+  display: block;
+  font-size: 1.08rem;
+  font-weight: 850;
+  line-height: 1.35;
+}
+
 .learning-path {
   display: grid;
   gap: 0;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   list-style: none;
   margin: 34px 0 0;
   padding: 0;
@@ -1066,6 +1360,23 @@ const content = computed(() => {
   display: block;
   font-size: 0.95rem;
   margin-top: 2px;
+}
+
+.path-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.path-card {
+  color: var(--home-text);
+  min-height: 150px;
+  padding: 24px;
+  text-decoration: none;
+  transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+.path-card:hover {
+  border-color: rgba(8, 145, 178, 0.42);
+  transform: translateY(-3px);
 }
 
 .open-section {
@@ -1164,16 +1475,24 @@ const content = computed(() => {
 
 [data-theme="dark"] .method-node,
 [data-theme="dark"] .method-map__ticks span,
-[data-theme="dark"] .method-node__chips b {
+[data-theme="dark"] .method-node__chips b,
+[data-theme="dark"] .framework-step,
+[data-theme="dark"] .plugin-card,
+[data-theme="dark"] .path-card {
   background: rgba(11, 24, 38, 0.78);
   border-color: rgba(148, 213, 255, 0.16);
 }
 
-[data-theme="dark"] .method-node strong {
+[data-theme="dark"] .method-node strong,
+[data-theme="dark"] .plugin-card strong,
+[data-theme="dark"] .path-card strong {
   color: rgba(235, 248, 255, 0.92);
 }
 
-[data-theme="dark"] .method-node p {
+[data-theme="dark"] .method-node p,
+[data-theme="dark"] .framework-step p,
+[data-theme="dark"] .plugin-card p,
+[data-theme="dark"] .path-card p {
   color: rgba(220, 235, 245, 0.7);
 }
 
@@ -1199,17 +1518,24 @@ const content = computed(() => {
     max-width: 680px;
   }
 
-  .domain-grid {
+  .domain-grid,
+  .framework-rail {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .principle-flow,
-  .open-grid {
+  .open-grid,
+  .path-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .learning-path {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+  .plugin-section {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .plugin-copy {
+    max-width: 820px;
+    position: static;
   }
 }
 
@@ -1236,8 +1562,11 @@ const content = computed(() => {
 
   .domain-grid,
   .principle-flow,
+  .framework-rail,
   .pillar-grid,
+  .plugin-grid,
   .open-grid,
+  .path-grid,
   .learning-path {
     grid-template-columns: 1fr;
   }
@@ -1292,6 +1621,7 @@ const content = computed(() => {
   }
 
   .principle-flow::before,
+  .framework-rail::before,
   .learning-path::before {
     display: none;
   }

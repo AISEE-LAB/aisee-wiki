@@ -53,4 +53,28 @@ const badgeClass = computed(() => cn('ui-badge', `ui-badge--${props.tone}`, prop
   border-color: rgba(191, 236, 255, 0.2);
   color: #e8f8ff;
 }
+
+[data-theme="dark"] .ui-badge {
+  background: rgba(11, 24, 38, 0.78);
+  border-color: rgba(148, 213, 255, 0.16);
+  color: rgba(214, 235, 255, 0.9);
+}
+
+[data-theme="dark"] .ui-badge--cyan {
+  background: rgba(9, 58, 72, 0.62);
+  border-color: rgba(74, 201, 220, 0.32);
+  color: rgba(181, 246, 255, 0.92);
+}
+
+[data-theme="dark"] .ui-badge--amber {
+  background: rgba(70, 42, 20, 0.62);
+  border-color: rgba(245, 158, 11, 0.34);
+  color: rgba(255, 218, 158, 0.92);
+}
+
+[data-theme="dark"] .ui-badge--deep {
+  background: rgba(255, 255, 255, 0.11);
+  border-color: rgba(191, 236, 255, 0.2);
+  color: #e8f8ff;
+}
 </style>

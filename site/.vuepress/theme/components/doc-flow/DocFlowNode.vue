@@ -163,5 +163,21 @@ a.doc-flow-node__link:hover {
   background:
     linear-gradient(135deg, color-mix(in oklch, currentColor 9%, transparent), transparent 58%),
     color-mix(in oklch, var(--vp-c-bg) 84%, oklch(24% 0.02 240));
+  border-color: color-mix(in oklch, currentColor 30%, var(--vp-c-divider));
+  box-shadow:
+    0 16px 32px color-mix(in oklch, black 26%, transparent),
+    inset 0 1px 0 color-mix(in oklch, white 10%, transparent);
+}
+
+[data-theme="dark"] .doc-flow-node--decision {
+  --doc-node-color: oklch(72% 0.13 58);
+}
+
+[data-theme="dark"] .doc-flow-node--guard {
+  --doc-node-color: oklch(68% 0.13 138);
+}
+
+[data-theme="dark"] .doc-flow-node--agent {
+  --doc-node-color: oklch(70% 0.13 35);
 }
 </style>

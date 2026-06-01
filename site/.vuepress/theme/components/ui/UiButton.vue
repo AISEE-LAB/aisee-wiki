@@ -43,4 +43,10 @@ const buttonClass = computed(() => cn('ui-button', `ui-button--${props.variant}`
   border: 1px solid rgba(29, 78, 216, 0.28);
   color: #17427e;
 }
+
+[data-theme="dark"] .ui-button--secondary {
+  background: rgba(11, 24, 38, 0.78);
+  border-color: rgba(148, 213, 255, 0.2);
+  color: rgba(235, 248, 255, 0.92);
+}
 </style>

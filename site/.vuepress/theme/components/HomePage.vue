@@ -1484,6 +1484,10 @@ onUnmounted(() => {
 [data-theme="dark"] .method-node,
 [data-theme="dark"] .method-map__ticks span,
 [data-theme="dark"] .method-node__chips b,
+[data-theme="dark"] .domain-card,
+[data-theme="dark"] .pillar-card,
+[data-theme="dark"] .open-card,
+[data-theme="dark"] .principle-card,
 [data-theme="dark"] .framework-step,
 [data-theme="dark"] .plugin-card,
 [data-theme="dark"] .path-card {
@@ -1491,13 +1495,48 @@ onUnmounted(() => {
   border-color: rgba(148, 213, 255, 0.16);
 }
 
+[data-theme="dark"] .aisee-home .domain-icon,
+[data-theme="dark"] .aisee-home .pillar-icon,
+[data-theme="dark"] .aisee-home .principle-mark,
+[data-theme="dark"] .aisee-home .open-icon,
+[data-theme="dark"] .aisee-home .framework-step__icon,
+[data-theme="dark"] .aisee-home .plugin-card__icon,
+[data-theme="dark"] .aisee-home .method-node__icon {
+  background: rgba(17, 53, 73, 0.78);
+  border-color: rgba(74, 201, 220, 0.42);
+  color: rgba(181, 246, 255, 0.9);
+}
+
+[data-theme="dark"] .aisee-home .method-node__icon--amber,
+[data-theme="dark"] .aisee-home .principle-mark {
+  background: rgba(70, 42, 20, 0.68);
+  border-color: rgba(245, 158, 11, 0.42);
+  color: rgba(255, 218, 158, 0.92);
+}
+
+[data-theme="dark"] .pillar-card--primary {
+  background:
+    linear-gradient(135deg, rgba(14, 58, 71, 0.82), rgba(12, 26, 42, 0.9)),
+    rgba(11, 24, 38, 0.86);
+  border-color: rgba(74, 201, 220, 0.34);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.24);
+}
+
+[data-theme="dark"] .pillar-card--primary .pillar-icon {
+  background: rgba(17, 88, 106, 0.55);
+  border-color: rgba(74, 201, 220, 0.55);
+  color: rgba(181, 246, 255, 0.92);
+}
+
 [data-theme="dark"] .method-node strong,
+[data-theme="dark"] .pillar-card strong,
 [data-theme="dark"] .plugin-card strong,
 [data-theme="dark"] .path-card strong {
   color: rgba(235, 248, 255, 0.92);
 }
 
 [data-theme="dark"] .method-node p,
+[data-theme="dark"] .pillar-card span:last-child,
 [data-theme="dark"] .framework-step p,
 [data-theme="dark"] .plugin-card p,
 [data-theme="dark"] .path-card p {
@@ -1507,6 +1546,25 @@ onUnmounted(() => {
 [data-theme="dark"] .method-map__ticks span,
 [data-theme="dark"] .method-node__chips b {
   color: rgba(235, 248, 255, 0.82);
+}
+
+[data-theme="dark"] .open-section {
+  background:
+    linear-gradient(90deg, rgba(10, 30, 44, 0.78), rgba(8, 18, 31, 0.86) 48%, rgba(9, 28, 43, 0.78)),
+    linear-gradient(180deg, rgba(15, 55, 70, 0.18), rgba(8, 17, 29, 0.7));
+  border-color: rgba(148, 213, 255, 0.16);
+}
+
+[data-theme="dark"] .open-action {
+  background: rgba(11, 24, 38, 0.82);
+  border-color: rgba(148, 213, 255, 0.18);
+  color: rgba(235, 248, 255, 0.9);
+}
+
+[data-theme="dark"] .open-action--primary {
+  background: linear-gradient(135deg, #089bb0, #087e82);
+  border-color: transparent;
+  color: #fff !important;
 }
 
 @media (max-width: 1180px) {

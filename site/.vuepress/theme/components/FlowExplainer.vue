@@ -603,6 +603,109 @@ function getMotionIndex(index: number, max = 8): number {
   gap: 10px;
 }
 
+[data-theme="dark"] .flow-explainer {
+  --flow-accent: oklch(72% 0.12 188);
+  --flow-accent-strong: oklch(76% 0.13 188);
+  --flow-accent-soft: oklch(24% 0.035 205);
+  --flow-border: rgba(148, 213, 255, 0.16);
+  --flow-panel: rgba(11, 24, 38, 0.82);
+  --flow-soft: rgba(18, 34, 48, 0.82);
+  --flow-text-muted: rgba(220, 235, 245, 0.72);
+  --flow-focus: oklch(72% 0.12 188);
+  background:
+    linear-gradient(135deg, rgba(20, 55, 62, 0.36), transparent 42%),
+    linear-gradient(315deg, rgba(77, 50, 26, 0.28), transparent 48%),
+    rgba(9, 18, 30, 0.84);
+}
+
+[data-theme="dark"] .flow-explainer__eyebrow {
+  color: rgba(142, 245, 255, 0.9);
+}
+
+[data-theme="dark"] .flow-stage__index {
+  color: rgba(255, 255, 245, 0.94);
+  background: #00746e;
+  outline-color: rgba(125, 241, 230, 0.24);
+}
+
+[data-theme="dark"] .flow-stage:not(.flow-stage--last)::after {
+  background: linear-gradient(90deg, rgba(74, 201, 220, 0.72), rgba(245, 158, 11, 0.54));
+}
+
+[data-theme="dark"] .flow-item {
+  --item-border: rgba(148, 213, 255, 0.14);
+  --item-bg: rgba(11, 24, 38, 0.82);
+  --item-dot: rgba(156, 178, 194, 0.86);
+  --item-chip-bg: rgba(255, 255, 255, 0.08);
+  --item-chip-text: rgba(231, 240, 248, 0.78);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+[data-theme="dark"] .flow-item--active {
+  --item-border: rgba(74, 201, 220, 0.48);
+  --item-bg: rgba(9, 58, 72, 0.54);
+  --item-dot: rgba(66, 206, 236, 0.92);
+  --item-chip-bg: rgba(181, 246, 255, 0.16);
+  --item-chip-text: rgba(181, 246, 255, 0.94);
+}
+
+[data-theme="dark"] .flow-item--done {
+  --item-border: rgba(74, 222, 128, 0.34);
+  --item-dot: rgba(74, 222, 128, 0.86);
+  --item-chip-bg: rgba(74, 222, 128, 0.14);
+  --item-chip-text: rgba(187, 247, 208, 0.92);
+}
+
+[data-theme="dark"] .flow-item--blocked {
+  --item-border: rgba(245, 158, 11, 0.36);
+  --item-dot: rgba(245, 158, 11, 0.86);
+  --item-chip-bg: rgba(245, 158, 11, 0.15);
+  --item-chip-text: rgba(255, 218, 158, 0.92);
+}
+
+[data-theme="dark"] .flow-item--risk {
+  --item-border: rgba(248, 113, 113, 0.38);
+  --item-dot: rgba(248, 113, 113, 0.88);
+  --item-chip-bg: rgba(248, 113, 113, 0.14);
+  --item-chip-text: rgba(254, 202, 202, 0.92);
+}
+
+[data-theme="dark"] .flow-item__title {
+  color: rgba(245, 250, 255, 0.92);
+}
+
+[data-theme="dark"] .flow-item p {
+  color: rgba(220, 235, 245, 0.72);
+}
+
+[data-theme="dark"] .flow-item__accent {
+  color: rgba(255, 218, 158, 0.92);
+  background: rgba(245, 158, 11, 0.18);
+}
+
+[data-theme="dark"] .flow-connections li,
+[data-theme="dark"] .flow-legend__item {
+  background: rgba(11, 24, 38, 0.78);
+  border-color: rgba(148, 213, 255, 0.14);
+}
+
+[data-theme="dark"] .flow-connection__type {
+  color: rgba(255, 255, 245, 0.94);
+  background: #00746e;
+}
+
+[data-theme="dark"] .flow-connection--depends .flow-connection__type {
+  background: #6d5fd1;
+}
+
+[data-theme="dark"] .flow-connection--feedback .flow-connection__type {
+  background: #b4533a;
+}
+
+[data-theme="dark"] .flow-connection--gate .flow-connection__type {
+  background: #9a6a1f;
+}
+
 @media (max-width: 960px) {
   .flow-explainer__stages {
     grid-template-columns: repeat(2, minmax(0, 1fr));

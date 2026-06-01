@@ -585,7 +585,7 @@ onUnmounted(() => {
   transform-origin: 50% 62%;
 }
 
-.hero-title-zh .hero-title__line:last-child {
+.hero-title-zh .hero-title__line {
   white-space: nowrap;
 }
 
@@ -1556,7 +1556,7 @@ onUnmounted(() => {
     font-size: clamp(2.45rem, 11vw, 3.6rem);
   }
 
-  .hero-title-zh span:last-child {
+  .hero-title-zh .hero-title__line {
     white-space: normal;
   }
 

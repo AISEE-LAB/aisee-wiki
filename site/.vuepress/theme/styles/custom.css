@@ -48,9 +48,3 @@
   --vp-c-text-3: rgba(235, 235, 245, 0.38);
   */
 }
-
-@media (min-width: 768px) {
-  .vp-navbar .container {
-    max-width: none;
-  }
-}

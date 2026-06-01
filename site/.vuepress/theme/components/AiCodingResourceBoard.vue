@@ -14,6 +14,9 @@ type Resource = {
 type Category = {
   key: string
   title: string
+  summary: string
+  bestFor: string
+  cardNote: string
   resources: Resource[]
 }
 
@@ -21,6 +24,9 @@ const categories: Category[] = [
   {
     key: 'methodology',
     title: '方法论与工作流',
+    summary: '用于理解 AI 工程如何从一次性 prompt 进入可审查、可验证、可归档的工作方式。',
+    bestFor: '先建立团队方法论、规范边界和变更流程。',
+    cardNote: '重点看它如何定义协作对象、事实源和流程边界。',
     resources: [
       {
         name: 'OpenSpec',
@@ -87,6 +93,9 @@ const categories: Category[] = [
   {
     key: 'agents',
     title: 'Coding Agent 与 Harness',
+    summary: '用于观察 coding agent 如何组织任务、工具、权限、运行环境和团队协作。',
+    bestFor: '评估 Agent 平台、CLI、异步执行和 harness 形态。',
+    cardNote: '重点看它如何约束 Agent 的执行环境和任务生命周期。',
     resources: [
       {
         name: 'OpenHands',
@@ -190,6 +199,9 @@ const categories: Category[] = [
   {
     key: 'skills',
     title: 'Skill、Prompt 与上下文工程',
+    summary: '用于研究如何把稳定经验、提示词模式和上下文组织方式封装成可复用能力。',
+    bestFor: '建设团队规则、skills、prompt patterns 和上下文复用机制。',
+    cardNote: '重点看它如何把隐性经验变成可复用的自然语言资产。',
     resources: [
       {
         name: 'SkillOpt',
@@ -288,6 +300,9 @@ const categories: Category[] = [
   {
     key: 'tools',
     title: 'MCP、Tool Use 与浏览器自动化',
+    summary: '用于研究 Agent 如何安全连接浏览器、命令行、设计工具、协作系统和外部服务。',
+    bestFor: '设计工具接入、MCP 边界、浏览器自动化和跨系统协作。',
+    cardNote: '重点看它如何处理外部系统权限、上下文和操作边界。',
     resources: [
       {
         name: 'agent-browser',
@@ -371,6 +386,9 @@ const categories: Category[] = [
   {
     key: 'context',
     title: '代码上下文、记忆与观测',
+    summary: '用于解决大仓库理解、跨会话记忆、上下文同步和 Agent 行为观测问题。',
+    bestFor: '降低上下文成本、维护长期记忆、排查 Agent 执行过程。',
+    cardNote: '重点看它如何让代码事实、历史会话和运行状态可检索。',
     resources: [
       {
         name: 'code-review-graph',
@@ -463,6 +481,9 @@ const categories: Category[] = [
   {
     key: 'design',
     title: 'UI/UX、设计与可视化',
+    summary: '用于改善 AI 生成界面的设计判断、品牌一致性、原型质量和可视化表达。',
+    bestFor: '前端界面、设计评审、技术图示、DESIGN.md 和高保真原型。',
+    cardNote: '重点看它如何把设计约束注入 AI Coding 工作流。',
     resources: [
       {
         name: 'ui-ux-pro-max-skill',
@@ -591,6 +612,9 @@ const categories: Category[] = [
   {
     key: 'learning',
     title: '学习资料与训练场',
+    summary: '用于系统学习 AI Coding、Agent harness、团队能力模型和多 Agent 协作。',
+    bestFor: '入门训练、团队培训、招聘考核和方法论补课。',
+    cardNote: '重点看它是否能把概念转成可练习、可复盘的任务。',
     resources: [
       {
         name: 'learn-claude-code',
@@ -660,6 +684,16 @@ const categories: Category[] = [
 
 const totalResources = computed(() => categories.reduce((total, category) => total + category.resources.length, 0))
 const updatedDate = '2026-05-30'
+
+const selectionGuides = [
+  ['先定方法', '方法论与工作流'],
+  ['评估执行环境', 'Coding Agent 与 Harness'],
+  ['沉淀团队能力', 'Skill、Prompt 与上下文工程'],
+  ['接入外部系统', 'MCP、Tool Use 与浏览器自动化'],
+  ['降低上下文成本', '代码上下文、记忆与观测'],
+  ['提升界面质量', 'UI/UX、设计与可视化'],
+  ['系统学习', '学习资料与训练场'],
+]
 </script>
 
 <template>
@@ -670,6 +704,13 @@ const updatedDate = '2026-05-30'
       </div>
       <strong>{{ totalResources }} 个推荐资源</strong>
     </header>
+
+    <div class="ai-resource-board__guide" aria-label="快速选择">
+      <div v-for="[need, target] in selectionGuides" :key="need">
+        <span>{{ need }}</span>
+        <strong>{{ target }}</strong>
+      </div>
+    </div>
 
     <div class="ai-resource-board__index" aria-label="资源分类">
       <a
@@ -691,9 +732,13 @@ const updatedDate = '2026-05-30'
         class="ai-resource-board__category"
       >
         <div class="ai-resource-board__category-heading">
-          <h3>{{ category.title }}</h3>
+          <div>
+            <h3>{{ category.title }}</h3>
+            <p>{{ category.summary }}</p>
+          </div>
           <span>{{ category.resources.length }} 个资源</span>
         </div>
+        <p class="ai-resource-board__category-best">适合场景：{{ category.bestFor }}</p>
 
         <div class="ai-resource-board__grid">
           <article v-for="resource in category.resources" :key="resource.repo" class="ai-resource-card">
@@ -708,6 +753,10 @@ const updatedDate = '2026-05-30'
               </div>
             </div>
             <p>{{ resource.description }}</p>
+            <p class="ai-resource-card__note">
+              <span>推荐看点</span>
+              {{ category.cardNote }}
+            </p>
             <div class="ai-resource-card__tags" aria-label="标签">
               <span v-for="tag in resource.tags" :key="tag">{{ tag }}</span>
             </div>
@@ -793,6 +842,41 @@ const updatedDate = '2026-05-30'
   margin: 18px 0 24px;
 }
 
+.ai-resource-board__guide {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 16px 0 18px;
+}
+
+.ai-resource-board__guide div {
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid color-mix(in oklch, var(--vp-c-divider) 78%, transparent);
+  border-radius: 8px;
+  background: color-mix(in oklch, var(--vp-c-bg) 96%, white);
+}
+
+.ai-resource-board__guide span,
+.ai-resource-board__guide strong {
+  display: block;
+  min-width: 0;
+}
+
+.ai-resource-board__guide span {
+  color: var(--vp-c-text-3);
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+.ai-resource-board__guide strong {
+  margin-top: 4px;
+  overflow-wrap: anywhere;
+  color: var(--vp-c-text-1);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
 .ai-resource-board__index-item {
   display: inline-flex;
   gap: 8px;
@@ -856,11 +940,26 @@ const updatedDate = '2026-05-30'
   line-height: 1.3;
 }
 
+.ai-resource-board__category-heading p {
+  max-width: 760px;
+  margin: 5px 0 0;
+  color: var(--vp-c-text-2);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
 .ai-resource-board__category-heading span {
   flex: 0 0 auto;
   color: var(--vp-c-text-3);
   font-size: 13px;
   font-weight: 650;
+}
+
+.ai-resource-board__category-best {
+  margin: -4px 0 14px;
+  color: var(--vp-c-text-2);
+  font-size: 13px;
+  line-height: 1.6;
 }
 
 .ai-resource-board__grid {
@@ -941,6 +1040,22 @@ const updatedDate = '2026-05-30'
   line-height: 1.7;
 }
 
+.ai-resource-card__note {
+  padding: 10px 11px;
+  border-left: 3px solid color-mix(in oklch, oklch(55% 0.13 174) 74%, var(--vp-c-divider));
+  border-radius: 8px;
+  background: color-mix(in oklch, oklch(94% 0.035 180) 44%, transparent);
+}
+
+.ai-resource-card__note span {
+  display: block;
+  margin-bottom: 3px;
+  color: oklch(45% 0.13 174);
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1.25;
+}
+
 .ai-resource-card__tags {
   display: flex;
   flex-wrap: wrap;
@@ -997,6 +1112,7 @@ const updatedDate = '2026-05-30'
 }
 
 [data-theme="dark"] .ai-resource-board__index-item,
+[data-theme="dark"] .ai-resource-board__guide div,
 [data-theme="dark"] .ai-resource-card,
 [data-theme="dark"] .ai-resource-card__links a {
   background: color-mix(in oklch, var(--vp-c-bg) 88%, oklch(23% 0.018 236));
@@ -1009,6 +1125,10 @@ const updatedDate = '2026-05-30'
 [data-theme="dark"] .ai-resource-card__tags span {
   color: oklch(80% 0.075 252);
   background: color-mix(in oklch, oklch(30% 0.055 252) 50%, var(--vp-c-bg));
+}
+
+[data-theme="dark"] .ai-resource-card__note {
+  background: color-mix(in oklch, oklch(28% 0.05 180) 42%, transparent);
 }
 
 @media (max-width: 780px) {
@@ -1025,6 +1145,10 @@ const updatedDate = '2026-05-30'
     grid-template-columns: 1fr;
   }
 
+  .ai-resource-board__guide {
+    grid-template-columns: 1fr;
+  }
+
   .ai-resource-card {
     min-height: 0;
   }
@@ -1032,6 +1156,10 @@ const updatedDate = '2026-05-30'
 
 @media (min-width: 781px) and (max-width: 1080px) {
   .ai-resource-board__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ai-resource-board__guide {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

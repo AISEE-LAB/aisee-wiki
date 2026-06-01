@@ -20,4 +20,4 @@ createTime: 2026/05/25 00:00:00
 
 ## 延伸阅读
 
-学完这条路径后，可以先阅读 [OpenSpec](/openspec/) 和 [OpenSpec 是什么](/openspec/what-is-openspec/)，把单次协作升级为可审查、可验证、可归档的工程 change；再继续看 [Compound](/compound/)，理解工程复利、评审和知识沉淀。
+学完这条路径后，先读 [AI Engineering](/ai-engineering/) 建立方法论框架，理解传统软件工程和 AI 增强软件工程的差异；再进入 [OpenSpec](/openspec/) 和 [OpenSpec 是什么](/openspec/what-is-openspec/)，把单次协作升级为可审查、可验证、可归档的工程 change；最后继续看 [Compound](/compound/)，理解工程复利、评审和知识沉淀。

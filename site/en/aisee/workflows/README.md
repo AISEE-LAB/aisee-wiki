@@ -17,4 +17,4 @@ Workflow articles and reusable flow components will be completed in later change
 - [OpenSpec](/en/openspec/)
 - [Compound](/en/compound/)
 - [AISEE](/en/aisee/)
-- [Resources](/en/resources/)
+- [Recommended Resources](/en/resources/)

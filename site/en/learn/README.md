@@ -19,4 +19,4 @@ The Chinese AI Coding learning path is now available at [/learn/](/learn/). It c
 - [OpenSpec](/en/openspec/)
 - [Compound](/en/compound/)
 - [AISEE](/en/aisee/)
-- [Resources](/en/resources/)
+- [Recommended Resources](/en/resources/)

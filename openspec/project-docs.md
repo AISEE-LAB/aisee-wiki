@@ -18,6 +18,7 @@
 | OpenSpec | `/openspec/` | AI Engineering 的规范层与事实源方法论栏目 | active | 按“栏目首页 / 作用 / 模型 / 用法 / 扩展 / 边界”组织中文正文，说明 OpenSpec 的作用、对象模型、artifact 写法、schema 扩展和适用边界。 |
 | Compound Engineering | `/compound/` | AI Engineering 的工程复利方法论栏目 | active | 按“总览 / 定义与计划 / 执行与质量 / 多智能体 / 知识 / 关系”组织中文正文，说明策略、计划、执行、评审、调试、知识沉淀和 OpenSpec 配合关系。 |
 | AISEE | `/aisee/` | AI-Enhanced Software Engineering 方法、插件与工作流入口 | active | 承载 skill 生态、需求链路、技术上下文、change 拆分、OpenSpec 协作方式，以及原工程流程子入口 `/aisee/workflows/`。 |
+| 推荐资源 | `/resources/` | AI Coding 推荐项目、工具和方法论资源目录 | active | 以精选推荐为主，展示 AI Coding、Agent 工程化、Skill、MCP、Spec-driven、UI/UX Skill 和代码上下文相关资源；不再作为模板、术语表、命令速查和检查清单的泛资源中心。 |
 
 ## 3. 页面清单
 
@@ -62,6 +63,7 @@
 | AISEE | `/aisee/` | AISEE | AI-Enhanced Software Engineering 栏目首页，说明 skill 生态、需求链路、技术上下文、change 拆分、OpenSpec 协作方式和工程流程入口。 | active | 后续补齐 skills、schema pack、context pack 和 Compound handoff 正文。 |
 | 工程流程 | `/aisee/workflows/` | AISEE | AISEE 栏目下的工程流程子入口，承载 OpenSpec、Compound、Harness 和 AISEE 链路中的可执行工作流说明。 | active | 后续补端到端流程正文。 |
 | 可复用流程讲解组件示例 | `/aisee/workflows/flow-explainer/` | AISEE | 展示 FlowExplainer 组件的阶段、节点、连接和状态写法，作为后续流程文章复用示例。 | active | 后续可替换为真实流程案例或保留为组件文档。 |
+| AI Coding 推荐资源 | `/resources/` | 推荐资源 | 按分类展示精选 AI Coding 开源项目、工具、Agent/Harness、Skill、MCP、UI/UX 和方法论资源。 | active | 后续可按英文读者语境重写 `/en/resources/`，并定期复核资源有效性。 |
 
 ## 4. 内容缺口
 
@@ -72,8 +74,9 @@
 | Compound 英文完整正文尚未建设 | Compound Engineering | P1 | 本轮只建设中文正文，英文入口保持稳定占位。 | 后续独立 change 按英文读者语境重写 Compound 栏目。 |
 | OpenSpec 缺少完整真实项目演练 | OpenSpec / AISEE 工程流程 | P1 | 栏目已解释概念、写法和边界，但尚未把一次真实 change 从 propose 跑到 archive。 | 后续放入 `/aisee/workflows/` 或 OpenSpec 实战页，避免替代 AISEE SRS 链路。 |
 | Compound 缺少端到端工程复利演练 | Compound Engineering / AISEE 工程流程 | P1 | 栏目已解释方法论、角色、边界和知识沉淀，但尚未把一次真实任务从 brainstorm / plan 跑到 work / review / compound。 | 后续放入 `/aisee/workflows/` 或 Compound 实战页，避免把栏目正文写成操作日志。 |
-| OpenSpec artifact 模板和命令速查尚未独立整理 | OpenSpec / 资源中心 | P2 | 当前正文已有写法原则，但缺少可复制模板和短命令清单。 | 后续在资源中心或 OpenSpec 子页补模板、检查清单和命令速查。 |
-| Compound skill / agent 命令速查尚未独立整理 | Compound Engineering / 资源中心 | P2 | 当前栏目按方法论转译插件能力，未复制完整命令清单和版本行为。 | 后续在资源中心或专题页整理稳定速查，并明确以官方 README 和插件源码为准。 |
+| OpenSpec artifact 模板和命令速查尚未独立整理 | OpenSpec / 后续独立资源页 | P2 | 当前正文已有写法原则，但缺少可复制模板和短命令清单；推荐资源栏目已收束为精选项目和方法论资源。 | 后续另起 change 规划模板、检查清单和命令速查，不默认塞回推荐资源栏目。 |
+| Compound skill / agent 命令速查尚未独立整理 | Compound Engineering / 后续独立资源页 | P2 | 当前栏目按方法论转译插件能力，未复制完整命令清单和版本行为；推荐资源栏目不承载命令大全。 | 后续另起 change 整理稳定速查，并明确以官方 README 和插件源码为准。 |
+| 术语表和阅读路径已从推荐资源栏目移除 | 推荐资源 | P2 | 推荐资源已聚焦推荐内容，旧术语表和阅读路径占位页不再符合栏目定位。 | 如仍需要术语表或阅读路径，后续单独规划栏目或页面，并重新加入导航。 |
 | Codex 产品入口和安装方式可能快速变化 | 学习路径 | P1 | Codex App、CLI、IDE 和账号/额度属于高频变化信息。 | 定期核对 OpenAI 官方文档，必要时更新 `/learn/codex-setup/`。 |
 | Agent 进阶页面偏概念入门，缺少动手配置样例 | 学习路径 | P2 | 本 change 目标是建立认知和主线，未覆盖 MCP/Hook/Skill 详细实操。 | 后续按 Skill、MCP、Hook 分别补实战文章。 |
 
@@ -81,7 +84,7 @@
 
 | 读者/场景 | 推荐入口 | 推荐顺序 | 说明 |
 |---|---|---|---|
-| AI Coding 新手 | `/learn/` | `/learn/ai-coding-intro/` → `/learn/tools-and-models/` → `/learn/runtime-setup/` → `/learn/codex-setup/` → `/learn/first-ai-project/` | 先建立认知，再跑通 Codex 和第一个页面项目。 |
+| AI Coding 新手 | `/learn/` | `/learn/ai-coding-intro/` → `/learn/tools-and-models/` → `/learn/runtime-setup/` → `/learn/codex-setup/` → `/learn/first-ai-project/` → `/resources/` | 先建立认知，再跑通 Codex 和第一个页面项目；需要扩展生态视野时再看推荐资源。 |
 | 已会用工具但效果不稳定 | `/learn/codex-setup/` | `/learn/codex-setup/` → `/learn/first-ai-project/` → `/learn/agent-basics/` → `/learn/agent-memory/` | 重点补上下文、权限、diff、验证和任务拆分。 |
 | 想理解 Agent 工程化 | `/learn/agent-basics/` | `/learn/agent-basics/` → `/learn/agent-memory/` → `/learn/skills/` → `/learn/mcp/` → `/learn/tool-calls/` → `/learn/hooks/` → `/learn/agent-orchestration/` | 逐一理解 Agent 的核心组成，再看它们如何配合。 |
 | 想把 AI 协作变成可审查 change | `/openspec/` | `/openspec/what-is-openspec/` → `/openspec/mental-model/` → `/openspec/workflow/` → `/openspec/artifact-guide/` → `/openspec/spec-granularity/` → `/openspec/delta-spec/` → `/openspec/schema/` → `/openspec/boundaries/` | 先建立规范层心智模型，再学习工作流、artifact 写法、粒度、delta spec、schema 和适用边界。 |
@@ -112,6 +115,7 @@
 | 多智能体评审 | 多智能体评审 / reviewer personas | 把多智能体写成越多越好 | 应按风险选择 reviewer，并通过置信度、去重和人工决策 gate 控制噪声。 |
 | Research Agents | research agents / 研究型智能体 | 把研究结果当最终事实 | 研究型智能体负责补证据，不能覆盖已生效 spec、项目文档或人工决策。 |
 | `docs/solutions/` | `docs/solutions/` / solution docs | 普通复盘文章目录 | 它是可检索、可刷新、带 frontmatter 的团队知识库。 |
+| 推荐资源 | 推荐资源 / Recommended Resources | 泛资源中心 | 推荐资源只展示精选 AI Coding 相关项目、工具和方法论参考；模板、命令速查、术语表和检查清单应另行规划。 |
 
 ## 7. 站点结构约定
 
@@ -120,6 +124,7 @@
 - 侧边栏：OpenSpec 中文栏目按“栏目首页 / 作用 / 模型 / 用法 / 扩展 / 边界”分组，页面保持平铺路由 `/openspec/<slug>/`。
 - 侧边栏：Compound 中文栏目按“栏目首页 / 总览 / 定义与计划 / 执行与质量 / 多智能体 / 知识 / 关系”分组，页面保持平铺路由 `/compound/<slug>/`。
 - 侧边栏：AISEE 中文栏目包含栏目首页和“工程流程”分组，工程流程页面使用 `/aisee/workflows/` 路由前缀。
+- 侧边栏：推荐资源中文和英文栏目只保留 `README.md`，主路由保持 `/resources/` 和 `/en/resources/`；不再公开 demo、preview、foo/bar 示例页。
 - frontmatter：学习路径正文包含 `title`、`permalink`、`createTime`。
 - frontmatter：OpenSpec 中文正文包含 `title`、`permalink`、`createTime`，permalink 与侧边栏链接保持一致。
 - frontmatter：Compound 中文正文包含 `title`、`permalink`、`createTime`，permalink 与侧边栏链接保持一致。
@@ -128,6 +133,7 @@
 - 标签/分类：Compound Engineering 作为 doc collection，不新增标签体系。
 - 多语言：中文正文优先；英文 `/en/learn/` 和 `/en/openspec/` 保持入口可用并指向中文稳定内容，后续再按英文读者语境完整重写。
 - 多语言：英文 `/en/compound/` 暂保留稳定占位入口，后续再按英文读者语境完整重写。
+- 多语言：英文 `/en/resources/` 暂保留推荐资源入口，指向中文推荐资源目录；后续再按英文读者语境完整重写。
 - 图片/附件：工具/模型 logo 使用 LobeHub Icons 静态 SVG/CDN；交互式关系图优先使用 Vue Flow；禁止引用本地绝对路径和未经授权商业截图。
 - 图片/附件：OpenSpec 复杂静态图保留 `.excalidraw` 源文件，导出 SVG 放在 `site/.vuepress/public/diagrams/openspec/`，正文通过 `DiagramFigure` 引用站点内路径。
 - 代码块/命令示例：安装、账号、平台、价格、额度等易变信息必须标注“以官方文档为准”；危险 Git/删除/上传/生产操作必须有风险说明。
@@ -140,3 +146,4 @@
 | 2026-05-25 | `build-ai-coding-learning-path` | `/learn/` 升级为 AI Coding 学习路径，新增 12 篇中文正文、Vue Flow 路线图、LobeHub logo 网格和分组侧边栏。 | 构建通过；后续归档时同步到正式 specs。 |
 | 2026-05-29 | `build-openspec-column-content` | `/openspec/` 升级为 OpenSpec 方法论栏目，新增 8 篇中文专题正文、分组侧边栏、英文占位入口、阅读路径入口和 Excalidraw/SVG 图示资产。 | 构建通过后可归档；英文完整正文、真实项目演练和模板速查留待后续 change。 |
 | 2026-05-30 | `build-compound-engineering-column` | `/compound/` 升级为 Compound Engineering 方法论栏目，新增 13 篇中文专题正文、分组侧边栏，并建立与 OpenSpec 的组合关系说明。 | 构建通过后可归档；英文完整正文、端到端工程复利演练和命令速查留待后续 change。 |
+| 2026-06-01 | `cleanup-demo-preview-and-recommendations` | 删除公开 demo、blog preview 和资源旧占位页；资源栏目展示名收束为“推荐资源 / Recommended Resources”，主路由继续使用 `/resources/`。 | 构建通过后可归档；术语表、模板、命令速查和检查清单如有需要应另起 change。 |

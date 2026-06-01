@@ -63,7 +63,7 @@ const content = computed(() => {
         ['OpenSpec', 'A specification state machine for changes, artifacts, validation, and archive.', '/en/openspec/'],
         ['Compound', 'Planning, work, review, debugging, retrospection, and knowledge assets.', '/en/compound/'],
         ['aisee', 'Requirements, context, change planning, implementation bridge, and verification guard.', '/en/aisee/'],
-        ['Resources', 'Templates, glossary, schema packs, checklists, examples, and references.', '/en/resources/'],
+        ['Recommended Resources', 'Curated AI Coding projects, tools, agent frameworks, skills, and methodology references.', '/en/resources/'],
       ],
       methodTitle: 'Three method threads',
       methodText: 'The site is organized by methodology, not by tool commands. OpenSpec provides the source of truth, Compound provides the execution and learning discipline, and aisee connects them into working flows.',
@@ -150,7 +150,7 @@ const content = computed(() => {
       ['OpenSpec', '用规范状态机管理 specs、changes、artifacts、validate 和 archive。', '/openspec/'],
       ['Compound', '理解工程复利：计划、执行、评审、调试、复盘和知识资产。', '/compound/'],
       ['aisee', '把需求、上下文、change 规划、实现桥接、验证和工程流程串成工作机制。', '/aisee/'],
-      ['资源中心', '模板、术语表、schema pack、检查清单、示例和参考资料入口。', '/resources/'],
+      ['推荐资源', '精选 AI Coding 项目、工具、Agent 框架、Skill 和方法论参考。', '/resources/'],
     ],
     methodTitle: '三条方法主线',
     methodText: '本站不是命令清单，而是围绕方法论组织内容：OpenSpec 提供事实源，Compound 提供执行与复盘纪律，aisee 把两者连接成可落地的工作流。',
@@ -492,7 +492,7 @@ onUnmounted(() => {
         </article>
       </div>
       <div class="open-actions">
-        <a class="open-action open-action--primary" :href="content.resourcesLink">{{ isEn ? 'Resources' : '资源中心' }}</a>
+        <a class="open-action open-action--primary" :href="content.resourcesLink">{{ isEn ? 'Recommended Resources' : '推荐资源' }}</a>
         <a class="open-action" :href="content.workflowLink">aisee</a>
       </div>
     </section>

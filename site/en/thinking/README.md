@@ -16,4 +16,4 @@ English articles are being prepared. This page keeps the section available.
 
 - [Learn](/en/learn/)
 - [AISEE Workflows](/en/aisee/workflows/)
-- [Resources](/en/resources/)
+- [Recommended Resources](/en/resources/)

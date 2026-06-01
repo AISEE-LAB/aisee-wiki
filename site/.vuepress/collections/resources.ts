@@ -4,7 +4,7 @@ export const resourcesCollection = defineCollection({
   type: 'doc',
   dir: 'resources',
   linkPrefix: '/resources',
-  title: '资源中心',
+  title: '推荐资源',
   sidebar: ['README.md'],
 })
 
@@ -12,6 +12,6 @@ export const resourcesEnCollection = defineCollection({
   type: 'doc',
   dir: 'resources',
   linkPrefix: '/resources',
-  title: 'Resources',
-  sidebar: ['README.md', 'glossary', 'reading-path'],
+  title: 'Recommended Resources',
+  sidebar: ['README.md'],
 })

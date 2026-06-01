@@ -31,8 +31,8 @@ export const siteSections = [
   },
   {
     slug: 'resources',
-    zh: '资源中心',
-    en: 'Resources',
-    role: '模板、术语、命令、检查清单等资源',
+    zh: '推荐资源',
+    en: 'Recommended Resources',
+    role: 'AI Coding 推荐项目、工具和方法论资源',
   },
 ] as const

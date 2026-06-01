@@ -19,4 +19,4 @@ Skill details, installation commands, and version notes will be completed in a l
 ## Next
 
 - [Learn](/en/learn/)
-- [Resources](/en/resources/)
+- [Recommended Resources](/en/resources/)

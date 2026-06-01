@@ -26,5 +26,4 @@ Current Chinese content already covers:
 - [What is OpenSpec?](/openspec/what-is-openspec/)
 - [OpenSpec boundaries](/openspec/boundaries/)
 - [Learn](/en/learn/)
-- [Resources](/en/resources/)
-- [Glossary](/en/resources/glossary/)
+- [Recommended Resources](/en/resources/)

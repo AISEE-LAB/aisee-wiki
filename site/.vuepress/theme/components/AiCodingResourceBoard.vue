@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 
 type Resource = {
   name: string
@@ -683,38 +683,106 @@ const categories: Category[] = [
 ]
 
 const totalResources = computed(() => categories.reduce((total, category) => total + category.resources.length, 0))
-const updatedDate = '2026-05-30'
 
-const selectionGuides = [
-  ['先定方法', '方法论与工作流'],
-  ['评估执行环境', 'Coding Agent 与 Harness'],
-  ['沉淀团队能力', 'Skill、Prompt 与上下文工程'],
-  ['接入外部系统', 'MCP、Tool Use 与浏览器自动化'],
-  ['降低上下文成本', '代码上下文、记忆与观测'],
-  ['提升界面质量', 'UI/UX、设计与可视化'],
-  ['系统学习', '学习资料与训练场'],
+const featuredTags = [
+  'MCP',
+  'Harness',
+  'Skill',
+  'Workflow',
+  'Claude Code',
+  'Agent',
+  'Memory',
+  'UI/UX Skill',
+  'Design System',
+  'Browser',
+  'Code Graph',
+  'Tutorial',
 ]
+
+const searchQuery = ref('')
+const selectedTag = ref('全部')
+const normalizedQuery = computed(() => searchQuery.value.trim().toLocaleLowerCase())
+const availableFeaturedTags = computed(() =>
+  featuredTags.filter(tag => categories.some(category => category.resources.some(resource => resource.tags.includes(tag)))),
+)
+
+const filteredCategories = computed(() => {
+  return categories
+    .map(category => ({
+      ...category,
+      resources: category.resources.filter((resource) => {
+        const matchesTag = selectedTag.value === '全部' || resource.tags.includes(selectedTag.value)
+
+        if (!matchesTag)
+          return false
+
+        if (!normalizedQuery.value)
+          return true
+
+        const searchableText = [
+          resource.name,
+          resource.repo,
+          resource.description,
+          ...resource.tags,
+        ].join(' ').toLocaleLowerCase()
+
+        return searchableText.includes(normalizedQuery.value)
+      }),
+    }))
+    .filter(category => category.resources.length > 0)
+})
+const filteredTotal = computed(() => filteredCategories.value.reduce((total, category) => total + category.resources.length, 0))
+const hasActiveFilter = computed(() => normalizedQuery.value.length > 0 || selectedTag.value !== '全部')
+
+function resetFilters() {
+  searchQuery.value = ''
+  selectedTag.value = '全部'
+}
 </script>
 
 <template>
   <section class="ai-resource-board" aria-label="AI Coding 资源目录">
-    <header class="ai-resource-board__header">
-      <div>
-        <p>更新日期：{{ updatedDate }}</p>
+    <div class="ai-resource-board__filters" aria-label="资源筛选">
+      <label class="ai-resource-board__search">
+        <span>搜索资源</span>
+        <input
+          v-model="searchQuery"
+          type="search"
+          placeholder="输入项目名、repo、标签或用途"
+        >
+      </label>
+      <div class="ai-resource-board__tag-filter" aria-label="常用标签筛选">
+        <span>常用标签</span>
+        <div>
+          <button
+            type="button"
+            :class="{ 'is-active': selectedTag === '全部' }"
+            @click="selectedTag = '全部'"
+          >
+            全部
+          </button>
+          <button
+            v-for="tag in availableFeaturedTags"
+            :key="tag"
+            type="button"
+            :class="{ 'is-active': selectedTag === tag }"
+            @click="selectedTag = tag"
+          >
+            {{ tag }}
+          </button>
+        </div>
       </div>
-      <strong>{{ totalResources }} 个推荐资源</strong>
-    </header>
-
-    <div class="ai-resource-board__guide" aria-label="快速选择">
-      <div v-for="[need, target] in selectionGuides" :key="need">
-        <span>{{ need }}</span>
-        <strong>{{ target }}</strong>
+      <div class="ai-resource-board__filter-status">
+        <span>{{ filteredTotal }} / {{ totalResources }} 个资源</span>
+        <button v-if="hasActiveFilter" type="button" @click="resetFilters">
+          重置
+        </button>
       </div>
     </div>
 
     <div class="ai-resource-board__index" aria-label="资源分类">
       <a
-        v-for="category in categories"
+        v-for="category in filteredCategories"
         :key="category.key"
         class="ai-resource-board__index-item"
         :href="`#resource-${category.key}`"
@@ -726,7 +794,7 @@ const selectionGuides = [
 
     <div class="ai-resource-board__sections">
       <section
-        v-for="category in categories"
+        v-for="category in filteredCategories"
         :id="`resource-${category.key}`"
         :key="category.key"
         class="ai-resource-board__category"
@@ -739,6 +807,10 @@ const selectionGuides = [
           <span>{{ category.resources.length }} 个资源</span>
         </div>
         <p class="ai-resource-board__category-best">适合场景：{{ category.bestFor }}</p>
+        <p class="ai-resource-board__category-note">
+          <span>推荐看点</span>
+          {{ category.cardNote }}
+        </p>
 
         <div class="ai-resource-board__grid">
           <article v-for="resource in category.resources" :key="resource.repo" class="ai-resource-card">
@@ -753,10 +825,6 @@ const selectionGuides = [
               </div>
             </div>
             <p>{{ resource.description }}</p>
-            <p class="ai-resource-card__note">
-              <span>推荐看点</span>
-              {{ category.cardNote }}
-            </p>
             <div class="ai-resource-card__tags" aria-label="标签">
               <span v-for="tag in resource.tags" :key="tag">{{ tag }}</span>
             </div>
@@ -767,6 +835,13 @@ const selectionGuides = [
           </article>
         </div>
       </section>
+    </div>
+    <div v-if="filteredTotal === 0" class="ai-resource-board__empty">
+      <strong>没有匹配的资源</strong>
+      <p>换一个关键词，或清空标签筛选后再试。</p>
+      <button type="button" @click="resetFilters">
+        重置筛选
+      </button>
     </div>
   </section>
 </template>
@@ -802,39 +877,6 @@ const selectionGuides = [
   margin: 18px 0 40px;
 }
 
-.ai-resource-board__header {
-  display: flex;
-  gap: 18px;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 16px;
-  border-bottom: 1px solid color-mix(in oklch, var(--vp-c-divider) 86%, transparent);
-  border-radius: 8px;
-  background:
-    linear-gradient(135deg, color-mix(in oklch, oklch(93% 0.045 180) 46%, transparent), transparent 58%),
-    color-mix(in oklch, var(--vp-c-bg-soft) 64%, var(--vp-c-bg));
-}
-
-.ai-resource-board__header p {
-  margin: 0;
-  color: oklch(48% 0.13 174);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0;
-  text-transform: uppercase;
-}
-
-.ai-resource-board__header strong {
-  flex: 0 0 auto;
-  padding: 8px 11px;
-  border: 1px solid color-mix(in oklch, oklch(67% 0.16 42) 42%, var(--vp-c-divider));
-  border-radius: 8px;
-  color: oklch(45% 0.13 42);
-  font-size: 13px;
-  line-height: 1.2;
-  background: color-mix(in oklch, oklch(92% 0.05 65) 42%, var(--vp-c-bg));
-}
-
 .ai-resource-board__index {
   display: flex;
   flex-wrap: wrap;
@@ -842,39 +884,99 @@ const selectionGuides = [
   margin: 18px 0 24px;
 }
 
-.ai-resource-board__guide {
+.ai-resource-board__filters {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 8px;
-  margin: 16px 0 18px;
-}
-
-.ai-resource-board__guide div {
-  min-width: 0;
-  padding: 10px 12px;
+  grid-template-columns: minmax(220px, 1.1fr) minmax(0, 2fr) auto;
+  gap: 12px;
+  align-items: end;
+  margin: 18px 0;
+  padding: 14px;
   border: 1px solid color-mix(in oklch, var(--vp-c-divider) 78%, transparent);
   border-radius: 8px;
-  background: color-mix(in oklch, var(--vp-c-bg) 96%, white);
+  background: color-mix(in oklch, var(--vp-c-bg-soft) 68%, var(--vp-c-bg));
 }
 
-.ai-resource-board__guide span,
-.ai-resource-board__guide strong {
-  display: block;
+.ai-resource-board__search,
+.ai-resource-board__tag-filter {
+  display: grid;
+  gap: 7px;
   min-width: 0;
 }
 
-.ai-resource-board__guide span {
-  color: var(--vp-c-text-3);
+.ai-resource-board__search span,
+.ai-resource-board__tag-filter > span {
+  color: var(--vp-c-text-2);
   font-size: 12px;
+  font-weight: 700;
   line-height: 1.25;
 }
 
-.ai-resource-board__guide strong {
-  margin-top: 4px;
-  overflow-wrap: anywhere;
+.ai-resource-board__search input {
+  width: 100%;
+  min-height: 40px;
+  padding: 8px 11px;
+  border: 1px solid color-mix(in oklch, var(--vp-c-divider) 78%, transparent);
+  border-radius: 8px;
   color: var(--vp-c-text-1);
+  font: inherit;
+  font-size: 14px;
+  background: color-mix(in oklch, var(--vp-c-bg) 96%, white);
+}
+
+.ai-resource-board__search input:focus {
+  border-color: color-mix(in oklch, oklch(52% 0.13 174) 72%, var(--vp-c-divider));
+  outline: 2px solid color-mix(in oklch, oklch(78% 0.1 174) 32%, transparent);
+}
+
+.ai-resource-board__tag-filter div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.ai-resource-board__tag-filter button,
+.ai-resource-board__filter-status button,
+.ai-resource-board__empty button {
+  min-height: 32px;
+  padding: 6px 10px;
+  border: 1px solid color-mix(in oklch, var(--vp-c-divider) 76%, transparent);
+  border-radius: 8px;
+  color: var(--vp-c-text-2);
+  font: inherit;
   font-size: 13px;
-  line-height: 1.35;
+  font-weight: 650;
+  line-height: 1.25;
+  background: color-mix(in oklch, var(--vp-c-bg) 96%, white);
+  cursor: pointer;
+}
+
+.ai-resource-board__tag-filter button:hover,
+.ai-resource-board__filter-status button:hover,
+.ai-resource-board__empty button:hover {
+  border-color: color-mix(in oklch, oklch(52% 0.13 174) 60%, var(--vp-c-divider));
+  color: var(--vp-c-text-1);
+}
+
+.ai-resource-board__tag-filter button.is-active {
+  border-color: color-mix(in oklch, oklch(48% 0.13 174) 72%, var(--vp-c-divider));
+  color: white;
+  background: oklch(48% 0.13 174);
+}
+
+.ai-resource-board__filter-status {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 118px;
+}
+
+.ai-resource-board__filter-status span {
+  color: var(--vp-c-text-2);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.25;
+  white-space: nowrap;
 }
 
 .ai-resource-board__index-item {
@@ -962,6 +1064,23 @@ const selectionGuides = [
   line-height: 1.6;
 }
 
+.ai-resource-board__category-note {
+  margin: -4px 0 16px;
+  padding: 10px 12px;
+  border-left: 3px solid color-mix(in oklch, oklch(55% 0.13 174) 74%, var(--vp-c-divider));
+  border-radius: 8px;
+  color: var(--vp-c-text-2);
+  font-size: 13px;
+  line-height: 1.6;
+  background: color-mix(in oklch, oklch(94% 0.035 180) 44%, transparent);
+}
+
+.ai-resource-board__category-note span {
+  margin-right: 8px;
+  color: oklch(45% 0.13 174);
+  font-weight: 750;
+}
+
 .ai-resource-board__grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -971,7 +1090,7 @@ const selectionGuides = [
 .ai-resource-card {
   display: flex;
   min-width: 0;
-  min-height: 232px;
+  min-height: 198px;
   flex-direction: column;
   padding: 16px;
   border: 1px solid color-mix(in oklch, var(--vp-c-divider) 76%, transparent);
@@ -1040,22 +1159,6 @@ const selectionGuides = [
   line-height: 1.7;
 }
 
-.ai-resource-card__note {
-  padding: 10px 11px;
-  border-left: 3px solid color-mix(in oklch, oklch(55% 0.13 174) 74%, var(--vp-c-divider));
-  border-radius: 8px;
-  background: color-mix(in oklch, oklch(94% 0.035 180) 44%, transparent);
-}
-
-.ai-resource-card__note span {
-  display: block;
-  margin-bottom: 3px;
-  color: oklch(45% 0.13 174);
-  font-size: 12px;
-  font-weight: 750;
-  line-height: 1.25;
-}
-
 .ai-resource-card__tags {
   display: flex;
   flex-wrap: wrap;
@@ -1100,19 +1203,32 @@ const selectionGuides = [
   color: oklch(45% 0.13 174);
 }
 
-[data-theme="dark"] .ai-resource-board__header strong {
-  color: oklch(78% 0.09 66);
-  background: color-mix(in oklch, oklch(31% 0.04 66) 38%, var(--vp-c-bg));
+.ai-resource-board__empty {
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+  padding: 24px;
+  border: 1px solid color-mix(in oklch, var(--vp-c-divider) 78%, transparent);
+  border-radius: 8px;
+  background: color-mix(in oklch, var(--vp-c-bg-soft) 72%, var(--vp-c-bg));
 }
 
-[data-theme="dark"] .ai-resource-board__header {
-  background:
-    linear-gradient(135deg, color-mix(in oklch, oklch(30% 0.06 180) 48%, transparent), transparent 58%),
-    color-mix(in oklch, var(--vp-c-bg) 86%, oklch(23% 0.018 236));
+.ai-resource-board__empty strong {
+  color: var(--vp-c-text-1);
+  font-size: 16px;
+}
+
+.ai-resource-board__empty p {
+  margin: 0;
+  color: var(--vp-c-text-2);
+  font-size: 14px;
 }
 
 [data-theme="dark"] .ai-resource-board__index-item,
-[data-theme="dark"] .ai-resource-board__guide div,
+[data-theme="dark"] .ai-resource-board__search input,
+[data-theme="dark"] .ai-resource-board__tag-filter button,
+[data-theme="dark"] .ai-resource-board__filter-status button,
+[data-theme="dark"] .ai-resource-board__empty button,
 [data-theme="dark"] .ai-resource-card,
 [data-theme="dark"] .ai-resource-card__links a {
   background: color-mix(in oklch, var(--vp-c-bg) 88%, oklch(23% 0.018 236));
@@ -1127,26 +1243,21 @@ const selectionGuides = [
   background: color-mix(in oklch, oklch(30% 0.055 252) 50%, var(--vp-c-bg));
 }
 
-[data-theme="dark"] .ai-resource-card__note {
+[data-theme="dark"] .ai-resource-board__category-note {
   background: color-mix(in oklch, oklch(28% 0.05 180) 42%, transparent);
 }
 
 @media (max-width: 780px) {
-  .ai-resource-board__header {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .ai-resource-board__header h2 {
-    font-size: 23px;
-  }
-
   .ai-resource-board__grid {
     grid-template-columns: 1fr;
   }
 
-  .ai-resource-board__guide {
+  .ai-resource-board__filters {
     grid-template-columns: 1fr;
+  }
+
+  .ai-resource-board__filter-status {
+    justify-content: space-between;
   }
 
   .ai-resource-card {
@@ -1159,9 +1270,6 @@ const selectionGuides = [
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .ai-resource-board__guide {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 @media (max-width: 520px) {

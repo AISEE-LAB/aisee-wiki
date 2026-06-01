@@ -538,11 +538,11 @@ onUnmounted(() => {
 
 .home-hero {
   display: grid;
-  gap: 42px;
+  gap: clamp(64px, 5.2vw, 92px);
   grid-template-columns: minmax(520px, 0.9fr) minmax(620px, 1.1fr);
   min-height: min(560px, calc(100vh - 150px));
   align-items: center;
-  padding: 58px 0 18px clamp(42px, 5vw, 92px);
+  padding: 58px 0 18px clamp(14px, 2.6vw, 44px);
 }
 
 .hero-copy {
@@ -568,9 +568,13 @@ onUnmounted(() => {
   margin: 0;
 }
 
+.hero-copy .hero-title-zh {
+  font-size: clamp(3.2rem, 4.15vw, 5.05rem);
+}
+
 .hero-title__line {
   display: block;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hero-title__char {

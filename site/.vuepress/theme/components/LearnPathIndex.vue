@@ -114,13 +114,13 @@ const checkpoints = [
 </script>
 
 <template>
-  <section class="learn-index" aria-label="AI Coding 学习路径">
+  <section class="learn-index" aria-label="AI Coding 指南路径">
     <div class="learn-index__hero">
       <div class="learn-index__hero-copy">
         <p class="learn-index__eyebrow">AI CODING PATH</p>
         <h2>先建立判断力，再跑通工具，最后理解 Agent 的核心组成。</h2>
         <p>
-          这不是一组零散教程，而是一条从认知到实操、再到工程化协作的路线。每篇文章都回答一个具体问题，并把下一步自然接上。
+          这不是一组零散文章，而是一条从认知到实操、再到工程化协作的指南路径。每篇文章都回答一个具体问题，并把下一步自然接上。
         </p>
       </div>
       <ol class="learn-index__steps" aria-label="三阶段路线">

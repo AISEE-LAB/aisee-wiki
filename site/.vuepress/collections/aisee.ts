@@ -8,10 +8,25 @@ export const aiseeCollection = defineCollection({
   sidebar: [
     'README.md',
     {
-      text: '工程流程',
+      text: 'AISEE Plugin',
       items: [
-        { text: '流程总览', link: '/aisee/workflows/' },
-        { text: '流程讲解组件示例', link: '/aisee/workflows/flow-explainer/' },
+        { text: 'AISEE Plugin', link: '/aisee/workflows/' },
+      ],
+    },
+    {
+      text: 'OpenSpec',
+      items: [
+        { text: 'OpenSpec', link: '/openspec/' },
+        { text: '基础工作流', link: '/openspec/workflow/' },
+        { text: 'Artifact 写法', link: '/openspec/artifact-guide/' },
+      ],
+    },
+    {
+      text: 'Compound Engineering',
+      items: [
+        { text: 'Compound Engineering', link: '/compound/' },
+        { text: '工程复利循环', link: '/compound/workflow-loop/' },
+        { text: '与 OpenSpec 配合', link: '/compound/with-openspec/' },
       ],
     },
   ],
@@ -25,9 +40,21 @@ export const aiseeEnCollection = defineCollection({
   sidebar: [
     'README.md',
     {
-      text: 'Workflows',
+      text: 'AISEE Plugin',
       items: [
         { text: 'Overview', link: '/en/aisee/workflows/' },
+      ],
+    },
+    {
+      text: 'OpenSpec',
+      items: [
+        { text: 'OpenSpec', link: '/en/openspec/' },
+      ],
+    },
+    {
+      text: 'Compound Engineering',
+      items: [
+        { text: 'Compound Engineering', link: '/en/compound/' },
       ],
     },
   ],

@@ -4,7 +4,7 @@ export const learnCollection = defineCollection({
   type: 'doc',
   dir: 'learn',
   linkPrefix: '/learn',
-  title: '学习路径',
+  title: '指南',
   sidebar: [
     'README.md',
     {
@@ -41,6 +41,6 @@ export const learnEnCollection = defineCollection({
   type: 'doc',
   dir: 'learn',
   linkPrefix: '/learn',
-  title: 'Learn',
+  title: 'Guides',
   sidebar: ['README.md'],
 })

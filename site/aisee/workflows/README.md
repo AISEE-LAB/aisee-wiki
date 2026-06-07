@@ -1,12 +1,12 @@
 ---
-title: 工程流程
+title: AISEE Plugin
 permalink: /aisee/workflows/
 createTime: 2026/05/23 11:01:52
 ---
 
-# 工程流程
+# AISEE Plugin
 
-工程流程把 OpenSpec、Compound、Harness 和 AISEE 连接成可执行链路。重点不是描述工具清单，而是说明一次 AI 增强工程任务如何从需求进入事实源、在受控环境中执行、经过验证后沉淀为可复用经验。
+AISEE Plugin 把 OpenSpec、Compound、Harness 和 AISEE 工作流连接成可执行链路。重点不是描述工具清单，而是说明一次 AI 增强工程任务如何从需求进入事实源、在受控环境中执行、经过验证后沉淀为可复用经验。
 
 ## 核心链路
 

@@ -1,12 +1,12 @@
 ---
-title: Workflows
+title: AISEE Plugin
 permalink: /en/aisee/workflows/
 createTime: 2026/05/23 11:01:52
 ---
 
-# Workflows
+# AISEE Plugin
 
-Workflows describe runnable engineering chains across OpenSpec, Compound, Harness, and AISEE.
+AISEE Plugin describes runnable engineering chains across OpenSpec, Compound, Harness, and AISEE.
 
 ## Scope
 

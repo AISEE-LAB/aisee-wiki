@@ -7,7 +7,7 @@
 import { defineNavbarConfig } from 'vuepress-theme-plume'
 import { siteSections } from './ia'
 
-const navbarSectionSlugs = ['learn', 'ai-engineering', 'openspec', 'compound', 'aisee', 'resources'] as const
+const navbarSectionSlugs = ['learn', 'ai-engineering', 'projects', 'resources'] as const
 const navbarSections = navbarSectionSlugs.map((slug) => {
   const section = siteSections.find(item => item.slug === slug)
 
@@ -22,10 +22,32 @@ const enSectionNavbar = navbarSections.map(section => ({ text: section.en, link:
 
 export const zhNavbar = defineNavbarConfig([
   { text: '首页', link: '/' },
-  ...zhSectionNavbar,
+  zhSectionNavbar[0],
+  zhSectionNavbar[1],
+  {
+    text: 'AISEE',
+    items: [
+      { text: 'AISEE Plugin', link: '/aisee/workflows/' },
+      { text: 'OpenSpec', link: '/openspec/' },
+      { text: 'Compound Engineering', link: '/compound/' },
+    ],
+  },
+  zhSectionNavbar[2],
+  zhSectionNavbar[3],
 ])
 
 export const enNavbar = defineNavbarConfig([
   { text: 'Home', link: '/en/' },
-  ...enSectionNavbar,
+  enSectionNavbar[0],
+  enSectionNavbar[1],
+  {
+    text: 'AISEE',
+    items: [
+      { text: 'AISEE Plugin', link: '/en/aisee/workflows/' },
+      { text: 'OpenSpec', link: '/en/openspec/' },
+      { text: 'Compound Engineering', link: '/en/compound/' },
+    ],
+  },
+  enSectionNavbar[2],
+  enSectionNavbar[3],
 ])

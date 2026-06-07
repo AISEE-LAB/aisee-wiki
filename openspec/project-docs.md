@@ -7,37 +7,38 @@
 
 - 文档站名称：AI SEE Wiki
 - 目标读者：正在学习 AI Coding、Agent 工程化协作、OpenSpec / Compound / AISEE 工作流的开发者和团队维护者。
-- 核心用途：沉淀 AI Engineering 学习路径、工程方法论、工作流说明和可复用实践。
+- 核心用途：沉淀 AI Engineering 指南路径、工程方法论、工作流说明和可复用实践。
 - 内容边界：优先提供可执行、可验证、可复用的工程文档；不做实时模型排行榜、价格表或未经核对的第三方安装方案。
 
 ## 2. 栏目结构
 
 | 栏目 | 路径 | 定位 | 状态 | 说明 |
 |---|---|---|---|---|
-| 学习路径 | `/learn/` | AI Coding 入门到 Agent 进阶的主路径 | active | 按“认知入门 / 工具上手 / Agent 进阶”组织 12 篇正文，作为 Codex 和 Agent 基础主入口。 |
+| 指南 | `/learn/` | AI Coding 入门到 Agent 进阶的指南入口 | active | 按“认知入门 / 工具上手 / Agent 进阶”组织 12 篇正文，作为 Codex 和 Agent 基础主入口；公开展示名从“学习路径”调整为“指南”。 |
 | AI Engineering | `/ai-engineering/` | AI 时代软件工程的方法论基础栏目 | active | 解释传统软件工程与 AI 增强软件工程的变化、延续、工程师职责，以及 Spec First、Harness Better、Compound Knowledge 三条主线为什么成立。 |
-| OpenSpec | `/openspec/` | AI Engineering 的规范层与事实源方法论栏目 | active | 按“栏目首页 / 作用 / 模型 / 用法 / 扩展 / 边界”组织中文正文，说明 OpenSpec 的作用、对象模型、artifact 写法、schema 扩展和适用边界。 |
-| Compound Engineering | `/compound/` | AI Engineering 的工程复利方法论栏目 | active | 按“总览 / 定义与计划 / 执行与质量 / 多智能体 / 知识 / 关系”组织中文正文，说明策略、计划、执行、评审、调试、知识沉淀和 OpenSpec 配合关系。 |
-| AISEE | `/aisee/` | AI-Enhanced Software Engineering 方法、插件与工作流入口 | active | 承载 skill 生态、需求链路、技术上下文、change 拆分、OpenSpec 协作方式，以及原工程流程子入口 `/aisee/workflows/`。 |
+| AISEE | `/aisee/` | 从 AISEE 工作流视角介绍 AISEE Plugin、OpenSpec 与 Compound Engineering 的主线入口 | active | 顶栏 `AISEE` 展示二级菜单，直接进入 AISEE Plugin、OpenSpec、Compound Engineering；侧边栏包含相同三个子栏目；OpenSpec 和 Compound Engineering 是独立开源项目，本站在这里做深度介绍和组合实践说明，不暗示归属关系。 |
+| OpenSpec | `/openspec/` | AI Engineering 的规范层与事实源方法论栏目 | active | 保留独立路由和 collection，作为 AISEE 栏目下的深度子栏目入口；按“栏目首页 / 作用 / 模型 / 用法 / 扩展 / 边界”组织中文正文。 |
+| Compound Engineering | `/compound/` | AI Engineering 的工程复利方法论栏目 | active | 保留独立路由和 collection，作为 AISEE 栏目下的深度子栏目入口；按“总览 / 定义与计划 / 执行与质量 / 多智能体 / 知识 / 关系”组织中文正文。 |
+| 开源项目 | `/projects/` | AISEE 团队自有或主导开源项目清单与项目介绍 | active | 展示团队自有项目、项目状态、仓库入口、文档入口和后续路线；不混入外部推荐资源。 |
 | 推荐资源 | `/resources/` | AI Coding 推荐项目、工具和方法论资源目录 | active | 以精选推荐为主，展示 AI Coding、Agent 工程化、Skill、MCP、Spec-driven、UI/UX Skill 和代码上下文相关资源；不再作为模板、术语表、命令速查和检查清单的泛资源中心。 |
 
 ## 3. 页面清单
 
 | 页面 | 路径 | 栏目 | 内容摘要 | 状态 | 后续动作 |
 |---|---|---|---|---|---|
-| 学习路径 | `/learn/` | 学习路径 | AI Coding 学习路线首页，汇总三类路径、12 篇正文和后续方法论入口。 | active | 后续链接 OpenSpec、Compound、AISEE 深度路径。 |
-| AI Coding 到底改变了什么 | `/learn/ai-coding-intro/` | 学习路径 | 从补全、生成到 Agent 的发展，说明工程师角色变化和 AI 擅长/不擅长边界。 | active | 可补充更多课堂练习案例。 |
-| AI 编程工具与模型怎么选 | `/learn/tools-and-models/` | 学习路径 | 介绍工具形态、模型能力维度、Codex/Claude/Gemini/GLM 推荐定位和选择矩阵。 | active | 定期核对官方文档，避免价格/额度过期。 |
-| 给 AI 准备运行环境 | `/learn/runtime-setup/` | 学习路径 | 说明 Git、Node.js、Python、终端、编辑器、浏览器等基础环境及验证清单。 | active | 后续可拆 Windows/macOS/Linux 详细教程。 |
-| Codex 安装、配置与第一次运行 | `/learn/codex-setup/` | 学习路径 | 作为本站 Codex 主入口，讲项目读取、命令执行、diff、权限边界和安全任务。 | active | Codex 产品入口变化时必须更新。 |
-| 第一个 AI Coding 项目：复刻一个网站 | `/learn/first-ai-project/` | 学习路径 | 用自拟品牌复刻网站首页，训练选参考、拆模块、预览、修复和提交。 | active | 可追加完整示例仓库或演示截图。 |
-| Agent 是怎么工作的 | `/learn/agent-basics/` | 学习路径 | 解释 Agent 的目标、上下文、工具、环境、约束和验证循环。 | active | 后续与具体 Agent 框架文章互链。 |
-| Memory：让 Agent 带着上下文持续工作 | `/learn/agent-memory/` | 学习路径 | 区分当前会话、项目规则、项目记忆和全局记忆，并以 Codex 工作流举例。 | active | 后续可补 memory 沉淀规范。 |
-| Skill：把经验封装成可复用能力 | `/learn/skills/` | 学习路径 | 说明 Skill 的触发、流程、模板、脚本和适用边界。 | active | 后续可链接项目内 skill 创建教程。 |
-| MCP：让 Agent 连接外部能力 | `/learn/mcp/` | 学习路径 | 说明 MCP client/server、tool/resource/prompt 和外部系统连接边界。 | active | 后续可补 MCP 配置实战。 |
-| Tool：Agent 真正执行动作的接口 | `/learn/tool-calls/` | 学习路径 | 说明工具调用闭环、常见工具类型和风险控制。 | active | 后续可补 shell/browser/git 工具专题。 |
-| Hook：在关键节点加上自动检查和约束 | `/learn/hooks/` | 学习路径 | 说明 Hook 在任务开始、工具调用、修改后、提交前、归档前的检查作用。 | active | 后续可补 Codex hook 配置示例。 |
-| Agent 的核心组成如何配合 | `/learn/agent-orchestration/` | 学习路径 | 以 Codex 智能体为例串起 Memory、Skill、MCP、Tool、Hook 的分工。 | active | 后续作为 OpenSpec/Compound/AISEE 进阶入口。 |
+| 指南 | `/learn/` | 指南 | AI Coding 指南首页，汇总三类路径、12 篇正文和后续方法论入口。 | active | 后续链接 AI Engineering 和 AISEE 深度路径。 |
+| AI Coding 到底改变了什么 | `/learn/ai-coding-intro/` | 指南 | 从补全、生成到 Agent 的发展，说明工程师角色变化和 AI 擅长/不擅长边界。 | active | 可补充更多课堂练习案例。 |
+| AI 编程工具与模型怎么选 | `/learn/tools-and-models/` | 指南 | 介绍工具形态、模型能力维度、Codex/Claude/Gemini/GLM 推荐定位和选择矩阵。 | active | 定期核对官方文档，避免价格/额度过期。 |
+| 给 AI 准备运行环境 | `/learn/runtime-setup/` | 指南 | 说明 Git、Node.js、Python、终端、编辑器、浏览器等基础环境及验证清单。 | active | 后续可拆 Windows/macOS/Linux 详细教程。 |
+| Codex 安装、配置与第一次运行 | `/learn/codex-setup/` | 指南 | 作为本站 Codex 主入口，讲项目读取、命令执行、diff、权限边界和安全任务。 | active | Codex 产品入口变化时必须更新。 |
+| 第一个 AI Coding 项目：复刻一个网站 | `/learn/first-ai-project/` | 指南 | 用自拟品牌复刻网站首页，训练选参考、拆模块、预览、修复和提交。 | active | 可追加完整示例仓库或演示截图。 |
+| Agent 是怎么工作的 | `/learn/agent-basics/` | 指南 | 解释 Agent 的目标、上下文、工具、环境、约束和验证循环。 | active | 后续与具体 Agent 框架文章互链。 |
+| Memory：让 Agent 带着上下文持续工作 | `/learn/agent-memory/` | 指南 | 区分当前会话、项目规则、项目记忆和全局记忆，并以 Codex 工作流举例。 | active | 后续可补 memory 沉淀规范。 |
+| Skill：把经验封装成可复用能力 | `/learn/skills/` | 指南 | 说明 Skill 的触发、流程、模板、脚本和适用边界。 | active | 后续可链接项目内 skill 创建教程。 |
+| MCP：让 Agent 连接外部能力 | `/learn/mcp/` | 指南 | 说明 MCP client/server、tool/resource/prompt 和外部系统连接边界。 | active | 后续可补 MCP 配置实战。 |
+| Tool：Agent 真正执行动作的接口 | `/learn/tool-calls/` | 指南 | 说明工具调用闭环、常见工具类型和风险控制。 | active | 后续可补 shell/browser/git 工具专题。 |
+| Hook：在关键节点加上自动检查和约束 | `/learn/hooks/` | 指南 | 说明 Hook 在任务开始、工具调用、修改后、提交前、归档前的检查作用。 | active | 后续可补 Codex hook 配置示例。 |
+| Agent 的核心组成如何配合 | `/learn/agent-orchestration/` | 指南 | 以 Codex 智能体为例串起 Memory、Skill、MCP、Tool、Hook 的分工。 | active | 后续作为 OpenSpec/Compound/AISEE 进阶入口。 |
 | AI Engineering | `/ai-engineering/` | AI Engineering | 方法论基础栏目首页，说明 AI 增强软件工程的核心问题、三条主线和推荐阅读顺序。 | active | 后续可补英文完整正文和真实团队采用案例。 |
 | 传统软件工程和 AI 增强软件工程有什么不同 | `/ai-engineering/traditional-vs-ai-engineering/` | AI Engineering | 对比传统工程和 AI 增强工程在任务分工、上下文、交付物、验证和团队协作上的差异。 | active | 后续可补团队流程迁移案例。 |
 | AI 没有改变什么 | `/ai-engineering/what-does-not-change/` | AI Engineering | 说明需求、设计、测试、评审、架构判断和安全边界没有消失，反而因 AI 被放大。 | active | 后续可补检查清单和反例。 |
@@ -68,15 +69,17 @@
 | 多智能体评审边界 | `/compound/review-boundaries/` | Compound Engineering | 说明 no review、lightweight review、document review、full multi-agent review 和 specialized review 的选择边界。 | active | 后续可补更多高/低风险任务示例。 |
 | 知识如何复利 | `/compound/knowledge-compounding/` | Compound Engineering | 说明 `/ce-compound`、`/ce-compound-refresh`、`docs/solutions/`、frontmatter、problem_type、bug/knowledge track 和 refresh 机制。 | active | 后续可补更多 `docs/solutions/` 示例。 |
 | 与 OpenSpec 如何配合 | `/compound/with-openspec/` | Compound Engineering | 说明 OpenSpec 作为规范事实源，Compound Engineering 作为工程执行、评审、沉淀和反馈层，两者如何组合使用。 | active | 后续可补完整 OpenSpec + Compound 工程案例。 |
-| AISEE | `/aisee/` | AISEE | AI-Enhanced Software Engineering 方法与插件主题，说明需求链路、技术上下文、change 拆分、OpenSpec 协作方式和工程流程入口。 | active | 后续补齐 skills、schema pack、context pack 和 Compound handoff 正文。 |
-| 工程流程 | `/aisee/workflows/` | AISEE | 承载 OpenSpec、Compound、Harness 和 AISEE 链路中的可执行工作流说明。 | active | 后续补端到端流程正文。 |
+| AISEE | `/aisee/` | AISEE | 从 AISEE 工作流视角介绍 AISEE Plugin、OpenSpec 与 Compound Engineering，明确 OpenSpec 和 Compound Engineering 是独立开源项目。 | active | 后续补齐 AISEE Plugin、skills、schema pack、context pack 和 Compound handoff 正文。 |
+| AISEE Plugin | `/aisee/workflows/` | AISEE | 承载 OpenSpec、Compound、Harness 和 AISEE 链路中的可执行工作流说明。 | active | 后续补端到端流程正文和插件命令边界。 |
+| 开源项目 | `/projects/` | 开源项目 | AISEE 团队自有或主导开源项目栏目首页，说明项目清单、项目状态、仓库入口和与推荐资源的边界。 | active | 等维护者补充正式项目清单、仓库 URL、成熟度和项目说明。 |
 | AI Coding 推荐资源 | `/resources/` | 推荐资源 | 按分类展示精选 AI Coding 开源项目、工具、Agent/Harness、Skill、MCP、UI/UX 和方法论资源。 | active | 后续可按英文读者语境重写 `/en/resources/`，并定期复核资源有效性。 |
 
 ## 4. 内容缺口
 
 | 缺口 | 关联栏目 | 优先级 | 原因 | 建议动作 |
 |---|---|---|---|---|
-| OpenSpec、Compound、AISEE 深度学习路径尚未串成完整后续课程 | 学习路径 | P1 | `/learn/` 已建立入门路径，但后续方法论正文仍分散。 | 新建独立 change 规划方法论学习路径和跨栏目导读。 |
+| AISEE、OpenSpec、Compound Engineering 深度指南尚未串成完整后续课程 | 指南 | P1 | `/learn/` 已建立入门指南，但后续方法论正文仍分散。 | 新建独立 change 规划方法论指南路径和跨栏目导读。 |
+| AISEE 团队开源项目正式清单尚未补齐 | 开源项目 | P1 | `/projects/` 已建立栏目边界，但项目名称、仓库 URL、成熟度和项目说明仍需维护者确认。 | 后续补正式项目卡片、项目详情页或仓库入口。 |
 | AI Engineering 英文完整正文尚未建设 | AI Engineering | P1 | 本轮只建设中文方法论基础正文，英文入口保持稳定占位。 | 后续独立 change 按英文读者语境重写 AI Engineering 栏目。 |
 | AI Engineering 缺少真实团队采用案例 | AI Engineering / AISEE 工程流程 | P2 | 当前正文解释方法论基础，尚未展示团队如何从传统流程迁移到 AI 增强工程。 | 后续补团队采用路线或案例文章，并与 AISEE workflow 串联。 |
 | OpenSpec 英文完整正文尚未建设 | OpenSpec | P1 | 本轮只更新英文入口，未重写英文专题正文。 | 后续独立 change 按英文读者语境重写 OpenSpec 栏目。 |
@@ -86,22 +89,24 @@
 | OpenSpec artifact 模板和命令速查尚未独立整理 | OpenSpec / 后续独立资源页 | P2 | 当前正文已有写法原则，但缺少可复制模板和短命令清单；推荐资源栏目已收束为精选项目和方法论资源。 | 后续另起 change 规划模板、检查清单和命令速查，不默认塞回推荐资源栏目。 |
 | Compound skill / agent 命令速查尚未独立整理 | Compound Engineering / 后续独立资源页 | P2 | 当前栏目按方法论转译插件能力，未复制完整命令清单和版本行为；推荐资源栏目不承载命令大全。 | 后续另起 change 整理稳定速查，并明确以官方 README 和插件源码为准。 |
 | 术语表和阅读路径已从推荐资源栏目移除 | 推荐资源 | P2 | 推荐资源已聚焦推荐内容，旧术语表和阅读路径占位页不再符合栏目定位。 | 如仍需要术语表或阅读路径，后续单独规划栏目或页面，并重新加入导航。 |
-| Codex 产品入口和安装方式可能快速变化 | 学习路径 | P1 | Codex App、CLI、IDE 和账号/额度属于高频变化信息。 | 定期核对 OpenAI 官方文档，必要时更新 `/learn/codex-setup/`。 |
-| Agent 进阶页面偏概念入门，缺少动手配置样例 | 学习路径 | P2 | 本 change 目标是建立认知和主线，未覆盖 MCP/Hook/Skill 详细实操。 | 后续按 Skill、MCP、Hook 分别补实战文章。 |
+| Codex 产品入口和安装方式可能快速变化 | 指南 | P1 | Codex App、CLI、IDE 和账号/额度属于高频变化信息。 | 定期核对 OpenAI 官方文档，必要时更新 `/learn/codex-setup/`。 |
+| Agent 进阶页面偏概念入门，缺少动手配置样例 | 指南 | P2 | 本 change 目标是建立认知和主线，未覆盖 MCP/Hook/Skill 详细实操。 | 后续按 Skill、MCP、Hook 分别补实战文章。 |
 
 ## 5. 阅读路径
 
 | 读者/场景 | 推荐入口 | 推荐顺序 | 说明 |
 |---|---|---|---|
-| AI Coding 新手 | `/learn/` | `/learn/ai-coding-intro/` → `/learn/tools-and-models/` → `/learn/runtime-setup/` → `/learn/codex-setup/` → `/learn/first-ai-project/` → `/ai-engineering/` → `/resources/` | 先建立认知，再跑通 Codex 和第一个页面项目；之后理解 AI Engineering 方法论基础，需要扩展生态视野时再看推荐资源。 |
-| 想理解 AI 时代软件工程 | `/ai-engineering/` | `/ai-engineering/traditional-vs-ai-engineering/` → `/ai-engineering/what-does-not-change/` → `/ai-engineering/engineer-role/` → `/ai-engineering/prompt-to-spec/` → `/ai-engineering/tool-to-harness/` → `/ai-engineering/experience-to-compounding/` | 先理解传统软件工程和 AI 增强软件工程的差异，再进入 OpenSpec、Harness 和 Compound 三条主线。 |
+| AI Coding 新手 | `/learn/` | `/learn/ai-coding-intro/` → `/learn/tools-and-models/` → `/learn/runtime-setup/` → `/learn/codex-setup/` → `/learn/first-ai-project/` → `/ai-engineering/` → `/aisee/` | 先建立认知，再跑通 Codex 和第一个页面项目；之后理解 AI Engineering 方法论基础，再从 AISEE 进入插件、OpenSpec 和 Compound Engineering 主线。 |
+| 想理解 AI 时代软件工程 | `/ai-engineering/` | `/ai-engineering/traditional-vs-ai-engineering/` → `/ai-engineering/what-does-not-change/` → `/ai-engineering/engineer-role/` → `/ai-engineering/prompt-to-spec/` → `/ai-engineering/tool-to-harness/` → `/ai-engineering/experience-to-compounding/` → `/aisee/` | 先理解传统软件工程和 AI 增强软件工程的差异，再进入 AISEE 栏目理解 AISEE Plugin、OpenSpec 和 Compound Engineering 如何组合。 |
 | 已会用工具但效果不稳定 | `/learn/codex-setup/` | `/learn/codex-setup/` → `/learn/first-ai-project/` → `/learn/agent-basics/` → `/learn/agent-memory/` | 重点补上下文、权限、diff、验证和任务拆分。 |
 | 想理解 Agent 工程化 | `/learn/agent-basics/` | `/learn/agent-basics/` → `/learn/agent-memory/` → `/learn/skills/` → `/learn/mcp/` → `/learn/tool-calls/` → `/learn/hooks/` → `/learn/agent-orchestration/` | 逐一理解 Agent 的核心组成，再看它们如何配合。 |
 | 想把 AI 协作变成可审查 change | `/openspec/` | `/openspec/what-is-openspec/` → `/openspec/mental-model/` → `/openspec/workflow/` → `/openspec/artifact-guide/` → `/openspec/spec-granularity/` → `/openspec/delta-spec/` → `/openspec/schema/` → `/openspec/boundaries/` | 先建立规范层心智模型，再学习工作流、artifact 写法、粒度、delta spec、schema 和适用边界。 |
 | 准备写第一个 OpenSpec change | `/openspec/workflow/` | `/openspec/workflow/` → `/openspec/artifact-guide/` → `/openspec/delta-spec/` → `/openspec/boundaries/` | 重点理解 propose、spec、design、tasks、verify、archive 的职责和取舍。 |
 | 想理解 AI 工程复利 | `/compound/` | `/compound/what-is-compound-engineering/` → `/compound/workflow-loop/` → `/compound/strategy-brainstorm-plan/` → `/compound/work-debug-review/` → `/compound/knowledge-compounding/` | 先理解方法论和核心循环，再看定义计划、执行质量和知识复利。 |
 | 想理解多智能体评审 | `/compound/multi-agent-review/` | `/compound/multi-agent-review/` → `/compound/reviewer-personas/` → `/compound/document-review-agents/` → `/compound/design-review-agents/` → `/compound/research-agents/` → `/compound/agent-orchestration/` → `/compound/review-boundaries/` | 先理解多视角价值，再拆角色、文档/设计/研究能力、协作机制和适用边界。 |
-| 想把 OpenSpec 和 Compound 组合使用 | `/compound/with-openspec/` | `/openspec/what-is-openspec/` → `/compound/workflow-loop/` → `/compound/with-openspec/` → `/compound/review-boundaries/` | OpenSpec 负责事实源和变更边界，Compound 负责执行、评审、沉淀和反馈。 |
+| 想理解 AISEE 主线实践 | `/aisee/` | `/aisee/` → `/aisee/workflows/` → `/openspec/` → `/compound/` | AISEE 栏目从插件与工作流视角串起 OpenSpec 和 Compound Engineering，但不暗示它们属于 AISEE 自有项目。 |
+| 想把 OpenSpec 和 Compound 组合使用 | `/aisee/` | `/openspec/what-is-openspec/` → `/compound/workflow-loop/` → `/compound/with-openspec/` → `/compound/review-boundaries/` | OpenSpec 负责事实源和变更边界，Compound 负责执行、评审、沉淀和反馈；AISEE 负责把二者放入可执行工作流。 |
+| 想了解 AISEE 团队项目 | `/projects/` | `/projects/` → 具体项目页或仓库入口 | 团队项目和外部推荐资源分开呈现，避免混淆来源和维护责任。 |
 
 ## 6. 术语与写作约定
 
@@ -121,31 +126,39 @@
 | artifact | artifact / proposal / spec / design / tasks | 把 artifact 混写成同一份说明 | 各 artifact 可被 schema 调整顺序，但职责边界应清楚。 |
 | delta spec | delta spec / 变更 spec | 直接复制主 spec 再改 | delta spec 描述相对当前事实的 ADDED、MODIFIED、REMOVED 行为变化。 |
 | schema | OpenSpec schema / artifact DAG / 模板 / 门禁 | 把 schema 当业务规范 | schema 扩展工作流组织方式，不替代 specs、changes 和 archive 的基本职责。 |
+| AISEE Plugin | AISEE Plugin / aisee plugin | 把 OpenSpec 或 Compound Engineering 写成 AISEE 自有项目 | AISEE Plugin 是 AISEE 工作流的插件和命令入口；OpenSpec 和 Compound Engineering 是独立开源项目，本站在 AISEE 栏目下做组合实践说明。 |
 | Compound Engineering | Compound Engineering / 工程复利 | 把 Compound 写成单个 `/ce-compound` 命令 | Compound Engineering 是策略、计划、执行、评审、调试、知识沉淀和结果回看的协作系统。 |
 | `/ce-compound` | `/ce-compound` / 知识沉淀 skill | 把 `/ce-compound` 等同 Compound Engineering 全部 | `/ce-compound` 只负责把刚解决的问题写入结构化知识库。 |
 | 多智能体评审 | 多智能体评审 / reviewer personas | 把多智能体写成越多越好 | 应按风险选择 reviewer，并通过置信度、去重和人工决策 gate 控制噪声。 |
 | Research Agents | research agents / 研究型智能体 | 把研究结果当最终事实 | 研究型智能体负责补证据，不能覆盖已生效 spec、项目文档或人工决策。 |
 | `docs/solutions/` | `docs/solutions/` / solution docs | 普通复盘文章目录 | 它是可检索、可刷新、带 frontmatter 的团队知识库。 |
+| 开源项目 | 开源项目 / Open Source | 推荐资源、外部项目榜单 | 开源项目栏目只展示 AISEE 团队自有或主导的项目清单和介绍。 |
 | 推荐资源 | 推荐资源 / Recommended Resources | 泛资源中心 | 推荐资源只展示精选 AI Coding 相关项目、工具和方法论参考；模板、命令速查、术语表和检查清单应另行规划。 |
 
 ## 7. 站点结构约定
 
-- 导航：不为学习路径新增顶层导航，继续使用现有 `/learn/` 入口。
-- 导航：AI Engineering 是正式顶层栏目，位于学习路径之后、OpenSpec 之前；旧 `/thinking/` 不再作为公开栏目。
+- 导航：顶层导航为 `首页 / 指南 / AI Engineering / AISEE / 开源项目 / 推荐资源`；英文为 `Home / Guides / AI Engineering / AISEE / Open Source / Recommended Resources`。
+- 导航：`AISEE` 顶栏项不是普通链接，而是二级菜单；中文和英文菜单项均为 `AISEE Plugin`、`OpenSpec`、`Compound Engineering`，分别进入 `/aisee/workflows/`、`/openspec/`、`/compound/` 及英文 locale 对应路径。
+- 导航：`/learn/` 路由保留，公开展示名为“指南 / Guides”。
+- 导航：AI Engineering 是正式顶层栏目，位于指南之后、AISEE 之前；旧 `/thinking/` 不再作为公开栏目。
+- 导航：OpenSpec 和 Compound Engineering 不再作为顶栏平级入口，但 `/openspec/`、`/compound/` 路由和 collection 保持可访问。
 - 侧边栏：AI Engineering 中文栏目按“方法基础 / 三条主线”分组，页面保持平铺路由 `/ai-engineering/<slug>/`。
-- 侧边栏：学习路径中文栏目按“认知入门 / 工具上手 / Agent 进阶”分组，`README.md` 保持栏目首页。
+- 侧边栏：指南中文栏目按“认知入门 / 工具上手 / Agent 进阶”分组，`README.md` 保持栏目首页。
 - 侧边栏：OpenSpec 中文栏目按“栏目首页 / 作用 / 模型 / 用法 / 扩展 / 边界”分组，页面保持平铺路由 `/openspec/<slug>/`。
 - 侧边栏：Compound 中文栏目按“栏目首页 / 总览 / 定义与计划 / 执行与质量 / 多智能体 / 知识 / 关系”分组，页面保持平铺路由 `/compound/<slug>/`。
-- 侧边栏：AISEE 中文栏目包含栏目首页和“工程流程”分组，工程流程页面使用 `/aisee/workflows/` 路由前缀。
+- 侧边栏：AISEE 中文栏目包含栏目首页，以及 `AISEE Plugin / OpenSpec / Compound Engineering` 三个子栏目入口；工程流程页面使用 `/aisee/workflows/` 路由前缀。
+- 侧边栏：开源项目中文和英文栏目只保留 `README.md`，主路由保持 `/projects/` 和 `/en/projects/`。
 - 侧边栏：推荐资源中文和英文栏目只保留 `README.md`，主路由保持 `/resources/` 和 `/en/resources/`；不再公开 demo、preview、foo/bar 示例页。
-- frontmatter：学习路径正文包含 `title`、`permalink`、`createTime`。
+- frontmatter：指南正文包含 `title`、`permalink`、`createTime`。
 - frontmatter：OpenSpec 中文正文包含 `title`、`permalink`、`createTime`，permalink 与侧边栏链接保持一致。
 - frontmatter：Compound 中文正文包含 `title`、`permalink`、`createTime`，permalink 与侧边栏链接保持一致。
-- 标签/分类：学习路径作为 doc collection，不为本 change 新增标签体系。
+- frontmatter：开源项目栏目首页包含 `title`、`permalink`、`createTime`。
+- 标签/分类：指南作为 doc collection，不为本 change 新增标签体系。
 - 标签/分类：OpenSpec 作为 doc collection，不新增标签体系。
 - 标签/分类：Compound Engineering 作为 doc collection，不新增标签体系。
 - 多语言：中文正文优先；英文 `/en/learn/`、`/en/ai-engineering/` 和 `/en/openspec/` 保持入口可用并指向中文稳定内容，后续再按英文读者语境完整重写。
 - 多语言：英文 `/en/compound/` 暂保留稳定占位入口，后续再按英文读者语境完整重写。
+- 多语言：英文 `/en/projects/` 暂保留开源项目入口，后续在项目清单确认后补完整英文说明。
 - 多语言：英文 `/en/resources/` 暂保留推荐资源入口，指向中文推荐资源目录；后续再按英文读者语境完整重写。
 - 图片/附件：工具/模型 logo 使用 LobeHub Icons 静态 SVG/CDN；交互式关系图优先使用 Vue Flow；禁止引用本地绝对路径和未经授权商业截图。
 - 图片/附件：OpenSpec 复杂静态图保留 `.excalidraw` 源文件，导出 SVG 放在 `site/.vuepress/public/diagrams/openspec/`，正文通过 `DiagramFigure` 引用站点内路径。
@@ -161,3 +174,4 @@
 | 2026-05-30 | `build-compound-engineering-column` | `/compound/` 升级为 Compound Engineering 方法论栏目，新增 13 篇中文专题正文、分组侧边栏，并建立与 OpenSpec 的组合关系说明。 | 构建通过后可归档；英文完整正文、端到端工程复利演练和命令速查留待后续 change。 |
 | 2026-06-01 | `cleanup-demo-preview-and-recommendations` | 删除公开 demo、blog preview 和资源旧占位页；资源栏目展示名收束为“推荐资源 / Recommended Resources”，主路由继续使用 `/resources/`。 | 构建通过后可归档；术语表、模板、命令速查和检查清单如有需要应另起 change。 |
 | 2026-06-01 | `transform-thinking-to-ai-engineering-column` | 将旧“观点文章 / Thinking”改造为 `AI Engineering` 方法论基础栏目，新增 6 篇中文基础正文，并从 post/blog collection 改为 doc collection。 | 构建通过后可归档；英文完整正文和真实团队采用案例留待后续 change。 |
+| 2026-06-08 | `restructure-aisee-navigation` | 顶栏调整为“指南 / AI Engineering / AISEE / 开源项目 / 推荐资源”；AISEE 顶栏项改为二级菜单，收束 AISEE Plugin、OpenSpec、Compound Engineering 三个入口；新增 `/projects/`。 | OpenSpec 和 Compound Engineering 保留独立路由，但不再作为顶栏平级入口；团队项目清单待维护者补充。 |

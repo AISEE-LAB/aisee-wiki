@@ -10,6 +10,7 @@ import { aiseeCollection, aiseeEnCollection } from './collections/aisee'
 import { compoundCollection, compoundEnCollection } from './collections/compound'
 import { learnCollection, learnEnCollection } from './collections/learn'
 import { openspecCollection, openspecEnCollection } from './collections/openspec'
+import { projectsCollection, projectsEnCollection } from './collections/projects'
 import { resourcesCollection, resourcesEnCollection } from './collections/resources'
 
 export const zhCollections = defineCollections([
@@ -18,6 +19,7 @@ export const zhCollections = defineCollections([
   openspecCollection,
   compoundCollection,
   aiseeCollection,
+  projectsCollection,
   resourcesCollection,
 ])
 
@@ -27,5 +29,6 @@ export const enCollections = defineCollections([
   openspecEnCollection,
   compoundEnCollection,
   aiseeEnCollection,
+  projectsEnCollection,
   resourcesEnCollection,
 ])

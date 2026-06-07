@@ -37,7 +37,7 @@ const content = computed(() => {
       title: 'Understand software engineering in the AI era',
       subtitle: 'AI SEE Wiki is an independent methodology site around OpenSpec, Compound Engineering, and AISEE workflows.',
       note: 'Spec First. Harness Better. Compound Knowledge.',
-      primary: 'Start learning',
+      primary: 'Open guides',
       secondary: 'Explore AISEE',
       domainCta: 'Start with the guide',
       visual: {
@@ -59,12 +59,11 @@ const content = computed(() => {
       domainsTitle: 'What this wiki covers',
       domainsText: 'Each area serves the same method line: make intent explicit, run AI inside a bounded harness, and turn useful work into reusable knowledge.',
       domains: [
-        ['Learning Path', 'Concepts, local setup, agent components, memory, skills, MCP, and hooks.', '/en/learn/'],
+        ['Guides', 'Concepts, local setup, agent components, memory, skills, MCP, and hooks.', '/en/learn/'],
         ['AI Engineering', 'The methodology layer: what changes in software engineering when AI becomes part of the workflow.', '/en/ai-engineering/'],
-        ['OpenSpec', 'A specification state machine for changes, artifacts, validation, and archive.', '/en/openspec/'],
-        ['Compound', 'Planning, work, review, debugging, retrospection, and knowledge assets.', '/en/compound/'],
-        ['AISEE', 'Requirements, context, change planning, implementation bridge, and verification guard.', '/en/aisee/'],
-        ['Recommended Resources', 'Curated AI Coding projects, tools, agent frameworks, skills, and methodology references.', '/en/resources/'],
+        ['AISEE', 'AISEE Plugin, OpenSpec, and Compound Engineering as one practice entry.', '/en/aisee/'],
+        ['Open Source', 'Projects maintained or led by the AISEE team.', '/en/projects/'],
+        ['Recommended Resources', 'Curated external AI Coding projects, tools, agent frameworks, skills, and methodology references.', '/en/resources/'],
       ],
       methodTitle: 'Three method threads',
       methodText: 'The site is organized by methodology, not by tool commands. OpenSpec provides the source of truth, Compound provides the execution and learning discipline, and AISEE connects them into working flows.',
@@ -83,11 +82,11 @@ const content = computed(() => {
         ['05', 'Verification gate', 'Use tests, reviews, checks, and apply guards to manage uncertainty.'],
         ['06', 'Knowledge compounding', 'Keep patterns, fixes, templates, and schema decisions for the next change.'],
       ],
-      pillarsTitle: 'Core references and engineering entry',
+      pillarsTitle: 'AISEE practice sections',
       pillars: [
+        ['AISEE Plugin', 'The installable workflow layer for SRS, context packs, schema packs, and handoffs.', '/en/aisee/workflows/'],
         ['OpenSpec', 'The specification layer and source of truth for controlled engineering changes.', '/en/openspec/'],
         ['Compound Engineering', 'The discipline for harnessed execution, review, debugging, and knowledge reuse.', '/en/compound/'],
-        ['aisee plugin', 'The installable workflow layer for SRS, context packs, schema packs, and handoffs.', '/en/aisee/'],
       ],
       pluginTitle: 'aisee plugin as implementation layer',
       pluginText: 'The plugin turns the method into installable skills, schema packs, context packs, ID policy, and Compound handoffs.',
@@ -101,21 +100,21 @@ const content = computed(() => {
       ],
       pathTitle: 'Recommended reading path',
       paths: [
-        ['New to AI Coding', 'Start with concepts, local setup, agent components, memory, skills, MCP, and hooks.', '/en/learn/'],
+        ['New to AI Coding', 'Start with guides for concepts, local setup, agent components, memory, skills, MCP, and hooks.', '/en/learn/'],
         ['Understanding the methodology', 'Read AI Engineering to understand what changed from traditional software engineering.', '/en/ai-engineering/'],
-        ['Managing real changes', 'Read OpenSpec to understand specs, changes, artifacts, validation, and archive.', '/en/openspec/'],
-        ['Building team leverage', 'Read Compound to connect planning, work, review, debugging, and knowledge assets.', '/en/compound/'],
-        ['Adopting AISEE', 'Use the plugin track to connect requirements, schemas, context packs, and handoffs.', '/en/aisee/'],
+        ['Adopting AISEE', 'Use AISEE to connect plugin workflows, OpenSpec, and Compound Engineering.', '/en/aisee/'],
+        ['Team open source', 'Browse projects maintained or led by the AISEE team.', '/en/projects/'],
       ],
       openTitle: 'Open collaboration and source notes',
       openText: 'This site is maintained as an independent practice and methodology wiki. It is not the official OpenSpec or Compound documentation.',
       openItems: [
         ['Source on GitHub', 'Documentation source is hosted in GitHub and pages can provide edit entries.'],
-        ['Reusable assets', 'Templates, example specs, schemas, and agent rules are designed for reuse.'],
+        ['Open source projects', 'Team-owned projects are separated from external recommended resources.'],
         ['Open contribution', 'Contributions can be fixes, cases, workflow templates, skills, or schemas.'],
         ['Clear attribution', 'The site documents independent practice, interpretation, and methodology.'],
       ],
       guideLink: '/en/learn/',
+      projectsLink: '/en/projects/',
       resourcesLink: '/en/resources/',
       workflowLink: '/en/aisee/',
     }
@@ -126,9 +125,9 @@ const content = computed(() => {
     title: '深入理解 AI 时代的软件工程',
     subtitle: 'AI SEE Wiki 是围绕 OpenSpec、Compound Engineering 与 AISEE 工作流建立的独立实践与方法论站点。',
     note: 'Spec First. Harness Better. Compound Knowledge.',
-    primary: '开始学习',
+    primary: '打开指南',
     secondary: '了解 AISEE',
-    domainCta: '进入学习路径',
+    domainCta: '进入指南',
     visual: {
       coreTitle: 'AI Engineering Method',
       coreText: '把规范、执行环境、验证和知识复用组织成可反复运行的工程闭环。',
@@ -148,12 +147,11 @@ const content = computed(() => {
     domainsTitle: '方法版图',
     domainsText: '这些主题共同服务于同一条主线：把意图表达清楚，让 AI 在有边界的环境中工作，再把有效经验沉淀为可复用资产。',
     domains: [
-      ['学习路径', '建立 AI Coding、Agent、Memory、Skill、MCP、Tool 和 Hook 的基础认知。', '/learn/'],
+      ['指南', '建立 AI Coding、Agent、Memory、Skill、MCP、Tool 和 Hook 的基础认知。', '/learn/'],
       ['AI Engineering', '解释 AI 时代软件工程变了什么、没变什么，以及方法论如何成立。', '/ai-engineering/'],
-      ['OpenSpec', '用规范状态机管理 specs、changes、artifacts、validate 和 archive。', '/openspec/'],
-      ['Compound', '理解工程复利：计划、执行、评审、调试、复盘和知识资产。', '/compound/'],
-      ['AISEE', '把需求、上下文、change 规划、实现桥接、验证和工程流程串成工作机制。', '/aisee/'],
-      ['推荐资源', '精选 AI Coding 项目、工具、Agent 框架、Skill 和方法论参考。', '/resources/'],
+      ['AISEE', '以 AISEE Plugin、OpenSpec 和 Compound Engineering 组织主线实践。', '/aisee/'],
+      ['开源项目', '展示 AISEE 团队自有或主导的开源项目清单和介绍。', '/projects/'],
+      ['推荐资源', '精选外部 AI Coding 项目、工具、Agent 框架、Skill 和方法论参考。', '/resources/'],
     ],
     methodTitle: '三条方法主线',
     methodText: '内容围绕方法论组织，而不是停留在命令清单：OpenSpec 提供事实源，Compound 提供执行与复盘纪律，AISEE 把两者连接成可落地的工作流。',
@@ -172,11 +170,11 @@ const content = computed(() => {
       ['05', '验证 gate', '通过测试、评审、检查和 apply guard 管理不确定性。'],
       ['06', '知识复利', '把模式、修复、模板和 schema 决策留给下一轮工程。'],
     ],
-    pillarsTitle: '核心参照与工程化入口',
+    pillarsTitle: 'AISEE 主线入口',
     pillars: [
+      ['AISEE Plugin', '把 SRS、上下文包、schema pack、change 规划和 handoff 做成工程化入口。', '/aisee/workflows/'],
       ['OpenSpec', '作为规范层和事实源，管理可审查、可验证、可归档的工程变更。', '/openspec/'],
       ['Compound Engineering', '提供有边界的执行、评审、调试、复盘与知识复利方法。', '/compound/'],
-      ['aisee plugin', '把 SRS、上下文包、schema pack、change 规划和 handoff 做成工程化入口。', '/aisee/'],
     ],
     pluginTitle: 'aisee plugin：方法论的工程化入口',
     pluginText: 'aisee plugin 会把这套方法落到可安装、可引用、可版本化的 skills、schema packs、context packs、ID 策略和 Compound handoff 中。',
@@ -188,23 +186,23 @@ const content = computed(() => {
       ['Verify / apply guard', '在 apply 前检查 drift、tasks、contracts、source-map 和测试评审证据。'],
       ['Schema packs', '支持 app、device、docsite、infra、security、quick-fix、research 等工作流。'],
     ],
-    pathTitle: '推荐学习路径',
+    pathTitle: '推荐指南路径',
     paths: [
-      ['新手理解 AI Coding', '从概念、工具、agent 组件、memory、skills、MCP 和 hooks 建立基础模型。', '/learn/'],
+      ['新手理解 AI Coding', '从指南中的概念、工具、agent 组件、memory、skills、MCP 和 hooks 建立基础模型。', '/learn/'],
       ['理解方法论基础', '先读 AI Engineering，理解传统软件工程与 AI 增强软件工程的差异。', '/ai-engineering/'],
-      ['管理真实变更', '读 OpenSpec，理解 specs、changes、artifacts、validate 和 archive。', '/openspec/'],
-      ['建立团队复利', '读 Compound，把计划、执行、评审、调试和知识资产连接起来。', '/compound/'],
-      ['采用 AISEE', '沿插件路线连接需求、schema、上下文包、change 规划和 handoff。', '/aisee/'],
+      ['采用 AISEE', '从 AISEE 栏目理解插件、OpenSpec 和 Compound Engineering 如何组合。', '/aisee/'],
+      ['查看团队项目', '了解 AISEE 团队自有或主导的开源项目。', '/projects/'],
     ],
     openTitle: '开放协作与来源说明',
     openText: '这里记录围绕 OpenSpec、Compound Engineering 与 AISEE 的实践、解释和方法论沉淀。',
     openItems: [
       ['源码托管', '文档源代码托管在 GitHub，页面可提供编辑入口。'],
-      ['资产复用', '模板、示例 spec、schema 示例和 agent 规则以可复用为目标。'],
+      ['开源项目', '团队自有项目和外部推荐资源分开呈现，避免混淆来源。'],
       ['开放贡献', '接受文档修订、真实案例、workflow、skill 和 schema 模板。'],
       ['清晰声明', '内容不是 OpenSpec 或 Compound 官方文档，而是独立实践与方法论沉淀。'],
     ],
     guideLink: '/learn/',
+    projectsLink: '/projects/',
     resourcesLink: '/resources/',
     workflowLink: '/aisee/',
   }
@@ -496,7 +494,8 @@ onUnmounted(() => {
         </article>
       </div>
       <div class="open-actions">
-        <a class="open-action open-action--primary" :href="content.resourcesLink">{{ isEn ? 'Recommended Resources' : '推荐资源' }}</a>
+        <a class="open-action open-action--primary" :href="content.projectsLink">{{ isEn ? 'Open Source' : '开源项目' }}</a>
+        <a class="open-action" :href="content.resourcesLink">{{ isEn ? 'Recommended Resources' : '推荐资源' }}</a>
         <a class="open-action" :href="content.workflowLink">AISEE</a>
       </div>
     </section>

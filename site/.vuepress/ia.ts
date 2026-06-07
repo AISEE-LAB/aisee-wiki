@@ -1,9 +1,9 @@
 export const siteSections = [
   {
     slug: 'learn',
-    zh: '学习路径',
-    en: 'Learn',
-    role: '基础层与推荐阅读路径',
+    zh: '指南',
+    en: 'Guides',
+    role: 'AI Coding 入门、环境准备、工具选择与 Agent 基础指南',
   },
   {
     slug: 'openspec',
@@ -21,7 +21,7 @@ export const siteSections = [
     slug: 'aisee',
     zh: 'AISEE',
     en: 'AISEE',
-    role: 'AI-Enhanced Software Engineering 方法、插件与工作流入口',
+    role: '从 AISEE 工作流视角介绍 AISEE Plugin、OpenSpec 与 Compound Engineering 的主线入口',
   },
   {
     slug: 'ai-engineering',
@@ -30,9 +30,15 @@ export const siteSections = [
     role: 'AI 时代软件工程的方法论基础',
   },
   {
+    slug: 'projects',
+    zh: '开源项目',
+    en: 'Open Source',
+    role: 'AISEE 团队自有或主导开源项目清单与项目介绍',
+  },
+  {
     slug: 'resources',
     zh: '推荐资源',
     en: 'Recommended Resources',
-    role: 'AI Coding 推荐项目、工具和方法论资源',
+    role: '外部 AI Coding 项目、工具和方法论参考精选',
   },
 ] as const

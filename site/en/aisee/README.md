@@ -6,7 +6,17 @@ createTime: 2026/05/23 11:01:52
 
 # AISEE
 
-AISEE stands for AI-Enhanced Software Engineering. It introduces the skill ecosystem, OpenSpec collaboration model, and reusable engineering workflows.
+The AISEE section introduces three core practices from the perspective of the AISEE workflow: AISEE Plugin, OpenSpec, and Compound Engineering.
+
+OpenSpec and Compound Engineering are independent open source projects. They are grouped here because this wiki explains how they can be used together in an AISEE workflow, not because they are owned by AISEE.
+
+## Sections
+
+| Section | Role | Start |
+|---|---|---|
+| AISEE Plugin | Turns requirements, context packs, change planning, schema packs, and handoffs into reusable commands and skills. | [Workflow overview](/en/aisee/workflows/) |
+| OpenSpec | Provides the specification layer and source of truth for reviewable engineering changes. | [OpenSpec](/en/openspec/) |
+| Compound Engineering | Covers bounded execution, review, debugging, retrospection, and knowledge compounding. | [Compound Engineering](/en/compound/) |
 
 ## Scope
 
@@ -19,5 +29,6 @@ AISEE connects requirements, context, change planning, implementation handoff, v
 ## Start Here
 
 - [Chinese AISEE foundation](/aisee/)
-- [Learn](/en/learn/)
+- [Guides](/en/learn/)
+- [Open Source](/en/projects/)
 - [Recommended Resources](/en/resources/)

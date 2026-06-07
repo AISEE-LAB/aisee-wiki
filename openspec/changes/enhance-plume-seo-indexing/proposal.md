@@ -10,6 +10,7 @@
 
 - 按 Plume 官方文档在 `.vuepress/config.ts` 中配置生产域名 `https://aisee.wiki`，启用主题内置 SEO 与 sitemap 能力。
 - 启用 Plume 内置 `llmstxt`，为中英文文档生成 LLM 友好索引文件。
+- 引入 Plume `PageContextMenu`，让文档页标题旁提供复制页面、查看 Markdown 和打开 LLM 工具的交互入口。
 - 依赖 Plume SEO 插件生成 `robots.txt`，避免在 public 目录手写重复规则。
 - 为核心栏目入口和重点页面补充 `description` frontmatter，使自动生成的 SEO 描述不只依赖站点默认描述。
 - 保持配置符合 Plume 边界：`hostname`、`llmstxt` 等不支持 `plume.config.ts` 的字段只放在 `.vuepress/config.ts`。
@@ -30,7 +31,7 @@
 | 页面 | 核心入口页与重点页面 | 补充页面级 `description`，优先覆盖首页、栏目首页和入口型页面。 |
 | 导航/侧边栏 | N/A | 不改变导航和侧边栏。 |
 | 路由/frontmatter | 多个 Markdown 页面 | 只补充 `description`，不改 permalink。 |
-| 站点配置 | `site/.vuepress/config.ts` | 启用 `hostname`、`llmstxt`，由 Plume 生成 SEO、sitemap 和 robots。 |
+| 站点配置 | `site/.vuepress/config.ts`、`site/.vuepress/client.ts` | 启用 `hostname`、`llmstxt`，由 Plume 生成 SEO、sitemap 和 robots；通过 Layout slot 引入 `PageContextMenu`。 |
 
 ## 成功标准
 
@@ -39,6 +40,7 @@
 - [ ] 构建后的页面 head 包含 Open Graph / Twitter 或 JSON-LD 等 Plume 自动 SEO 元信息。
 - [ ] `robots.txt` 可在构建产物中访问，并由 Plume 生成 sitemap 声明。
 - [ ] 重点页面具备页面级 `description`。
+- [ ] 文档页标题旁展示 Plume `PageContextMenu`，支持 LLM 友好复制和 Markdown 查看入口。
 - [ ] 文档站构建通过。
 - [ ] 归档前已处理 openspec/project-docs.md 回写。
 

@@ -170,6 +170,7 @@
 - SEO：生产域名在 Plume 配置中使用 `https://aisee.wiki`；`hostname` 必须配置在 `site/.vuepress/config.ts` 的 `plumeTheme` 顶层，不放入 `plume.config.ts`。
 - SEO：站点依赖 Plume 内置 SEO 和 sitemap 能力生成 Open Graph、JSON-LD、`sitemap.xml` 和 `robots.txt`；不要在 `site/.vuepress/public/robots.txt` 手写重复规则。
 - LLM 索引：站点启用 Plume 内置 `llmstxt`，`locale: 'all'` 覆盖中文和英文，生产构建生成 `/llms.txt`、`/llms-full.txt`、`/en/llms.txt` 和 `/en/llms-full.txt`。
+- LLM 交互：站点通过 `site/.vuepress/client.ts` 引入 Plume `PageContextMenu`，挂载在 `doc-title-after` slot，用于在文档页标题旁提供复制页面、查看 Markdown 和打开 LLM 工具入口；该能力依赖生产构建中的 `llmstxt` 产物。
 - frontmatter：核心首页、栏目首页和英文入口应维护页面级 `description`；普通正文可暂由 Plume 自动摘要兜底，正文稳定后再逐页补充。
 
 ## 8. 归档记录

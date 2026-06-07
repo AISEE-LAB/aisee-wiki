@@ -18,6 +18,7 @@
 - [x] 2.2 在 `site/.vuepress/config.ts` 中启用 `llmstxt: { locale: 'all' }`，覆盖中英文页面。
 - [x] 2.3 依赖 Plume SEO 插件生成 `robots.txt`，不在 public 目录手写重复规则。
 - [x] 2.4 不修改导航、侧边栏、permalink、Cloudflare Pages、GitHub 仓库或预览 URL。
+- [x] 2.5 在 `site/.vuepress/client.ts` 中通过 Plume `Layout` 的 `doc-title-after` slot 引入 `PageContextMenu`。
 
 ## 3. 验证
 
@@ -25,6 +26,7 @@
 - [x] 3.2 检查构建产物包含 `site/.vuepress/dist/sitemap.xml`、`robots.txt`、`llms.txt`、`llms-full.txt`。
 - [x] 3.3 抽查首页和至少一篇正文页面 head，确认生成 `og:*`、JSON-LD 或等价 Plume SEO 元信息。
 - [x] 3.4 检查 Plume 生成的 `robots.txt` 内容和 sitemap 地址。
+- [x] 3.5 抽查构建产物中存在 `PageContextMenu` 相关脚本或页面上下文菜单文本。
 
 ## 4. Archive Gate
 

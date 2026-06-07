@@ -1,5 +1,6 @@
 ---
 title: Open Source
+description: Open source projects maintained or led by the AISEE team, separated from external recommended resources.
 permalink: /en/projects/
 createTime: 2026/06/08 00:00:00
 ---

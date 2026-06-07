@@ -1,5 +1,6 @@
 ---
 title: Compound
+description: Compound Engineering connects planning, execution, review, debugging, retrospection, and knowledge assets for AI engineering teams.
 permalink: /en/compound/
 createTime: 2026/05/23 11:01:52
 ---

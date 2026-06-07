@@ -1,5 +1,6 @@
 ---
 title: 指南
+description: 面向 AI Coding 初学者的系统指南，覆盖工具选择、本地环境、Codex 入门、第一个项目和 Agent 基础组件。
 permalink: /learn/
 createTime: 2026/05/25 00:00:00
 ---

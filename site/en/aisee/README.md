@@ -1,5 +1,6 @@
 ---
 title: AISEE
+description: An AISEE workflow entry that connects AISEE Plugin, OpenSpec, and Compound Engineering as one engineering practice.
 permalink: /en/aisee/
 createTime: 2026/05/23 11:01:52
 ---

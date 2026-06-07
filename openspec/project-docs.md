@@ -92,6 +92,7 @@
 | 术语表和阅读路径已从推荐资源栏目移除 | 推荐资源 | P2 | 推荐资源已聚焦推荐内容，旧术语表和阅读路径占位页不再符合栏目定位。 | 如仍需要术语表或阅读路径，后续单独规划栏目或页面，并重新加入导航。 |
 | Codex 产品入口和安装方式可能快速变化 | 指南 | P1 | Codex App、CLI、IDE 和账号/额度属于高频变化信息。 | 定期核对 OpenAI 官方文档，必要时更新 `/learn/codex-setup/`。 |
 | Agent 进阶页面偏概念入门，缺少动手配置样例 | 指南 | P2 | 本 change 目标是建立认知和主线，未覆盖 MCP/Hook/Skill 详细实操。 | 后续按 Skill、MCP、Hook 分别补实战文章。 |
+| 页面级 description 尚未覆盖全部正文 | 全站 SEO | P2 | 首页、栏目首页和英文入口已有页面级描述；部分普通正文仍由 Plume 自动摘要生成 SEO 描述。 | 后续在正文稳定后逐页补 `description`，优先覆盖高流量和分享入口页面。 |
 
 ## 5. 阅读路径
 
@@ -166,6 +167,10 @@
 - 代码块/命令示例：安装、账号、平台、价格、额度等易变信息必须标注“以官方文档为准”；危险 Git/删除/上传/生产操作必须有风险说明。
 - 代码块/命令示例：Compound Engineering 正文优先讲方法论和职责边界，不复制插件内部长 prompt，不在公开正文暴露本地绝对路径或本地安装版本口径。
 - 正文导读：不要在普通正文末尾放置纯目录式“下一步阅读 / 继续阅读 / 方法路线”链接块；文档站导航、侧边栏和搜索已承担页面发现能力。只有当链接承担当前段落的必要语义引导时，才在正文句子中加入文章链接。
+- SEO：生产域名在 Plume 配置中使用 `https://aisee.wiki`；`hostname` 必须配置在 `site/.vuepress/config.ts` 的 `plumeTheme` 顶层，不放入 `plume.config.ts`。
+- SEO：站点依赖 Plume 内置 SEO 和 sitemap 能力生成 Open Graph、JSON-LD、`sitemap.xml` 和 `robots.txt`；不要在 `site/.vuepress/public/robots.txt` 手写重复规则。
+- LLM 索引：站点启用 Plume 内置 `llmstxt`，`locale: 'all'` 覆盖中文和英文，生产构建生成 `/llms.txt`、`/llms-full.txt`、`/en/llms.txt` 和 `/en/llms-full.txt`。
+- frontmatter：核心首页、栏目首页和英文入口应维护页面级 `description`；普通正文可暂由 Plume 自动摘要兜底，正文稳定后再逐页补充。
 
 ## 8. 归档记录
 
@@ -178,3 +183,4 @@
 | 2026-06-01 | `transform-thinking-to-ai-engineering-column` | 将旧“观点文章 / Thinking”改造为 `AI Engineering` 方法论基础栏目，新增 6 篇中文基础正文，并从 post/blog collection 改为 doc collection。 | 构建通过后可归档；英文完整正文和真实团队采用案例留待后续 change。 |
 | 2026-06-08 | `restructure-aisee-navigation` | 顶栏调整为“指南 / AI Engineering / AISEE / 开源项目 / 推荐资源”；AISEE 顶栏项改为二级菜单，收束 AISEE Plugin、OpenSpec、Compound Engineering 三个入口；新增 `/projects/`。 | OpenSpec 和 Compound Engineering 保留独立路由，但不再作为顶栏平级入口；团队项目清单待维护者补充。 |
 | 2026-06-08 | `strengthen-ai-engineering-bridge` | 强化 AI Engineering 作为指南与 AISEE 之间的解释层，补充传统软件工程与 AI 增强软件工程的研发环节对照，并新增 `/ai-engineering/from-traditional-flow-to-aisee/`；清理正文中重复文档站导航能力的“下一步阅读”类链接块。 | 构建通过后可归档；真实团队落地案例和英文完整正文留待后续 change。 |
+| 2026-06-08 | `enhance-plume-seo-indexing` | 按 Plume 最佳实践配置 `hostname: 'https://aisee.wiki'` 和 `llmstxt: { locale: 'all' }`，启用 SEO、sitemap、robots 与中英文 LLM 友好索引；核心入口页补充页面级 `description`。 | 构建通过；普通正文的页面级 description 可后续继续细化。 |

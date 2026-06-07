@@ -1,5 +1,6 @@
 ---
 title: AISEE
+description: 从 AISEE 工作流视角介绍 AISEE Plugin、OpenSpec 与 Compound Engineering 如何组合成可执行工程链路。
 permalink: /aisee/
 createTime: 2026/05/23 11:01:52
 ---

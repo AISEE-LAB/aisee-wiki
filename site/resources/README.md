@@ -1,5 +1,6 @@
 ---
 title: AI Coding 推荐资源
+description: 精选 AI Coding、Agent 工程化、Skill、MCP、Spec-driven、UI/UX Skill 和代码上下文相关资源。
 permalink: /resources/
 date: 2026/05/30
 createTime: false

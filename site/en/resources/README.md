@@ -1,5 +1,6 @@
 ---
 title: Recommended Resources
+description: Curated AI Coding tools, agent frameworks, skills, MCP projects, spec-driven workflows, and AI engineering references.
 permalink: /en/resources/
 createTime: 2026/05/23 11:01:52
 ---

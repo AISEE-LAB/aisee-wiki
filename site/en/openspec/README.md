@@ -1,5 +1,6 @@
 ---
 title: OpenSpec
+description: OpenSpec is the specification layer and source of truth for reviewable AI-assisted engineering changes.
 permalink: /en/openspec/
 createTime: 2026/05/23 11:01:52
 ---

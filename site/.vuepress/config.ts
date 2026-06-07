@@ -39,7 +39,7 @@ export default defineUserConfig({
 
   theme: plumeTheme({
     /* 添加您的部署域名, 有助于 SEO, 生成 sitemap */
-    // hostname: 'https://your_site_url',
+    hostname: 'https://aisee.wiki',
 
     /* 文档仓库配置，用于 editLink */
     // docsRepo: '',
@@ -180,9 +180,9 @@ export default defineUserConfig({
      * 启用 llmstxt 插件，用于为大语言模型提供更友好的内容
      * @see https://theme-plume.vuejs.press/guide/features/llmstxt/
      */
-    // llmstxt: {
-    //   locale: '/',    // 默认仅为主语言生成 llms 友好内容
-    //   locale: 'all',  // 为所有语言生成 llms 友好内容
-    // }
+    llmstxt: {
+      locale: 'all',
+      domain: 'https://aisee.wiki',
+    },
   }),
 })

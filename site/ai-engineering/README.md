@@ -1,5 +1,6 @@
 ---
 title: AI Engineering
+description: 解释 AI 增强软件工程的方法论基础，连接指南、OpenSpec、Compound Engineering 与 AISEE 主线实践。
 permalink: /ai-engineering/
 createTime: 2026/06/01 00:00:00
 ---

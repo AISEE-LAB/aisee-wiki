@@ -1,5 +1,6 @@
 ---
 title: AI Engineering
+description: The methodology layer for AI-enhanced software engineering, covering specification, harness, verification, and knowledge reuse.
 permalink: /en/ai-engineering/
 createTime: 2026/06/01 00:00:00
 ---

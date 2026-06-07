@@ -1,5 +1,6 @@
 ---
 title: OpenSpec
+description: OpenSpec 是面向 AI coding assistants 的规范层和事实源，用于管理可审查、可验证、可归档的工程变更。
 permalink: /openspec/
 createTime: 2026/05/23 11:01:52
 ---

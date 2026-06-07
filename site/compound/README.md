@@ -1,5 +1,6 @@
 ---
 title: Compound Engineering
+description: Compound Engineering 把策略、计划、执行、评审、调试和知识沉淀串成可复用的 AI Coding 工程复利链路。
 permalink: /compound/
 createTime: 2026/05/23 11:01:52
 ---

@@ -1,5 +1,6 @@
 ---
 title: Guides
+description: Guides for AI-enhanced software engineering foundations, including AI Coding concepts, tools, Codex, and Agent building blocks.
 permalink: /en/learn/
 createTime: 2026/05/23 11:01:52
 ---

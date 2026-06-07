@@ -1,5 +1,6 @@
 ---
 title: 开源项目
+description: AISEE 团队自有或主导维护的开源项目入口，用于说明项目定位、状态、仓库入口和后续路线。
 permalink: /projects/
 createTime: 2026/06/08 00:00:00
 ---

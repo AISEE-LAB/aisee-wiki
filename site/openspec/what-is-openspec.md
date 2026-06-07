@@ -206,10 +206,6 @@ OpenSpec 不是把瀑布流程搬到 AI Coding 中。官方文档强调的是 fl
 | 有了 OpenSpec 就不用测试 | OpenSpec 定义预期，测试和审查验证实现。 |
 | 只有大团队才需要 | 个人项目也会遇到上下文丢失和历史难追踪，只是使用粒度可以更轻。 |
 
-## 下一步阅读
-
-读完这篇后，可以回到 [OpenSpec 总览](/openspec/) 对照整体学习路线。下一篇会展开 OpenSpec 的心智模型：`specs`、`changes`、artifacts 和 archive 到底如何配合。
-
 ## 参考资料
 
 - [OpenSpec GitHub 仓库](https://github.com/Fission-AI/OpenSpec)

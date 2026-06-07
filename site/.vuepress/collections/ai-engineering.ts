@@ -11,6 +11,7 @@ export const aiEngineeringCollection = defineCollection({
       text: '方法基础',
       items: [
         { text: '传统与 AI 增强', link: '/ai-engineering/traditional-vs-ai-engineering/' },
+        { text: '从传统流程到 AISEE', link: '/ai-engineering/from-traditional-flow-to-aisee/' },
         { text: 'AI 没有改变什么', link: '/ai-engineering/what-does-not-change/' },
         { text: '工程师新职责', link: '/ai-engineering/engineer-role/' },
       ],

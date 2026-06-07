@@ -252,10 +252,6 @@ openspec/changes/archive/
 | 在 tasks 里重新定义需求 | 会让执行清单覆盖 proposal/spec | tasks 只拆执行和验证 |
 | 完成后不 archive | 主 specs 不更新，历史上下文也丢失 | 验证通过后归档并更新基线 |
 
-## 下一步阅读
-
-理解心智模型后，再看工作流会更容易。下一篇建议阅读《OpenSpec 基础工作流：从 propose 到 archive》，它会把这些对象放进一次完整 change 的执行过程里。
-
 ## 参考资料
 
 - [OpenSpec Concepts](https://github.com/Fission-AI/OpenSpec/blob/main/docs/concepts.md)

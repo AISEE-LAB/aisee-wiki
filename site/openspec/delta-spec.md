@@ -321,10 +321,6 @@ openspec/changes/add-report-export/specs/audit/spec.md
 
 Delta spec 写得越清楚，后续 design、tasks、实现和 verify 就越少靠猜。
 
-## 下一步阅读
-
-理解 delta spec 后，下一篇适合继续看 [OpenSpec Schema 是什么](/openspec/schema/)：为什么有些团队会扩展 artifact DAG、模板和门禁，以及 schema 如何改变 artifact 顺序但不应该打乱职责边界。
-
 ## 参考资料
 
 - [OpenSpec Concepts](https://github.com/Fission-AI/OpenSpec/blob/main/docs/concepts.md)

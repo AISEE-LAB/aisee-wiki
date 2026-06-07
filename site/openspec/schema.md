@@ -240,10 +240,6 @@ openspec schema which my-workflow
 | gate 是否可验证 | apply / archive 前置要求能被检查。 |
 | 是否保留 OpenSpec 核心边界 | schema 扩展 workflow，不改变 specs、changes、archive 的基本职责。 |
 
-## 下一步阅读
-
-理解 schema 后，下一篇适合看 [OpenSpec 的适用边界](/openspec/boundaries/)：哪些工作值得进入 OpenSpec，哪些只需要轻量记录，以及 OpenSpec 与 Issue、普通文档、测试、代码注释之间如何分工。
-
 ## 参考资料
 
 - [OpenSpec Concepts](https://github.com/Fission-AI/OpenSpec/blob/main/docs/concepts.md)

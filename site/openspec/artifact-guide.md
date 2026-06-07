@@ -274,10 +274,6 @@ OpenSpec 的 artifact 顺序由 schema 决定。默认 `spec-driven` flow 里，
 
 审查的重点不是文字是否漂亮，而是未来的人和 AI 是否能根据这些文件继续推进，并判断实现是否偏离。
 
-## 下一步阅读
-
-理解 artifact 写法后，下一篇适合继续看 spec 粒度设计：项目级、模块级、能力级 spec 应该如何划分，避免 spec 过粗导致无法审查，或过细导致维护成本过高。
-
 ## 参考资料
 
 - [OpenSpec Workflows](https://github.com/Fission-AI/OpenSpec/blob/main/docs/workflows.md)

@@ -8,6 +8,12 @@ import { defineNavbarConfig } from 'vuepress-theme-plume'
 import { siteSections } from './ia'
 
 const navbarSectionSlugs = ['learn', 'ai-engineering', 'projects', 'resources'] as const
+const navbarSectionIcons = {
+  learn: 'lucide:book-open',
+  'ai-engineering': 'lucide:brain-circuit',
+  projects: 'lucide:folder-git-2',
+  resources: 'lucide:library-big',
+} as const
 const navbarSections = navbarSectionSlugs.map((slug) => {
   const section = siteSections.find(item => item.slug === slug)
 
@@ -17,19 +23,33 @@ const navbarSections = navbarSectionSlugs.map((slug) => {
   return section
 })
 
-const zhSectionNavbar = navbarSections.map(section => ({ text: section.zh, link: `/${section.slug}/` }))
-const enSectionNavbar = navbarSections.map(section => ({ text: section.en, link: `/en/${section.slug}/` }))
+const zhSectionNavbar = navbarSections.map(section => ({
+  text: section.zh,
+  link: `/${section.slug}/`,
+  icon: navbarSectionIcons[section.slug],
+}))
+const enSectionNavbar = navbarSections.map(section => ({
+  text: section.en,
+  link: `/en/${section.slug}/`,
+  icon: navbarSectionIcons[section.slug],
+}))
+const homeNavbarIcon = 'lucide:house'
+const aiseeNavbarIcon = 'lucide:workflow'
+const aiseePluginNavbarIcon = 'lucide:puzzle'
+const openspecNavbarIcon = 'lucide:file-check-2'
+const compoundNavbarIcon = 'lucide:layers-3'
 
 export const zhNavbar = defineNavbarConfig([
-  { text: '首页', link: '/' },
+  { text: '首页', link: '/', icon: homeNavbarIcon },
   zhSectionNavbar[0],
   zhSectionNavbar[1],
   {
     text: 'AISEE',
+    icon: aiseeNavbarIcon,
     items: [
-      { text: 'AISEE Plugin', link: '/aisee/workflows/' },
-      { text: 'OpenSpec', link: '/openspec/' },
-      { text: 'Compound Engineering', link: '/compound/' },
+      { text: 'AISEE Plugin', link: '/aisee/workflows/', icon: aiseePluginNavbarIcon },
+      { text: 'OpenSpec', link: '/openspec/', icon: openspecNavbarIcon },
+      { text: 'Compound Engineering', link: '/compound/', icon: compoundNavbarIcon },
     ],
   },
   zhSectionNavbar[2],
@@ -37,15 +57,16 @@ export const zhNavbar = defineNavbarConfig([
 ])
 
 export const enNavbar = defineNavbarConfig([
-  { text: 'Home', link: '/en/' },
+  { text: 'Home', link: '/en/', icon: homeNavbarIcon },
   enSectionNavbar[0],
   enSectionNavbar[1],
   {
     text: 'AISEE',
+    icon: aiseeNavbarIcon,
     items: [
-      { text: 'AISEE Plugin', link: '/en/aisee/workflows/' },
-      { text: 'OpenSpec', link: '/en/openspec/' },
-      { text: 'Compound Engineering', link: '/en/compound/' },
+      { text: 'AISEE Plugin', link: '/en/aisee/workflows/', icon: aiseePluginNavbarIcon },
+      { text: 'OpenSpec', link: '/en/openspec/', icon: openspecNavbarIcon },
+      { text: 'Compound Engineering', link: '/en/compound/', icon: compoundNavbarIcon },
     ],
   },
   enSectionNavbar[2],

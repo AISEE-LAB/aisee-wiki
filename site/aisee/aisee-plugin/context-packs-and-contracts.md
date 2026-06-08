@@ -6,96 +6,66 @@ createTime: 2026/06/08 12:30:00
 
 # Context Packs 与 Contracts
 
-Aisee CLI 的定位，不是再造一套规范系统，而是做 **OpenSpec change 的上下文总线**。它把当前 change 里真正需要的信息，以更适合 AI 消费的方式整理出来。
+Aisee CLI 提供两类与上下文读取相关的能力：`context pack` 面向实现、验证和审查生成 JSON context view；`contract` 命令面向跨仓库协作暴露只读契约上下文。二者都从当前项目文件和 OpenSpec artifacts 派生信息，不构成新的规范事实源。
 
-## Context pack 是什么
+## Context pack
 
-可以把它理解为：
+`aisee context pack` 用于为特定消费目标生成当前 change 的上下文视图。它通常包含：
 
-```text
-当前 change 的最小可执行读物
-```
-
-它通常汇总：
-
-- 当前 change 与 schema；
+- 当前 change 与 schema metadata；
 - 必读 artifacts；
-- 允许修改的路径与测试路径；
-- 关键 ID、source-map、evidence 位置；
-- 针对具体消费方的最小字段集。
+- 允许修改的代码路径和测试路径；
+- source-map、ID、evidence 位置；
+- 目标消费方需要的字段。
 
-## 为什么不能直接把所有文档扔给 Agent
-
-因为 AI 的问题往往不是“上下文不够大”，而是“上下文不够准”。整仓库搜索会带来两个问题：
-
-- 把无关历史和当前 change 混在一起；
-- 让实现范围逐渐失控。
-
-context pack 的价值就在于先做一次**上下文裁剪**。
-
-## 常见消费目标
-
-| 目标 | 需要什么 | 典型用途 |
-|---|---|---|
-| `ce-work` | 当前 change、路径、任务、验证命令 | 进入实现 |
-| `ce-code-review` | 目标、diff 对照点、风险面 | 聚焦 review |
-| `aisee-verify` | tasks、evidence、Required artifacts | 做 verify 检查 |
-| `archive-guard` | validate 结果、risk、review/test/manual evidence | 判断是否可归档 |
-
-## 正确使用方式
+常见调用方式：
 
 ```bash
 aisee context pack --change <change> --for ce-work --json
 aisee context pack --change <change> --for aisee-verify --json
+aisee context pack --change <change> --for ce-code-review --json
 ```
 
-使用时要记住三条规则：
+## 消费目标
 
-1. **只消费当前目标需要的字段**。
-2. **不要把 pack 输出复制成长期文档**。
-3. **发现缺口时，回写当前 OpenSpec artifact**。
+| 目标 | 用途 |
+|---|---|
+| `ce-work` | 为实现阶段提供当前 change、路径、任务和验证命令。 |
+| `aisee-verify` | 为 verify 阶段提供 artifacts、tasks、evidence 和 Required 状态。 |
+| `ce-code-review` | 为代码审查提供目标、风险面和对照上下文。 |
 
-## Contract serve 解决什么问题
+使用 context pack 时，应只消费当前目标需要的字段。发现缺口时，应回写当前 OpenSpec artifact、apply tracks、source-map 或 registry，而不是修改 context pack 输出。
 
-当前后端、BFF、前端或 SDK 分属不同仓库时，最麻烦的问题不是“接口文档有没有”，而是：
+## Contract service
 
-- 谁拥有 contract source；
-- 消费方该读哪一段；
-- 如何避免把整份接口说明复制到另一个仓库。
+`aisee contract` 适用于前后端分仓、BFF、SDK 或独立契约仓库等协作场景。推荐由契约提供方维护 contract source，并通过只读接口暴露：
 
-只读 contract 服务的推荐模式是：
-
-```text
-provider 仓库维护 contract source
-  -> 暴露 manifest / summary / section
-  -> consumer 按需读取
+```bash
+aisee contract manifest --json
+aisee contract summary --change <change> --json
+aisee contract serve --host 127.0.0.1 --port 8765
 ```
 
-## 为什么它不是 mock backend
+消费方按需读取：
 
-`aisee contract serve` 只负责暴露当前 contract 的只读视图：
+```bash
+curl http://127.0.0.1:8765/manifest
+curl http://127.0.0.1:8765/changes/<change>/summary
+curl "http://127.0.0.1:8765/changes/<change>/contracts/service-contract/sections/<section>?max_chars=4000"
+```
 
-- 可以读 manifest；
-- 可以读 change summary；
-- 可以按 section 拉取一小段内容；
-- 不能替代真实 API；
-- 不能充当 gateway；
-- 不能变成第二份事实源。
+## 读取模型
 
-## 最小读取模型
+| 层级 | 作用 |
+|---|---|
+| manifest | 了解可读取的契约来源和变更范围。 |
+| summary | 判断当前 change 需要读取哪些契约段落。 |
+| section | 读取实现当前任务所需的局部内容，并通过 `max_chars` 控制上下文大小。 |
 
-推荐按这个顺序读：
+Contract service 不是 mock backend，不是 API gateway，也不应暴露源码、密钥、环境变量或全仓库搜索结果。
 
-1. `manifest`：先知道有哪些契约可读。
-2. `summary`：再判断这次 change 需要哪些段落。
-3. `section`：最后只拉取实现当前任务真正需要的部分。
+## 与 OpenSpec 的关系
 
-这个顺序的价值在于：**先定位，再读取，而不是一次灌满上下文**。
+Context pack 和 contract service 都是读取层能力。它们可以帮助 AI 或开发者获得更小、更明确的上下文，但不能覆盖当前 OpenSpec change、baseline specs、source-map 或人工决策。
 
-## 对文档站意味着什么
-
-即使是文档站项目，也能借用同样的原则：
-
-- 进入写作前，先读取当前 change 的 `proposal/doc-change/tasks`。
-- 不要因为要写一页文档，就把全站所有栏目都重新扫一遍。
-- 内链、导航、构建验证等也应该由最小上下文驱动，而不是靠记忆猜。
+需要长期保留的结论，应回写到对应 artifact 或归档后的 baseline。

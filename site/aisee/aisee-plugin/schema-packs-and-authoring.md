@@ -61,9 +61,9 @@ schema 的价值在于**合适**，不是越重越好。小修复强行走大 sc
 | 站点结构影响 | 顶栏、侧边栏、路由、frontmatter、搜索、多语言是否受影响 |
 | 验证方式 | 页面可访问、内链、构建、人工预览如何检查 |
 
-## 本仓库里的具体应用
+## 文档站示例
 
-当前 `AISEE Plugin` 栏目就是典型例子：
+本站的 `AISEE Plugin` 栏目是 `aisee-docsite-driven` schema 的一个应用示例：
 
 - 顶层 `/aisee/` 保持不变，这是栏目规范。
 - 子入口从 `/aisee/workflows/` 改到 `/aisee/aisee-plugin/`，属于**路由与导航影响**。

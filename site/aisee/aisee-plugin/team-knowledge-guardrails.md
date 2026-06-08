@@ -6,74 +6,77 @@ createTime: 2026/06/08 12:30:00
 
 # Team Knowledge Guardrails
 
-Team knowledge 是 Aisee 里最容易被误解的部分。很多团队一看到“知识库复用”，就会本能地把所有 docs、solutions、memory 和 reflect 都搬进一个大仓库。Aisee 刻意不这么做。
+Team knowledge 是 Aisee Plugin 的实验性能力，用于跨项目复用少量经审查的工程经验。当前适合本地试用和工作流 dogfood，不建议作为公开稳定 contract 依赖。
 
-## 它到底是什么
+## 定位
 
-Team knowledge 的目标很窄：
+Team knowledge 提供 guardrail retrieval：在实现、review、verify 等阶段按需检索少量相关经验，提醒当前任务可能涉及的约定、风险或实践。它不替代 OpenSpec specs、active changes、baseline 或当前项目的人工决策。
 
-> 跨项目复用少量、经审查、可定位的工程经验。
+## 当前可用能力
 
-它更像 guardrail 卡片，而不是万能问答库。
+| 能力 | 说明 |
+|---|---|
+| 配置检查 | 通过 `aisee knowledge inspect`、`doctor`、`check` 检查本地配置、path 和 card / pack。 |
+| 本地 scaffold | 通过 `aisee knowledge scaffold --dest <path> --update-config --json` 创建 team knowledge 仓库骨架。 |
+| 同步与索引 | 通过 `install`、`update`、`index` 同步或构建本地 cache。 |
+| 查询 | 通过 `aisee knowledge query ... --json` 或 `--from-change <change>` 检索少量 guardrails。 |
+| Context pack 注入 | 通过 `aisee context pack --knowledge` 将少量 matches 注入实现上下文。 |
+| 候选沉淀 | 通过 `aisee:reflect` 生成项目内 reusable knowledge candidates。 |
+| 批量整理 | 通过 `aisee:knowledge-curate` 审查候选并生成 card drafts。 |
+| 批量提升 | 通过 `aisee knowledge promote-batch` 将已审查 drafts 写入 team knowledge worktree。 |
 
-## 它不是什么
+## 不承担的职责
 
-- 不是 OpenSpec specs 的替代品；
-- 不是项目 memory 的跨项目复制；
-- 不是把 `docs/solutions/` 整库同步出去；
-- 不是 AI 可随意搜索的全量知识仓库；
-- 不是稳定的“事实源二号位”。
+- 不自动把项目经验写入 team knowledge。
+- 不自动创建分支、提交、合并或 PR。
+- 不默认读取完整 card 正文。
+- 不直接扫描 `knowledge/cards/**/*.md` 作为 AI 上下文。
+- 不把 `docs/solutions/`、memory 或 reflect 文档整库迁移到其他项目。
 
-## 推荐闭环
+## 推荐使用方式
 
-```text
-aisee:reflect
-  -> 生成项目内 knowledge candidates
-  -> aisee:knowledge-curate
-  -> 用户确认
-  -> promote-batch 写入 team repo
+业务项目只 pin 需要的 packs：
+
+```yaml
+repo: git@example.com:org/aisee-team-knowledge.git
+path: .aisee/team-knowledge
+ref: v0.1.0
+packs:
+  - web-app
+retrieval:
+  max_cards: 3
+  include_project_candidates: true
 ```
 
-这个顺序很重要，因为它把“当前项目的候选经验”和“团队级可复用规则”明确隔开了。
+查询前先检查配置：
 
-## 为什么要先 reflect 再 curate
+```bash
+aisee knowledge inspect --json
+aisee knowledge doctor --json
+aisee knowledge check --json
+```
 
-因为很多经验一开始只是“这次任务里的局部判断”，并不一定适合推广。直接写入 team knowledge 容易引入三类噪声：
-
-- 只适用于单一项目的临时约定；
-- 含有敏感路径、内部命名或上下文；
-- 和现有卡片重复，甚至相互矛盾。
-
-curate 的作用就是做这层筛选、去敏和泛化。
-
-## 查询时要克制
-
-推荐调用方式：
+基于当前 change 查询：
 
 ```bash
 aisee knowledge query --from-change <change> --for ce-work --json
 ```
 
-理想结果是：
+## 沉淀流程
 
-- 返回很少量的 matches；
-- 每条都与当前任务的风险面直接相关；
-- 起提醒作用，而不是覆盖当前 change 事实。
+知识沉淀默认由用户主动触发：
 
-## 什么时候不该查
+```text
+aisee:reflect
+  -> aisee/docs/reflect/knowledge-candidates/
+  -> aisee:knowledge-curate
+  -> 用户确认
+  -> aisee knowledge promote-batch
+  -> 人工 review diff
+```
 
-| 场景 | 原因 |
-|---|---|
-| 当前 change 本身还没写清楚 | 先补 change，别拿 team knowledge 代替规范 |
-| 想靠 team knowledge 决定业务需求 | 需求应来自当前项目事实，不来自跨项目经验 |
-| 想把整个知识仓库喂给 Agent | 会制造噪声并放大错配风险 |
+写入 team knowledge repo、创建分支、提交、合并或 PR 前，需要用户再次明确授权。
 
-## 对维护者最有价值的判断
+## 稳定性说明
 
-当你看到一条“经验”时，先问这三个问题：
-
-1. 它是稳定规则，还是当前项目的一次性决策？
-2. 它能泛化成跨项目指导吗？
-3. 它如果过时，谁来刷新？
-
-如果三个问题都答不稳，就先留在当前项目的 reflect 或 solutions 里，不要急着提升到 team knowledge。
+外部 `aisee-plugin` 文档将该能力标记为实验性。公开稳定前仍需补齐更多真实 card packs、stale card refresh 工作流，以及可选的 semantic rerank 或 MCP 包装；这些能力不改变 Git + card / pack 的事实源模型。

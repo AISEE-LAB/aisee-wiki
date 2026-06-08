@@ -6,97 +6,84 @@ createTime: 2026/06/08 12:30:00
 
 # 从意图到 Change
 
-AISEE Plugin 的第一层价值，不是帮你更快写代码，而是帮你在实现前把模糊想法收束成一个可验证的 OpenSpec change。
+AISEE Plugin 的前置阶段用于把需求意图、页面内容和技术约束整理为 OpenSpec change authoring 的输入。它不直接替代 change artifacts，也不把 SRS、UI Content 或 Architecture 提升为 baseline。
 
-## 为什么不能直接从聊天进入实现
+## 目标
 
-当需求还停留在“帮我加这个功能”这种描述时，Agent 往往会自己补全：
+这个阶段要解决的是输入边界问题：在创建或补齐 OpenSpec change 之前，先明确本次工作要解决什么、影响哪些对象、需要哪些上下文、适合使用哪个 schema。
 
-- 哪些范围算本次 change；
-- 哪些行为是必须保持不变的；
-- 哪些页面、接口、数据或测试需要一起改；
-- 什么叫“完成”。
-
-这些补全如果没有进入事实源，就会把实现、review 和 verify 都带偏。
-
-## 推荐顺序
+推荐顺序来自 Aisee Workflow 文档：
 
 ```text
 aisee:srs
-  -> aisee:ui-content（有界面时）
-  -> aisee:design-spec / design-assets（有视觉输入时）
+  -> aisee:ui-content（有 UI 时）
+  -> aisee:design-spec / aisee:design-assets（有视觉设计需要时）
   -> aisee:architecture
   -> aisee:change-plan
-  -> /opsx:new <change> --schema <schema>
+  -> OpenSpec change
   -> aisee:change-author
 ```
 
-## 每一步各写什么
+## 前置输入
 
-| 步骤 | 作用 | 应该写什么 | 不应该写什么 |
-|---|---|---|---|
-| `aisee:srs` | 澄清业务目标、范围、验收标准 | 功能需求、非功能需求、成功标准 | 代码路径、任务清单 |
-| `aisee:ui-content` | 把页面内容、状态、操作与权限写清楚 | 页面内容、状态、前端数据需求 | 视觉规范、组件选型 |
-| `aisee:architecture` | 固化技术事实、边界与风险 | 依赖、约束、共享能力、风险 | 当前 change 的实现步骤 |
-| `aisee:change-plan` | 把输入拆成可独立交付的 change | change list、依赖、schema 建议 | 直接代替 OpenSpec artifact |
-| `aisee:change-author` | 按 schema 补齐 change artifacts | proposal、doc-change、tasks 或 app schema artifacts | 再复制一遍前置文档全文 |
+| 输入 | 作用 | 边界 |
+|---|---|---|
+| SRS | 记录业务目标、范围、功能需求、非功能需求和验收标准。 | 不写实现任务，不替代 change artifacts。 |
+| UI Content | 描述页面内容、状态、操作、权限可见性和前端数据需求。 | 不写组件库、配色、排版或视觉规范。 |
+| Design Spec / Assets | 在存在视觉设计需要时记录视觉规范、参考图或素材输入。 | 不重复页面内容。 |
+| Architecture | 记录技术事实、架构边界、平台约束、共享约定和风险。 | 不作为当前 change 的完整设计文档。 |
 
-## 一个好 change 长什么样
+这些输入用于支持 change planning。需要长期保留的系统行为仍应进入 OpenSpec baseline 或已归档 change。
 
-一个 AI 友好的 change，至少要满足这四件事：
+## Change Planning
 
-1. **可以独立 validate**：不依赖“等另外两三个 change 一起完成再说”。
-2. **可以独立验收**：读者或 reviewer 能明确看到本 change 解决了什么。
-3. **可以独立归档**：tasks、evidence、review 结果都能闭环。
-4. **失败时影响可控**：不会因为一个 change 太大，把多个不同问题绑在一起。
+`aisee:change-plan` 将已确认输入拆成可独立交付的 OpenSpec changes。输出通常包括：
 
-## 什么时候该停下来
+- change 列表；
+- 依赖顺序；
+- schema 建议；
+- source-map seed。
 
-出现下面任一情况，不应该继续推进实现：
+拆分时应以可验证结果为边界。输入材料章节、技术层、页面类型、schema artifact 或任务阶段都不应直接作为 change 边界。
 
-| 信号 | 为什么要停 |
+## Change Authoring
+
+创建 change 后，`aisee:change-author` 按目标 schema 的 artifact DAG 补齐文档。以 app schema 为例，常见 artifacts 包括：
+
+```text
+proposal.md
+source-map.md
+specs/**/*.md
+tasks.md
+change-context.md        # 按需
+ui-contract.md           # 按需
+service-contract.md      # 按需
+data-model.md            # 按需
+```
+
+按需 artifact 是否展开，应由 `source-map.md` 或目标 schema 的规则决定。Required=yes 时补齐内容；Required=no 时写明不适用原因。
+
+## 停止条件
+
+以下情况应先回到前置输入或 change 规划，而不是继续进入实现：
+
+| 情况 | 处理 |
 |---|---|
-| 还说不清“这次不改什么” | 范围容易继续扩张 |
-| UI 内容和技术约束互相冲突 | change 会在实现阶段反复返工 |
-| 一个 change 想同时覆盖多个独立结果 | 无法独立验证和归档 |
-| 读到一半发现缺关键输入 | 应先回到 SRS / UI / Architecture 补齐 |
+| 目标、范围或非目标无法说明 | 补充 SRS 或 proposal 输入。 |
+| UI 内容与技术约束不一致 | 回到 UI Content 或 Architecture 澄清。 |
+| 一个 change 覆盖多个独立结果 | 重新拆分 change。 |
+| contract 是否适用无法判断 | 在 source-map 或对应 contract artifact 中明确 Required 状态。 |
+| 实现中发现 spec、contract、代码不一致 | 先回写当前 OpenSpec change，再继续实现。 |
 
-## 和 OpenSpec 的分工
+## 文档站场景
 
-这里最容易误解的点是：Aisee 不替代 OpenSpec。
-
-- **Aisee 负责把输入整理好**，并把它们转换成更容易 author 的 change。
-- **OpenSpec 负责保存当前 change 的规范事实**，例如 proposal、spec、tasks、doc-change。
-
-因此，正确路径是：
+文档站变更通常使用 `aisee-docsite-driven` schema。最小闭环是：
 
 ```text
-前置输入
-  -> Aisee 结构化
-  -> OpenSpec change
-  -> 实现 / review / verify
-```
-
-而不是：
-
-```text
-前置输入
-  -> 直接实现
-  -> 聊天记录代替 artifact
-```
-
-## 适合文档站的最小闭环
-
-对这个文档站来说，常见路径会更轻一些：
-
-```text
-栏目目标
-  -> 内容缺口判断
-  -> /opsx:new <change> --schema aisee-docsite-driven
-  -> proposal.md
+proposal.md
   -> doc-change.md
   -> tasks.md
-  -> 写正文 / 改导航 / 跑构建
+  -> 内容修改 / 导航调整 / 构建验证
 ```
 
-重点不是生成更多文件，而是让“改哪些页面、为什么改、如何验证”在执行前就清晰。
+这个 schema 关注页面差异、站点结构影响、内链和构建验证，不要求生成 app schema 下的 UI contract、service contract 或 data model。

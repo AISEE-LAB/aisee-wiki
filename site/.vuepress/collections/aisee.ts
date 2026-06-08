@@ -7,12 +7,6 @@ export const aiseeCollection = defineCollection({
   title: 'AISEE',
   sidebar: [
     {
-      text: '栏目首页',
-      items: [
-        { text: 'AISEE', link: '/aisee/' },
-      ],
-    },
-    {
       text: '总览',
       items: [
         { text: 'AISEE Plugin', link: '/aisee/aisee-plugin/' },
@@ -47,12 +41,6 @@ export const aiseeEnCollection = defineCollection({
   linkPrefix: '/aisee',
   title: 'AISEE',
   sidebar: [
-    {
-      text: 'Section Home',
-      items: [
-        { text: 'AISEE', link: '/en/aisee/' },
-      ],
-    },
     {
       text: 'Overview',
       items: [

@@ -148,7 +148,7 @@
 - 侧边栏：指南中文栏目按“认知入门 / 工具上手 / Agent 进阶”分组，`README.md` 保持栏目首页。
 - 侧边栏：OpenSpec 中文栏目按“栏目首页 / 作用 / 模型 / 用法 / 扩展 / 边界”分组，页面保持平铺路由 `/openspec/<slug>/`。
 - 侧边栏：Compound 中文栏目按“栏目首页 / 总览 / 定义与计划 / 执行与质量 / 多智能体 / 知识 / 关系”分组，页面保持平铺路由 `/compound/<slug>/`。
-- 侧边栏：AISEE 栏目按高层分组组织 `AISEE` 与 `AISEE Plugin` 页面，当前使用 `栏目首页 / 前置澄清与规划 / 上下文与执行 / 验证与沉淀` 四组；不在该侧边栏内继续混排 `OpenSpec` 和 `Compound Engineering` 分组，跨栏目进入由顶栏、正文链接或各自独立栏目承担。
+- 侧边栏：AISEE 栏目侧边栏不显示独立“栏目首页”分组，直接从 `AISEE Plugin` 的 `总览 / 前置澄清与规划 / 上下文与执行 / 验证与沉淀` 分组开始；不在该侧边栏内继续混排 `OpenSpec` 和 `Compound Engineering` 分组，跨栏目进入由顶栏、正文链接或各自独立栏目承担。
 - 侧边栏：开源项目中文和英文栏目只保留 `README.md`，主路由保持 `/projects/` 和 `/en/projects/`。
 - 侧边栏：推荐资源中文和英文栏目只保留 `README.md`，主路由保持 `/resources/` 和 `/en/resources/`；不再公开 demo、preview、foo/bar 示例页。
 - frontmatter：指南正文包含 `title`、`permalink`、`createTime`。

@@ -28,6 +28,7 @@ import SkillBoard from './theme/components/SkillBoard.vue'
 import ToolCallBoard from './theme/components/ToolCallBoard.vue'
 import CodexHookEventBoard from './theme/components/CodexHookEventBoard.vue'
 import AiCodingResourceBoard from './theme/components/AiCodingResourceBoard.vue'
+import OpenSourceProjectBoard from './theme/components/OpenSourceProjectBoard.vue'
 import '@vue-flow/core/dist/style.css'
 import '@vue-flow/core/dist/theme-default.css'
 // import CustomComponent from './theme/components/Custom.vue'
@@ -73,6 +74,7 @@ export default defineClientConfig({
     app.component('ToolCallBoard', ToolCallBoard)
     app.component('CodexHookEventBoard', CodexHookEventBoard)
     app.component('AiCodingResourceBoard', AiCodingResourceBoard)
+    app.component('OpenSourceProjectBoard', OpenSourceProjectBoard)
     // app.component('CustomComponent', CustomComponent)
   },
 })

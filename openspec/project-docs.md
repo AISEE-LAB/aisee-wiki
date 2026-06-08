@@ -72,7 +72,7 @@
 | 与 OpenSpec 如何配合 | `/compound/with-openspec/` | Compound Engineering | 说明 OpenSpec 作为规范事实源，Compound Engineering 作为工程执行、评审、沉淀和反馈层，两者如何组合使用。 | active | 后续可补完整 OpenSpec + Compound 工程案例。 |
 | AISEE | `/aisee/` | AISEE | 从 AISEE 工作流视角介绍 AISEE Plugin、OpenSpec 与 Compound Engineering，明确 OpenSpec 和 Compound Engineering 是独立开源项目。 | active | 后续补齐 AISEE Plugin、skills、schema pack、context pack 和 Compound handoff 正文。 |
 | AISEE Plugin | `/aisee/aisee-plugin/` | AISEE | 承载围绕 OpenSpec 的前置澄清、schema-aware change authoring、context pack、契约读取、团队知识 guardrails 与 verify/archive 门禁说明。 | active | 后续可补真实端到端 change 演练与更多英文正文。 |
-| 开源项目 | `/projects/` | 开源项目 | AISEE 团队自有或主导开源项目栏目首页，说明项目清单、项目状态、仓库入口和与推荐资源的边界。 | active | 等维护者补充正式项目清单、仓库 URL、成熟度和项目说明。 |
+| 开源项目 | `/projects/` | 开源项目 | AISEE 团队自有或主导开源项目栏目首页，使用卡片式项目看板展示当前公开仓库、项目状态、仓库入口和与推荐资源的边界。 | active | 当前已收录 `aisee-plugin`、`skills-for-chinese`；后续有新增公开仓库时继续补充。 |
 | AI Coding 推荐资源 | `/resources/` | 推荐资源 | 按分类展示精选 AI Coding 开源项目、工具、Agent/Harness、Skill、MCP、UI/UX 和方法论资源。 | active | 后续可按英文读者语境重写 `/en/resources/`，并定期复核资源有效性。 |
 
 ## 4. 内容缺口
@@ -80,7 +80,7 @@
 | 缺口 | 关联栏目 | 优先级 | 原因 | 建议动作 |
 |---|---|---|---|---|
 | AISEE、OpenSpec、Compound Engineering 深度指南尚未串成完整后续课程 | 指南 | P1 | `/learn/` 已建立入门指南，但后续方法论正文仍分散。 | 新建独立 change 规划方法论指南路径和跨栏目导读。 |
-| AISEE 团队开源项目正式清单尚未补齐 | 开源项目 | P1 | `/projects/` 已建立栏目边界，但项目名称、仓库 URL、成熟度和项目说明仍需维护者确认。 | 后续补正式项目卡片、项目详情页或仓库入口。 |
+| 开源项目详情页和长期路线仍未补齐 | 开源项目 | P2 | `/projects/` 已补当前公开仓库卡片，但每个项目的独立文档、使用示例和长期路线还未展开。 | 后续按项目成熟度补详情页、路线图或更细粒度入口。 |
 | AI Engineering 英文完整正文尚未建设 | AI Engineering | P1 | 本轮只建设中文方法论基础正文，英文入口保持稳定占位。 | 后续独立 change 按英文读者语境重写 AI Engineering 栏目。 |
 | AI Engineering 缺少真实团队采用案例 | AI Engineering / AISEE 工程流程 | P2 | 当前正文已有传统流程到 AISEE 工作流的通用迁移框架，但尚未展示真实团队如何落地、验证和复盘。 | 后续补团队采用案例、示例 change 或端到端演练，并与 AISEE Plugin 串联。 |
 | OpenSpec 英文完整正文尚未建设 | OpenSpec | P1 | 本轮只更新英文入口，未重写英文专题正文。 | 后续独立 change 按英文读者语境重写 OpenSpec 栏目。 |

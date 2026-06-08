@@ -169,6 +169,8 @@
 - 正文导读：不要在普通正文末尾放置纯目录式“下一步阅读 / 继续阅读 / 方法路线”链接块；文档站导航、侧边栏和搜索已承担页面发现能力。只有当链接承担当前段落的必要语义引导时，才在正文句子中加入文章链接。
 - SEO：生产域名在 Plume 配置中使用 `https://aisee.wiki`；`hostname` 必须配置在 `site/.vuepress/config.ts` 的 `plumeTheme` 顶层，不放入 `plume.config.ts`。
 - SEO：站点依赖 Plume 内置 SEO 和 sitemap 能力生成 Open Graph、JSON-LD、`sitemap.xml` 和 `robots.txt`；不要在 `site/.vuepress/public/robots.txt` 手写重复规则。
+- 访问统计：站点通过 `@vuepress/plugin-umami-analytics` 接入 Umami，脚本地址为 `https://um.zerseager.com/script.js`，网站 ID 为 `ae374543-c338-4059-ae6e-ca70ed39e16d`；配置集中在 `site/.vuepress/config.ts` 顶层 `plugins`，不要在 `head` 中手写重复统计脚本。
+- 访问统计：Umami 统计仅对生产域名 `aisee.wiki` 与 `www.aisee.wiki` 自动启用，避免本地开发和预览访问污染正式数据。
 - LLM 索引：站点启用 Plume 内置 `llmstxt`，`locale: 'all'` 覆盖中文和英文，生产构建生成 `/llms.txt`、`/llms-full.txt`、`/en/llms.txt` 和 `/en/llms-full.txt`。
 - LLM 交互：站点通过 `site/.vuepress/client.ts` 引入 Plume `PageContextMenu`，挂载在 `doc-title-after` slot，用于在文档页标题旁提供复制页面、查看 Markdown 和打开 LLM 工具入口；该能力依赖生产构建中的 `llmstxt` 产物。
 - frontmatter：核心首页、栏目首页和英文入口应维护页面级 `description`；普通正文可暂由 Plume 自动摘要兜底，正文稳定后再逐页补充。
@@ -185,3 +187,4 @@
 | 2026-06-08 | `restructure-aisee-navigation` | 顶栏调整为“指南 / AI Engineering / AISEE / 开源项目 / 推荐资源”；AISEE 顶栏项改为二级菜单，收束 AISEE Plugin、OpenSpec、Compound Engineering 三个入口；新增 `/projects/`。 | OpenSpec 和 Compound Engineering 保留独立路由，但不再作为顶栏平级入口；团队项目清单待维护者补充。 |
 | 2026-06-08 | `strengthen-ai-engineering-bridge` | 强化 AI Engineering 作为指南与 AISEE 之间的解释层，补充传统软件工程与 AI 增强软件工程的研发环节对照，并新增 `/ai-engineering/from-traditional-flow-to-aisee/`；清理正文中重复文档站导航能力的“下一步阅读”类链接块。 | 构建通过后可归档；真实团队落地案例和英文完整正文留待后续 change。 |
 | 2026-06-08 | `enhance-plume-seo-indexing` | 按 Plume 最佳实践配置 `hostname: 'https://aisee.wiki'` 和 `llmstxt: { locale: 'all' }`，启用 SEO、sitemap、robots 与中英文 LLM 友好索引；核心入口页补充页面级 `description`。 | 构建通过；普通正文的页面级 description 可后续继续细化。 |
+| 2026-06-08 | `add-umami-analytics` | 通过 `@vuepress/plugin-umami-analytics` 接入 Umami 访问统计，配置自托管脚本地址、网站 ID 和生产域名限制。 | 构建通过；后续如需自定义事件或更细粒度埋点应另起 change。 |

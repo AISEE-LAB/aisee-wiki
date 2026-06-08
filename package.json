@@ -16,6 +16,7 @@
   "devDependencies": {
     "@vue-flow/core": "^1.48.2",
     "@vuepress/bundler-vite": "2.0.0-rc.30",
+    "@vuepress/plugin-umami-analytics": "2.0.0-rc.130",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "elkjs": "^0.11.1",

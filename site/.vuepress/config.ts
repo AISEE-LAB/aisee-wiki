@@ -10,6 +10,7 @@
  */
 
 import { viteBundler } from '@vuepress/bundler-vite'
+import { umamiAnalyticsPlugin } from '@vuepress/plugin-umami-analytics'
 import { defineUserConfig } from 'vuepress'
 import { plumeTheme } from 'vuepress-theme-plume'
 
@@ -32,6 +33,15 @@ export default defineUserConfig({
   head: [
     // 配置站点图标
     ['link', { rel: 'icon', type: 'image/png', href: 'https://theme-plume.vuejs.press/favicon-32x32.png' }],
+  ],
+
+  plugins: [
+    umamiAnalyticsPlugin({
+      id: 'ae374543-c338-4059-ae6e-ca70ed39e16d',
+      link: 'https://um.zerseager.com/script.js',
+      hostUrl: 'https://um.zerseager.com',
+      domains: ['aisee.wiki', 'www.aisee.wiki'],
+    }),
   ],
 
   bundler: viteBundler(),

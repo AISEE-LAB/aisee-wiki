@@ -1,13 +1,13 @@
 ---
 title: AISEE Plugin
-description: 说明 AISEE Plugin 在 OpenSpec 协作链路中的职责边界，以及需求澄清、change authoring、context pack、契约读取和归档校验的组织方式。
+description: 说明 AISEE Plugin 在 OpenSpec 项目中的职责边界，以及需求澄清、change authoring、context pack、契约读取和归档校验的组织方式。
 permalink: /aisee/aisee-plugin/
 createTime: 2026/06/08 12:30:00
 ---
 
 # AISEE Plugin
 
-AISEE Plugin 是面向 OpenSpec 工作流的 AI 软件工程插件。它提供一组 skills、schema packs、CLI 上下文工具和校验规则，用于把需求、UI 内容、技术上下文、OpenSpec change、实现交接和验证证据组织到同一条可审查链路中。
+AISEE Plugin 是面向 OpenSpec 项目的 AI 软件工程插件。它提供一组 skills、schema packs、CLI 上下文工具和校验规则，用于在 OpenSpec change 生命周期内组织需求输入、UI 内容、技术上下文、实现交接和验证证据。
 
 AISEE Plugin 不替代 OpenSpec。OpenSpec 仍然负责规范状态机、active changes、baseline specs、validate 和 archive。AISEE Plugin 的职责是在 OpenSpec 周围补充结构化输入、schema-aware authoring、机器可读 context pack、稳定 ID 追踪、契约读取和归档前检查。
 
@@ -49,9 +49,9 @@ AISEE Plugin 不替代 OpenSpec。OpenSpec 仍然负责规范状态机、active 
 
 <FlowExplainer
   mode="timeline"
-  eyebrow="Aisee workflow"
+  eyebrow="Aisee plugin"
   title="从输入整理到归档检查"
-  description="Aisee Plugin 当前文档推荐先整理需求和上下文，再进入 OpenSpec change authoring，随后为实现、验证和归档提供面向目标的上下文与检查。"
+  description="Aisee Plugin 当前文档推荐先整理需求和上下文，再进入 OpenSpec change authoring，随后为实现、验证和归档提供目标化上下文与检查。"
   :stages="[
     {
       id: 'prepare',

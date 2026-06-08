@@ -71,7 +71,7 @@
 | 知识如何复利 | `/compound/knowledge-compounding/` | Compound Engineering | 说明 `/ce-compound`、`/ce-compound-refresh`、`docs/solutions/`、frontmatter、problem_type、bug/knowledge track 和 refresh 机制。 | active | 后续可补更多 `docs/solutions/` 示例。 |
 | 与 OpenSpec 如何配合 | `/compound/with-openspec/` | Compound Engineering | 说明 OpenSpec 作为规范事实源，Compound Engineering 作为工程执行、评审、沉淀和反馈层，两者如何组合使用。 | active | 后续可补完整 OpenSpec + Compound 工程案例。 |
 | AISEE | `/aisee/` | AISEE | 从 AISEE 工作流视角介绍 AISEE Plugin、OpenSpec 与 Compound Engineering，明确 OpenSpec 和 Compound Engineering 是独立开源项目。 | active | 后续补齐 AISEE Plugin、skills、schema pack、context pack 和 Compound handoff 正文。 |
-| AISEE Plugin | `/aisee/workflows/` | AISEE | 承载 OpenSpec、Compound、Harness 和 AISEE 链路中的可执行工作流说明。 | active | 后续补端到端流程正文和插件命令边界。 |
+| AISEE Plugin | `/aisee/aisee-plugin/` | AISEE | 承载围绕 OpenSpec 的前置澄清、schema-aware change authoring、context pack、契约读取、团队知识 guardrails 与 verify/archive 门禁说明。 | active | 后续可补真实端到端 change 演练与更多英文正文。 |
 | 开源项目 | `/projects/` | 开源项目 | AISEE 团队自有或主导开源项目栏目首页，说明项目清单、项目状态、仓库入口和与推荐资源的边界。 | active | 等维护者补充正式项目清单、仓库 URL、成熟度和项目说明。 |
 | AI Coding 推荐资源 | `/resources/` | 推荐资源 | 按分类展示精选 AI Coding 开源项目、工具、Agent/Harness、Skill、MCP、UI/UX 和方法论资源。 | active | 后续可按英文读者语境重写 `/en/resources/`，并定期复核资源有效性。 |
 
@@ -85,8 +85,8 @@
 | AI Engineering 缺少真实团队采用案例 | AI Engineering / AISEE 工程流程 | P2 | 当前正文已有传统流程到 AISEE 工作流的通用迁移框架，但尚未展示真实团队如何落地、验证和复盘。 | 后续补团队采用案例、示例 change 或端到端演练，并与 AISEE Plugin 串联。 |
 | OpenSpec 英文完整正文尚未建设 | OpenSpec | P1 | 本轮只更新英文入口，未重写英文专题正文。 | 后续独立 change 按英文读者语境重写 OpenSpec 栏目。 |
 | Compound 英文完整正文尚未建设 | Compound Engineering | P1 | 本轮只建设中文正文，英文入口保持稳定占位。 | 后续独立 change 按英文读者语境重写 Compound 栏目。 |
-| OpenSpec 缺少完整真实项目演练 | OpenSpec / AISEE 工程流程 | P1 | 栏目已解释概念、写法和边界，但尚未把一次真实 change 从 propose 跑到 archive。 | 后续放入 `/aisee/workflows/` 或 OpenSpec 实战页，避免替代 AISEE SRS 链路。 |
-| Compound 缺少端到端工程复利演练 | Compound Engineering / AISEE 工程流程 | P1 | 栏目已解释方法论、角色、边界和知识沉淀，但尚未把一次真实任务从 brainstorm / plan 跑到 work / review / compound。 | 后续放入 `/aisee/workflows/` 或 Compound 实战页，避免把栏目正文写成操作日志。 |
+| OpenSpec 缺少完整真实项目演练 | OpenSpec / AISEE 工程流程 | P1 | 栏目已解释概念、写法和边界，但尚未把一次真实 change 从 propose 跑到 archive。 | 后续放入 `/aisee/aisee-plugin/` 或 OpenSpec 实战页，避免替代 AISEE SRS 链路。 |
+| Compound 缺少端到端工程复利演练 | Compound Engineering / AISEE 工程流程 | P1 | 栏目已解释方法论、角色、边界和知识沉淀，但尚未把一次真实任务从 brainstorm / plan 跑到 work / review / compound。 | 后续放入 `/aisee/aisee-plugin/` 或 Compound 实战页，避免把栏目正文写成操作日志。 |
 | OpenSpec artifact 模板和命令速查尚未独立整理 | OpenSpec / 后续独立资源页 | P2 | 当前正文已有写法原则，但缺少可复制模板和短命令清单；推荐资源栏目已收束为精选项目和方法论资源。 | 后续另起 change 规划模板、检查清单和命令速查，不默认塞回推荐资源栏目。 |
 | Compound skill / agent 命令速查尚未独立整理 | Compound Engineering / 后续独立资源页 | P2 | 当前栏目按方法论转译插件能力，未复制完整命令清单和版本行为；推荐资源栏目不承载命令大全。 | 后续另起 change 整理稳定速查，并明确以官方 README 和插件源码为准。 |
 | 术语表和阅读路径已从推荐资源栏目移除 | 推荐资源 | P2 | 推荐资源已聚焦推荐内容，旧术语表和阅读路径占位页不再符合栏目定位。 | 如仍需要术语表或阅读路径，后续单独规划栏目或页面，并重新加入导航。 |
@@ -106,7 +106,7 @@
 | 准备写第一个 OpenSpec change | `/openspec/workflow/` | `/openspec/workflow/` → `/openspec/artifact-guide/` → `/openspec/delta-spec/` → `/openspec/boundaries/` | 重点理解 propose、spec、design、tasks、verify、archive 的职责和取舍。 |
 | 想理解 AI 工程复利 | `/compound/` | `/compound/what-is-compound-engineering/` → `/compound/workflow-loop/` → `/compound/strategy-brainstorm-plan/` → `/compound/work-debug-review/` → `/compound/knowledge-compounding/` | 先理解方法论和核心循环，再看定义计划、执行质量和知识复利。 |
 | 想理解多智能体评审 | `/compound/multi-agent-review/` | `/compound/multi-agent-review/` → `/compound/reviewer-personas/` → `/compound/document-review-agents/` → `/compound/design-review-agents/` → `/compound/research-agents/` → `/compound/agent-orchestration/` → `/compound/review-boundaries/` | 先理解多视角价值，再拆角色、文档/设计/研究能力、协作机制和适用边界。 |
-| 想理解 AISEE 主线实践 | `/aisee/` | `/aisee/` → `/aisee/workflows/` → `/openspec/` → `/compound/` | AISEE 栏目从插件与工作流视角串起 OpenSpec 和 Compound Engineering，但不暗示它们属于 AISEE 自有项目。 |
+| 想理解 AISEE 主线实践 | `/aisee/` | `/aisee/` → `/aisee/aisee-plugin/` → `/openspec/` → `/compound/` | AISEE 栏目从插件与工作流视角串起 OpenSpec 和 Compound Engineering，但不暗示它们属于 AISEE 自有项目。 |
 | 想把 OpenSpec 和 Compound 组合使用 | `/aisee/` | `/openspec/what-is-openspec/` → `/compound/workflow-loop/` → `/compound/with-openspec/` → `/compound/review-boundaries/` | OpenSpec 负责事实源和变更边界，Compound 负责执行、评审、沉淀和反馈；AISEE 负责把二者放入可执行工作流。 |
 | 想了解 AISEE 团队项目 | `/projects/` | `/projects/` → 具体项目页或仓库入口 | 团队项目和外部推荐资源分开呈现，避免混淆来源和维护责任。 |
 
@@ -140,7 +140,7 @@
 ## 7. 站点结构约定
 
 - 导航：顶层导航为 `首页 / 指南 / AI Engineering / AISEE / 开源项目 / 推荐资源`；英文为 `Home / Guides / AI Engineering / AISEE / Open Source / Recommended Resources`。
-- 导航：`AISEE` 顶栏项不是普通链接，而是二级菜单；中文和英文菜单项均为 `AISEE Plugin`、`OpenSpec`、`Compound Engineering`，分别进入 `/aisee/workflows/`、`/openspec/`、`/compound/` 及英文 locale 对应路径。
+- 导航：`AISEE` 顶栏项不是普通链接，而是二级菜单；中文和英文菜单项均为 `AISEE Plugin`、`OpenSpec`、`Compound Engineering`，分别进入 `/aisee/aisee-plugin/`、`/openspec/`、`/compound/` 及英文 locale 对应路径。
 - 导航：`/learn/` 路由保留，公开展示名为“指南 / Guides”。
 - 导航：AI Engineering 是正式顶层栏目，位于指南之后、AISEE 之前；旧 `/thinking/` 不再作为公开栏目。
 - 导航：OpenSpec 和 Compound Engineering 不再作为顶栏平级入口，但 `/openspec/`、`/compound/` 路由和 collection 保持可访问。
@@ -148,7 +148,7 @@
 - 侧边栏：指南中文栏目按“认知入门 / 工具上手 / Agent 进阶”分组，`README.md` 保持栏目首页。
 - 侧边栏：OpenSpec 中文栏目按“栏目首页 / 作用 / 模型 / 用法 / 扩展 / 边界”分组，页面保持平铺路由 `/openspec/<slug>/`。
 - 侧边栏：Compound 中文栏目按“栏目首页 / 总览 / 定义与计划 / 执行与质量 / 多智能体 / 知识 / 关系”分组，页面保持平铺路由 `/compound/<slug>/`。
-- 侧边栏：AISEE 中文栏目包含栏目首页，以及 `AISEE Plugin / OpenSpec / Compound Engineering` 三个子栏目入口；工程流程页面使用 `/aisee/workflows/` 路由前缀。
+- 侧边栏：AISEE 栏目按高层分组组织 `AISEE` 与 `AISEE Plugin` 页面，当前使用 `栏目首页 / 前置澄清与规划 / 上下文与执行 / 验证与沉淀` 四组；不在该侧边栏内继续混排 `OpenSpec` 和 `Compound Engineering` 分组，跨栏目进入由顶栏、正文链接或各自独立栏目承担。
 - 侧边栏：开源项目中文和英文栏目只保留 `README.md`，主路由保持 `/projects/` 和 `/en/projects/`。
 - 侧边栏：推荐资源中文和英文栏目只保留 `README.md`，主路由保持 `/resources/` 和 `/en/resources/`；不再公开 demo、preview、foo/bar 示例页。
 - frontmatter：指南正文包含 `title`、`permalink`、`createTime`。

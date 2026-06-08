@@ -1,6 +1,6 @@
 ---
 title: AISEE
-description: An AISEE workflow entry that connects AISEE Plugin, OpenSpec, and Compound Engineering as one engineering practice.
+description: An AISEE entry that connects AISEE Plugin, OpenSpec, and Compound Engineering as one engineering practice.
 permalink: /en/aisee/
 createTime: 2026/05/23 11:01:52
 ---
@@ -15,7 +15,7 @@ OpenSpec and Compound Engineering are independent open source projects. They are
 
 | Section | Role | Start |
 |---|---|---|
-| AISEE Plugin | Turns requirements, context packs, change planning, schema packs, and handoffs into reusable commands and skills. | [Workflow overview](/en/aisee/workflows/) |
+| AISEE Plugin | Turns requirements, context packs, change planning, schema packs, and handoffs into reusable commands and skills. | [AISEE Plugin overview](/en/aisee/aisee-plugin/) |
 | OpenSpec | Provides the specification layer and source of truth for reviewable engineering changes. | [OpenSpec](/en/openspec/) |
 | Compound Engineering | Covers bounded execution, review, debugging, retrospection, and knowledge compounding. | [Compound Engineering](/en/compound/) |
 
@@ -23,9 +23,9 @@ OpenSpec and Compound Engineering are independent open source projects. They are
 
 AISEE connects requirements, context, change planning, implementation handoff, verification, and reusable workflow assets.
 
-## Workflows
+## AISEE Plugin
 
-- [Workflow overview](/en/aisee/workflows/)
+- [AISEE Plugin overview](/en/aisee/aisee-plugin/)
 
 ## Start Here
 

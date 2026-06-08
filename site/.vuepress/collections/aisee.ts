@@ -6,27 +6,36 @@ export const aiseeCollection = defineCollection({
   linkPrefix: '/aisee',
   title: 'AISEE',
   sidebar: [
-    'README.md',
     {
-      text: 'AISEE Plugin',
+      text: '栏目首页',
       items: [
-        { text: 'AISEE Plugin', link: '/aisee/workflows/' },
+        { text: 'AISEE', link: '/aisee/' },
       ],
     },
     {
-      text: 'OpenSpec',
+      text: '总览',
       items: [
-        { text: 'OpenSpec', link: '/openspec/' },
-        { text: '基础工作流', link: '/openspec/workflow/' },
-        { text: 'Artifact 写法', link: '/openspec/artifact-guide/' },
+        { text: 'AISEE Plugin', link: '/aisee/aisee-plugin/' },
       ],
     },
     {
-      text: 'Compound Engineering',
+      text: '前置澄清与规划',
       items: [
-        { text: 'Compound Engineering', link: '/compound/' },
-        { text: '工程复利循环', link: '/compound/workflow-loop/' },
-        { text: '与 OpenSpec 配合', link: '/compound/with-openspec/' },
+        { text: '从意图到 Change', link: '/aisee/aisee-plugin/from-intent-to-change/' },
+        { text: 'Schema Packs 与 Authoring', link: '/aisee/aisee-plugin/schema-packs-and-authoring/' },
+      ],
+    },
+    {
+      text: '上下文与执行',
+      items: [
+        { text: 'Context Packs 与 Contracts', link: '/aisee/aisee-plugin/context-packs-and-contracts/' },
+      ],
+    },
+    {
+      text: '验证与沉淀',
+      items: [
+        { text: 'Team Knowledge Guardrails', link: '/aisee/aisee-plugin/team-knowledge-guardrails/' },
+        { text: 'Verify 与 Archive Guard', link: '/aisee/aisee-plugin/verify-and-archive-guard/' },
       ],
     },
   ],
@@ -38,23 +47,16 @@ export const aiseeEnCollection = defineCollection({
   linkPrefix: '/aisee',
   title: 'AISEE',
   sidebar: [
-    'README.md',
     {
-      text: 'AISEE Plugin',
+      text: 'Section Home',
       items: [
-        { text: 'Overview', link: '/en/aisee/workflows/' },
+        { text: 'AISEE', link: '/en/aisee/' },
       ],
     },
     {
-      text: 'OpenSpec',
+      text: 'Overview',
       items: [
-        { text: 'OpenSpec', link: '/en/openspec/' },
-      ],
-    },
-    {
-      text: 'Compound Engineering',
-      items: [
-        { text: 'Compound Engineering', link: '/en/compound/' },
+        { text: 'Overview', link: '/en/aisee/aisee-plugin/' },
       ],
     },
   ],

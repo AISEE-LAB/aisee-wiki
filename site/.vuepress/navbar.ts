@@ -47,7 +47,7 @@ export const zhNavbar = defineNavbarConfig([
     text: 'AISEE',
     icon: aiseeNavbarIcon,
     items: [
-      { text: 'AISEE Plugin', link: '/aisee/workflows/', icon: aiseePluginNavbarIcon },
+      { text: 'AISEE Plugin', link: '/aisee/aisee-plugin/', icon: aiseePluginNavbarIcon },
       { text: 'OpenSpec', link: '/openspec/', icon: openspecNavbarIcon },
       { text: 'Compound Engineering', link: '/compound/', icon: compoundNavbarIcon },
     ],
@@ -64,7 +64,7 @@ export const enNavbar = defineNavbarConfig([
     text: 'AISEE',
     icon: aiseeNavbarIcon,
     items: [
-      { text: 'AISEE Plugin', link: '/en/aisee/workflows/', icon: aiseePluginNavbarIcon },
+      { text: 'AISEE Plugin', link: '/en/aisee/aisee-plugin/', icon: aiseePluginNavbarIcon },
       { text: 'OpenSpec', link: '/en/openspec/', icon: openspecNavbarIcon },
       { text: 'Compound Engineering', link: '/en/compound/', icon: compoundNavbarIcon },
     ],

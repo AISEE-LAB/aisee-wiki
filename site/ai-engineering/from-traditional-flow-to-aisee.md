@@ -46,7 +46,7 @@ Spec Layer 负责回答“这次变化到底是什么”。它不是把所有文
 
 Harness Layer 负责回答“AI 可以在哪里、用什么方式执行”。它包括工作目录、权限、工具、Hook、上下文注入、运行命令和失败处理。
 
-这一层对应 [AISEE Plugin](/aisee/workflows/) 的工作流定位：把 SRS、技术上下文、change 规划、实现和验证串起来，让 Agent 的执行不只是一次自由对话，而是处在明确边界内。
+这一层对应 [AISEE Plugin](/aisee/aisee-plugin/) 的工作流定位：把 SRS、技术上下文、change 规划、实现和验证串起来，让 Agent 的执行不只是一次自由对话，而是处在明确边界内。
 
 ### 3. Verification Gate
 

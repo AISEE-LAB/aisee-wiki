@@ -17,5 +17,5 @@ Compound Engineering connects planning, work, review, debugging, retrospection, 
 
 - [Chinese Compound foundation](/compound/)
 - [OpenSpec](/en/openspec/)
-- [AISEE Workflows](/en/aisee/workflows/)
+- [AISEE Plugin](/en/aisee/aisee-plugin/)
 - [Recommended Resources](/en/resources/)

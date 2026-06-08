@@ -91,4 +91,4 @@ AI 增强软件工程不是：
 - 用 [OpenSpec](/openspec/) 解决事实源和变更边界。
 - 用 [指南](/learn/) 建立 Agent、Memory、Skill、MCP、Tool、Hook 的基础认知。
 - 用 [Compound Engineering](/compound/) 解决计划、执行、评审、调试和知识复利。
-- 用 [AISEE Plugin](/aisee/workflows/) 把需求、上下文、change、实现桥接和验证串成工作流。
+- 用 [AISEE Plugin](/aisee/aisee-plugin/) 把需求、上下文、change、实现桥接和验证串成工作流。

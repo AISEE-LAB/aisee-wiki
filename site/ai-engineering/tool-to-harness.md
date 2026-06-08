@@ -64,6 +64,6 @@ Tool list
 
 ## 工作流承接
 
-[AISEE Plugin](/aisee/workflows/) 将 harness 思路落到项目协作：先整理需求和技术上下文，再规划 change，随后由 OpenSpec 和 Compound Engineering 承接实现、验证和沉淀。
+[AISEE Plugin](/aisee/aisee-plugin/) 将 harness 思路落到项目协作：先整理需求和技术上下文，再规划 change，随后由 OpenSpec 和 Compound Engineering 承接实现、验证和沉淀。
 
 AI 增强软件工程不是“给 AI 更多工具”，而是让 AI 在一个可理解、可限制、可验证的环境里工作。

@@ -15,7 +15,7 @@ OpenSpec 和 Compound Engineering 是独立开源项目。本站把它们放在 
 
 | 子栏目 | 作用 | 入口 |
 |---|---|---|
-| AISEE Plugin | 把 SRS、技术上下文、change 规划、schema pack 和 handoff 做成可复用命令与 skill。 | [插件与工作流](/aisee/workflows/) |
+| AISEE Plugin | 把 SRS、技术上下文、change 规划、schema pack、context pack 和验证门禁做成可复用命令与 skill。 | [AISEE Plugin](/aisee/aisee-plugin/) |
 | OpenSpec | 管理可审查、可验证、可归档的工程变更，提供规范层和事实源。 | [OpenSpec](/openspec/) |
 | Compound Engineering | 承接计划、执行、评审、调试、复盘和知识复利。 | [Compound Engineering](/compound/) |
 
@@ -28,9 +28,11 @@ AISEE 关注的不是单个命令，而是从需求到验证的连续链路：
 - 把已确认目标拆成 OpenSpec change。
 - 把实现、评审、验证和知识沉淀交给明确的工作流承接。
 
-## 工程流程
+## AISEE Plugin
 
-- [流程总览](/aisee/workflows/)
+- [AISEE Plugin 总览](/aisee/aisee-plugin/)
+- [从意图到 Change](/aisee/aisee-plugin/from-intent-to-change/)
+- [Context Packs 与 Contracts](/aisee/aisee-plugin/context-packs-and-contracts/)
 
 ## 相关方法
 

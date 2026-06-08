@@ -27,7 +27,6 @@ const domainIcons = [Lightbulb, FileText, FileCheck2, Workflow, Boxes, LibraryBi
 const principleIcons = [FileText, Workflow, LibraryBig]
 const frameworkIcons = [Lightbulb, FileText, Network, Workflow, CircleDot, LibraryBig]
 const pillarIcons = [FileCheck2, GitBranch, Boxes]
-const pluginIcons = [PenLine, GitBranch, FileText, Workflow, CircleDot, PackageCheck]
 const openIcons = [GitBranch, PenLine, PackageCheck, Network]
 
 const content = computed(() => {
@@ -56,14 +55,15 @@ const content = computed(() => {
         knowledgeText: 'Proven patterns, templates, schemas, and cases feed the next engineering cycle.',
         knowledgeItems: ['Review', 'Template', 'Case', 'Memory'],
       },
-      domainsTitle: 'What this wiki covers',
-      domainsText: 'Each area serves the same method line: make intent explicit, run AI inside a bounded harness, and turn useful work into reusable knowledge.',
+      domainsTitle: 'Start by what you need',
+      domainsText: 'Use the homepage as a map. Pick the question you are trying to answer, then enter the section that carries that job.',
       domains: [
-        ['Guides', 'Concepts, local setup, agent components, memory, skills, MCP, and hooks.', '/en/learn/'],
-        ['AI Engineering', 'The methodology layer: what changes in software engineering when AI becomes part of the workflow.', '/en/ai-engineering/'],
-        ['AISEE', 'AISEE Plugin, OpenSpec, and Compound Engineering as one practice entry.', '/en/aisee/'],
-        ['Open Source', 'Projects maintained or led by the AISEE team.', '/en/projects/'],
-        ['Recommended Resources', 'Curated external AI Coding projects, tools, agent frameworks, skills, and methodology references.', '/en/resources/'],
+        ['New to AI Coding', 'Build the concepts, local setup, and agent basics before entering the methodology layer.', '/en/learn/'],
+        ['Understand the shift', 'See what changes when AI participates in requirements, design, coding, review, and knowledge reuse.', '/en/ai-engineering/'],
+        ['Manage changes with specs', 'Use OpenSpec to make scope, behavior, decisions, and acceptance criteria reviewable.', '/en/openspec/'],
+        ['Run agent work reliably', 'Use Compound Engineering to plan, execute, review, debug, and preserve reusable knowledge.', '/en/compound/'],
+        ['Adopt the AISEE workflow', 'Connect AISEE Plugin, OpenSpec, and Compound Engineering into an end-to-end practice.', '/en/aisee/workflows/'],
+        ['Find references', 'Browse external resources and team-led open source projects from clearly separated entry points.', '/en/resources/'],
       ],
       methodTitle: 'Three method threads',
       methodText: 'The site is organized by methodology, not by tool commands. OpenSpec provides the source of truth, Compound provides the execution and learning discipline, and AISEE connects them into working flows.',
@@ -72,31 +72,21 @@ const content = computed(() => {
         ['Harness Better', 'Put AI inside explicit agents, skills, MCP tools, hooks, schemas, and workflows.'],
         ['Compound Knowledge', 'Keep templates, cases, schemas, retrospectives, and fixes available for the next change.'],
       ],
-      frameworkTitle: 'AI Engineering method frame',
-      frameworkText: 'AI-enhanced engineering becomes reliable when the full chain is visible, inspectable, and reusable.',
+      frameworkTitle: 'From problem to reusable knowledge',
+      frameworkText: 'The same loop should be visible in each serious AI engineering task: define, specify, prepare context, execute, verify, then preserve what worked.',
       framework: [
-        ['01', 'Problem framing', 'Clarify goals, users, constraints, non-goals, and acceptance direction.'],
-        ['02', 'Specification modeling', 'Use specs and artifacts to make scope, behavior, and decisions inspectable.'],
-        ['03', 'Context harness', 'Prepare project facts, source maps, memory, skills, and tool boundaries.'],
-        ['04', 'Engineering execution', 'Let AI participate in implementation inside explicit tasks and workflows.'],
-        ['05', 'Verification gate', 'Use tests, reviews, checks, and apply guards to manage uncertainty.'],
-        ['06', 'Knowledge compounding', 'Keep patterns, fixes, templates, and schema decisions for the next change.'],
+        ['01', 'Frame the problem', 'Clarify goal, user, constraint, non-goal, and acceptance direction.'],
+        ['02', 'Model the spec', 'Make scope, behavior, and decisions inspectable before execution starts.'],
+        ['03', 'Prepare context', 'Collect project facts, memory, skills, source maps, and tool boundaries.'],
+        ['04', 'Execute the work', 'Let AI act inside explicit tasks, permissions, and workflow steps.'],
+        ['05', 'Verify the result', 'Use tests, review, checks, and guards to decide whether work can move on.'],
+        ['06', 'Compound knowledge', 'Keep patterns, fixes, templates, and cases available for the next change.'],
       ],
       pillarsTitle: 'AISEE practice sections',
       pillars: [
         ['AISEE Plugin', 'The installable workflow layer for SRS, context packs, schema packs, and handoffs.', '/en/aisee/workflows/'],
         ['OpenSpec', 'The specification layer and source of truth for controlled engineering changes.', '/en/openspec/'],
         ['Compound Engineering', 'The discipline for harnessed execution, review, debugging, and knowledge reuse.', '/en/compound/'],
-      ],
-      pluginTitle: 'aisee plugin as implementation layer',
-      pluginText: 'The plugin turns the method into installable skills, schema packs, context packs, ID policy, and Compound handoffs.',
-      pluginItems: [
-        ['SRS and content inputs', 'Structure raw requirements into SRS, UI content, device context, or technical context.'],
-        ['Change planning', 'Map confirmed requirements into OpenSpec changes, dependencies, schemas, and source maps.'],
-        ['Artifact authoring', 'Generate change artifacts while keeping OpenSpec as the specification state machine.'],
-        ['Implementation bridge', 'Prepare the minimum context package for Compound work and review.'],
-        ['Verify and apply guard', 'Check drift, tasks, contracts, source maps, and review/test evidence before apply.'],
-        ['Schema packs', 'Support app, device, docsite, infra, security, quick-fix, research, and collaboration workflows.'],
       ],
       pathTitle: 'Recommended reading path',
       paths: [
@@ -144,14 +134,15 @@ const content = computed(() => {
       knowledgeText: '把有效模式、模板、schema 和真实案例反哺下一轮工程。',
       knowledgeItems: ['Review', 'Template', 'Case', 'Memory'],
     },
-    domainsTitle: '方法版图',
-    domainsText: '这些主题共同服务于同一条主线：把意图表达清楚，让 AI 在有边界的环境中工作，再把有效经验沉淀为可复用资产。',
+    domainsTitle: '按目标进入',
+    domainsText: '首页更像一张地图。先判断你现在要解决的问题，再进入承担这个任务的栏目。',
     domains: [
-      ['指南', '建立 AI Coding、Agent、Memory、Skill、MCP、Tool 和 Hook 的基础认知。', '/learn/'],
-      ['AI Engineering', '解释 AI 时代软件工程变了什么、没变什么，以及方法论如何成立。', '/ai-engineering/'],
-      ['AISEE', '以 AISEE Plugin、OpenSpec 和 Compound Engineering 组织主线实践。', '/aisee/'],
-      ['开源项目', '展示 AISEE 团队自有或主导的开源项目清单和介绍。', '/projects/'],
-      ['推荐资源', '精选外部 AI Coding 项目、工具、Agent 框架、Skill 和方法论参考。', '/resources/'],
+      ['刚开始学 AI Coding', '先建立概念、本地环境、工具选择和 Agent 基础认知。', '/learn/'],
+      ['理解工程方法变化', '看清 AI 参与需求、设计、开发、评审和知识沉淀后，工程组织方式如何变化。', '/ai-engineering/'],
+      ['用规范管理变更', '用 OpenSpec 固定目标、范围、行为变化、设计判断和验收边界。', '/openspec/'],
+      ['组织 Agent 执行和复盘', '用 Compound Engineering 串起计划、执行、评审、调试和知识沉淀。', '/compound/'],
+      ['采用 AISEE 工作流', '理解 AISEE Plugin 如何连接需求输入、OpenSpec change 和 Compound handoff。', '/aisee/workflows/'],
+      ['寻找工具和项目参考', '从推荐资源与开源项目中区分外部参考和团队自有资产。', '/resources/'],
     ],
     methodTitle: '三条方法主线',
     methodText: '内容围绕方法论组织，而不是停留在命令清单：OpenSpec 提供事实源，Compound 提供执行与复盘纪律，AISEE 把两者连接成可落地的工作流。',
@@ -160,31 +151,21 @@ const content = computed(() => {
       ['Harness Better', '用 Agent、Skill、MCP、Hook、Schema 和 Workflow 组成有边界的 AI 执行环境。'],
       ['Compound Knowledge', '把模板、案例、schema、复盘和修复经验留给下一次工程工作。'],
     ],
-    frameworkTitle: 'AI Engineering 方法框架',
-    frameworkText: 'AI 增强的软件工程不是把某一步自动化，而是让完整工程链路变得可表达、可验证、可复用。',
+    frameworkTitle: '从问题到知识复利',
+    frameworkText: '一次可靠的 AI 工程任务，应该能看见同一条链路：定义问题、建立规范、准备上下文、执行实现、验证结果、沉淀经验。',
     framework: [
       ['01', '问题定义', '明确目标、用户、约束、非目标和验收方向。'],
-      ['02', '规范建模', '用 specs 与 artifacts 固化范围、行为变化和设计判断。'],
-      ['03', '上下文组织', '准备项目事实、source-map、memory、skills 与工具边界。'],
-      ['04', '工程执行', '让 AI 在明确任务、规则和工作流中参与实现。'],
-      ['05', '验证 gate', '通过测试、评审、检查和 apply guard 管理不确定性。'],
-      ['06', '知识复利', '把模式、修复、模板和 schema 决策留给下一轮工程。'],
+      ['02', '规范建模', '让范围、行为变化和设计判断在执行前可审查。'],
+      ['03', '上下文组织', '准备项目事实、memory、skills、source-map 与工具边界。'],
+      ['04', '工程执行', '让 AI 在明确任务、权限和工作流步骤中参与实现。'],
+      ['05', '验证结果', '通过测试、评审、检查和 guard 判断是否继续流转。'],
+      ['06', '知识复利', '把模式、修复、模板和案例留给下一轮工程。'],
     ],
     pillarsTitle: 'AISEE 主线入口',
     pillars: [
       ['AISEE Plugin', '把 SRS、上下文包、schema pack、change 规划和 handoff 做成工程化入口。', '/aisee/workflows/'],
       ['OpenSpec', '作为规范层和事实源，管理可审查、可验证、可归档的工程变更。', '/openspec/'],
       ['Compound Engineering', '提供有边界的执行、评审、调试、复盘与知识复利方法。', '/compound/'],
-    ],
-    pluginTitle: 'aisee plugin：方法论的工程化入口',
-    pluginText: 'aisee plugin 会把这套方法落到可安装、可引用、可版本化的 skills、schema packs、context packs、ID 策略和 Compound handoff 中。',
-    pluginItems: [
-      ['SRS 与内容输入', '把模糊需求整理为 SRS、UI 内容、设备上下文或技术上下文。'],
-      ['Change 规划', '把已确认需求映射为 OpenSpec changes、依赖、schema 和 source-map。'],
-      ['Artifact 编排', '生成 change artifacts，同时保持 OpenSpec 作为规范状态机。'],
-      ['实现桥接', '为 Compound work / review 准备单个 change 的最小工程上下文。'],
-      ['Verify / apply guard', '在 apply 前检查 drift、tasks、contracts、source-map 和测试评审证据。'],
-      ['Schema packs', '支持 app、device、docsite、infra、security、quick-fix、research 等工作流。'],
     ],
     pathTitle: '推荐指南路径',
     paths: [
@@ -224,8 +205,8 @@ const heroTitleLines = computed(() => {
     [
       { text: '深入理解 ', highlight: false },
       { text: 'AI', highlight: true },
-      { text: ' 时代的', highlight: false },
     ],
+    [{ text: '时代的', highlight: false }],
     [{ text: '软件工程', highlight: false }],
   ]
 })
@@ -462,23 +443,6 @@ onUnmounted(() => {
       </div>
     </section>
 
-    <section class="home-section plugin-section">
-      <div class="plugin-copy">
-        <p class="section-kicker">{{ isEn ? 'Implementation layer' : '工程化入口' }}</p>
-        <h2>{{ content.pluginTitle }}</h2>
-        <p>{{ content.pluginText }}</p>
-      </div>
-      <div class="plugin-grid">
-        <article v-for="(item, index) in content.pluginItems" :key="item[0]" class="plugin-card">
-          <span class="plugin-card__icon" aria-hidden="true">
-            <component :is="pluginIcons[index]" :size="19" :stroke-width="2.1" />
-          </span>
-          <strong>{{ item[0] }}</strong>
-          <p>{{ item[1] }}</p>
-        </article>
-      </div>
-    </section>
-
     <section class="home-section open-section">
       <div class="section-heading">
         <h2>{{ content.openTitle }}</h2>
@@ -530,9 +494,17 @@ onUnmounted(() => {
   background:
     linear-gradient(90deg, rgba(244, 250, 255, 0.82), rgba(255, 255, 255, 0.74) 38%, rgba(239, 249, 255, 0.92)),
     linear-gradient(180deg, #ffffff 0%, #f8fcff 46%, #ffffff 100%);
+  box-sizing: border-box;
   margin: calc(var(--vp-nav-height, 64px) * -1) calc(50% - 50vw) 0;
+  max-width: 100vw;
   padding: var(--vp-nav-height, 64px) max(34px, calc((100vw - 1510px) / 2)) 48px;
   overflow: hidden;
+}
+
+.aisee-home *,
+.aisee-home *::before,
+.aisee-home *::after {
+  box-sizing: border-box;
 }
 
 .home-hero {
@@ -546,6 +518,7 @@ onUnmounted(() => {
 
 .hero-copy {
   max-width: 740px;
+  min-width: 0;
   padding-bottom: 8px;
 }
 
@@ -601,6 +574,7 @@ onUnmounted(() => {
   font-size: clamp(1.02rem, 1.25vw, 1.2rem);
   line-height: 1.78;
   margin: 24px 0 0;
+  overflow-wrap: break-word;
 }
 
 .hero-slogan {
@@ -609,6 +583,7 @@ onUnmounted(() => {
   font-weight: 850;
   line-height: 1.45;
   margin: 18px 0 0;
+  overflow-wrap: break-word;
 }
 
 .hero-actions {
@@ -790,6 +765,7 @@ onUnmounted(() => {
   font-size: 0.78rem;
   line-height: 1.48;
   margin: 4px 0 0;
+  overflow-wrap: break-word;
 }
 
 .method-map__ticks {
@@ -906,6 +882,11 @@ onUnmounted(() => {
   width: 42px;
 }
 
+.method-system__core > div,
+.method-node > div {
+  min-width: 0;
+}
+
 .method-system__core strong {
   display: block;
   font-size: 1.08rem;
@@ -917,6 +898,7 @@ onUnmounted(() => {
   font-size: 0.86rem;
   line-height: 1.55;
   margin: 5px 0 0;
+  overflow-wrap: break-word;
 }
 
 .method-system__nodes {
@@ -1008,7 +990,6 @@ onUnmounted(() => {
 .domain-grid,
 .pillar-grid,
 .open-grid,
-.plugin-grid,
 .path-grid {
   display: grid;
   gap: 18px;
@@ -1016,7 +997,7 @@ onUnmounted(() => {
 }
 
 .domain-grid {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .domain-card,
@@ -1024,7 +1005,6 @@ onUnmounted(() => {
 .open-card,
 .principle-card,
 .framework-step,
-.plugin-card,
 .path-card {
   background: var(--home-card);
   border: 1px solid var(--home-line);
@@ -1078,8 +1058,7 @@ onUnmounted(() => {
 .pillar-icon,
 .principle-mark,
 .open-icon,
-.framework-step__icon,
-.plugin-card__icon {
+.framework-step__icon {
   align-items: center;
   background: linear-gradient(135deg, rgba(8, 145, 178, 0.14), rgba(29, 78, 216, 0.14));
   border: 2px solid rgba(8, 145, 178, 0.55);
@@ -1117,7 +1096,6 @@ onUnmounted(() => {
 .principle-card p,
 .open-card p,
 .framework-step p,
-.plugin-card p,
 .path-card p {
   color: var(--home-muted);
   font-size: 0.93rem;
@@ -1263,50 +1241,6 @@ onUnmounted(() => {
   color: var(--home-muted);
 }
 
-.plugin-section {
-  align-items: start;
-  display: grid;
-  gap: 34px;
-  grid-template-columns: minmax(300px, 0.72fr) minmax(620px, 1.28fr);
-}
-
-.plugin-copy {
-  max-width: 520px;
-  position: sticky;
-  top: calc(var(--vp-nav-height, 64px) + 28px);
-}
-
-.plugin-copy h2 {
-  font-size: clamp(2rem, 3vw, 3rem);
-  letter-spacing: 0;
-  line-height: 1.12;
-  margin: 0;
-}
-
-.plugin-copy p {
-  color: var(--home-muted);
-  font-size: 1.04rem;
-  line-height: 1.72;
-  margin: 14px 0 0;
-}
-
-.plugin-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-top: 0;
-}
-
-.plugin-card {
-  min-height: 156px;
-  padding: 22px;
-}
-
-.plugin-card__icon {
-  height: 34px;
-  margin-bottom: 16px;
-  width: 34px;
-}
-
-.plugin-card strong,
 .path-card strong {
   color: #0a2a54;
   display: block;
@@ -1488,7 +1422,6 @@ onUnmounted(() => {
 [data-theme="dark"] .open-card,
 [data-theme="dark"] .principle-card,
 [data-theme="dark"] .framework-step,
-[data-theme="dark"] .plugin-card,
 [data-theme="dark"] .path-card {
   background: rgba(11, 24, 38, 0.78);
   border-color: rgba(148, 213, 255, 0.16);
@@ -1499,7 +1432,6 @@ onUnmounted(() => {
 [data-theme="dark"] .aisee-home .principle-mark,
 [data-theme="dark"] .aisee-home .open-icon,
 [data-theme="dark"] .aisee-home .framework-step__icon,
-[data-theme="dark"] .aisee-home .plugin-card__icon,
 [data-theme="dark"] .aisee-home .method-node__icon {
   background: rgba(17, 53, 73, 0.78);
   border-color: rgba(74, 201, 220, 0.42);
@@ -1529,7 +1461,6 @@ onUnmounted(() => {
 
 [data-theme="dark"] .method-node strong,
 [data-theme="dark"] .pillar-card strong,
-[data-theme="dark"] .plugin-card strong,
 [data-theme="dark"] .path-card strong {
   color: rgba(235, 248, 255, 0.92);
 }
@@ -1537,7 +1468,6 @@ onUnmounted(() => {
 [data-theme="dark"] .method-node p,
 [data-theme="dark"] .pillar-card span:last-child,
 [data-theme="dark"] .framework-step p,
-[data-theme="dark"] .plugin-card p,
 [data-theme="dark"] .path-card p {
   color: rgba(220, 235, 245, 0.7);
 }
@@ -1594,22 +1524,14 @@ onUnmounted(() => {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .plugin-section {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .plugin-copy {
-    max-width: 820px;
-    position: static;
-  }
 }
 
 @media (max-width: 760px) {
   .aisee-home {
-    margin-left: -24px;
-    margin-right: -24px;
-    padding-left: 24px;
-    padding-right: 24px;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .home-hero {
@@ -1618,7 +1540,9 @@ onUnmounted(() => {
   }
 
   .hero-copy h1 {
-    font-size: clamp(2.45rem, 11vw, 3.6rem);
+    font-size: clamp(2.35rem, 10vw, 3.25rem);
+    line-height: 1.12;
+    overflow-wrap: break-word;
   }
 
   .hero-title-zh .hero-title__line {
@@ -1629,7 +1553,6 @@ onUnmounted(() => {
   .principle-flow,
   .framework-rail,
   .pillar-grid,
-  .plugin-grid,
   .open-grid,
   .path-grid,
   .learning-path {

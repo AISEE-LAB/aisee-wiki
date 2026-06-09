@@ -17,6 +17,7 @@
 |---|---|---|
 | `site/.vuepress/config.ts` | favicon 仍使用 `https://theme-plume.vuejs.press/favicon-32x32.png`。 | 站点品牌入口仍依赖第三方远程默认图标，不符合 AISEE 自有品牌接入目标。 |
 | `site/.vuepress/plume.config.ts` | `logo` 与中英文 `profile.avatar` 仍使用 Plume 默认远程图片。 | 顶部站点标识和侧边 profile 头像尚未切换为 AISEE 品牌资产。 |
+| `site/.vuepress/plume.config.ts` social | 右上角 GitHub 社交入口仍是占位根路径 `/`。 | 社交入口没有指向 AISEE-LAB 组织主页，公开仓库与组织入口不一致。 |
 | `site/.vuepress/theme/styles/custom.css` | 主题 brand 变量仍保留一组旧的青灰色注释值。 | 组件强调色与当前 AISEE logo 的蓝青紫品牌方向不一致，品牌识别有割裂感。 |
 | `site/.vuepress/theme/components/` | 多个首页、资源页和通用 UI 组件仍使用组件内硬编码颜色。 | 即使主题 brand token 已更新，这些组件也不会自动跟随，首页与资源页会继续保留旧色。 |
 | `README.md`、`README.zh-CN.md` | 仓库首页仍使用旧的 `AI SEE Wiki` 口径和朴素文本结构，且存在重复中文 README。 | GitHub 仓库入口没有体现最新品牌、方法论定位和站点入口；重复 README 会增加维护成本，语言策略也不清晰。 |
@@ -31,6 +32,7 @@
 | 新增 | 品牌静态资源目录 | `site/.vuepress/public/brand/` | 新增 AISEE logo 静态资源目录，保存无字与带字 SVG。 |
 | 修改 | VuePress 顶层配置 | `site/.vuepress/config.ts` | 将 favicon 切换为本地无字 SVG。 |
 | 修改 | Plume 主题配置 | `site/.vuepress/plume.config.ts` | 将 `logo` 与中英文 `profile.avatar` 切换为本地 AISEE 品牌资源。 |
+| 修改 | 社交入口配置 | `site/.vuepress/plume.config.ts` | 将右上角 GitHub 社交入口指向 `https://github.com/AISEE-LAB`。 |
 | 修改 | 主题品牌色变量 | `site/.vuepress/theme/styles/custom.css` | 将主题 brand token 同步为从 AISEE logo 提炼出的主品牌色，并放大导航栏带字版 logo。 |
 | 修改 | 主题组件配色 | `site/.vuepress/theme/components/` | 将首页、资源页和通用 UI 组件从硬编码配色切换为品牌 token 与语义 token。 |
 | 修改 | 仓库首页文档 | `README.md` | 参考 `aisee-plugin` 的首屏结构，改成更适合文档站的品牌展示、简介和入口链接，并采用中文优先的单 README 入口。 |

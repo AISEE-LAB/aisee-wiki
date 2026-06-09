@@ -20,6 +20,7 @@
 - [x] 2.1 将维护者提供的无字与带字 logo 复制到 `site/.vuepress/public/brand/`。
 - [x] 2.2 在 `site/.vuepress/config.ts` 中将 favicon 切换为本地无字 SVG。
 - [x] 2.3 在 `site/.vuepress/plume.config.ts` 中将站点 logo 与中英文 `profile.avatar` 切换为本地 AISEE 品牌资源。
+- [x] 2.3a 在 `site/.vuepress/plume.config.ts` 中将右上角 GitHub 社交入口指向 `https://github.com/AISEE-LAB`。
 - [x] 2.4 在 `site/.vuepress/theme/styles/custom.css` 中将 brand token 同步为基于 logo 提炼的品牌色，并适度放大导航栏带字版 logo。
 - [x] 2.5 将首页、资源页和通用 `Ui*` 组件的主品牌强调色切换为共享 token，保留风险/告警等语义色。
 - [x] 2.6 参考 `aisee-plugin` 的仓库首页写法，更新 `README.md` 的首屏结构、品牌图和入口链接，并删除重复的 `README.zh-CN.md`。

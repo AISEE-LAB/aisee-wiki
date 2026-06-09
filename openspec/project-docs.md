@@ -140,6 +140,7 @@
 ## 7. 站点结构约定
 
 - 导航：顶层导航为 `首页 / 指南 / AI Engineering / AISEE / 开源项目 / 推荐资源`；英文为 `Home / Guides / AI Engineering / AISEE / Open Source / Recommended Resources`。
+- 社交入口：导航栏 GitHub 图标指向 `https://github.com/AISEE-LAB`，作为 AISEE 团队公开组织入口。
 - 导航：`AISEE` 顶栏项不是普通链接，而是二级菜单；中文和英文菜单项均为 `AISEE Plugin`、`OpenSpec`、`Compound Engineering`，分别进入 `/aisee/aisee-plugin/`、`/openspec/`、`/compound/` 及英文 locale 对应路径。
 - 导航：`/learn/` 路由保留，公开展示名为“指南 / Guides”。
 - 导航：AI Engineering 是正式顶层栏目，位于指南之后、AISEE 之前；旧 `/thinking/` 不再作为公开栏目。

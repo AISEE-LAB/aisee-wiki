@@ -12,6 +12,8 @@
 - 使用不带文字 logo 作为站点 favicon。
 - 在不影响现有导航结构和页面内容的前提下，将站点 logo 与 profile avatar 切换为本地 AISEE 品牌资产。
 - 将主题 brand token 同步为从 logo 提炼出的主品牌色，提升站点组件与品牌资产的一致性。
+- 调整仓库根 README 的首屏结构与简介文案，使其与当前品牌、站点定位和 GitHub 仓库入口保持一致，并采用中文优先的单 README 入口。
+- 补充 MIT LICENSE，并完善 README 的读者入口、项目关系、贡献方式与协议说明。
 - 回写项目基线，记录站点品牌资产的存放路径与 favicon/logo 使用约定。
 
 ## 不在范围
@@ -30,6 +32,7 @@
 | 导航/侧边栏 | N/A | 不改导航信息架构，仅替换站点视觉资产。 |
 | 路由/frontmatter | N/A | 不改 permalink 与 frontmatter。 |
 | 站点配置 | `site/.vuepress/config.ts`、`site/.vuepress/plume.config.ts`、`site/.vuepress/public/brand/`、`site/.vuepress/theme/styles/custom.css` | 引入本地品牌 SVG 资产、更新全局配置引用，并同步主题 brand token。 |
+| 仓库元信息 | `README.md`、`LICENSE` | 调整仓库首页简介、品牌展示与入口链接，补充 MIT 协议，采用中文优先单 README 入口，并反映“方法论与实践文档站”定位。 |
 
 ## 成功标准
 
@@ -37,6 +40,8 @@
 - [ ] `site/.vuepress/config.ts` 使用本地无字 SVG 作为 favicon。
 - [ ] `site/.vuepress/plume.config.ts` 使用本地 AISEE logo 资产替换默认站点 logo 与 profile avatar。
 - [ ] `site/.vuepress/theme/styles/custom.css` 的品牌色变量已同步为基于 AISEE logo 提炼的主题 token。
+- [ ] 仓库根 `README.md` 已更新为与站点品牌和方法论定位一致的首屏简介，并作为中文优先默认入口。
+- [ ] 仓库根 `LICENSE` 已补充为 MIT 协议，README 已包含协议说明。
 - [ ] 站点不再依赖 Plume 默认远程品牌图片。
 - [ ] 文档站构建通过。
 - [ ] 归档前已处理 openspec/project-docs.md 回写。

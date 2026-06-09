@@ -1,26 +1,9 @@
 {
   "hooks": {
-    "SessionStart": [
-      {
-        "matcher": "startup|resume|clear",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node '/Users/fengliang/PycharmProjects/aisee.wiki/.aisee/hooks/session-inject.js'",
-            "timeout": 10
-          }
-        ]
-      }
-    ],
     "UserPromptSubmit": [
       {
         "matcher": "",
         "hooks": [
-          {
-            "type": "command",
-            "command": "node '/Users/fengliang/PycharmProjects/aisee.wiki/.aisee/hooks/spec-drift.js'",
-            "timeout": 10
-          },
           {
             "type": "command",
             "command": "node '/Users/fengliang/PycharmProjects/aisee.wiki/.aisee/hooks/prompt-scan.js'",

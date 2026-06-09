@@ -1,4 +1,4 @@
-import { defineAsyncComponent, h } from 'vue'
+import { Fragment, defineAsyncComponent, h } from 'vue'
 import { defineClientConfig } from 'vuepress/client'
 import { Layout } from 'vuepress-theme-plume/client'
 // import RepoCard from 'vuepress-theme-plume/features/RepoCard.vue'
@@ -29,6 +29,7 @@ import ToolCallBoard from './theme/components/ToolCallBoard.vue'
 import CodexHookEventBoard from './theme/components/CodexHookEventBoard.vue'
 import AiCodingResourceBoard from './theme/components/AiCodingResourceBoard.vue'
 import OpenSourceProjectBoard from './theme/components/OpenSourceProjectBoard.vue'
+import AiseePluginStarGuide from './theme/components/AiseePluginStarGuide.vue'
 import '@vue-flow/core/dist/style.css'
 import '@vue-flow/core/dist/theme-default.css'
 // import CustomComponent from './theme/components/Custom.vue'
@@ -39,9 +40,12 @@ const PageContextMenu = defineAsyncComponent(() => import('vuepress-theme-plume/
 
 export default defineClientConfig({
   layouts: {
-    Layout: () => h(Layout, null, {
-      'doc-title-after': () => h(PageContextMenu),
-    }),
+    Layout: () => h(Fragment, null, [
+      h(Layout, null, {
+        'doc-title-after': () => h(PageContextMenu),
+      }),
+      h(AiseePluginStarGuide),
+    ]),
   },
 
   enhance({ app }) {
@@ -75,6 +79,7 @@ export default defineClientConfig({
     app.component('CodexHookEventBoard', CodexHookEventBoard)
     app.component('AiCodingResourceBoard', AiCodingResourceBoard)
     app.component('OpenSourceProjectBoard', OpenSourceProjectBoard)
+    app.component('AiseePluginStarGuide', AiseePluginStarGuide)
     // app.component('CustomComponent', CustomComponent)
   },
 })

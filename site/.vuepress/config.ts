@@ -19,12 +19,12 @@ export default defineUserConfig({
   lang: 'zh-CN',
   locales: {
     '/': {
-      title: 'AI SEE Wiki',
+      title: 'AISEE Wiki',
       lang: 'zh-CN',
       description: 'OpenSpec × Compound × aisee 的 AI Engineering 文档站',
     },
     '/en/': {
-      title: 'AI SEE Wiki',
+      title: 'AISEE Wiki',
       lang: 'en-US',
       description: 'OpenSpec × Compound × aisee 的 AI Engineering 文档站',
     },
@@ -32,7 +32,7 @@ export default defineUserConfig({
 
   head: [
     // 配置站点图标
-    ['link', { rel: 'icon', type: 'image/png', href: 'https://theme-plume.vuejs.press/favicon-32x32.png' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/brand/aisee-logo-mark.svg' }],
   ],
 
   plugins: [

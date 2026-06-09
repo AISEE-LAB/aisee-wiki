@@ -5,7 +5,7 @@
 
 ## 1. 文档站定位
 
-- 文档站名称：AI SEE Wiki
+- 文档站名称：AISEE Wiki
 - 目标读者：正在学习 AI Coding、Agent 工程化协作、OpenSpec / Compound / AISEE 工作流的开发者和团队维护者。
 - 核心用途：沉淀 AI Engineering 指南路径、工程方法论、工作流说明和可复用实践。
 - 内容边界：优先提供可执行、可验证、可复用的工程文档；不做实时模型排行榜、价格表或未经核对的第三方安装方案。
@@ -163,6 +163,7 @@
 - 多语言：英文 `/en/projects/` 暂保留开源项目入口，后续在项目清单确认后补完整英文说明。
 - 多语言：英文 `/en/resources/` 暂保留推荐资源入口，指向中文推荐资源目录；后续再按英文读者语境完整重写。
 - 图片/附件：工具/模型 logo 使用 LobeHub Icons 静态 SVG/CDN；交互式关系图优先使用 Vue Flow；禁止引用本地绝对路径和未经授权商业截图。
+- 图片/附件：站点自有品牌资源统一存放在 `site/.vuepress/public/brand/`；当前保留 `aisee-logo-mark.svg`（无字）与 `aisee-logo-wordmark.svg`（带字）两个 SVG，favicon 必须使用无字版本，导航栏站点 logo 使用带字版本。
 - 图片/附件：OpenSpec 复杂静态图保留 `.excalidraw` 源文件，导出 SVG 放在 `site/.vuepress/public/diagrams/openspec/`，正文通过 `DiagramFigure` 引用站点内路径。
 - 代码块/命令示例：安装、账号、平台、价格、额度等易变信息必须标注“以官方文档为准”；危险 Git/删除/上传/生产操作必须有风险说明。
 - 代码块/命令示例：Compound Engineering 正文优先讲方法论和职责边界，不复制插件内部长 prompt，不在公开正文暴露本地绝对路径或本地安装版本口径。
@@ -171,6 +172,7 @@
 - SEO：站点依赖 Plume 内置 SEO 和 sitemap 能力生成 Open Graph、JSON-LD、`sitemap.xml` 和 `robots.txt`；不要在 `site/.vuepress/public/robots.txt` 手写重复规则。
 - 访问统计：站点通过 `@vuepress/plugin-umami-analytics` 接入 Umami，脚本地址为 `https://um.zerseager.com/script.js`，网站 ID 为 `ae374543-c338-4059-ae6e-ca70ed39e16d`；配置集中在 `site/.vuepress/config.ts` 顶层 `plugins`，不要在 `head` 中手写重复统计脚本。
 - 访问统计：Umami 统计仅对生产域名 `aisee.wiki` 与 `www.aisee.wiki` 自动启用，避免本地开发和预览访问污染正式数据。
+- 品牌资源：`site/.vuepress/config.ts` 的 favicon 使用无字版 SVG；`site/.vuepress/plume.config.ts` 的导航栏站点 logo 使用带字版 SVG，profile avatar 使用无字版 SVG；不要回退到 Plume 默认远程品牌图。
 - LLM 索引：站点启用 Plume 内置 `llmstxt`，`locale: 'all'` 覆盖中文和英文，生产构建生成 `/llms.txt`、`/llms-full.txt`、`/en/llms.txt` 和 `/en/llms-full.txt`。
 - LLM 交互：站点通过 `site/.vuepress/client.ts` 引入 Plume `PageContextMenu`，挂载在 `doc-title-after` slot，用于在文档页标题旁提供复制页面、查看 Markdown 和打开 LLM 工具入口；该能力依赖生产构建中的 `llmstxt` 产物。
 - frontmatter：核心首页、栏目首页和英文入口应维护页面级 `description`；普通正文可暂由 Plume 自动摘要兜底，正文稳定后再逐页补充。
@@ -188,3 +190,4 @@
 | 2026-06-08 | `strengthen-ai-engineering-bridge` | 强化 AI Engineering 作为指南与 AISEE 之间的解释层，补充传统软件工程与 AI 增强软件工程的研发环节对照，并新增 `/ai-engineering/from-traditional-flow-to-aisee/`；清理正文中重复文档站导航能力的“下一步阅读”类链接块。 | 构建通过后可归档；真实团队落地案例和英文完整正文留待后续 change。 |
 | 2026-06-08 | `enhance-plume-seo-indexing` | 按 Plume 最佳实践配置 `hostname: 'https://aisee.wiki'` 和 `llmstxt: { locale: 'all' }`，启用 SEO、sitemap、robots 与中英文 LLM 友好索引；核心入口页补充页面级 `description`。 | 构建通过；普通正文的页面级 description 可后续继续细化。 |
 | 2026-06-08 | `add-umami-analytics` | 通过 `@vuepress/plugin-umami-analytics` 接入 Umami 访问统计，配置自托管脚本地址、网站 ID 和生产域名限制。 | 构建通过；后续如需自定义事件或更细粒度埋点应另起 change。 |
+| 2026-06-09 | `update-site-logo-assets` | 将维护者提供的 AISEE logo 素材复制到 `site/.vuepress/public/brand/`，并把 favicon、站点 logo 与 profile avatar 切换为本地品牌 SVG。 | 构建通过；带字版 SVG 当前保留为站内静态资源备用，后续如需扩展到首页或分享图应另起 change。 |

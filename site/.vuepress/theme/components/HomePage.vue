@@ -34,7 +34,7 @@ const content = computed(() => {
     return {
       eyebrow: 'AI-Enhanced Software Engineering',
       title: 'Understand software engineering in the AI era',
-      subtitle: 'AI SEE Wiki is an independent methodology site around OpenSpec, Compound Engineering, and AISEE workflows.',
+      subtitle: 'AISEE Wiki is an independent methodology site around OpenSpec, Compound Engineering, and AISEE workflows.',
       note: 'Spec First. Harness Better. Compound Knowledge.',
       primary: 'Open guides',
       secondary: 'Explore AISEE',
@@ -113,7 +113,7 @@ const content = computed(() => {
   return {
     eyebrow: 'AI-Enhanced Software Engineering',
     title: '深入理解 AI 时代的软件工程',
-    subtitle: 'AI SEE Wiki 是围绕 OpenSpec、Compound Engineering 与 AISEE 工作流建立的独立实践与方法论站点。',
+    subtitle: 'AISEE Wiki 是围绕 OpenSpec、Compound Engineering 与 AISEE 工作流建立的独立实践与方法论站点。',
     note: 'Spec First. Harness Better. Compound Knowledge.',
     primary: '打开指南',
     secondary: '了解 AISEE',

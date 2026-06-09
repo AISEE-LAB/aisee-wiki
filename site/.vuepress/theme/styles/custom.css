@@ -48,3 +48,13 @@
   --vp-c-text-3: rgba(235, 235, 245, 0.38);
   */
 }
+
+/* 导航位使用带字版 logo，隐藏重复的站点标题文本。 */
+.vp-navbar-title .title > span {
+  display: none;
+}
+
+.vp-navbar-title .logo {
+  width: auto;
+  height: clamp(2.2rem, 3vw, 2.8rem);
+}

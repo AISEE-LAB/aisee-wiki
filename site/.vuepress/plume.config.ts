@@ -18,7 +18,7 @@ import { enNavbar, zhNavbar } from './navbar'
  * @see https://theme-plume.vuejs.press/config/theme/
  */
 export default defineThemeConfig({
-  logo: 'https://theme-plume.vuejs.press/plume.png',
+  logo: '/brand/aisee-logo-wordmark.svg',
 
   appearance: true,  // 配置 深色模式
 
@@ -58,8 +58,8 @@ export default defineThemeConfig({
        * @see https://theme-plume.vuejs.press/config/theme/#profile
        */
       profile: {
-        avatar: 'https://theme-plume.vuejs.press/plume.png',
-        name: 'AI SEE Wiki',
+        avatar: '/brand/aisee-logo-mark.svg',
+        name: 'AISEE Wiki',
         description: 'OpenSpec × Compound × aisee 的 AI Engineering 文档站',
         // circle: true,
         // location: '',
@@ -85,8 +85,8 @@ export default defineThemeConfig({
        * @see https://theme-plume.vuejs.press/config/theme/#profile
        */
       profile: {
-        avatar: 'https://theme-plume.vuejs.press/plume.png',
-        name: 'AI SEE Wiki',
+        avatar: '/brand/aisee-logo-mark.svg',
+        name: 'AISEE Wiki',
         description: 'OpenSpec × Compound × aisee 的 AI Engineering 文档站',
         // circle: true,
         // location: '',

@@ -115,8 +115,8 @@ const projects = computed(() =>
       <article v-for="project in projects" :key="project.repo" class="oss-project-card">
         <div class="oss-project-card__top">
           <span class="oss-project-card__icon">
-            <span>{{ project.name.slice(0, 1).toUpperCase() }}</span>
-            <img :src="project.avatar" :alt="`${project.name} avatar`" loading="lazy">
+            <img v-if="project.avatar" :src="project.avatar" :alt="`${project.name} avatar`" loading="lazy">
+            <span v-else>{{ project.name.slice(0, 1).toUpperCase() }}</span>
           </span>
           <div class="oss-project-card__heading">
             <div>

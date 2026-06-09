@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
 
 const repoUrl = 'https://github.com/AISEE-LAB/aisee-plugin'
 const storageKey = 'aisee-plugin-star-guide:v1'
@@ -7,14 +8,14 @@ const storageKey = 'aisee-plugin-star-guide:v1'
 const isVisible = ref(false)
 const hasClickedStarCta = ref(false)
 const locale = ref<'zh' | 'en'>('zh')
+const route = useRoute()
 
 const content = computed(() => {
   if (locale.value === 'en') {
     return {
       eyebrow: 'Support AISEE Plugin',
-      title: 'Before you continue, please support the core open-source repo.',
-      description: 'AISEE Plugin is one of the core public repos behind the workflows documented on this site.',
-      note: 'This site cannot truly verify your GitHub Star status. You need to open GitHub and complete the Star manually.',
+      title: 'Thank you for supporting the core open-source project.',
+      description: 'AISEE Plugin is one of the core public repos behind the workflows documented on this site. If this content is useful to you, please consider starring the repository on GitHub.',
       cta: 'Open GitHub to Star',
       close: 'I have done it, continue browsing',
       waiting: 'Click the GitHub button first to unlock close.',
@@ -23,21 +24,13 @@ const content = computed(() => {
 
   return {
     eyebrow: '支持核心开源项目',
-    title: '继续浏览前，请先关注 AISEE Plugin。',
-    description: 'AISEE Plugin 是本站工作流内容背后的核心公开仓库之一。',
-    note: '站点无法真实校验你的 GitHub Star 状态。你需要打开 GitHub 页面后手动完成 Star。',
+    title: '感谢你支持核心开源项目。',
+    description: 'AISEE Plugin 是本站工作流内容背后的核心公开仓库之一。如果这些内容对你有帮助，欢迎前往 GitHub 点亮 Star，支持项目持续演进。',
     cta: '前往 GitHub Star',
     close: '我已完成，继续浏览',
     waiting: '请先点击 GitHub 按钮，再解锁关闭。',
   }
 })
-
-function isLocalDevelopmentHost(hostname: string): boolean {
-  return hostname === 'localhost'
-    || hostname === '127.0.0.1'
-    || hostname === '0.0.0.0'
-    || hostname.endsWith('.local')
-}
 
 function openGitHubStar(): void {
   hasClickedStarCta.value = true
@@ -47,24 +40,37 @@ function closeGuide(): void {
   if (!hasClickedStarCta.value)
     return
 
-  localStorage.setItem(storageKey, 'acknowledged')
+  if (typeof window !== 'undefined')
+    window.sessionStorage.setItem(storageKey, 'acknowledged')
   isVisible.value = false
 }
 
-onMounted(() => {
-  const { hostname, pathname } = window.location
+function updateGuideState(pathname: string): void {
+  locale.value = pathname.startsWith('/en') ? 'en' : 'zh'
 
-  if (isLocalDevelopmentHost(hostname))
+  if (pathname === '/' || pathname === '/en' || pathname === '/en/') {
+    isVisible.value = false
+    return
+  }
+
+  if (typeof window === 'undefined')
     return
 
-  if (document.documentElement.lang.startsWith('en') || pathname.startsWith('/en/'))
-    locale.value = 'en'
-
-  if (localStorage.getItem(storageKey) === 'acknowledged')
+  if (window.sessionStorage.getItem(storageKey) === 'acknowledged') {
+    isVisible.value = false
     return
+  }
 
   isVisible.value = true
-})
+}
+
+watch(
+  () => route.path,
+  (pathname) => {
+    updateGuideState(pathname)
+  },
+  { immediate: true },
+)
 </script>
 
 <template>
@@ -75,7 +81,6 @@ onMounted(() => {
         <p class="star-guide__eyebrow">{{ content.eyebrow }}</p>
         <h2 id="star-guide-title">{{ content.title }}</h2>
         <p class="star-guide__description">{{ content.description }}</p>
-        <p class="star-guide__note">{{ content.note }}</p>
 
         <div class="star-guide__actions">
           <a
@@ -158,21 +163,11 @@ onMounted(() => {
   line-height: 1.75;
 }
 
-.star-guide__note {
-  margin: 16px 0 0;
-  padding: 12px 14px;
-  border-left: 3px solid var(--aisee-warning-border);
-  border-radius: 10px;
-  color: var(--aisee-warning-text);
-  font-size: 0.92rem;
-  line-height: 1.65;
-  background: var(--aisee-warning-surface);
-}
-
 .star-guide__actions {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, max-content));
   gap: 12px;
+  justify-content: center;
   margin-top: 22px;
 }
 
@@ -180,15 +175,21 @@ onMounted(() => {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  padding: 0 18px;
+  min-height: 50px;
+  min-width: 0;
+  padding: 0 22px;
   border: 1px solid transparent;
-  border-radius: 999px;
-  font-size: 0.96rem;
-  font-weight: 760;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 740;
   line-height: 1.2;
   text-decoration: none;
-  transition: transform 0.18s ease, border-color 0.18s ease, opacity 0.18s ease;
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    opacity 0.18s ease,
+    box-shadow 0.18s ease,
+    background-color 0.18s ease;
 }
 
 .star-guide__action:hover {
@@ -197,21 +198,25 @@ onMounted(() => {
 
 .star-guide__action--primary {
   color: #fff;
-  background: var(--aisee-brand-gradient);
-  box-shadow: 0 18px 34px color-mix(in srgb, var(--aisee-brand-primary) 24%, transparent);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--aisee-brand-secondary) 92%, white), var(--aisee-brand-primary));
+  box-shadow:
+    0 12px 26px color-mix(in srgb, var(--aisee-brand-primary) 18%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .star-guide__action--secondary {
   color: var(--aisee-brand-text-strong);
-  background: color-mix(in oklch, var(--aisee-brand-surface) 38%, var(--aisee-surface-card));
-  border-color: var(--aisee-brand-border);
+  background: rgba(255, 255, 255, 0.72);
+  border-color: color-mix(in oklch, var(--aisee-brand-border) 86%, var(--vp-c-divider));
   cursor: pointer;
 }
 
 .star-guide__action--secondary:disabled {
   cursor: not-allowed;
-  opacity: 0.5;
+  opacity: 0.58;
   transform: none;
+  box-shadow: none;
 }
 
 .star-guide__hint {
@@ -219,6 +224,7 @@ onMounted(() => {
   color: var(--vp-c-text-3);
   font-size: 0.88rem;
   line-height: 1.55;
+  text-align: center;
 }
 
 [data-theme="dark"] .star-guide__panel {
@@ -228,6 +234,10 @@ onMounted(() => {
   box-shadow:
     0 28px 80px rgba(0, 0, 0, 0.42),
     inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+[data-theme="dark"] .star-guide__action--secondary {
+  background: color-mix(in oklch, var(--aisee-brand-surface-strong) 46%, var(--aisee-surface-card));
 }
 
 @media (max-width: 640px) {
@@ -240,7 +250,6 @@ onMounted(() => {
   }
 
   .star-guide__actions {
-    display: grid;
     grid-template-columns: 1fr;
   }
 }

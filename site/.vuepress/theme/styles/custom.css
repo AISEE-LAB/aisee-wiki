@@ -1,12 +1,38 @@
 :root {
   /** 主题颜色 */
-
-  /*
-  --vp-c-brand-1: #5086a1;
-  --vp-c-brand-2: #6aa1b7;
-  --vp-c-brand-3: #8cccd5;
-  --vp-c-brand-soft: rgba(131, 208, 218, 0.314);
-  */
+  --vp-c-brand-1: #015cfa;
+  --vp-c-brand-2: #00aafe;
+  --vp-c-brand-3: #443aff;
+  --vp-c-brand-soft: rgba(1, 92, 250, 0.14);
+  --aisee-brand-primary: #015cfa;
+  --aisee-brand-secondary: #00aafe;
+  --aisee-brand-tertiary: #443aff;
+  --aisee-brand-tertiary-strong: #5b30fc;
+  --aisee-brand-surface: color-mix(in oklch, var(--aisee-brand-secondary) 10%, white);
+  --aisee-brand-surface-strong: color-mix(in oklch, var(--aisee-brand-primary) 12%, white);
+  --aisee-brand-border: color-mix(in oklch, var(--aisee-brand-primary) 22%, var(--vp-c-divider));
+  --aisee-brand-border-strong: color-mix(in oklch, var(--aisee-brand-secondary) 40%, var(--vp-c-divider));
+  --aisee-brand-text: color-mix(in oklch, var(--aisee-brand-primary) 72%, black);
+  --aisee-brand-text-strong: color-mix(in oklch, var(--aisee-brand-tertiary) 74%, black);
+  --aisee-brand-gradient: linear-gradient(135deg, var(--aisee-brand-secondary), var(--aisee-brand-primary));
+  --aisee-brand-gradient-soft: linear-gradient(
+    135deg,
+    color-mix(in oklch, var(--aisee-brand-secondary) 16%, white),
+    color-mix(in oklch, var(--aisee-brand-primary) 10%, white)
+  );
+  --aisee-brand-gradient-deep: linear-gradient(
+    135deg,
+    color-mix(in oklch, var(--aisee-brand-primary) 88%, black),
+    color-mix(in oklch, var(--aisee-brand-tertiary) 76%, black)
+  );
+  --aisee-surface-card: color-mix(in oklch, var(--vp-c-bg) 94%, white);
+  --aisee-surface-card-alt: color-mix(in oklch, var(--vp-c-bg-soft) 68%, var(--vp-c-bg));
+  --aisee-warning-solid: #d97706;
+  --aisee-warning-surface: color-mix(in oklch, var(--aisee-warning-solid) 10%, var(--vp-c-bg));
+  --aisee-warning-border: color-mix(in oklch, var(--aisee-warning-solid) 22%, var(--vp-c-divider));
+  --aisee-warning-text: color-mix(in oklch, var(--aisee-warning-solid) 70%, black);
+  --aisee-deep-border: color-mix(in oklch, var(--aisee-brand-secondary) 46%, var(--vp-c-divider));
+  --aisee-deep-text: #e8f8ff;
 
   /** 背景颜色 */
 
@@ -28,12 +54,26 @@
 
 /** 深色模式 */
 [data-theme="dark"] {
-  /*
-  --vp-c-brand-1: #8cccd5;
-  --vp-c-brand-2: #6aa1b7;
-  --vp-c-brand-3: #5086a1;
-  --vp-c-brand-soft: rgba(131, 208, 218, 0.314);
-  */
+  --vp-c-brand-1: #00aafe;
+  --vp-c-brand-2: #01eafe;
+  --vp-c-brand-3: #5b30fc;
+  --vp-c-brand-soft: rgba(0, 170, 254, 0.18);
+  --aisee-brand-surface: rgba(9, 58, 72, 0.58);
+  --aisee-brand-surface-strong: rgba(17, 56, 96, 0.52);
+  --aisee-brand-border: rgba(88, 215, 255, 0.28);
+  --aisee-brand-border-strong: rgba(88, 215, 255, 0.46);
+  --aisee-brand-text: rgba(181, 246, 255, 0.92);
+  --aisee-brand-text-strong: rgba(235, 248, 255, 0.94);
+  --aisee-brand-gradient: linear-gradient(135deg, var(--aisee-brand-secondary), var(--aisee-brand-tertiary-strong));
+  --aisee-brand-gradient-soft: linear-gradient(135deg, rgba(17, 88, 106, 0.58), rgba(27, 70, 138, 0.48));
+  --aisee-brand-gradient-deep: linear-gradient(135deg, rgba(8, 44, 82, 0.96), rgba(41, 31, 112, 0.94));
+  --aisee-surface-card: rgba(11, 24, 38, 0.82);
+  --aisee-surface-card-alt: rgba(18, 34, 48, 0.82);
+  --aisee-warning-surface: rgba(70, 42, 20, 0.62);
+  --aisee-warning-border: rgba(245, 158, 11, 0.34);
+  --aisee-warning-text: rgba(255, 218, 158, 0.92);
+  --aisee-deep-border: rgba(88, 215, 255, 0.5);
+  --aisee-deep-text: rgba(235, 248, 255, 0.94);
 
   /*
   --vp-c-bg: #1b1b1f;

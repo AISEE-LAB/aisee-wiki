@@ -21,38 +21,38 @@ const cardClass = computed(() => cn('ui-card', `ui-card--${props.tone}`, props.c
 
 <style scoped>
 .ui-card {
-  background: rgba(255, 255, 255, 0.88);
-  border: 1px solid rgba(32, 86, 130, 0.16);
+  background: var(--aisee-surface-card);
+  border: 1px solid color-mix(in oklch, var(--aisee-brand-border) 76%, var(--vp-c-divider));
   border-radius: 8px;
   box-shadow: 0 18px 42px rgba(35, 64, 98, 0.09);
   backdrop-filter: blur(14px);
 }
 
 .ui-card--cyan {
-  border-color: rgba(8, 155, 176, 0.22);
-  box-shadow: 0 18px 42px rgba(8, 155, 176, 0.1);
+  border-color: var(--aisee-brand-border-strong);
+  box-shadow: 0 18px 42px color-mix(in srgb, var(--aisee-brand-primary) 10%, transparent);
 }
 
 .ui-card--amber {
-  background: rgba(255, 249, 238, 0.92);
-  border-color: rgba(217, 119, 6, 0.22);
-  box-shadow: 0 18px 42px rgba(217, 119, 6, 0.08);
+  background: var(--aisee-warning-surface);
+  border-color: var(--aisee-warning-border);
+  box-shadow: 0 18px 42px color-mix(in srgb, var(--aisee-warning-solid) 10%, transparent);
 }
 
 .ui-card--deep {
   background:
-    radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.52), transparent 42%),
-    linear-gradient(180deg, rgba(8, 63, 104, 0.96), rgba(5, 45, 75, 0.98));
-  border-color: rgba(88, 215, 255, 0.5);
-  box-shadow: 0 24px 58px rgba(13, 91, 151, 0.24), inset 0 0 34px rgba(255, 255, 255, 0.12);
+    radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--aisee-brand-secondary) 52%, transparent), transparent 42%),
+    var(--aisee-brand-gradient-deep);
+  border-color: var(--aisee-deep-border);
+  box-shadow: 0 24px 58px color-mix(in srgb, var(--aisee-brand-primary) 24%, transparent), inset 0 0 34px rgba(255, 255, 255, 0.12);
 }
 
 [data-theme="dark"] .ui-card {
-  background: rgba(11, 24, 38, 0.74);
-  border-color: rgba(148, 213, 255, 0.16);
+  background: var(--aisee-surface-card);
+  border-color: color-mix(in oklch, var(--aisee-brand-border) 78%, var(--vp-c-divider));
 }
 
 [data-theme="dark"] .ui-card--amber {
-  background: rgba(44, 30, 12, 0.74);
+  background: var(--aisee-warning-surface);
 }
 </style>

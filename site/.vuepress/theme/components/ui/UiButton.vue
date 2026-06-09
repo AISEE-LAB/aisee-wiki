@@ -33,20 +33,20 @@ const buttonClass = computed(() => cn('ui-button', `ui-button--${props.variant}`
 }
 
 .ui-button--primary {
-  background: linear-gradient(135deg, #089bb0, #087e82);
-  box-shadow: 0 18px 34px rgba(8, 155, 176, 0.24);
+  background: var(--aisee-brand-gradient);
+  box-shadow: 0 18px 34px color-mix(in srgb, var(--aisee-brand-primary) 24%, transparent);
   color: #fff;
 }
 
 .ui-button--secondary {
-  background: rgba(255, 255, 255, 0.74);
-  border: 1px solid rgba(29, 78, 216, 0.28);
-  color: #17427e;
+  background: color-mix(in oklch, var(--aisee-brand-surface) 42%, var(--aisee-surface-card));
+  border: 1px solid var(--aisee-brand-border);
+  color: var(--aisee-brand-text-strong);
 }
 
 [data-theme="dark"] .ui-button--secondary {
-  background: rgba(11, 24, 38, 0.78);
-  border-color: rgba(148, 213, 255, 0.2);
-  color: rgba(235, 248, 255, 0.92);
+  background: color-mix(in oklch, var(--aisee-brand-surface-strong) 52%, var(--aisee-surface-card));
+  border-color: var(--aisee-brand-border);
+  color: var(--aisee-brand-text-strong);
 }
 </style>

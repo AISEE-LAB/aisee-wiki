@@ -206,14 +206,14 @@ function getMotionIndex(index: number, max = 8): number {
 <style scoped>
 .flow-explainer {
   --flow-stage-count: 3;
-  --flow-accent: oklch(47% 0.105 186);
-  --flow-accent-strong: oklch(40% 0.12 188);
-  --flow-accent-soft: oklch(96% 0.026 188);
-  --flow-border: color-mix(in oklch, var(--vp-c-divider) 82%, transparent);
-  --flow-panel: color-mix(in oklch, var(--vp-c-bg) 92%, oklch(96% 0.012 205));
-  --flow-soft: color-mix(in oklch, var(--vp-c-bg-soft) 84%, transparent);
+  --flow-accent: var(--aisee-brand-primary);
+  --flow-accent-strong: var(--aisee-brand-tertiary);
+  --flow-accent-soft: color-mix(in oklch, var(--aisee-brand-secondary) 14%, var(--vp-c-bg));
+  --flow-border: color-mix(in oklch, var(--aisee-brand-border) 74%, var(--vp-c-divider));
+  --flow-panel: var(--aisee-surface-card);
+  --flow-soft: var(--aisee-surface-card-alt);
   --flow-text-muted: var(--vp-c-text-2);
-  --flow-focus: oklch(62% 0.14 188);
+  --flow-focus: var(--aisee-brand-secondary);
   --flow-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --flow-reveal-duration: 220ms;
   margin: 28px 0;
@@ -222,7 +222,7 @@ function getMotionIndex(index: number, max = 8): number {
   border-radius: 8px;
   background:
     linear-gradient(135deg, color-mix(in oklch, var(--flow-accent-soft) 72%, transparent), transparent 42%),
-    linear-gradient(315deg, color-mix(in oklch, oklch(94% 0.036 78) 64%, transparent), transparent 46%),
+    linear-gradient(315deg, color-mix(in oklch, var(--aisee-brand-tertiary) 8%, transparent), transparent 46%),
     var(--vp-c-bg);
 }
 
@@ -274,7 +274,7 @@ function getMotionIndex(index: number, max = 8): number {
   z-index: 1;
   width: 18px;
   height: 2px;
-  background: linear-gradient(90deg, var(--flow-accent), oklch(69% 0.13 79));
+  background: linear-gradient(90deg, var(--flow-accent), var(--aisee-brand-tertiary));
   content: "";
   transform-origin: left center;
   animation: flow-link-draw 180ms var(--flow-ease) both;
@@ -346,11 +346,11 @@ function getMotionIndex(index: number, max = 8): number {
 }
 
 .flow-item--active {
-  --item-border: color-mix(in oklch, oklch(57% 0.14 235) 58%, var(--flow-border));
-  --item-bg: color-mix(in oklch, oklch(96% 0.03 225) 76%, var(--vp-c-bg));
-  --item-dot: oklch(55% 0.15 235);
-  --item-chip-bg: oklch(93% 0.045 225);
-  --item-chip-text: oklch(38% 0.11 235);
+  --item-border: var(--aisee-brand-border-strong);
+  --item-bg: color-mix(in oklch, var(--aisee-brand-surface) 68%, var(--vp-c-bg));
+  --item-dot: var(--aisee-brand-primary);
+  --item-chip-bg: color-mix(in oklch, var(--aisee-brand-surface) 82%, var(--vp-c-bg));
+  --item-chip-text: var(--aisee-brand-text);
 }
 
 .flow-item--done {
@@ -459,8 +459,8 @@ function getMotionIndex(index: number, max = 8): number {
   display: inline-block;
   align-self: flex-start;
   margin-top: auto;
-  color: oklch(42% 0.1 78);
-  background: color-mix(in oklch, oklch(93% 0.06 80) 72%, var(--vp-c-bg));
+  color: var(--aisee-brand-text);
+  background: color-mix(in oklch, var(--aisee-brand-surface) 76%, var(--vp-c-bg));
 }
 
 .flow-connections {
@@ -515,7 +515,7 @@ function getMotionIndex(index: number, max = 8): number {
 }
 
 .flow-connection--depends .flow-connection__type {
-  background: oklch(48% 0.16 294);
+  background: var(--aisee-brand-tertiary);
 }
 
 .flow-connection--feedback .flow-connection__type {
@@ -604,32 +604,32 @@ function getMotionIndex(index: number, max = 8): number {
 }
 
 [data-theme="dark"] .flow-explainer {
-  --flow-accent: oklch(72% 0.12 188);
-  --flow-accent-strong: oklch(76% 0.13 188);
-  --flow-accent-soft: oklch(24% 0.035 205);
-  --flow-border: rgba(148, 213, 255, 0.16);
-  --flow-panel: rgba(11, 24, 38, 0.82);
-  --flow-soft: rgba(18, 34, 48, 0.82);
+  --flow-accent: var(--aisee-brand-secondary);
+  --flow-accent-strong: var(--aisee-brand-tertiary-strong);
+  --flow-accent-soft: color-mix(in oklch, var(--aisee-brand-secondary) 22%, transparent);
+  --flow-border: var(--aisee-brand-border);
+  --flow-panel: var(--aisee-surface-card);
+  --flow-soft: var(--aisee-surface-card-alt);
   --flow-text-muted: rgba(220, 235, 245, 0.72);
-  --flow-focus: oklch(72% 0.12 188);
+  --flow-focus: var(--aisee-brand-secondary);
   background:
-    linear-gradient(135deg, rgba(20, 55, 62, 0.36), transparent 42%),
-    linear-gradient(315deg, rgba(77, 50, 26, 0.28), transparent 48%),
+    linear-gradient(135deg, color-mix(in srgb, var(--aisee-brand-secondary) 22%, transparent), transparent 42%),
+    linear-gradient(315deg, color-mix(in srgb, var(--aisee-brand-tertiary) 18%, transparent), transparent 48%),
     rgba(9, 18, 30, 0.84);
 }
 
 [data-theme="dark"] .flow-explainer__eyebrow {
-  color: rgba(142, 245, 255, 0.9);
+  color: var(--aisee-brand-text);
 }
 
 [data-theme="dark"] .flow-stage__index {
-  color: rgba(255, 255, 245, 0.94);
-  background: #00746e;
-  outline-color: rgba(125, 241, 230, 0.24);
+  color: var(--aisee-brand-text-strong);
+  background: var(--aisee-brand-primary);
+  outline-color: color-mix(in srgb, var(--aisee-brand-secondary) 24%, transparent);
 }
 
 [data-theme="dark"] .flow-stage:not(.flow-stage--last)::after {
-  background: linear-gradient(90deg, rgba(74, 201, 220, 0.72), rgba(245, 158, 11, 0.54));
+  background: linear-gradient(90deg, var(--aisee-brand-secondary), var(--aisee-brand-tertiary-strong));
 }
 
 [data-theme="dark"] .flow-item {
@@ -642,11 +642,11 @@ function getMotionIndex(index: number, max = 8): number {
 }
 
 [data-theme="dark"] .flow-item--active {
-  --item-border: rgba(74, 201, 220, 0.48);
-  --item-bg: rgba(9, 58, 72, 0.54);
-  --item-dot: rgba(66, 206, 236, 0.92);
-  --item-chip-bg: rgba(181, 246, 255, 0.16);
-  --item-chip-text: rgba(181, 246, 255, 0.94);
+  --item-border: var(--aisee-brand-border-strong);
+  --item-bg: var(--aisee-brand-surface);
+  --item-dot: var(--aisee-brand-secondary);
+  --item-chip-bg: color-mix(in srgb, var(--aisee-brand-secondary) 18%, transparent);
+  --item-chip-text: var(--aisee-brand-text);
 }
 
 [data-theme="dark"] .flow-item--done {
@@ -679,23 +679,23 @@ function getMotionIndex(index: number, max = 8): number {
 }
 
 [data-theme="dark"] .flow-item__accent {
-  color: rgba(255, 218, 158, 0.92);
-  background: rgba(245, 158, 11, 0.18);
+  color: var(--aisee-brand-text);
+  background: color-mix(in srgb, var(--aisee-brand-secondary) 14%, transparent);
 }
 
 [data-theme="dark"] .flow-connections li,
 [data-theme="dark"] .flow-legend__item {
-  background: rgba(11, 24, 38, 0.78);
-  border-color: rgba(148, 213, 255, 0.14);
+  background: var(--aisee-surface-card);
+  border-color: var(--aisee-brand-border);
 }
 
 [data-theme="dark"] .flow-connection__type {
-  color: rgba(255, 255, 245, 0.94);
-  background: #00746e;
+  color: var(--aisee-brand-text-strong);
+  background: var(--aisee-brand-primary);
 }
 
 [data-theme="dark"] .flow-connection--depends .flow-connection__type {
-  background: #6d5fd1;
+  background: var(--aisee-brand-tertiary-strong);
 }
 
 [data-theme="dark"] .flow-connection--feedback .flow-connection__type {

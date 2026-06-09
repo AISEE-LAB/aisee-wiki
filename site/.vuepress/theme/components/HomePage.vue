@@ -483,13 +483,13 @@ onUnmounted(() => {
 .aisee-home {
   --home-text: #071426;
   --home-muted: #5a6b80;
-  --home-soft: #edf6fb;
-  --home-line: rgba(35, 69, 98, 0.14);
-  --home-card: rgba(255, 255, 255, 0.9);
-  --home-cyan: #089bb0;
-  --home-teal: #087e82;
-  --home-blue: #1755b8;
-  --home-amber: #d97706;
+  --home-soft: color-mix(in oklch, var(--aisee-brand-secondary) 10%, white);
+  --home-line: var(--aisee-brand-border);
+  --home-card: var(--aisee-surface-card);
+  --home-cyan: var(--aisee-brand-secondary);
+  --home-teal: var(--aisee-brand-primary);
+  --home-blue: var(--aisee-brand-tertiary);
+  --home-amber: var(--aisee-warning-solid);
   color: var(--home-text);
   background:
     linear-gradient(90deg, rgba(244, 250, 255, 0.82), rgba(255, 255, 255, 0.74) 38%, rgba(239, 249, 255, 0.92)),
@@ -523,7 +523,7 @@ onUnmounted(() => {
 }
 
 .eyebrow {
-  color: #087e82;
+  color: var(--home-teal);
   font-size: clamp(1.12rem, 1.52vw, 1.48rem);
   font-weight: 880;
   letter-spacing: 0;
@@ -532,7 +532,7 @@ onUnmounted(() => {
 }
 
 .hero-copy h1 {
-  color: #061326;
+  color: var(--home-text);
   font-size: clamp(3.5rem, 4.65vw, 5.65rem);
   font-weight: 900;
   line-height: 1.08;
@@ -557,7 +557,7 @@ onUnmounted(() => {
 
 .hero-title__char--ai {
   --ai-glow-alpha: 0;
-  background: linear-gradient(180deg, #12c8d0 0%, #0961c6 92%);
+  background: linear-gradient(180deg, var(--home-cyan) 0%, var(--home-teal) 92%);
   background-clip: text;
   color: transparent;
   font-style: normal;
@@ -570,7 +570,7 @@ onUnmounted(() => {
 }
 
 .hero-subtitle {
-  color: #26394f;
+  color: color-mix(in oklch, var(--home-text) 72%, white);
   font-size: clamp(1.02rem, 1.25vw, 1.2rem);
   line-height: 1.78;
   margin: 24px 0 0;
@@ -578,7 +578,7 @@ onUnmounted(() => {
 }
 
 .hero-slogan {
-  color: #0a376a;
+  color: var(--aisee-brand-text-strong);
   font-size: clamp(1rem, 1.18vw, 1.14rem);
   font-weight: 850;
   line-height: 1.45;

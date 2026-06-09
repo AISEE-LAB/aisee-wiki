@@ -164,6 +164,8 @@
 - 多语言：英文 `/en/resources/` 暂保留推荐资源入口，指向中文推荐资源目录；后续再按英文读者语境完整重写。
 - 图片/附件：工具/模型 logo 使用 LobeHub Icons 静态 SVG/CDN；交互式关系图优先使用 Vue Flow；禁止引用本地绝对路径和未经授权商业截图。
 - 图片/附件：站点自有品牌资源统一存放在 `site/.vuepress/public/brand/`；当前保留 `aisee-logo-mark.svg`（无字）与 `aisee-logo-wordmark.svg`（带字）两个 SVG，favicon 必须使用无字版本，导航栏站点 logo 使用带字版本。
+- 主题品牌色：`site/.vuepress/theme/styles/custom.css` 中的 `--vp-c-brand-*` 应基于 AISEE logo 提炼的主品牌色维护；当前使用主蓝 `#015cfa`、亮青 `#00aafe`、深紫 `#443aff` / `#5b30fc` 作为亮暗主题强调色，不继续沿用旧的青灰色 token。
+- 主题组件：首页、资源页和通用 `Ui*` 组件优先消费共享品牌 token 与语义 token；除非组件有明确视觉理由，不再在单个组件中硬编码站点主品牌色。
 - 图片/附件：OpenSpec 复杂静态图保留 `.excalidraw` 源文件，导出 SVG 放在 `site/.vuepress/public/diagrams/openspec/`，正文通过 `DiagramFigure` 引用站点内路径。
 - 代码块/命令示例：安装、账号、平台、价格、额度等易变信息必须标注“以官方文档为准”；危险 Git/删除/上传/生产操作必须有风险说明。
 - 代码块/命令示例：Compound Engineering 正文优先讲方法论和职责边界，不复制插件内部长 prompt，不在公开正文暴露本地绝对路径或本地安装版本口径。

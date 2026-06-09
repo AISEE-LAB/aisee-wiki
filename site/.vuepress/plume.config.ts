@@ -73,12 +73,11 @@ export default defineThemeConfig({
        * 公告板
        * @see https://theme-plume.vuejs.press/guide/features/bulletin/
        */
-       // bulletin: {
-       //   layout: 'top-right',
-       //   contentType: 'markdown',
-       //   title: '',
-       //   content: '',
-       // },
+      bulletin: {
+        layout: 'top-right',
+        title: '关注 AISEE 公众号',
+        contentFile: 'site/_bulletin.md',
+      },
     },
     '/en/': {
       /**
@@ -100,12 +99,11 @@ export default defineThemeConfig({
        * 公告板
        * @see https://theme-plume.vuejs.press/guide/features/bulletin/
        */
-       // bulletin: {
-       //   layout: 'top-right',
-       //   contentType: 'markdown',
-       //   title: '',
-       //   content: '',
-       // },
+      bulletin: {
+        layout: 'top-right',
+        title: 'Follow AISEE',
+        contentFile: 'site/en_bulletin.md',
+      },
     },
   },
 })

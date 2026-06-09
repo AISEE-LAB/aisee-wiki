@@ -8,8 +8,6 @@ import { Layout } from 'vuepress-theme-plume/client'
 
 import HomePage from './theme/components/HomePage.vue'
 import FlowExplainer from './theme/components/FlowExplainer.vue'
-import LearningFlow from './theme/components/LearningFlow.vue'
-import DocFlow from './theme/components/doc-flow/DocFlow.vue'
 import ToolLogoGrid from './theme/components/ToolLogoGrid.vue'
 import ToolCompareMatrix from './theme/components/ToolCompareMatrix.vue'
 import DiagramFigure from './theme/components/DiagramFigure.vue'
@@ -30,8 +28,6 @@ import CodexHookEventBoard from './theme/components/CodexHookEventBoard.vue'
 import AiCodingResourceBoard from './theme/components/AiCodingResourceBoard.vue'
 import OpenSourceProjectBoard from './theme/components/OpenSourceProjectBoard.vue'
 import AiseePluginStarGuide from './theme/components/AiseePluginStarGuide.vue'
-import '@vue-flow/core/dist/style.css'
-import '@vue-flow/core/dist/theme-default.css'
 // import CustomComponent from './theme/components/Custom.vue'
 
 import './theme/styles/custom.css'
@@ -58,8 +54,6 @@ export default defineClientConfig({
     // your custom components
     app.component('HomePage', HomePage)
     app.component('FlowExplainer', FlowExplainer)
-    app.component('LearningFlow', LearningFlow)
-    app.component('DocFlow', DocFlow)
     app.component('ToolLogoGrid', ToolLogoGrid)
     app.component('ToolCompareMatrix', ToolCompareMatrix)
     app.component('DiagramFigure', DiagramFigure)

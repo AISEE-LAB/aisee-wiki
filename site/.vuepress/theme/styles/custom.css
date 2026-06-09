@@ -33,6 +33,10 @@
   --aisee-warning-text: color-mix(in oklch, var(--aisee-warning-solid) 70%, black);
   --aisee-deep-border: color-mix(in oklch, var(--aisee-brand-secondary) 46%, var(--vp-c-divider));
   --aisee-deep-text: #e8f8ff;
+  --vp-bulletin-width: 420px;
+  --vp-bulletin-title-font-size: 18px;
+  --vp-bulletin-font-size: 15px;
+  --vp-bulletin-line-height: 1.7;
 
   /** 背景颜色 */
 
@@ -97,4 +101,66 @@
 .vp-navbar-title .logo {
   width: auto;
   height: clamp(2.2rem, 3vw, 2.8rem);
+}
+
+.vp-bulletin:where(.preset) .close {
+  top: 12px;
+  right: 14px;
+  font-size: 18px;
+}
+
+.vp-bulletin:where(.preset) h2 {
+  padding: 20px 24px 0;
+}
+
+.vp-bulletin:where(.preset) .container {
+  padding: 14px 24px 24px;
+}
+
+.vp-bulletin:where(.preset).border .container {
+  padding: calc(14px + var(--vp-bulletin-border-width)) 24px calc(24px + var(--vp-bulletin-border-width)) calc(24px + var(--vp-bulletin-border-width));
+}
+
+.aisee-bulletin {
+  display: grid;
+  gap: 12px;
+}
+
+.aisee-bulletin__lead,
+.aisee-bulletin__text,
+.aisee-bulletin__caption {
+  margin: 0;
+}
+
+.aisee-bulletin__lead {
+  color: var(--vp-c-text-1);
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.7;
+}
+
+.aisee-bulletin__text {
+  color: var(--vp-c-text-2);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.aisee-bulletin__qr {
+  display: grid;
+  justify-items: center;
+  margin-top: 4px;
+}
+
+.aisee-bulletin__qr img {
+  width: 184px;
+  max-width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.aisee-bulletin__caption {
+  color: var(--vp-c-text-3);
+  font-size: 0.84rem;
+  line-height: 1.5;
+  text-align: center;
 }

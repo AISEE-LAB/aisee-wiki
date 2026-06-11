@@ -162,17 +162,20 @@ export default defineUserConfig({
      * 评论 comments
      * @see https://theme-plume.vuejs.press/guide/features/comments/
      */
-    // comment: {
-    //   provider: '', // "Artalk" | "Giscus" | "Twikoo" | "Waline"
-    //   comment: true,
-    //   repo: '',
-    //   repoId: '',
-    //   category: '',
-    //   categoryId: '',
-    //   mapping: 'pathname',
-    //   reactionsEnabled: true,
-    //   inputPosition: 'top',
-    // },
+    comment: {
+      provider: 'Giscus',
+      comment: true,
+      repo: 'AISEE-LAB/aisee-wiki',
+      repoId: 'R_kgDOS1Nbag',
+      category: 'Announcements',
+      categoryId: 'DIC_kwDOS1Nbas4C-8BT',
+      mapping: 'pathname',
+      strict: false,
+      reactionsEnabled: true,
+      inputPosition: 'bottom',
+      lightTheme: 'preferred_color_scheme',
+      darkTheme: 'preferred_color_scheme',
+    },
 
     /**
      * 资源链接替换
